@@ -1,0 +1,29 @@
+name: Validate Templates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate registry.json
+        run: |
+          node -e "
+            const reg = JSON.parse(require('fs').readFileSync('registry.json', 'utf8'));
+            if (!reg.version || !reg.templates) throw new Error('Invalid registry.json');
+            for (const [name, info] of Object.entries(reg.templates)) {
+              const manifest = JSON.parse(require('fs').readFileSync(name + '/manifest.json', 'utf8'));
+              if (!manifest.files || !manifest.files.length) throw new Error(name + ': no files in manifest');
+              for (const f of manifest.files) {
+                require('fs').accessSync(name + '/files/' + f);
+              }
+              console.log('✓ ' + name + ' (' + manifest.files.length + ' files)');
+            }
+            console.log('All templates valid.');
+          "

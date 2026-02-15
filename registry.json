@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "templates": {
+    "trinity-signature": {
+      "description": "Animated triangle signature easter-egg for client sites",
+      "category": "component",
+      "version": "1.0.0"
+    }
+  }
+}

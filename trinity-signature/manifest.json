@@ -1,0 +1,17 @@
+{
+  "name": "trinity-signature",
+  "version": "1.0.0",
+  "description": "Animated triangle signature easter-egg for client sites",
+  "outputDir": "components/trinity-signature",
+  "files": [
+    "trinity-signature.tsx",
+    "overscroll-reveal.tsx",
+    "triangle-background/triangle-background.tsx",
+    "triangle-background/animations.ts",
+    "triangle-background/noise.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Add <TrinitySignature accentColor=\"#YOUR_COLOR\" /> to your layout.\n  Wrap your page with <OverscrollReveal background={<TrinitySignature />}> for the full effect."
+}
