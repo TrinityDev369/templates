@@ -1,24 +1,29 @@
 {
   "version": "1.0",
   "templates": {
-    "trinity-signature": {
-      "description": "Animated triangle signature easter-egg for client sites",
-      "category": "component",
-      "version": "1.0.0"
-    },
     "agentic-layer": {
-      "description": "Production-ready Claude Code agentic layer — skills, agents, hooks, and commands",
+      "description": "Production-ready Claude Code agentic layer \u2014 skills, agents, hooks, and commands",
       "category": "agentic",
       "version": "1.0.0"
     },
-    "skill-security": {
-      "description": "Security review skill — OWASP checklist, auth patterns, input validation",
+    "skill-accessibility": {
+      "description": "WCAG compliance and accessibility audit skill",
       "category": "skill",
       "version": "1.0.0"
     },
     "skill-copywriter": {
-      "description": "Content creation skill — SEO-aware copy, blog posts, headlines",
+      "description": "Content creation skill \u2014 SEO-aware copy, blog posts, headlines",
       "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-security": {
+      "description": "Security review skill \u2014 OWASP checklist, auth patterns, input validation",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "trinity-signature": {
+      "description": "Animated triangle signature easter-egg for client sites",
+      "category": "component",
       "version": "1.0.0"
     }
   }
