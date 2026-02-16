@@ -1,0 +1,10 @@
+{
+  "name": "skill-accessibility",
+  "version": "1.0.0",
+  "description": "WCAG compliance and accessibility audit skill",
+  "outputDir": ".claude",
+  "files": [
+    "skills/accessibility/SKILL.md"
+  ],
+  "postMessage": "Accessibility skill installed! Use for WCAG audits, ARIA patterns, and a11y fixes."
+}
