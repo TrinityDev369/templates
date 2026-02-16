@@ -1,0 +1,22 @@
+{
+  "name": "agentic-layer",
+  "version": "1.0.0",
+  "description": "Production-ready Claude Code agentic layer with skills, agents, hooks, and commands",
+  "outputDir": ".",
+  "files": [
+    "CLAUDE.md",
+    ".claude/settings.json",
+    ".claude/hooks/hooks.py",
+    ".claude/hooks/interactive.py",
+    ".claude/skills/plan/SKILL.md",
+    ".claude/skills/review/SKILL.md",
+    ".claude/skills/testing/SKILL.md",
+    ".claude/agents/builder.md",
+    ".claude/agents/reviewer.md",
+    ".claude/agents/researcher.md",
+    ".claude/commands/plan.md",
+    ".claude/commands/review.md",
+    ".claude/commands/fix.md"
+  ],
+  "postMessage": "Agentic layer installed! Edit CLAUDE.md to describe your project, then start a Claude Code session."
+}

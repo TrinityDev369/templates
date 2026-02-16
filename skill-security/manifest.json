@@ -1,0 +1,10 @@
+{
+  "name": "skill-security",
+  "version": "1.0.0",
+  "description": "Security review skill — OWASP checklist, auth patterns, input validation",
+  "outputDir": ".claude",
+  "files": [
+    "skills/security/SKILL.md"
+  ],
+  "postMessage": "Security skill installed! Use it when working with auth, user input, API endpoints, or secrets."
+}

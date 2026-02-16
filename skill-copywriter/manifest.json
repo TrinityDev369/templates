@@ -1,0 +1,10 @@
+{
+  "name": "skill-copywriter",
+  "version": "1.0.0",
+  "description": "Content creation skill — SEO-aware copy, blog posts, headlines, marketing content",
+  "outputDir": ".claude",
+  "files": [
+    "skills/copywriter/SKILL.md"
+  ],
+  "postMessage": "Copywriter skill installed! Use it for blog posts, page copy, headlines, and marketing content."
+}

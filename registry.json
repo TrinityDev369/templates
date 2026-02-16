@@ -5,6 +5,21 @@
       "description": "Animated triangle signature easter-egg for client sites",
       "category": "component",
       "version": "1.0.0"
+    },
+    "agentic-layer": {
+      "description": "Production-ready Claude Code agentic layer — skills, agents, hooks, and commands",
+      "category": "agentic",
+      "version": "1.0.0"
+    },
+    "skill-security": {
+      "description": "Security review skill — OWASP checklist, auth patterns, input validation",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-copywriter": {
+      "description": "Content creation skill — SEO-aware copy, blog posts, headlines",
+      "category": "skill",
+      "version": "1.0.0"
     }
   }
 }
