@@ -5,7 +5,7 @@ Installable templates from [Trinity Agency](https://trinity.agency). Drop compon
 ## Quick Start
 
 ```bash
-npx @trinity/use <template>
+npx @trinity369/use <template>
 ```
 
 ## Available Templates
@@ -16,16 +16,16 @@ npx @trinity/use <template>
 
 ## How It Works
 
-1. `npx @trinity/use <template>` fetches the template manifest from this repo
+1. `npx @trinity369/use <template>` fetches the template manifest from this repo
 2. Downloads each file via GitHub raw URLs
 3. Writes them to your project — self-contained, zero monorepo dependencies
 
 ## Commands
 
 ```bash
-npx @trinity/use --list               # List all templates
-npx @trinity/use <template>           # Install template
-npx @trinity/use <template> --dir .   # Custom output directory
+npx @trinity369/use --list               # List all templates
+npx @trinity369/use <template>           # Install template
+npx @trinity369/use <template> --dir .   # Custom output directory
 ```
 
 ## Adding Templates
