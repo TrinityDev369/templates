@@ -1,0 +1,12 @@
+{
+  "name": "pdf-resume",
+  "version": "1.0.0",
+  "description": "Professional resume/CV PDF with experience, education, skills sections — ATS-friendly, powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/resume",
+  "files": ["resume.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/resume/generate.tsx\nCustomize layout and colors in resume.tsx"
+}
