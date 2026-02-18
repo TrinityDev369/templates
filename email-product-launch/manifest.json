@@ -1,0 +1,12 @@
+{
+  "name": "email-product-launch",
+  "version": "1.0.0",
+  "description": "Product launch announcement email with feature highlights, social proof, pricing teaser, and early-bird CTA. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["product-launch.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Product launch email installed! Preview: npx email dev\nImport: import { ProductLaunchEmail } from '@/emails/product-launch'"
+}
