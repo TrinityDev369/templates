@@ -1,0 +1,12 @@
+{
+  "name": "integration-pdf-generation",
+  "version": "1.0.0",
+  "description": "Server-side PDF generation with Puppeteer — HTML-to-PDF, URL-to-PDF, invoice and report templates, merge, and watermark.",
+  "outputDir": "src/integrations/pdf-generation",
+  "files": ["client.ts", "types.ts", "templates.ts", "index.ts"],
+  "peerDependencies": {
+    "puppeteer": ">=22",
+    "pdf-lib": ">=1.17"
+  },
+  "postMessage": "PDF generation installed! Requires Chrome/Chromium (Puppeteer downloads it automatically).\nImport: import { generatePdfFromHtml, generateInvoice } from '@/integrations/pdf-generation'"
+}
