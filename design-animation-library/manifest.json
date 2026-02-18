@@ -1,0 +1,12 @@
+{
+  "name": "design-animation-library",
+  "version": "1.0.0",
+  "description": "Reusable animation primitives built on framer-motion. Includes AnimateIn, AnimatePresence wrapper, staggered children, and animation presets.",
+  "outputDir": "components/design-animation-library",
+  "files": ["AnimateIn.tsx", "AnimatePresence.tsx", "Stagger.tsx", "presets.ts", "README.md"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import animation components directly. All respect prefers-reduced-motion automatically."
+}
