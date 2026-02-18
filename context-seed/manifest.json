@@ -1,10 +1,11 @@
 {
   "name": "context-seed",
-  "version": "2.0.0",
-  "description": "PRD-to-packages seeding skill — dynamically fetches the live template registry and maps project requirements to npx trinity369/use commands. Never goes stale.",
+  "version": "3.0.0",
+  "description": "Autonomous project seeder — reads a PRD, maps requirements to packages, installs them in dependency order, delegates design system composition to design-system-seed, and delivers a scaffolded project.",
   "outputDir": ".claude",
   "files": [
     "skills/context-seed/SKILL.md"
   ],
-  "postMessage": "Context Seed skill installed at .claude/skills/context-seed/SKILL.md\n\nUsage: Feed your PRD or describe your project. The skill fetches the live template registry and recommends the right packages.\n\nNo hardcoded catalog — new templates are picked up automatically."
+  "peerDependencies": {},
+  "postMessage": "Context Seed v3 installed at .claude/skills/context-seed/SKILL.md\n\nFeed your PRD or describe your project. The skill fetches the live registry, builds an install plan, and executes it.\n\nDesign system signals are delegated to design-system-seed for brand-aware composition.\n\nNo hardcoded catalog — new templates are picked up automatically from the registry."
 }
