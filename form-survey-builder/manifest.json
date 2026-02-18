@@ -1,0 +1,20 @@
+{
+  "name": "form-survey-builder",
+  "version": "1.0.0",
+  "description": "Dynamic survey form builder with multiple question types and live preview",
+  "outputDir": "src/modules/form-survey-builder",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "survey-builder.tsx",
+    "question-editor.tsx",
+    "survey-preview.tsx",
+    "survey-renderer.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3"
+  },
+  "postMessage": "Survey Builder installed!\nImport: import { SurveyBuilder } from '@/modules/form-survey-builder'\nUsage: <SurveyBuilder onExport={(config) => console.log(config)} />"
+}
