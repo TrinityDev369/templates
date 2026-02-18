@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-kpi-cards",
+  "version": "1.0.0",
+  "description": "KPI stat cards with trend indicators, percentage change, and optional sparkline mini-charts",
+  "outputDir": "components/dashboard-kpi-cards",
+  "files": ["kpi-cards.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card\nImport: import { KpiCards, PLACEHOLDER_KPI_CARDS } from '@/components/dashboard-kpi-cards/kpi-cards'"
+}
