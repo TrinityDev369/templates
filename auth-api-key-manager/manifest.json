@@ -1,0 +1,16 @@
+{
+  "name": "auth-api-key-manager",
+  "version": "1.0.0",
+  "description": "API key management UI — create keys with scoped permissions, copy to clipboard, rotate, and revoke with confirmation",
+  "outputDir": "components/auth-api-key-manager",
+  "files": ["api-key-manager.tsx", "api-key-manager.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "API Key Manager installed!\n\nUsage:\nimport { ApiKeyManager } from '@/components/auth-api-key-manager/api-key-manager'\n\n<ApiKeyManager\n  apiKeys={keys}\n  onCreateKey={async (data) => { /* create and return key */ }}\n  onRevokeKey={async (keyId) => { /* revoke key */ }}\n  onRotateKey={async (keyId) => { /* rotate and return new key */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button input card label badge dialog checkbox form"
+}
