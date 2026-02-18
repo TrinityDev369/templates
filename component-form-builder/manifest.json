@@ -1,0 +1,23 @@
+{
+  "name": "component-form-builder",
+  "version": "1.0.0",
+  "description": "Multi-step form system with per-step Zod validation, field type rendering, and step progress indicator",
+  "outputDir": "components/form-builder",
+  "files": [
+    "form-builder.tsx",
+    "form-builder.types.ts",
+    "form-field-renderer.tsx",
+    "step-indicator.tsx",
+    "index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Form builder installed!\n\nUsage:\nimport { FormBuilder } from '@/components/form-builder'\nimport { z } from 'zod'\n\nconst steps = [\n  {\n    title: 'Personal Info',\n    fields: [\n      { name: 'name', label: 'Full Name', type: 'text' },\n      { name: 'email', label: 'Email', type: 'email' },\n    ],\n    schema: z.object({ name: z.string().min(1), email: z.string().email() }),\n  },\n]\n\n<FormBuilder steps={steps} onSubmit={async (data) => console.log(data)} />\n\nRequires shadcn/ui: npx shadcn@latest add button input textarea select checkbox card label form"
+}
