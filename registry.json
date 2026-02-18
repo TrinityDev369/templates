@@ -111,6 +111,21 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-consent-screen": {
+      "description": "OAuth authorization consent screen with scope display and risk indicators",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "auth-device-trust": {
+      "description": "Trusted devices list with browser, OS, location info and device revocation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-impersonation-banner": {
+      "description": "Sticky admin impersonation banner with user info and stop button",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-invite-flow": {
       "description": "Team member invitation flow \u2014 bulk email invite with role selection, pending invites list, and resend/revoke actions",
       "category": "component",
@@ -118,6 +133,11 @@
     },
     "auth-login-form": {
       "description": "Centered card login form with email, password, show/hide toggle, remember me, and OAuth buttons",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-mfa-recovery": {
+      "description": "MFA recovery codes display with copy, download, print, and regenerate actions",
       "category": "component",
       "version": "1.0.0"
     },
@@ -131,9 +151,19 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-password-change": {
+      "description": "In-app password change form with current password verification, strength meter, and confirmation",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-password-reset": {
       "description": "Multi-step password reset flow \u2014 email request, 6-digit code verification, new password",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "auth-rate-limit-ui": {
+      "description": "Rate limiting feedback component with attempt counter, countdown timer, and progressive warnings",
+      "category": "component",
       "version": "1.0.0"
     },
     "auth-seed": {
