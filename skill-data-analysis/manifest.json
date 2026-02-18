@@ -1,0 +1,8 @@
+{
+  "name": "skill-data-analysis",
+  "version": "1.0.0",
+  "description": "Data analysis skill — statistical analysis, data visualization, pattern recognition, reporting",
+  "outputDir": ".claude",
+  "files": ["skills/data-analysis/SKILL.md"],
+  "postMessage": "Data analysis skill installed! Use when analyzing datasets, generating reports, or creating visualizations."
+}
