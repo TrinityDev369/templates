@@ -1,0 +1,11 @@
+{
+  "name": "design-shadow-system",
+  "version": "1.0.0",
+  "description": "Elevation shadow tokens from xs to 2xl with colored shadow variants and dark mode support. CSS custom properties with Tailwind integration.",
+  "outputDir": "src/design-system",
+  "files": ["shadows.css", "tailwind.shadows.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import shadows.css in your global stylesheet. Use --shadow-* variables or Tailwind shadow utilities."
+}
