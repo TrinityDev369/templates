@@ -1,0 +1,8 @@
+{
+  "name": "skill-database",
+  "version": "1.0.0",
+  "description": "Database skill — PostgreSQL schema design, migration patterns, query optimization, and data integrity",
+  "outputDir": ".claude",
+  "files": ["skills/database/SKILL.md"],
+  "postMessage": "Database skill installed! Use for schema design, migrations, query optimization, and PostgreSQL best practices."
+}
