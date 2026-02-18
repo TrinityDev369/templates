@@ -1,0 +1,11 @@
+{
+  "name": "animation-noise-grain",
+  "version": "1.0.0",
+  "description": "Film grain and noise overlay effect using HTML Canvas",
+  "outputDir": "components/animation-noise-grain",
+  "files": ["NoiseGrain.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Add the overlay to your layout: import { NoiseGrain } from './components/animation-noise-grain/NoiseGrain'; then <NoiseGrain opacity={0.04} />"
+}
