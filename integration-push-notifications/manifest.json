@@ -1,0 +1,12 @@
+{
+  "name": "integration-push-notifications",
+  "version": "1.0.0",
+  "description": "Web push notifications with service worker, VAPID auth, and React hook",
+  "outputDir": "src/integrations/push-notifications",
+  "files": ["client.ts", "types.ts", "use-push-notifications.ts", "service-worker.js", "push-api.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "web-push": ">=3.6"
+  },
+  "postMessage": "Install: npm install web-push\nInstall types: npm install -D @types/web-push\n\n1. Generate VAPID keys: npx web-push generate-vapid-keys\n2. Set env vars: VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT=mailto:you@example.com\n3. Copy service-worker.js to your public/ folder\n4. Use the hook: const { subscribe, permission } = usePushNotifications({ vapidPublicKey: process.env.NEXT_PUBLIC_VAPID_KEY! })"
+}
