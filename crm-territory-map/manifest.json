@@ -1,0 +1,9 @@
+{
+  "name": "crm-territory-map",
+  "version": "1.0.0",
+  "description": "Sales territory map with Mapbox GL, assignment management, and quota tracking",
+  "outputDir": "src/modules/crm-territory-map",
+  "files": ["index.ts", "types.ts", "TerritoryMap.tsx", "territory-utils.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3", "mapbox-gl": ">=2" },
+  "postMessage": "Set your Mapbox token and import: import { TerritoryMap } from './src/modules/crm-territory-map'; <TerritoryMap territories={data} mapboxToken='pk...' reps={reps} onTerritoryClick={t => console.log(t)} />"
+}
