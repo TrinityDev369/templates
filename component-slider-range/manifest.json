@@ -1,0 +1,12 @@
+{
+  "name": "component-slider-range",
+  "version": "1.0.0",
+  "description": "Single and dual-handle range slider with tooltips, marks, and keyboard navigation",
+  "outputDir": "components/slider-range",
+  "files": ["slider-range.tsx", "slider-range.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add tooltip\nRequires cn() utility from shadcn.\nImport: import { SliderRange } from '@/components/slider-range/slider-range'"
+}
