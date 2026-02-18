@@ -1,0 +1,110 @@
+services:
+  kg-postgres:
+    image: apache/age:release_PG16_1.6.0
+    container_name: kg-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-knowledge}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: knowledge
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - kg_postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-knowledge} -d knowledge"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - knowledge-graph
+    restart: unless-stopped
+
+  kg-qdrant:
+    image: qdrant/qdrant:v1.12.1
+    container_name: kg-qdrant
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - "127.0.0.1:${QDRANT_HTTP_PORT:-6333}:6333"
+      - "127.0.0.1:${QDRANT_GRPC_PORT:-6334}:6334"
+    volumes:
+      - kg_qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__GRPC_PORT: 6334
+      QDRANT__SERVICE__HTTP_PORT: 6333
+      QDRANT__LOG_LEVEL: INFO
+    healthcheck:
+      test: ["CMD-SHELL", "cat /proc/net/tcp | grep -q ':18BD' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - knowledge-graph
+    restart: unless-stopped
+
+  kg-redis:
+    image: redis:7-alpine
+    container_name: kg-redis
+    expose:
+      - "6379"
+    volumes:
+      - kg_redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lru --requirepass ${REDIS_PASSWORD:-changeme}
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-changeme}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - knowledge-graph
+    restart: unless-stopped
+
+  kg-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: kg-api
+    ports:
+      - "127.0.0.1:${API_PORT:-8100}:8000"
+    environment:
+      POSTGRES_HOST: kg-postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER:-knowledge}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: knowledge
+      QDRANT_HOST: kg-qdrant
+      QDRANT_PORT: 6333
+      REDIS_HOST: kg-redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-changeme}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    depends_on:
+      kg-postgres:
+        condition: service_healthy
+      kg-qdrant:
+        condition: service_healthy
+      kg-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - knowledge-graph
+    restart: unless-stopped
+
+volumes:
+  kg_postgres_data:
+  kg_qdrant_data:
+  kg_redis_data:
+
+networks:
+  knowledge-graph:
+    driver: bridge
