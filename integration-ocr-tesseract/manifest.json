@@ -1,0 +1,11 @@
+{
+  "name": "integration-ocr-tesseract",
+  "version": "1.0.0",
+  "description": "Tesseract.js OCR integration — text extraction from images with bounding boxes, structured output, language detection, batch processing, and worker pool.",
+  "outputDir": "src/integrations/ocr-tesseract",
+  "files": ["client.ts", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "tesseract.js": ">=5"
+  },
+  "postMessage": "Tesseract OCR installed! No external binary needed — tesseract.js runs in Node.js.\nImport: import { extractText, batchExtract } from '@/integrations/ocr-tesseract'"
+}
