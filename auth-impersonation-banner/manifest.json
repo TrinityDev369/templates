@@ -1,0 +1,12 @@
+{
+  "name": "auth-impersonation-banner",
+  "version": "1.0.0",
+  "description": "Sticky admin impersonation banner with user info and stop button",
+  "outputDir": "components/auth-impersonation-banner",
+  "files": ["impersonation-banner.tsx", "impersonation-banner.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { ImpersonationBanner } from '@/components/auth-impersonation-banner/impersonation-banner'\n\nPlace at the top of your layout:\n<ImpersonationBanner\n  impersonatedUser={{ name: 'Jane Doe', email: 'jane@example.com' }}\n  adminUser={{ name: 'Admin', email: 'admin@example.com' }}\n  onStopImpersonating={() => endImpersonation()}\n/>\n\nTip: Add padding-top (pt-10 or pt-12) to your body/main content to offset the fixed banner."
+}
