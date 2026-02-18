@@ -1,0 +1,13 @@
+{
+  "name": "pricing-cards",
+  "version": "1.0.0",
+  "description": "2-4 tier pricing cards with highlighted recommended plan",
+  "outputDir": "components/pricing-cards",
+  "files": ["pricing-cards.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { PricingCards } from '@/components/pricing-cards/pricing-cards'\nUsage: <PricingCards plans={plans} onSelectPlan={(id) => console.log(id)} billingInterval=\"monthly\" />"
+}
