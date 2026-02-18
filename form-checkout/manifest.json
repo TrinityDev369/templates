@@ -1,0 +1,23 @@
+{
+  "name": "form-checkout",
+  "version": "1.0.0",
+  "description": "Multi-step checkout form with shipping, payment, and review steps",
+  "outputDir": "src/modules/form-checkout",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "checkout-form.tsx",
+    "shipping-step.tsx",
+    "payment-step.tsx",
+    "review-step.tsx",
+    "step-indicator.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Checkout form installed!\nImport: import { CheckoutForm } from '@/modules/form-checkout'\nUsage: <CheckoutForm onSubmit={(data) => console.log(data)} />"
+}
