@@ -41,6 +41,21 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-login-form": {
+      "description": "Centered card login form with email, password, show/hide toggle, remember me, and OAuth buttons",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-password-reset": {
+      "description": "Multi-step password reset flow \u2014 email request, 6-digit code verification, new password",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "auth-signup-form": {
+      "description": "Registration form with validation, password strength meter, terms checkbox, and OAuth buttons",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-sso-saml": {
       "description": "SAML SSO integration module for enterprise Next.js applications",
       "category": "module",
@@ -281,6 +296,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "skill-database": {
+      "description": "Database skill \u2014 PostgreSQL schema design, migration patterns, query optimization",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "skill-design-system": {
       "description": "Agent skill for building and maintaining design system components.",
       "category": "skill",
@@ -293,6 +313,11 @@
     },
     "skill-security": {
       "description": "Security review skill \u2014 OWASP checklist, auth patterns, input validation",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-testing": {
+      "description": "Testing skill \u2014 Vitest patterns, Playwright E2E, coverage strategies",
       "category": "skill",
       "version": "1.0.0"
     },
