@@ -1,0 +1,30 @@
+{
+  "name": "swarm-layer",
+  "version": "1.0.0",
+  "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles. Requires agentic-layer template and PostgreSQL.",
+  "outputDir": ".",
+  "files": [
+    "README.md",
+    "schema/field-system.sql",
+    ".claude/commands/prime.md",
+    ".claude/commands/swarm.md",
+    ".claude/commands/spawn.md",
+    ".claude/skills/work/SKILL.md",
+    ".claude/skills/swarm/SKILL.md",
+    ".claude/skills/monitor/SKILL.md",
+    ".claude/skills/plan-with-team/SKILL.md",
+    ".claude/hooks/hooks.py",
+    ".claude/hooks/swarm.py",
+    ".claude/hooks/settings.swarm.json",
+    "scripts/spawn.sh",
+    "scripts/lib/build-context-bundle.py",
+    "scripts/lib/claim-task.py",
+    "scripts/lib/resolve-task.py",
+    "scripts/lib/field-query.py",
+    "scripts/lib/stream-parser.py"
+  ],
+  "peerDependencies": {
+    "psycopg2-binary": ">=2.9"
+  },
+  "postMessage": "Swarm layer installed! Run `psql $DATABASE_URL -f schema/field-system.sql` to create tables. Then use /swarm to sense the field and /spawn to launch agents."
+}
