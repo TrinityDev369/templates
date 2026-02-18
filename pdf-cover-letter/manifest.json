@@ -1,0 +1,12 @@
+{
+  "name": "pdf-cover-letter",
+  "version": "1.0.0",
+  "description": "Professional cover letter PDF with applicant info, body paragraphs, and signature — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/cover-letter",
+  "files": ["cover-letter.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/cover-letter/generate.tsx\nCustomize applicant details and styling in cover-letter.tsx"
+}
