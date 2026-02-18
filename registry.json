@@ -421,6 +421,56 @@
       "category": "integration",
       "version": "1.0.0"
     },
+    "pdf-certificate": {
+      "name": "pdf-certificate",
+      "description": "Elegant certificate of completion/achievement PDF with decorative borders and signature field \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-contract": {
+      "name": "pdf-contract",
+      "description": "Service contract PDF with numbered clauses, payment terms, and signature blocks \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-cover-letter": {
+      "name": "pdf-cover-letter",
+      "description": "Professional cover letter PDF with applicant info, body paragraphs, and signature \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-data-export": {
+      "name": "pdf-data-export",
+      "description": "Tabular data export to formatted PDF with auto-pagination and summary \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-invoice-template": {
+      "name": "pdf-invoice-template",
+      "description": "Professional invoice PDF with line items, tax calculation, and payment details \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-nda": {
+      "name": "pdf-nda",
+      "description": "Non-Disclosure Agreement PDF with numbered articles, party details, and signature blocks \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-proposal": {
+      "name": "pdf-proposal",
+      "description": "Business proposal PDF with scope, deliverables, pricing table, and timeline \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-receipt": {
+      "name": "pdf-receipt",
+      "description": "Payment receipt PDF with transaction details, PAID stamp, and payment method \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-report-branded": {
+      "name": "pdf-report-branded",
+      "description": "Branded PDF report with header, footer, tables, and bar charts \u2014 powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
+    "pdf-resume": {
+      "name": "pdf-resume",
+      "description": "Professional resume/CV PDF with experience, education, skills sections \u2014 ATS-friendly, powered by @react-pdf/renderer",
+      "version": "1.0.0"
+    },
     "pipe-content-pipeline": {
       "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
       "category": "pipe",
