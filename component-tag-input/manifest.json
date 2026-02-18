@@ -1,0 +1,13 @@
+{
+  "name": "component-tag-input",
+  "version": "1.0.0",
+  "description": "Tag input with autocomplete suggestions, validation, and keyboard navigation",
+  "outputDir": "components/component-tag-input",
+  "files": ["tag-input.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add badge button command popover\nImport: import { TagInput } from '@/components/component-tag-input/tag-input'"
+}
