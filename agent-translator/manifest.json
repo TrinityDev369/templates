@@ -1,0 +1,8 @@
+{
+  "name": "agent-translator",
+  "version": "1.0.0",
+  "description": "Multi-language translation agent — context-aware translation with tone preservation and i18n support",
+  "outputDir": ".claude",
+  "files": ["agents/translator.md"],
+  "postMessage": "Translator agent installed! Configure in .claude/agents/ to use for translations and i18n workflows."
+}
