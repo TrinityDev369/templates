@@ -41,6 +41,26 @@
       "category": "starter",
       "version": "1.0.0"
     },
+    "dashboard-charts": {
+      "description": "Area, bar, line, and donut chart components wrapped in shadcn Cards. Powered by recharts.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-data-table": {
+      "description": "Generic data table with sorting, filtering, pagination, row selection. TanStack Table + shadcn/ui.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-kpi-cards": {
+      "description": "KPI stat cards with trend indicators, percentage change, icons, and SVG sparklines.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-shell": {
+      "description": "Responsive dashboard layout shell with collapsible sidebar, topbar, breadcrumbs, and global search.",
+      "category": "layout",
+      "version": "1.0.0"
+    },
     "pipe-content-pipeline": {
       "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
       "category": "pipe",
@@ -49,6 +69,26 @@
     "pipe-onboarding-automation": {
       "description": "Automated employee/user onboarding pipeline with configurable steps per role",
       "category": "pipe",
+      "version": "1.0.0"
+    },
+    "shop-cart": {
+      "description": "Shopping cart sheet with quantity controls, order summary, localStorage persistence, and empty state.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-checkout": {
+      "description": "Multi-step checkout flow with shipping, payment, review, and confirmation. react-hook-form + zod.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-product-detail": {
+      "description": "Product detail page with image gallery, variant selectors, rating, tabs for description/reviews/specs.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-product-grid": {
+      "description": "Responsive product card grid with image, price, rating, sale badges, add-to-cart, grid/list toggle.",
+      "category": "component",
       "version": "1.0.0"
     },
     "skill-accessibility": {
@@ -74,6 +114,11 @@
     "skill-security": {
       "description": "Security review skill \u2014 OWASP checklist, auth patterns, input validation",
       "category": "skill",
+      "version": "1.0.0"
+    },
+    "starter-saas-minimal": {
+      "description": "Next.js 14 SaaS + Shop starter with shadcn/ui, dashboard shell, product catalog, cart, and checkout.",
+      "category": "starter",
       "version": "1.0.0"
     },
     "swarm-layer": {
