@@ -1,0 +1,9 @@
+{
+  "name": "shop-wishlist",
+  "version": "1.0.0",
+  "description": "Wishlist grid with heart toggle, move-to-cart, share list, localStorage persistence, and empty state. shadcn/ui + Tailwind.",
+  "outputDir": "components/shop-wishlist",
+  "files": ["wishlist.tsx", "wishlist-provider.tsx", "wishlist-card.tsx", "types.ts"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3"},
+  "postMessage": "Wishlist installed! Add `npx shadcn@latest add card button dropdown-menu badge`. Wrap your layout with <WishlistProvider>."
+}
