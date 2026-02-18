@@ -1,0 +1,14 @@
+{
+  "name": "auth-session-manager",
+  "version": "1.0.0",
+  "description": "Active sessions list with device info, last active time, and revoke controls",
+  "outputDir": "components/auth-session-manager",
+  "files": ["session-manager.tsx", "session-manager.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Session manager installed!\n\nUsage:\nimport { SessionManager } from '@/components/auth-session-manager/session-manager'\n\n<SessionManager\n  sessions={sessions}\n  currentSessionId={currentSession.id}\n  onRevoke={async (id) => { /* revoke session via API */ }}\n  onRevokeAll={async () => { /* revoke all other sessions */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button card badge"
+}
