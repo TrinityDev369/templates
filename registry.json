@@ -91,6 +91,11 @@
       "category": "animation",
       "version": "1.0.0"
     },
+    "auth-2fa-setup": {
+      "description": "2FA setup flow \u2014 QR scan, recovery codes, and verification",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "auth-age-verification": {
       "description": "Age verification gate with date picker and localStorage persistence",
       "category": "component",
@@ -171,6 +176,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "auth-session-manager": {
+      "description": "Active sessions list with device info, last active time, and revoke controls",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-signup-form": {
       "description": "Registration form with validation, password strength meter, terms checkbox, and OAuth buttons",
       "category": "component",
@@ -201,6 +211,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-command-palette": {
+      "description": "Cmd+K command palette with search, keyboard navigation, grouped results, and shortcut display",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-copy-button": {
       "description": "Click-to-copy button with animated checkmark confirmation",
       "category": "component",
@@ -214,6 +229,11 @@
     "component-emoji-picker": {
       "description": "Emoji picker with search, categories, recent emojis, and keyboard navigation",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "component-form-builder": {
+      "description": "Multi-step form system with per-step Zod validation, field type rendering, and step progress indicator",
+      "category": "module",
       "version": "1.0.0"
     },
     "component-image-cropper": {
@@ -253,6 +273,11 @@
     },
     "component-timeline": {
       "description": "Vertical timeline with alternating layout, icons, and scroll animations",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-toast-notifications": {
+      "description": "Stacked toast system with success/error/warning/info variants, auto-dismiss, and pause on hover",
       "category": "component",
       "version": "1.0.0"
     },
