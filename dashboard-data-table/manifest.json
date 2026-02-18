@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-data-table",
+  "version": "1.0.0",
+  "description": "Generic data table with sorting, filtering, pagination, row selection, and column visibility. TanStack Table + shadcn/ui.",
+  "outputDir": "components/dashboard-data-table",
+  "files": ["data-table.tsx", "data-table-toolbar.tsx", "data-table-pagination.tsx"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3", "@tanstack/react-table": ">=8"},
+  "postMessage": "Data table installed! Add `npx shadcn@latest add table input button dropdown-menu select checkbox popover command badge` and `npm install @tanstack/react-table`."
+}
