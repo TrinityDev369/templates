@@ -17,15 +17,10 @@
  * </script>
  */
 
-/* Smooth theme transition */
-html.transitioning,
-html.transitioning *,
-html.transitioning *::before,
-html.transitioning *::after {
+/* Smooth theme transition — applied automatically by ThemeProvider during theme changes */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease !important;
-}
-
-/* Prevent transition on initial load */
-html:not(.transitioning) * {
-  transition: none !important;
 }

@@ -2,7 +2,7 @@
   "name": "design-theme-switcher",
   "version": "1.0.0",
   "description": "Light/dark/system theme toggle with React context, localStorage persistence, and CSS variable switching. Zero dependencies beyond React.",
-  "outputDir": "components/design-theme-switcher",
+  "outputDir": "src/design-system/theme-switcher",
   "files": ["ThemeProvider.tsx", "ThemeToggle.tsx", "useTheme.ts", "theme.css", "README.md"],
   "peerDependencies": {
     "react": ">=18",
