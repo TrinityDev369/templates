@@ -1,0 +1,19 @@
+{
+  "name": "config-playwright-e2e",
+  "version": "1.0.0",
+  "description": "Playwright E2E test setup with page object model, fixtures, and parallel execution",
+  "outputDir": ".",
+  "files": [
+    "playwright.config.ts",
+    "e2e/fixtures/base.ts",
+    "e2e/pages/login.page.ts",
+    "e2e/pages/dashboard.page.ts",
+    "e2e/specs/auth.spec.ts",
+    "e2e/specs/dashboard.spec.ts",
+    "e2e/helpers/test-data.ts"
+  ],
+  "peerDependencies": {
+    "@playwright/test": ">=1.40"
+  },
+  "postMessage": "Install: npm i -D @playwright/test && npx playwright install\nRun: npx playwright test\nUI mode: npx playwright test --ui\nReport: npx playwright show-report"
+}
