@@ -1,0 +1,13 @@
+{
+  "name": "pricing-usage-meter",
+  "version": "1.0.0",
+  "description": "Usage meter with quota bar and overage warning",
+  "outputDir": "components/pricing-usage-meter",
+  "files": ["usage-meter.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { UsageMeter } from '@/components/pricing-usage-meter/usage-meter'\nUsage: <UsageMeter used={8500} limit={10000} label=\"API Calls\" unit=\"requests\" />"
+}
