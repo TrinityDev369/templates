@@ -191,6 +191,16 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-gantt-chart": {
+      "description": "Project timeline Gantt chart with task groups, progress bars, dependency arrows, and day/week/month views.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-heatmap": {
+      "description": "Data heatmap with grid, calendar (GitHub-style), and correlation matrix variants.",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "dashboard-kanban": {
       "description": "Kanban board with native drag-and-drop, priority badges, assignee avatars, and column management.",
       "category": "component",
@@ -201,9 +211,24 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-map-visualization": {
+      "description": "Geographic data visualization with SVG world map, interactive markers, choropleth regions, and stats panel.",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "dashboard-notification-center": {
       "description": "Bell icon popover with unread badge, notification list with tabs, mark as read, and empty state.",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-realtime-websocket": {
+      "description": "Real-time dashboard with WebSocket simulation, live KPI cards, event feed, and sparkline charts.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-resource-scheduler": {
+      "description": "Resource scheduling grid with drag-and-drop block assignment, day/week views, and capacity tracking.",
+      "category": "module",
       "version": "1.0.0"
     },
     "dashboard-search-global": {
