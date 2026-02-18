@@ -331,6 +331,11 @@
       "category": "pipe",
       "version": "1.0.0"
     },
+    "swarm-sdk": {
+      "description": "TypeScript Agent SDK worker for thermodynamic field coordination. Billing switch, PRD intake, eventbus, context bundles.",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "trinity-signature": {
       "description": "Animated triangle signature easter-egg for client sites",
       "category": "component",
