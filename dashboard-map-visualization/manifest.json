@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-map-visualization",
+  "version": "1.0.0",
+  "description": "Geographic data visualization with SVG world map, interactive markers, choropleth regions, tooltips, and stats panel. Zero external map dependencies.",
+  "outputDir": "components/dashboard-map-visualization",
+  "files": ["map-visualization.tsx", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card badge tooltip\nImport: import { MapVisualization } from '@/components/dashboard-map-visualization'"
+}
