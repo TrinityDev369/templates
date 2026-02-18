@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-gantt-chart",
+  "version": "1.0.0",
+  "description": "Project timeline Gantt chart with task groups, progress bars, dependency arrows, today marker, and day/week/month views. Pure React + SVG, no external chart library.",
+  "outputDir": "components/dashboard-gantt-chart",
+  "files": ["gantt-chart.tsx", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card badge button toggle-group tooltip scroll-area avatar\nImport: import { GanttChart } from '@/components/dashboard-gantt-chart'"
+}
