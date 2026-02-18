@@ -31,9 +31,34 @@
       "category": "animation",
       "version": "1.0.0"
     },
+    "auth-age-verification": {
+      "description": "Age verification gate with date picker and localStorage persistence",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-biometric": {
+      "description": "Biometric authentication UI using WebAuthn API with fingerprint/face recognition",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-sso-saml": {
       "description": "SAML SSO integration module for enterprise Next.js applications",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "component-barcode-scanner": {
+      "description": "Camera-based barcode and QR code scanner using BarcodeDetector API",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-emoji-picker": {
+      "description": "Emoji picker with search, categories, recent emojis, and keyboard navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-qr-code": {
+      "description": "QR code generator component with Canvas rendering and inline encoder",
+      "category": "component",
       "version": "1.0.0"
     },
     "context-graph": {
