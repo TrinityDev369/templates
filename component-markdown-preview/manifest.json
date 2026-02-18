@@ -1,0 +1,12 @@
+{
+  "name": "component-markdown-preview",
+  "version": "1.0.0",
+  "description": "Live markdown editor with split preview pane and built-in parser",
+  "outputDir": "components/component-markdown-preview",
+  "files": ["MarkdownPreview.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import and use: import { MarkdownPreview } from './components/component-markdown-preview/MarkdownPreview'; <MarkdownPreview value={md} onChange={setMd} />"
+}
