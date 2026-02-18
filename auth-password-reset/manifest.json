@@ -1,0 +1,22 @@
+{
+  "name": "auth-password-reset",
+  "version": "1.0.0",
+  "description": "Multi-step password reset flow — email request, 6-digit code verification, new password with requirements checklist",
+  "outputDir": "components/auth-password-reset",
+  "files": [
+    "password-reset.tsx",
+    "password-reset.types.ts",
+    "otp-input.tsx",
+    "password-requirements.tsx",
+    "index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Password reset flow installed!\n\nUsage:\nimport { PasswordReset } from '@/components/auth-password-reset'\n\n<PasswordReset\n  onRequestReset={async (email) => { /* send reset email */ }}\n  onVerifyCode={async (email, code) => { /* verify code */ }}\n  onResetPassword={async (email, code, password) => { /* set new password */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button input card label"
+}
