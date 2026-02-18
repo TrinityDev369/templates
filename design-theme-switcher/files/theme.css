@@ -1,0 +1,31 @@
+/* Theme flash prevention script — add to <head> before any stylesheet.
+ * This CSS file also contains base theme transition styles.
+ *
+ * Add this inline script to your HTML <head> to prevent FOUC:
+ *
+ * <script>
+ *   (function() {
+ *     var t = localStorage.getItem('theme');
+ *     var d = document.documentElement;
+ *     if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+ *       d.classList.add('dark');
+ *     } else {
+ *       d.classList.add('light');
+ *     }
+ *     d.style.colorScheme = d.classList.contains('dark') ? 'dark' : 'light';
+ *   })();
+ * </script>
+ */
+
+/* Smooth theme transition */
+html.transitioning,
+html.transitioning *,
+html.transitioning *::before,
+html.transitioning *::after {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease !important;
+}
+
+/* Prevent transition on initial load */
+html:not(.transitioning) * {
+  transition: none !important;
+}
