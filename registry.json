@@ -306,6 +306,31 @@
       "category": "pipe",
       "version": "1.0.0"
     },
+    "pricing-enterprise-cta": {
+      "description": "Enterprise contact sales CTA section with feature highlights",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-plan-badge": {
+      "description": "Current plan badge with upgrade indicator",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-quota-warning": {
+      "description": "Approaching quota warning banner with dismiss and upgrade actions",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-upgrade-modal": {
+      "description": "Plan upgrade modal with feature comparison",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-usage-meter": {
+      "description": "Usage meter with quota bar and overage warning",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "shop-cart": {
       "description": "Shopping cart sheet with quantity controls, order summary, localStorage persistence, and empty state.",
       "category": "component",
