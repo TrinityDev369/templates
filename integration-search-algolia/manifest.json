@@ -1,0 +1,13 @@
+{
+  "name": "integration-search-algolia",
+  "version": "1.0.0",
+  "description": "Algolia instant search with autocomplete, React components, and Tailwind styling",
+  "outputDir": "src/integrations/algolia",
+  "files": ["client.ts", "types.ts", "search-provider.tsx", "search-box.tsx", "search-results.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "algoliasearch": ">=5",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install: npm install algoliasearch\n\nUsage:\n  import { SearchProvider } from '@/integrations/algolia/search-provider'\n  import { SearchBox } from '@/integrations/algolia/search-box'\n  import { SearchResults } from '@/integrations/algolia/search-results'\n\n  <SearchProvider appId='xxx' searchApiKey='xxx' indexName='products'>\n    <SearchBox />\n    <SearchResults renderHit={(hit) => <div>{hit.name}</div>} />\n  </SearchProvider>\n\nSet NEXT_PUBLIC_ALGOLIA_APP_ID and NEXT_PUBLIC_ALGOLIA_SEARCH_KEY in .env"
+}
