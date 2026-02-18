@@ -1,0 +1,14 @@
+{
+  "name": "component-code-block",
+  "version": "1.0.0",
+  "description": "Syntax-highlighted code block with copy button, line numbers, and language badge",
+  "outputDir": "components/component-code-block",
+  "files": ["code-block.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "shiki": ">=1.0.0",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button tooltip scroll-area\nInstall: npm install shiki\nImport: import { CodeBlock } from '@/components/component-code-block/code-block'"
+}
