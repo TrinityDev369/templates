@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-calendar",
+  "version": "1.0.0",
+  "description": "Interactive calendar with month/week/day views, event display, navigation, today indicator, and click callbacks. shadcn/ui + Tailwind.",
+  "outputDir": "components/dashboard-calendar",
+  "files": ["calendar.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Calendar installed! Add `npx shadcn@latest add button card badge toggle-group`."
+}
