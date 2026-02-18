@@ -1,0 +1,8 @@
+{
+  "name": "config-docker-next",
+  "version": "1.0.0",
+  "description": "Production Docker setup for Next.js — multi-stage build, standalone output, and compose orchestration",
+  "outputDir": ".",
+  "files": ["Dockerfile", "docker-compose.yml", "docker-compose.prod.yml", ".dockerignore", ".env.example", "next.config.mjs"],
+  "postMessage": "Copy .env.example to .env and configure.\nDev: docker compose up\nProd: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d\nNote: output: 'standalone' is already configured in next.config.mjs."
+}
