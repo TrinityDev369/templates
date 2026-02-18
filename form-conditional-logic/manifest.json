@@ -1,0 +1,18 @@
+{
+  "name": "form-conditional-logic",
+  "version": "1.0.0",
+  "description": "Form fields with conditional show/hide rules, supporting AND/OR logic",
+  "outputDir": "components/form-conditional-logic",
+  "files": [
+    "conditional-form.tsx",
+    "conditional-form.types.ts",
+    "condition-engine.ts",
+    "field-renderer.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3"
+  },
+  "postMessage": "Conditional Logic Form installed!\nImport: import { ConditionalForm } from '@/components/form-conditional-logic/conditional-form'\nUsage: <ConditionalForm fields={fieldConfig} onSubmit={(data) => console.log(data)} />"
+}
