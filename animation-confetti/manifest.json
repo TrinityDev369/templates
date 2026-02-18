@@ -1,0 +1,11 @@
+{
+  "name": "animation-confetti",
+  "version": "1.0.0",
+  "description": "Canvas-based confetti particle celebration animation. Fire confetti bursts on demand with configurable colors, particle count, spread, and gravity.",
+  "outputDir": "components/animation-confetti",
+  "files": ["Confetti.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import and use:\n\nimport { Confetti, useConfetti } from './components/animation-confetti/Confetti';\n\nfunction App() {\n  const { fire, ref } = useConfetti();\n  return (\n    <>\n      <Confetti ref={ref} />\n      <button onClick={() => fire()}>Celebrate!</button>\n    </>\n  );\n}"
+}
