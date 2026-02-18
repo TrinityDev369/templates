@@ -1,0 +1,14 @@
+{
+  "name": "shop-product-grid",
+  "version": "1.0.0",
+  "description": "Responsive product card grid with image, price, rating, sale badges, add-to-cart, and grid/list toggle",
+  "outputDir": "components/shop-product-grid",
+  "files": ["product-grid.tsx", "product-card.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card badge button skeleton\nImport: import { ProductGrid, PLACEHOLDER_PRODUCTS } from '@/components/shop-product-grid/product-grid'"
+}
