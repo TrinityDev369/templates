@@ -16,13 +16,63 @@
       "category": "animation",
       "version": "1.0.0"
     },
+    "animation-confetti": {
+      "description": "Canvas-based confetti burst with gravity, rotation, and auto-cleanup \u2014 fire on button click, form submit, or achievement unlock",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-cursor-follow": {
+      "description": "Smooth cursor-tracking element with spring physics, magnetic snap zones, and blur trail effects",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-gradient-mesh": {
+      "description": "Animated gradient mesh background using pure CSS keyframes \u2014 no JS runtime cost, GPU-accelerated",
+      "category": "animation",
+      "version": "1.0.0"
+    },
     "animation-liquid-button": {
       "description": "Liquid morphing button with SVG turbulence-driven distortion on hover. Supports primary, secondary, and ghost variants with configurable intensity.",
       "category": "animation",
       "version": "2.0.0"
     },
+    "animation-magnetic-button": {
+      "description": "Button that pulls toward the cursor with spring physics and snaps back on leave \u2014 hover delight effect",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-morphing-shape": {
+      "description": "SVG blob that morphs between organic shapes with smooth interpolation \u2014 decorative or interactive",
+      "category": "animation",
+      "version": "1.0.0"
+    },
     "animation-noise-grain": {
       "description": "Film grain and noise overlay effect using HTML Canvas",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-page-transition": {
+      "description": "Page transition wrapper with fade, slide, scale, and flip presets \u2014 drop-in for route changes",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-parallax-scroll": {
+      "description": "Scroll-driven parallax layers with configurable speed, direction, and opacity fade",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-scroll-reveal": {
+      "description": "Viewport-triggered reveal animations with stagger support \u2014 fade, slide, scale, and rotate presets",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-skeleton-loading": {
+      "description": "Composable skeleton loading placeholders with shimmer animation \u2014 text, avatar, card, and table variants",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-typing-effect": {
+      "description": "Typewriter text animation with cursor blink, configurable speed, and multi-string rotation",
       "category": "animation",
       "version": "1.0.0"
     },
