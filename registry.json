@@ -1,14 +1,29 @@
 {
   "version": "1.0",
   "templates": {
+    "agent-translator": {
+      "description": "Multi-language translation agent \u2014 context-aware translation with tone preservation and i18n support",
+      "category": "agent",
+      "version": "1.0.0"
+    },
     "agentic-layer": {
       "description": "Production-ready Claude Code agentic layer \u2014 skills, agents, hooks, and commands",
       "category": "agentic",
       "version": "1.0.0"
     },
+    "animation-3d-card-tilt": {
+      "description": "3D card tilt effect \u2014 interactive perspective transform on mouse hover with glare highlight",
+      "category": "animation",
+      "version": "1.0.0"
+    },
     "context-graph": {
       "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and MCP integration",
       "category": "starter",
+      "version": "1.0.0"
+    },
+    "pipe-content-pipeline": {
+      "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
+      "category": "pipe",
       "version": "1.0.0"
     },
     "skill-accessibility": {
@@ -18,6 +33,16 @@
     },
     "skill-copywriter": {
       "description": "Content creation skill \u2014 SEO-aware copy, blog posts, headlines",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-data-analysis": {
+      "description": "Data analysis skill \u2014 statistical analysis, data visualization, pattern recognition, reporting",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-legal-review": {
+      "description": "Legal review skill \u2014 contract analysis, clause identification, risk flagging, compliance checks",
       "category": "skill",
       "version": "1.0.0"
     },
