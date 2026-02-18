@@ -1,0 +1,9 @@
+{
+  "name": "skill-design-system",
+  "version": "1.0.0",
+  "description": "Agent skill for building, maintaining, and iterating on design system components. Covers token management, component creation, Storybook stories, and documentation.",
+  "outputDir": ".claude",
+  "files": ["skills/design-system/SKILL.md"],
+  "peerDependencies": {},
+  "postMessage": "Skill installed. Use '/design-system' or let the agent auto-detect design system tasks."
+}
