@@ -1,0 +1,13 @@
+{
+  "name": "pricing-quota-warning",
+  "version": "1.0.0",
+  "description": "Approaching quota warning banner with dismiss and upgrade actions",
+  "outputDir": "components/pricing-quota-warning",
+  "files": ["quota-warning.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { QuotaWarning } from '@/components/pricing-quota-warning/quota-warning'\nUsage: <QuotaWarning used={8500} limit={10000} resourceName=\"API calls\" onUpgrade={() => router.push('/upgrade')} />"
+}
