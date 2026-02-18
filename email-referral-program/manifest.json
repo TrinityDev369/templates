@@ -1,0 +1,12 @@
+{
+  "name": "email-referral-program",
+  "version": "1.0.0",
+  "description": "Referral program invitation email with discount offer, referral code, how-it-works steps, and social proof. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["referral-program.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Referral email installed! Preview: npx email dev\nSend: import { ReferralProgramEmail } from '@/emails/referral-program'"
+}
