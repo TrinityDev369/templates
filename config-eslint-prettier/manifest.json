@@ -1,0 +1,18 @@
+{
+  "name": "config-eslint-prettier",
+  "version": "1.0.0",
+  "description": "ESLint flat config + Prettier — TypeScript, React, import sorting, and consistent formatting",
+  "outputDir": ".",
+  "files": ["eslint.config.mjs", ".prettierrc", ".prettierignore", ".editorconfig"],
+  "peerDependencies": {
+    "eslint": ">=9",
+    "prettier": ">=3",
+    "@eslint/js": ">=9",
+    "typescript-eslint": ">=8",
+    "eslint-config-prettier": ">=9",
+    "eslint-plugin-react": ">=7",
+    "eslint-plugin-react-hooks": ">=5",
+    "globals": ">=15"
+  },
+  "postMessage": "Install: npm i -D eslint prettier @eslint/js typescript-eslint eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks globals\nLint: npx eslint .\nFormat: npx prettier --write ."
+}
