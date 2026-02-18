@@ -1,0 +1,8 @@
+{
+  "name": "skill-legal-review",
+  "version": "1.0.0",
+  "description": "Legal review skill — contract analysis, clause identification, risk flagging, compliance checks",
+  "outputDir": ".claude",
+  "files": ["skills/legal-review/SKILL.md"],
+  "postMessage": "Legal review skill installed! Use when reviewing contracts, terms of service, privacy policies, or legal documents."
+}
