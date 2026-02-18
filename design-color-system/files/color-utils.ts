@@ -21,11 +21,16 @@ interface RGBComponents {
 
 /** Parse an HSL string like "240 10% 3.9%" into components. */
 export function parseHSL(hsl: string): HSLComponents {
-  const parts = hsl.trim().split(/\s+/);
+  const trimmed = hsl.trim();
+  if (!trimmed) return { h: 0, s: 0, l: 0 };
+  const parts = trimmed.split(/\s+/);
+  const h = parseFloat(parts[0]);
+  const s = parseFloat(parts[1]);
+  const l = parseFloat(parts[2]);
   return {
-    h: parseFloat(parts[0]),
-    s: parseFloat(parts[1]),
-    l: parseFloat(parts[2]),
+    h: Number.isFinite(h) ? h : 0,
+    s: Number.isFinite(s) ? s : 0,
+    l: Number.isFinite(l) ? l : 0,
   };
 }
 
