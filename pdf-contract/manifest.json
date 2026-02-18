@@ -1,0 +1,12 @@
+{
+  "name": "pdf-contract",
+  "version": "1.0.0",
+  "description": "Service contract PDF with numbered clauses, payment terms, and signature blocks — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/contract",
+  "files": ["contract.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/contract/generate.tsx\nCustomize clauses and terms in contract.tsx"
+}
