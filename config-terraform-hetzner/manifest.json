@@ -1,0 +1,8 @@
+{
+  "name": "config-terraform-hetzner",
+  "version": "1.0.0",
+  "description": "Terraform config for Hetzner Cloud infrastructure -- servers, networks, firewalls, and volumes",
+  "outputDir": ".",
+  "files": ["main.tf", "variables.tf", "outputs.tf", "providers.tf", ".env.example"],
+  "postMessage": "Set your Hetzner API token: export HCLOUD_TOKEN=your-token\nInitialize: terraform init\nPlan: terraform plan\nApply: terraform apply"
+}
