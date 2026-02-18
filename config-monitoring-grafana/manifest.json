@@ -1,0 +1,15 @@
+{
+  "name": "config-monitoring-grafana",
+  "version": "1.0.0",
+  "description": "Grafana dashboards + Prometheus config — app overview, node metrics, alert rules, and Docker Compose monitoring stack.",
+  "outputDir": ".",
+  "files": [
+    "monitoring/grafana/dashboards/app-overview.json",
+    "monitoring/grafana/dashboards/node-exporter.json",
+    "monitoring/prometheus/prometheus.yml",
+    "monitoring/prometheus/alerts.yml",
+    "monitoring/docker-compose.monitoring.yml",
+    "monitoring/README.md"
+  ],
+  "postMessage": "Monitoring stack installed in monitoring/. Start with: cd monitoring && docker compose -f docker-compose.monitoring.yml up -d\nGrafana: http://localhost:3001 (admin/admin) | Prometheus: http://localhost:9090"
+}

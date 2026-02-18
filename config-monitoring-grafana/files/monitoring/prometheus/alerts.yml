@@ -1,0 +1,88 @@
+# Prometheus Alert Rules
+# https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
+
+groups:
+  - name: application
+    rules:
+      # High error rate — more than 5% of requests returning 5xx for 5 minutes
+      - alert: HighErrorRate
+        expr: |
+          (
+            sum(rate(http_requests_total{status=~"5.."}[5m]))
+            /
+            sum(rate(http_requests_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High HTTP error rate detected"
+          description: "More than 5% of HTTP requests are returning 5xx errors. Current error rate: {{ $value | humanizePercentage }}"
+          runbook_url: "https://wiki.example.com/runbooks/high-error-rate"
+
+      # High latency — p95 response time exceeds 1 second for 5 minutes
+      - alert: HighLatency
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(http_request_duration_seconds_bucket[5m])) by (le)
+          ) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High request latency detected"
+          description: "95th percentile response time is above 1 second. Current p95: {{ $value | humanizeDuration }}"
+          runbook_url: "https://wiki.example.com/runbooks/high-latency"
+
+  - name: kubernetes
+    rules:
+      # Pod crash looping — pod restarted more than 3 times in 15 minutes
+      - alert: PodCrashLooping
+        expr: |
+          increase(kube_pod_container_status_restarts_total[15m]) > 3
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Pod {{ $labels.namespace }}/{{ $labels.pod }} is crash looping"
+          description: "Pod {{ $labels.pod }} in namespace {{ $labels.namespace }} has restarted {{ $value }} times in the last 15 minutes."
+          runbook_url: "https://wiki.example.com/runbooks/pod-crash-looping"
+
+  - name: infrastructure
+    rules:
+      # High memory usage — over 85% for 5 minutes
+      - alert: HighMemoryUsage
+        expr: |
+          (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage on {{ $labels.instance }}"
+          description: "Memory usage is above 85% on {{ $labels.instance }}. Current usage: {{ $value | humanizePercentage }}"
+          runbook_url: "https://wiki.example.com/runbooks/high-memory"
+
+      # High CPU usage — over 80% for 5 minutes
+      - alert: HighCPUUsage
+        expr: |
+          (1 - avg without(cpu) (rate(node_cpu_seconds_total{mode="idle"}[5m]))) > 0.80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is above 80% on {{ $labels.instance }}. Current usage: {{ $value | humanizePercentage }}"
+          runbook_url: "https://wiki.example.com/runbooks/high-cpu"
+
+      # Disk space running low — less than 15% free
+      - alert: DiskSpaceRunningLow
+        expr: |
+          (node_filesystem_avail_bytes{mountpoint="/", fstype!="tmpfs"}
+            / node_filesystem_size_bytes{mountpoint="/", fstype!="tmpfs"}) < 0.15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk space running low on {{ $labels.instance }}"
+          description: "Less than 15% disk space remaining on {{ $labels.instance }} ({{ $labels.mountpoint }}). Available: {{ $value | humanizePercentage }}"
+          runbook_url: "https://wiki.example.com/runbooks/low-disk"
