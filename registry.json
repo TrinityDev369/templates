@@ -51,6 +51,11 @@
       "category": "animation",
       "version": "1.0.0"
     },
+    "animation-number-counter": {
+      "description": "Animated number counting with easing \u2014 counts from start to end value with configurable duration, formatting, and viewport trigger",
+      "category": "animation",
+      "version": "1.0.0"
+    },
     "animation-page-transition": {
       "description": "Page transition wrapper with fade, slide, scale, and flip presets \u2014 drop-in for route changes",
       "category": "animation",
@@ -68,6 +73,11 @@
     },
     "animation-skeleton-loading": {
       "description": "Composable skeleton loading placeholders with shimmer animation \u2014 text, avatar, card, and table variants",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-text-reveal": {
+      "description": "Character and word staggered text reveal animation with multiple presets \u2014 fade, blur, scale, and rotate effects",
       "category": "animation",
       "version": "1.0.0"
     },
