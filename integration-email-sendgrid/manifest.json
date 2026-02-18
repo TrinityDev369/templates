@@ -1,0 +1,9 @@
+{
+  "name": "integration-email-sendgrid",
+  "version": "1.0.0",
+  "description": "SendGrid email sending with dynamic templates and batch support",
+  "outputDir": "src/integrations/sendgrid",
+  "files": ["client.ts", "types.ts", "send.ts"],
+  "peerDependencies": {},
+  "postMessage": "Set environment variables:\n  SENDGRID_API_KEY=SG.xxx\n  SENDGRID_FROM_EMAIL=hello@example.com\n  SENDGRID_FROM_NAME=My App\n\nUsage:\n  import { sendEmail, sendTemplateEmail } from '@/integrations/sendgrid/send'"
+}
