@@ -1,0 +1,9 @@
+{
+  "name": "crm-ai-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered CRM assistant with deal analysis, insights, and chat interface",
+  "outputDir": "src/modules/crm-ai-assistant",
+  "files": ["index.ts", "types.ts", "AssistantChat.tsx", "deal-analyzer.ts", "api-handler.ts"],
+  "peerDependencies": { "react": ">=18", "next": ">=14", "tailwindcss": ">=3" },
+  "postMessage": "Set ASSISTANT_API_KEY and ASSISTANT_API_URL env vars. Import: import { AssistantChat, analyzeDealRisks } from './src/modules/crm-ai-assistant'; <AssistantChat deals={deals} config={{ apiEndpoint: '/api/assistant' }} />"
+}
