@@ -1,0 +1,12 @@
+{
+  "name": "form-address-autocomplete",
+  "version": "1.0.0",
+  "description": "Address form with autocomplete suggestions and map preview placeholder",
+  "outputDir": "components/form-address-autocomplete",
+  "files": ["address-autocomplete.tsx", "address-autocomplete.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Address Autocomplete installed!\nImport: import { AddressAutocomplete } from '@/components/form-address-autocomplete/address-autocomplete'\nUsage: <AddressAutocomplete onAddressChange={(addr) => console.log(addr)} />\nReplace fetchSuggestions prop with your API (Google Places, Mapbox, etc.)"
+}
