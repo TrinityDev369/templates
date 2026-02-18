@@ -1,7 +1,7 @@
 {
   "name": "swarm-layer",
-  "version": "1.0.0",
-  "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles. Requires agentic-layer template and PostgreSQL.",
+  "version": "1.1.0",
+  "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles, PRD intake. Requires agentic-layer template and PostgreSQL.",
   "outputDir": ".",
   "files": [
     "README.md",
@@ -13,6 +13,7 @@
     ".claude/skills/swarm/SKILL.md",
     ".claude/skills/monitor/SKILL.md",
     ".claude/skills/plan-with-team/SKILL.md",
+    ".claude/skills/prd-intake/SKILL.md",
     ".claude/hooks/hooks.py",
     ".claude/hooks/swarm.py",
     ".claude/hooks/settings.swarm.json",
@@ -26,5 +27,5 @@
   "peerDependencies": {
     "psycopg2-binary": ">=2.9"
   },
-  "postMessage": "Swarm layer installed! Run `psql $DATABASE_URL -f schema/field-system.sql` to create tables. Then use /swarm to sense the field and /spawn to launch agents."
+  "postMessage": "Swarm layer installed! Run `psql $DATABASE_URL -f schema/field-system.sql` to create tables. Then use /swarm to sense the field or /prd-intake to scope a PRD into tasks."
 }
