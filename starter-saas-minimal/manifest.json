@@ -1,0 +1,37 @@
+{
+  "name": "starter-saas-minimal",
+  "version": "1.0.0",
+  "description": "Next.js 14 SaaS + Shop starter with shadcn/ui, dashboard shell, product catalog, cart, and checkout. TypeScript, Tailwind CSS, App Router.",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "components.json",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/(dashboard)/layout.tsx",
+    "app/(dashboard)/page.tsx",
+    "app/(dashboard)/analytics/page.tsx",
+    "app/(dashboard)/orders/page.tsx",
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/settings/page.tsx",
+    "app/(shop)/layout.tsx",
+    "app/(shop)/page.tsx",
+    "app/(shop)/product/[id]/page.tsx",
+    "app/(shop)/cart/page.tsx",
+    "app/(shop)/checkout/page.tsx",
+    "lib/utils.ts",
+    "lib/hooks/use-cart.ts",
+    "lib/hooks/use-media-query.ts",
+    "types/index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "SaaS starter installed! Run `npx shadcn@latest init` then `npm install` to get started. See app/(dashboard) for admin pages and app/(shop) for storefront."
+}
