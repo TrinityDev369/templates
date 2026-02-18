@@ -16,6 +16,26 @@
       "category": "animation",
       "version": "1.0.0"
     },
+    "animation-liquid-button": {
+      "description": "Liquid morphing button with SVG filter hover effect",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-noise-grain": {
+      "description": "Film grain and noise overlay effect using HTML Canvas",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "animation-webgl-background": {
+      "description": "Interactive WebGL shader background with animated gradients",
+      "category": "animation",
+      "version": "1.0.0"
+    },
+    "auth-sso-saml": {
+      "description": "SAML SSO integration module for enterprise Next.js applications",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "context-graph": {
       "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and MCP integration",
       "category": "starter",
@@ -23,6 +43,11 @@
     },
     "pipe-content-pipeline": {
       "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
+      "category": "pipe",
+      "version": "1.0.0"
+    },
+    "pipe-onboarding-automation": {
+      "description": "Automated employee/user onboarding pipeline with configurable steps per role",
       "category": "pipe",
       "version": "1.0.0"
     },
