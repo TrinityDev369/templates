@@ -1,0 +1,12 @@
+{
+  "name": "animation-scroll-reveal",
+  "version": "1.0.0",
+  "description": "Scroll-triggered reveal animations with multiple presets — fade up, slide in, scale, blur, and stagger groups. Uses Intersection Observer for performance.",
+  "outputDir": "components/animation-scroll-reveal",
+  "files": ["ScrollReveal.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { ScrollReveal, StaggerReveal } from './components/animation-scroll-reveal/ScrollReveal';\n\n<ScrollReveal preset=\"fadeUp\" delay={0.1}>\n  <h2>This fades up on scroll</h2>\n</ScrollReveal>\n\n<StaggerReveal stagger={0.1}>\n  <div>Item 1</div>\n  <div>Item 2</div>\n  <div>Item 3</div>\n</StaggerReveal>"
+}
