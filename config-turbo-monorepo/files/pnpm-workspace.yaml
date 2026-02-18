@@ -1,0 +1,9 @@
+# ---------------------------------------------------------------------------
+# pnpm workspace configuration
+# ---------------------------------------------------------------------------
+# Every directory matching these globs is treated as a workspace package.
+# pnpm hoists shared dependencies and symlinks internal packages automatically.
+# ---------------------------------------------------------------------------
+packages:
+  - "apps/*"
+  - "packages/*"

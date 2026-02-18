@@ -1,0 +1,21 @@
+{
+  // Extend the shared strict base configuration from @myorg/typescript-config.
+  "extends": "@myorg/typescript-config/base.json",
+
+  "compilerOptions": {
+    // Emit compiled JS into dist/ (used when consumers import the built output).
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Support JSX for UI components (change to "react-jsx" if using React).
+    "jsx": "react-jsx",
+
+    // Produce declaration files so consumers get full type information.
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

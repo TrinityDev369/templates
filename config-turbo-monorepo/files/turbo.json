@@ -1,0 +1,59 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+
+  // ---------------------------------------------------------------------------
+  // Global configuration
+  // ---------------------------------------------------------------------------
+  // Files whose changes should invalidate every task cache across the monorepo.
+  "globalDependencies": ["**/.env.*local"],
+
+  // Environment variables that, when changed, bust every cache entry.
+  "globalEnv": ["NODE_ENV", "CI"],
+
+  // ---------------------------------------------------------------------------
+  // Task pipeline (Turbo v2 "tasks" format)
+  // ---------------------------------------------------------------------------
+  "tasks": {
+
+    // ---- build ----
+    // Waits for all workspace dependency builds to finish first (^build).
+    // Outputs are cached so unchanged packages skip rebuilding.
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": ["NEXT_PUBLIC_*"]
+    },
+
+    // ---- lint ----
+    // Runs ESLint. No inter-package dependency — each package lints independently.
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+
+    // ---- dev ----
+    // Long-running dev servers. Never cached; marked persistent so Turbo keeps
+    // the process alive and does not consider it "done".
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+
+    // ---- test ----
+    // Unit / integration tests. Depends on build so compiled assets are
+    // available if tests import from dist/.
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**"],
+      "env": ["CI"]
+    },
+
+    // ---- typecheck ----
+    // TypeScript type-checking via tsc --noEmit. No outputs to cache beyond
+    // the incremental .tsbuildinfo Turbo handles automatically.
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    }
+  }
+}

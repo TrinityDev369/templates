@@ -1,0 +1,22 @@
+{
+  "name": "config-turbo-monorepo",
+  "version": "1.0.0",
+  "description": "Turborepo monorepo scaffold — workspace structure, shared packages, and optimized pipeline",
+  "outputDir": ".",
+  "files": [
+    "turbo.json",
+    "package.json",
+    "packages/ui/package.json",
+    "packages/ui/tsconfig.json",
+    "packages/eslint-config/package.json",
+    "packages/eslint-config/index.js",
+    "packages/typescript-config/base.json",
+    "packages/typescript-config/package.json",
+    "apps/web/package.json",
+    "apps/web/tsconfig.json",
+    "apps/docs/package.json",
+    "apps/docs/tsconfig.json",
+    "pnpm-workspace.yaml"
+  ],
+  "postMessage": "Install: pnpm install\nDev: pnpm dev\nBuild: pnpm build\nLint: pnpm lint\nCustomize turbo.json pipeline for your needs."
+}

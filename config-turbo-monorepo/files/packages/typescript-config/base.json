@@ -1,0 +1,41 @@
+{
+  // ---------------------------------------------------------------------------
+  // @myorg/typescript-config — Strict shared base
+  // ---------------------------------------------------------------------------
+  // All workspace packages extend this config and override only what they need.
+  // Keep this strict — it is easier to relax a rule locally than to tighten it
+  // after the fact across dozens of packages.
+  // ---------------------------------------------------------------------------
+
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  "compilerOptions": {
+    // ---- Language & emit ----
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // ---- Strictness ----
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // ---- Emit control ----
+    // Most packages are consumed via bundlers, so we skip emit by default.
+    // Override outDir / declaration in each package's own tsconfig.json.
+    "noEmit": true,
+
+    // ---- Interop ----
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": false
+  },
+
+  "exclude": ["node_modules", "dist", ".turbo"]
+}

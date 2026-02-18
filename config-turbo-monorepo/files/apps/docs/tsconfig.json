@@ -1,0 +1,23 @@
+{
+  // Extend the shared strict base from @myorg/typescript-config.
+  "extends": "@myorg/typescript-config/base.json",
+
+  "compilerOptions": {
+    // Next.js requires JSX transform support.
+    "jsx": "preserve",
+
+    // Allow default imports from modules without a default export (Next.js convention).
+    "allowJs": true,
+
+    // Next.js plugin provides additional type checking.
+    "plugins": [{ "name": "next" }],
+
+    // Path aliases — adjust to match your project structure.
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+  "include": ["next-env.d.ts", "src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next"]
+}
