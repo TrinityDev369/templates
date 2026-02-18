@@ -1,0 +1,12 @@
+{
+  "name": "animation-cursor-follow",
+  "version": "1.0.0",
+  "description": "Cursor-following elements with spring physics. Wrap any content to make it magnetically track the mouse pointer with configurable spring stiffness and damping.",
+  "outputDir": "components/animation-cursor-follow",
+  "files": ["CursorFollow.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { CursorFollow } from './components/animation-cursor-follow/CursorFollow';\n\n<CursorFollow stiffness={150} damping={15}>\n  <div className=\"cursor-dot\" />\n</CursorFollow>"
+}
