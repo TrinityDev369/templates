@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Interactive Session Hooks
+Interactive Session Hooks — Safety guardrails and developer experience.
 
 Features:
 - Git context injection on session start
 - Auto-approve read-only tools
 - Block dangerous operations
-- Protect sensitive files
+- Auto-typecheck after TypeScript file edits
 """
 
 import json
@@ -27,6 +27,7 @@ DANGEROUS_PATTERNS = [
     "dd if=/dev/zero",
 ]
 
+# Patterns that need boundary checking (not substring match)
 DANGEROUS_ROOT_COMMANDS = [
     ("rm -rf /", [" ", "\t", "\n", ";", "&", "|", ""]),
     ("rm -rf /*", [" ", "\t", "\n", ";", "&", "|", ""]),
@@ -70,7 +71,7 @@ def deny(reason: str) -> None:
 # =============================================================================
 
 def handle_session_start(data: dict) -> None:
-    """Inject git context on session start."""
+    """Inject git context for orientation."""
     cwd = os.environ.get("CLAUDE_PROJECT_DIR", os.getcwd())
 
     try:
@@ -85,6 +86,8 @@ def handle_session_start(data: dict) -> None:
         ).stdout.strip()
 
         context = f"""# Session Context
+
+*Session started via: startup*
 
 ## Git State
 **Branch:** `{branch}`
@@ -118,11 +121,13 @@ def handle_pre_tool_use(data: dict) -> None:
     if tool_name == "Bash":
         command = tool_input.get("command", "")
 
+        # Simple substring patterns (always dangerous)
         for pattern in DANGEROUS_PATTERNS:
             if pattern in command:
                 deny(f"Blocked dangerous pattern: {pattern}")
                 return
 
+        # Root-level commands need boundary checking
         for pattern, terminators in DANGEROUS_ROOT_COMMANDS:
             if pattern in command:
                 idx = command.find(pattern)
@@ -131,6 +136,7 @@ def handle_pre_tool_use(data: dict) -> None:
                     deny(f"Blocked dangerous root command: {pattern}")
                     return
 
+        # Check curl/wget piped to shell
         if ("curl " in command or "wget " in command) and ("| sh" in command or "| bash" in command):
             deny("Blocked: piping download to shell")
             return
@@ -148,12 +154,38 @@ def handle_pre_tool_use(data: dict) -> None:
 
 
 def handle_post_tool_use(data: dict) -> None:
-    """Post-tool hook — extend with your own checks."""
+    """Auto-typecheck after Write/Edit on TypeScript files."""
+    tool_name = data.get("tool_name", "")
+    tool_input = data.get("tool_input", {})
+
+    if tool_name in {"Write", "Edit", "MultiEdit"}:
+        file_path = tool_input.get("file_path", "")
+        if file_path.endswith((".ts", ".tsx")):
+            try:
+                from validate import run_typecheck_scoped
+                ok, errors = run_typecheck_scoped(file_path, timeout=8)
+                if not ok:
+                    from pathlib import Path
+                    err_text = "\n".join(f"  {e}" for e in errors[:5])
+                    output({
+                        "hookSpecificOutput": {
+                            "hookEventName": "PostToolUse",
+                            "additionalContext": (
+                                f"<system-reminder>TYPECHECK: New errors in {Path(file_path).name}:\n"
+                                f"{err_text}\n"
+                                f"Fix these before continuing.</system-reminder>"
+                            )
+                        }
+                    })
+                    return
+            except Exception:
+                pass  # Validation is best-effort
+
     output({})
 
 
 def noop(data: dict) -> None:
-    """No-op handler for unregistered hooks."""
+    """No-op handler for hooks that don't need processing."""
     output({})
 
 
@@ -165,6 +197,8 @@ HANDLERS = {
     "session_start": handle_session_start,
     "pre_tool_use": handle_pre_tool_use,
     "post_tool_use": handle_post_tool_use,
+    "user_prompt_submit": noop,
+    "stop": noop,
 }
 
 

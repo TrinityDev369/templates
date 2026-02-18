@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Hook Router — Routes hook events to the interactive handler.
+Hook Router — Routes lifecycle events to the appropriate handler.
 
 Usage: python hooks.py <hook_type>
-Hook types: session_start, pre_tool_use, post_tool_use
+Hook types: session_start, pre_tool_use, post_tool_use, user_prompt_submit, stop
 """
 
 import json
-import os
 import sys
 
 

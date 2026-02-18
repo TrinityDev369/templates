@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "description": "Cold skill registry — maps skill slugs to paths and affinities for on-demand loading",
+  "skills": {
+    "security-review": {
+      "description": "Security checklist and vulnerability patterns for code review",
+      "affinities": ["security", "auth", "authentication", "vulnerability"],
+      "path": ".claude/skills/security-review"
+    },
+    "react-bestpractices": {
+      "description": "React and Next.js performance optimization patterns",
+      "affinities": ["react", "nextjs", "frontend", "performance", "component"],
+      "path": ".claude/skills/react-bestpractices"
+    },
+    "skill-creator": {
+      "description": "Guide for creating and packaging new skills",
+      "affinities": ["skill", "meta", "create"],
+      "path": ".claude/skills/skill-creator"
+    }
+  }
+}

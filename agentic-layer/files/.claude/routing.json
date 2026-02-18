@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "description": "Affinity-to-skill routing for agent task matching",
+  "routes": [
+    {
+      "affinities": ["security", "auth", "authentication", "vulnerability", "xss", "csrf"],
+      "skill": "security-review"
+    },
+    {
+      "affinities": ["react", "nextjs", "frontend", "component", "performance", "ui"],
+      "skill": "react-bestpractices"
+    }
+  ]
+}
