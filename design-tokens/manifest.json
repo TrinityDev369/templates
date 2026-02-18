@@ -1,0 +1,11 @@
+{
+  "name": "design-tokens",
+  "version": "1.0.0",
+  "description": "Design token system with CSS custom properties — colors, typography, spacing, radius, shadows. Uses shadcn/ui defaults as a starting point.",
+  "outputDir": "src/design-system",
+  "files": ["tokens.css", "tailwind.config.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import tokens.css in your global stylesheet and extend your tailwind.config with the provided config."
+}
