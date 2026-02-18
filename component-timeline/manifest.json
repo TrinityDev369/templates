@@ -1,0 +1,12 @@
+{
+  "name": "component-timeline",
+  "version": "1.0.0",
+  "description": "Vertical timeline with alternating layout, icons, and scroll animations",
+  "outputDir": "components/timeline",
+  "files": ["timeline.tsx", "timeline.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card\nRequires cn() utility from shadcn.\nImport: import { Timeline } from '@/components/timeline/timeline'"
+}
