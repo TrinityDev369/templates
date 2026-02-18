@@ -161,6 +161,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-color-picker": {
+      "description": "HSL/RGB color picker with saturation canvas, presets, and EyeDropper API",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-diff-viewer": {
       "description": "Side-by-side and inline text diff viewer with built-in diff algorithm",
       "category": "component",
@@ -178,6 +183,26 @@
     },
     "component-qr-code": {
       "description": "QR code generator component with Canvas rendering and inline encoder",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-slider-range": {
+      "description": "Single and dual-handle range slider with tooltips, marks, and keyboard navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-stepper": {
+      "description": "Step progress indicator with labels, validation states, and click navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-timeline": {
+      "description": "Vertical timeline with alternating layout, icons, and scroll animations",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-tree-view": {
+      "description": "Expandable tree view with checkboxes, lazy loading, search, and keyboard navigation",
       "category": "component",
       "version": "1.0.0"
     },
