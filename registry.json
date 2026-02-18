@@ -51,8 +51,18 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-diff-viewer": {
+      "description": "Side-by-side and inline text diff viewer with built-in diff algorithm",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-emoji-picker": {
       "description": "Emoji picker with search, categories, recent emojis, and keyboard navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-markdown-preview": {
+      "description": "Live markdown editor with split preview pane and built-in parser",
       "category": "component",
       "version": "1.0.0"
     },
@@ -69,6 +79,21 @@
     "context-seed": {
       "description": "PRD-to-packages expert guide \u2014 maps project requirements to correct npx trinity369/use commands",
       "category": "document",
+      "version": "1.0.0"
+    },
+    "crm-ai-assistant": {
+      "description": "AI-powered CRM assistant with deal analysis, insights, and chat interface",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "crm-commission-calculator": {
+      "description": "Sales commission calculator with configurable tier rules and visual breakdown",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "crm-territory-map": {
+      "description": "Sales territory map with Mapbox GL, assignment management, and quota tracking",
+      "category": "module",
       "version": "1.0.0"
     },
     "dashboard-activity-feed": {
