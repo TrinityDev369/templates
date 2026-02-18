@@ -6,6 +6,11 @@
       "category": "agentic",
       "version": "1.0.0"
     },
+    "context-graph": {
+      "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and MCP integration",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "skill-accessibility": {
       "description": "WCAG compliance and accessibility audit skill",
       "category": "skill",
