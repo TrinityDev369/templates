@@ -1,0 +1,12 @@
+{
+  "name": "pdf-proposal",
+  "version": "1.0.0",
+  "description": "Business proposal PDF with scope, deliverables, pricing table, and timeline — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/proposal",
+  "files": ["proposal.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/proposal/generate.tsx\nCustomize branding and sections in proposal.tsx"
+}
