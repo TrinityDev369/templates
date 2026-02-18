@@ -1,0 +1,12 @@
+{
+  "name": "component-tree-view",
+  "version": "1.0.0",
+  "description": "Expandable tree view with checkboxes, lazy loading, search, and keyboard navigation",
+  "outputDir": "components/tree-view",
+  "files": ["tree-view.tsx", "tree-view.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add checkbox input\nRequires cn() utility from shadcn.\nImport: import { TreeView } from '@/components/tree-view/tree-view'"
+}
