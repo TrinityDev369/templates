@@ -1,0 +1,14 @@
+{
+  "name": "pricing-upgrade-modal",
+  "version": "1.0.0",
+  "description": "Plan upgrade modal with feature comparison",
+  "outputDir": "components/pricing-upgrade-modal",
+  "files": ["upgrade-modal.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { UpgradeModal } from '@/components/pricing-upgrade-modal/upgrade-modal'\nUsage: <UpgradeModal open={showModal} onClose={() => setShowModal(false)} currentPlan={current} upgradePlan={pro} onUpgrade={handleUpgrade} />"
+}
