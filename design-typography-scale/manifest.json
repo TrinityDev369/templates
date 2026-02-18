@@ -1,0 +1,11 @@
+{
+  "name": "design-typography-scale",
+  "version": "1.0.0",
+  "description": "Fluid type scale with prose styles, heading hierarchy, and font stack definitions. Works with any font — system defaults included.",
+  "outputDir": "src/design-system",
+  "files": ["typography.css", "tailwind.typography.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import typography.css in your global stylesheet. Extend tailwind.config with the typography plugin config."
+}
