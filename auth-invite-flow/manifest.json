@@ -1,0 +1,17 @@
+{
+  "name": "auth-invite-flow",
+  "version": "1.0.0",
+  "description": "Team member invitation flow — bulk email invite with role selection, pending invites list, and resend/revoke actions",
+  "outputDir": "components/auth-invite-flow",
+  "files": ["invite-flow.tsx", "invite-flow.types.ts", "invite-list.tsx", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Invite Flow installed!\n\nUsage:\nimport { InviteFlow, InviteList } from '@/components/auth-invite-flow'\n\n<InviteFlow onInvite={async (invites) => { /* send invitations */ }} />\n<InviteList invitations={pending} onResend={...} onRevoke={...} />\n\nRequires shadcn/ui: npx shadcn@latest add button input card label select badge form"
+}
