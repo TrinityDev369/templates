@@ -1,0 +1,13 @@
+{
+  "name": "auth-2fa-setup",
+  "version": "1.0.0",
+  "description": "2FA setup flow — QR scan, recovery codes, and verification",
+  "outputDir": "components/auth-2fa-setup",
+  "files": ["two-factor-setup.tsx", "two-factor-setup.types.ts", "recovery-codes.tsx", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "2FA setup flow installed!\n\nUsage:\nimport { TwoFactorSetup } from '@/components/auth-2fa-setup'\n\n<TwoFactorSetup\n  onEnable={async () => { /* call your API, return { qrCodeUrl, secret, recoveryCodes } */ }}\n  onVerify={async (code) => { /* verify TOTP code with your API */ }}\n  onComplete={() => { /* redirect or show success */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button card label input"
+}
