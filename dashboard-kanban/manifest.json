@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-kanban",
+  "version": "1.0.0",
+  "description": "Kanban board with drag-and-drop cards, priority badges, assignee avatars, column management, and horizontal scroll. shadcn/ui + Tailwind.",
+  "outputDir": "components/dashboard-kanban",
+  "files": ["kanban-board.tsx", "kanban-card.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Kanban board installed! Add `npx shadcn@latest add card badge button dropdown-menu scroll-area avatar`."
+}
