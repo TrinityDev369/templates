@@ -1,0 +1,11 @@
+{
+  "name": "component-barcode-scanner",
+  "version": "1.0.0",
+  "description": "Camera-based barcode and QR code scanner using BarcodeDetector API",
+  "outputDir": "components/component-barcode-scanner",
+  "files": ["BarcodeScanner.tsx", "BarcodeScanner.module.css"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import and use: import { BarcodeScanner } from './components/component-barcode-scanner/BarcodeScanner'; <BarcodeScanner onScan={result => console.log(result.rawValue)} />. Note: BarcodeDetector API requires Chrome/Edge. For cross-browser support, add a polyfill."
+}
