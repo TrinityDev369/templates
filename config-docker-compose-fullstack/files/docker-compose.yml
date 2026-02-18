@@ -1,0 +1,130 @@
+# =============================================================================
+# Docker Compose — Development
+# Full-stack: Node.js app + PostgreSQL + Redis + Traefik reverse proxy
+# Usage: docker compose up
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # App — Node.js application with hot reload
+  # ---------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deps  # Use deps stage for dev (skip production build)
+    container_name: app
+    ports:
+      - "${PORT:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+    volumes:
+      # Bind-mount source for hot reload
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      # Prevent overwriting container node_modules with host
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - internal
+    # Dev command — override production CMD with watch mode
+    command: ["npm", "run", "dev"]
+
+  # ---------------------------------------------------------------------------
+  # Database — PostgreSQL 16
+  # ---------------------------------------------------------------------------
+  db:
+    image: postgres:16-alpine
+    container_name: db
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-myapp}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-myapp}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - internal
+
+  # ---------------------------------------------------------------------------
+  # Cache — Redis 7
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    # Only expose to internal network in dev; access via redis:6379
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  # ---------------------------------------------------------------------------
+  # Reverse Proxy — Traefik v3
+  # Dashboard available at http://localhost:8080 in dev
+  # ---------------------------------------------------------------------------
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"  # Dashboard (dev only)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_certs:/letsencrypt
+    command:
+      # API / Dashboard
+      - "--api.insecure=true"
+      - "--api.dashboard=true"
+      # Entrypoints
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # Docker provider
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=internal"
+      # Logging
+      - "--log.level=DEBUG"
+    networks:
+      - internal
+    labels:
+      - "traefik.enable=true"
+
+# =============================================================================
+# Volumes — Persistent data stores
+# =============================================================================
+volumes:
+  postgres_data:
+    name: ${COMPOSE_PROJECT_NAME:-myapp}_postgres_data
+  redis_data:
+    name: ${COMPOSE_PROJECT_NAME:-myapp}_redis_data
+  traefik_certs:
+    name: ${COMPOSE_PROJECT_NAME:-myapp}_traefik_certs
+
+# =============================================================================
+# Networks
+# =============================================================================
+networks:
+  internal:
+    driver: bridge

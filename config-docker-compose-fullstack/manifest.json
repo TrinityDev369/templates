@@ -1,0 +1,8 @@
+{
+  "name": "config-docker-compose-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack Docker Compose — app, PostgreSQL, Redis, and Traefik reverse proxy with SSL",
+  "outputDir": ".",
+  "files": ["docker-compose.yml", "docker-compose.prod.yml", ".env.example", "Dockerfile", ".dockerignore"],
+  "postMessage": "Copy .env.example to .env and fill in values.\nDev: docker compose up\nProd: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d"
+}
