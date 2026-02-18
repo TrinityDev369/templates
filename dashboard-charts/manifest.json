@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-charts",
+  "version": "1.0.0",
+  "description": "Area, bar, line, and donut chart components wrapped in shadcn Cards. Powered by recharts.",
+  "outputDir": "components/dashboard-charts",
+  "files": ["area-chart.tsx", "bar-chart.tsx", "line-chart.tsx", "donut-chart.tsx", "index.ts"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3", "recharts": ">=2"},
+  "postMessage": "Charts installed! Add `npx shadcn@latest add card` and `npm install recharts`."
+}
