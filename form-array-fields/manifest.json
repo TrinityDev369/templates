@@ -1,0 +1,15 @@
+{
+  "name": "form-array-fields",
+  "version": "1.0.0",
+  "description": "Dynamic repeatable field groups with add, remove, and reorder controls",
+  "outputDir": "components/form-array-fields",
+  "files": ["array-fields.tsx", "array-fields.types.ts", "array-field-row.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Array Fields installed!\nImport: import { ArrayFields } from '@/components/form-array-fields/array-fields'\nUsage: <ArrayFields name=\"members\" fields={fieldConfig} min={1} max={10} />"
+}
