@@ -1,0 +1,13 @@
+{
+  "name": "pricing-faq",
+  "version": "1.0.0",
+  "description": "Pricing FAQ accordion section with smooth expand/collapse animation",
+  "outputDir": "components/pricing-faq",
+  "files": ["pricing-faq.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { PricingFaq } from '@/components/pricing-faq/pricing-faq'\nUsage: <PricingFaq /> or <PricingFaq items={customItems} title=\"Questions?\" />"
+}
