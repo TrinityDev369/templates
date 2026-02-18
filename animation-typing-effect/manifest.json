@@ -1,0 +1,11 @@
+{
+  "name": "animation-typing-effect",
+  "version": "1.0.0",
+  "description": "Typewriter text animation with blinking cursor. Supports multiple strings, configurable typing/deleting speed, pause duration, and loop control.",
+  "outputDir": "components/animation-typing-effect",
+  "files": ["TypingEffect.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import and use:\n\nimport { TypingEffect } from './components/animation-typing-effect/TypingEffect';\n\n<TypingEffect\n  strings={['Hello World', 'Welcome Home', 'Start Building']}\n  typingSpeed={80}\n  deletingSpeed={40}\n  pauseTime={1500}\n/>"
+}
