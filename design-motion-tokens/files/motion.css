@@ -21,7 +21,7 @@
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);      /* Standard */
   --ease-in: cubic-bezier(0.4, 0, 1, 1);              /* Accelerate */
   --ease-out: cubic-bezier(0, 0, 0.2, 1);             /* Decelerate */
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);        /* Standard */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);        /* Symmetric ease-in-out */
 
   /* Expressive / emphatic curves */
   --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);       /* Enter with emphasis */
