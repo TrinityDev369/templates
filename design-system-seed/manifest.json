@@ -1,0 +1,11 @@
+{
+  "name": "design-system-seed",
+  "version": "1.0.0",
+  "description": "Design system composition engine — maps brand identity to a cohesive design system from 12 atomic primitives. Generates install plan, brand overrides, and the glue layer that turns packages into one system.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/design-system-seed/SKILL.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Design System Seed installed at .claude/skills/design-system-seed/SKILL.md\n\nDescribe your project and brand personality. The skill will compose a complete design system from 12 atomic primitives:\n\n  npx @trinity369/use design-tokens\n  npx @trinity369/use design-color-system\n  npx @trinity369/use design-typography-scale\n  npx @trinity369/use design-spacing-grid\n  npx @trinity369/use design-shadow-system\n  npx @trinity369/use design-motion-tokens\n  npx @trinity369/use design-responsive-breakpoints\n  npx @trinity369/use design-icon-set\n  npx @trinity369/use design-accessibility-primitives\n  npx @trinity369/use design-theme-switcher\n  npx @trinity369/use design-animation-library\n  npx @trinity369/use design-component-docs-template\n\nNot a list — a composition. The skill generates the glue that makes them one system."
+}
