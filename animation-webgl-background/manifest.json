@@ -1,0 +1,11 @@
+{
+  "name": "animation-webgl-background",
+  "version": "1.0.0",
+  "description": "Interactive WebGL shader background with animated gradients",
+  "outputDir": "components/animation-webgl-background",
+  "files": ["WebGLBackground.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Add to your layout: import { WebGLBackground } from './components/animation-webgl-background/WebGLBackground'; then <WebGLBackground colors={['#6366f1', '#8b5cf6', '#ec4899']} />"
+}
