@@ -341,6 +341,11 @@
       "category": "email",
       "version": "1.0.0"
     },
+    "email-product-launch": {
+      "description": "Product launch announcement email with feature highlights, social proof, pricing teaser, and early-bird CTA.",
+      "category": "email",
+      "version": "1.0.0"
+    },
     "email-referral-program": {
       "description": "Referral program invitation email with discount offer, referral code, and social proof.",
       "category": "email",
@@ -394,6 +399,26 @@
     "form-wizard-multistep": {
       "description": "Reusable multi-step form wizard with per-step Zod validation and progress tracking",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "integration-calendar-google": {
+      "description": "Google Calendar API integration \u2014 OAuth2 client, CRUD events, incremental sync, free/busy lookup, and webhook notifications.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-ocr-tesseract": {
+      "description": "Tesseract.js OCR \u2014 text extraction from images with bounding boxes, structured output, language detection, and worker pool.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-pdf-generation": {
+      "description": "Server-side PDF generation with Puppeteer \u2014 HTML-to-PDF, invoice and report templates, merge, and watermark.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-sms-twilio": {
+      "description": "Twilio SMS integration \u2014 send/receive messages, bulk SMS, delivery status, phone validation, and webhook handling.",
+      "category": "integration",
       "version": "1.0.0"
     },
     "pipe-content-pipeline": {
