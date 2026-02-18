@@ -1,0 +1,12 @@
+{
+  "name": "pricing-billing-toggle",
+  "version": "1.0.0",
+  "description": "Monthly/annual billing switch with savings percentage badge",
+  "outputDir": "components/pricing-billing-toggle",
+  "files": ["billing-toggle.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { BillingToggle } from '@/components/pricing-billing-toggle/billing-toggle'\nUsage: <BillingToggle interval={interval} onIntervalChange={setInterval} savingsPercentage={20} />"
+}
