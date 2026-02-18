@@ -146,6 +146,21 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "config-backup-script": {
+      "description": "Database and file backup scripts with rotation, encryption, S3 upload, and webhook notifications.",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-k8s-deployment": {
+      "description": "Production-ready Kubernetes manifests \u2014 Deployment, Service, Ingress, HPA, ConfigMap with security best practices.",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-monitoring-grafana": {
+      "description": "Grafana dashboards + Prometheus config \u2014 app overview, node metrics, alert rules, and Docker Compose monitoring stack.",
+      "category": "config",
+      "version": "1.0.0"
+    },
     "context-graph": {
       "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and MCP integration",
       "category": "starter",
@@ -319,6 +334,16 @@
     "design-typography-scale": {
       "description": "Fluid type scale with prose styles, heading hierarchy, and font stack definitions.",
       "category": "design-system",
+      "version": "1.0.0"
+    },
+    "email-abandoned-cart": {
+      "description": "E-commerce abandoned cart recovery email with product listing, order summary, and urgency CTA.",
+      "category": "email",
+      "version": "1.0.0"
+    },
+    "email-referral-program": {
+      "description": "Referral program invitation email with discount offer, referral code, and social proof.",
+      "category": "email",
       "version": "1.0.0"
     },
     "form-address-autocomplete": {
