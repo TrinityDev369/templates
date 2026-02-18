@@ -76,9 +76,19 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "shop-category-nav": {
+      "description": "Hierarchical category sidebar with accordion tree, breadcrumbs, count badges, active state, and mobile sheet.",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "shop-checkout": {
       "description": "Multi-step checkout flow with shipping, payment, review, and confirmation. react-hook-form + zod.",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-order-history": {
+      "description": "Order history page with status badges, expandable row details, re-order action, date filtering, and pagination.",
+      "category": "page",
       "version": "1.0.0"
     },
     "shop-product-detail": {
@@ -88,6 +98,16 @@
     },
     "shop-product-grid": {
       "description": "Responsive product card grid with image, price, rating, sale badges, add-to-cart, grid/list toggle.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-search-filters": {
+      "description": "Product search with faceted filters: price range, category checkboxes, color swatches, sort dropdown, and active filter badges.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "shop-wishlist": {
+      "description": "Wishlist grid with heart toggle, move-to-cart, share list, localStorage persistence, and empty state.",
       "category": "component",
       "version": "1.0.0"
     },
