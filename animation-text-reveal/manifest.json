@@ -1,0 +1,12 @@
+{
+  "name": "animation-text-reveal",
+  "version": "1.0.0",
+  "description": "Character and word staggered text reveal animation with multiple presets — fade, blur, scale, and rotate effects",
+  "outputDir": "components/animation-text-reveal",
+  "files": ["TextReveal.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { TextReveal, TextRevealGroup } from './components/animation-text-reveal/TextReveal';\n\n<TextReveal text=\"Hello World\" preset=\"fade-up\" />\n<TextReveal text=\"Character by character\" splitBy=\"char\" preset=\"blur\" />\n<TextReveal text=\"From the left\" preset=\"fade-left\" stagger={0.03} />\n\n// Sequential group — each line animates after the previous\n<TextRevealGroup>\n  <TextReveal text=\"First line appears\" />\n  <TextReveal text=\"Then this one\" />\n  <TextReveal text=\"And finally this\" />\n</TextRevealGroup>"
+}
