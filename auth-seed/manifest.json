@@ -1,0 +1,11 @@
+{
+  "name": "auth-seed",
+  "version": "1.0.0",
+  "description": "Autonomous auth composer -- discovers security requirements, selects auth modules, installs them, and wires the auth context + session management. Delivers a working authentication system.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/auth-seed/SKILL.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Auth Seed installed at .claude/skills/auth-seed/SKILL.md\n\nDescribe your application and security needs. The skill composes a complete auth system:\n\nCore: login-form, signup-form, password-reset\nEnterprise: sso-saml, biometric\nCompliance: age-verification\n\nNot a list -- a wired auth system with session management, protected routes, and auth context."
+}
