@@ -1,0 +1,282 @@
+/* BiometricAuth.module.css
+ * Biometric authentication component styles with state-based transitions,
+ * CSS custom properties for theming, and reduced-motion support.
+ */
+
+/* ── Theme tokens ──────────────────────────────────────── */
+
+.container {
+  --bio-primary: #3b82f6;
+  --bio-primary-hover: #2563eb;
+  --bio-success: #22c55e;
+  --bio-success-bg: #f0fdf4;
+  --bio-error: #ef4444;
+  --bio-error-bg: #fef2f2;
+  --bio-text: #1f2937;
+  --bio-text-muted: #6b7280;
+  --bio-bg: #ffffff;
+  --bio-border: #e5e7eb;
+  --bio-radius: 12px;
+  --bio-icon-size: 80px;
+  --bio-transition-speed: 200ms;
+}
+
+/* ── Container ─────────────────────────────────────────── */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: var(--bio-radius);
+  background: var(--bio-bg);
+  border: 1px solid var(--bio-border);
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  transition: border-color var(--bio-transition-speed) ease;
+}
+
+/* ── Icon area ─────────────────────────────────────────── */
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bio-icon-size);
+  height: var(--bio-icon-size);
+  border-radius: 50%;
+  background: #f3f4f6;
+  transition:
+    background var(--bio-transition-speed) ease,
+    box-shadow var(--bio-transition-speed) ease;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: var(--bio-text-muted);
+  transition: color var(--bio-transition-speed) ease;
+}
+
+/* ── Pulse animation for scanning ──────────────────────── */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes iconFade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ── State: scanning ───────────────────────────────────── */
+
+.scanning .iconWrapper {
+  background: #eff6ff;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.scanning .icon {
+  color: var(--bio-primary);
+  animation: iconFade 1.5s ease-in-out infinite;
+}
+
+/* ── State: success ────────────────────────────────────── */
+
+.success {
+  border-color: var(--bio-success);
+}
+
+.success .iconWrapper {
+  background: var(--bio-success-bg);
+}
+
+.success .icon {
+  color: var(--bio-success);
+}
+
+/* ── State: error ──────────────────────────────────────── */
+
+.error {
+  border-color: var(--bio-error);
+}
+
+.error .iconWrapper {
+  background: var(--bio-error-bg);
+}
+
+.error .icon {
+  color: var(--bio-error);
+}
+
+/* ── Status text ───────────────────────────────────────── */
+
+.statusText {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--bio-text-muted);
+  margin: 0;
+  min-height: 1.25rem;
+  transition: color var(--bio-transition-speed) ease;
+}
+
+.success .statusText {
+  color: var(--bio-success);
+  font-weight: 500;
+}
+
+.error .statusText {
+  color: var(--bio-error);
+  font-weight: 500;
+}
+
+/* ── Button ────────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+  background: var(--bio-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background var(--bio-transition-speed) ease,
+    opacity var(--bio-transition-speed) ease,
+    transform 100ms ease;
+  min-width: 180px;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--bio-primary-hover);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonScanning {
+  background: var(--bio-primary);
+  opacity: 0.8;
+}
+
+.buttonSuccess {
+  background: var(--bio-success);
+}
+
+.buttonError {
+  background: var(--bio-error);
+}
+
+/* ── Title ─────────────────────────────────────────────── */
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--bio-text);
+  margin: 0;
+}
+
+/* ── Fallback / unsupported message ────────────────────── */
+
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border-radius: var(--bio-radius);
+  background: var(--bio-bg);
+  border: 1px solid var(--bio-border);
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fallbackText {
+  font-size: 0.875rem;
+  color: var(--bio-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .scanning .iconWrapper {
+    animation: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  }
+
+  .scanning .icon {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .button:active:not(:disabled) {
+    transform: none;
+  }
+
+  .container,
+  .iconWrapper,
+  .icon,
+  .statusText,
+  .button {
+    transition: none;
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .container,
+  .fallback {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  .iconWrapper {
+    --bio-icon-size: 64px;
+    width: var(--bio-icon-size);
+    height: var(--bio-icon-size);
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .button {
+    width: 100%;
+    min-width: unset;
+  }
+}

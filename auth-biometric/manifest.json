@@ -1,0 +1,12 @@
+{
+  "name": "auth-biometric",
+  "version": "1.0.0",
+  "description": "Biometric authentication UI using WebAuthn API with fingerprint/face recognition",
+  "outputDir": "components/auth-biometric",
+  "files": ["BiometricAuth.tsx", "BiometricAuth.module.css"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14"
+  },
+  "postMessage": "Import and use: import { BiometricAuth } from './components/auth-biometric/BiometricAuth'; <BiometricAuth mode='register' userId='user-123' userName='jane@example.com' onSuccess={cred => console.log(cred)} onError={err => console.error(err)} />"
+}
