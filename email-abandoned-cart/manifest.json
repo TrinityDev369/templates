@@ -1,0 +1,12 @@
+{
+  "name": "email-abandoned-cart",
+  "version": "1.0.0",
+  "description": "E-commerce abandoned cart recovery email with product listing, order summary, and urgency CTA. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["abandoned-cart.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Abandoned cart email installed! Preview: npx email dev\nSend: import { AbandonedCartEmail } from '@/emails/abandoned-cart'"
+}
