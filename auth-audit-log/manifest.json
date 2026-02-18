@@ -1,0 +1,13 @@
+{
+  "name": "auth-audit-log",
+  "version": "1.0.0",
+  "description": "Authentication audit log viewer — filterable event timeline with user details, IP addresses, and risk indicators",
+  "outputDir": "components/auth-audit-log",
+  "files": ["audit-log.tsx", "audit-log.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Audit Log installed!\n\nUsage:\nimport { AuditLog } from '@/components/auth-audit-log/audit-log'\n\n<AuditLog\n  events={auditEvents}\n  onLoadMore={async () => { /* fetch next page */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add card badge button input select"
+}
