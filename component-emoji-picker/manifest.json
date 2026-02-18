@@ -1,0 +1,12 @@
+{
+  "name": "component-emoji-picker",
+  "version": "1.0.0",
+  "description": "Emoji picker with search, categories, recent emojis, and keyboard navigation",
+  "outputDir": "components/component-emoji-picker",
+  "files": ["EmojiPicker.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import and use: import { EmojiPicker } from './components/component-emoji-picker/EmojiPicker'; <EmojiPicker onSelect={emoji => console.log(emoji.emoji)} />"
+}
