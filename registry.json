@@ -136,6 +136,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "auth-seed": {
+      "description": "Autonomous auth composer \u2014 discovers security requirements, installs auth modules, and wires auth context + session management + protected routes.",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "auth-signup-form": {
       "description": "Registration form with validation, password strength meter, terms checkbox, and OAuth buttons",
       "category": "component",
@@ -144,6 +149,11 @@
     "auth-sso-saml": {
       "description": "SAML SSO integration module for enterprise Next.js applications",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "commerce-seed": {
+      "description": "Autonomous storefront composer \u2014 discovers business model, installs purchase flow components, and wires cart state + product types.",
+      "category": "skill",
       "version": "1.0.0"
     },
     "component-barcode-scanner": {
@@ -274,6 +284,11 @@
     "dashboard-search-global": {
       "description": "Cmd+K global search dialog with recent searches, categorized results, and keyboard navigation.",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-seed": {
+      "description": "Autonomous dashboard composer \u2014 discovers data model, selects widgets, installs layout + components, and wires navigation config.",
+      "category": "skill",
       "version": "1.0.0"
     },
     "dashboard-settings-page": {
