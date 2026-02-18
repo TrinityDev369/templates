@@ -3,38 +3,39 @@ import styles from './LiquidButton.module.css';
 
 /* ── Types ──────────────────────────────────────────────── */
 
-export type LiquidButtonVariant = 'primary' | 'secondary';
+export type LiquidButtonVariant = 'primary' | 'secondary' | 'ghost';
 export type LiquidButtonSize = 'sm' | 'md' | 'lg';
 
 export interface LiquidButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /** Button content */
   children: React.ReactNode;
-  /** Click handler */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** Additional CSS class appended to the root element */
   className?: string;
-  /** Visual variant — `primary` is a filled button, `secondary` is outlined */
+  /** Visual variant */
   variant?: LiquidButtonVariant;
   /** Size preset controlling padding and font size */
   size?: LiquidButtonSize;
+  /** Distortion intensity (0–1). Defaults to 0.6 */
+  intensity?: number;
 }
 
-/* ── Unique filter ID generation ────────────────────────── */
+/* ── Unique filter ID per instance ─────────────────────── */
 
-let filterIdCounter = 0;
+let idCounter = 0;
 
 /* ── Component ──────────────────────────────────────────── */
 
 /**
  * LiquidButton
  *
- * A button with a liquid / morphing hover effect powered by an inline SVG
- * `feTurbulence` + `feDisplacementMap` filter. On hover the turbulence
- * `baseFrequency` is animated to create the distortion, giving the button
- * surface a fluid, organic feel.
+ * A button with a viscous, gooey hover effect driven by an inline SVG
+ * `feTurbulence` → `feDisplacementMap` filter chain. On hover the
+ * turbulence seed animates frame-by-frame while displacement scale
+ * ramps up, creating an organic, fluid distortion across the entire
+ * button surface.
  *
- * Fully self-contained — no external animation libraries required.
+ * Fully self-contained — no animation libraries required.
  *
  * @example
  * ```tsx
@@ -47,93 +48,120 @@ export const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProp
   (
     {
       children,
-      onClick,
       className,
       variant = 'primary',
       size = 'md',
+      intensity = 0.6,
+      disabled,
       ...rest
     },
-    ref
+    ref,
   ) => {
-    /* Each instance gets a unique filter ID so multiple buttons on the same
-       page don't conflict. */
-    const filterIdRef = useRef<string>('');
+    /* ── Unique filter ID ─────────────────────────────────── */
+    const filterIdRef = useRef('');
     if (filterIdRef.current === '') {
-      filterIdCounter += 1;
-      filterIdRef.current = `liquid-filter-${filterIdCounter}`;
+      idCounter += 1;
+      filterIdRef.current = `lqb-${idCounter}`;
     }
     const filterId = filterIdRef.current;
 
-    /* Refs for animating the SVG turbulence on hover */
-    const turbulenceRef = useRef<SVGFETurbulenceElement | null>(null);
-    const animationFrameRef = useRef<number>(0);
-    const isHoveredRef = useRef(false);
+    /* ── Refs ──────────────────────────────────────────────── */
+    const btnRef = useRef<HTMLButtonElement | null>(null);
+    const turbRef = useRef<SVGFETurbulenceElement | null>(null);
+    const dispRef = useRef<SVGFEDisplacementMapElement | null>(null);
+    const rafRef = useRef(0);
+    const hoveredRef = useRef(false);
+    const scaleRef = useRef(0); // current displacement scale (0 → max)
 
-    /* Animate the turbulence baseFrequency to create the liquid wobble */
-    const animate = useCallback(() => {
-      const el = turbulenceRef.current;
-      if (!el) return;
+    const maxScale = Math.round(18 * Math.max(0, Math.min(1, intensity)));
 
-      if (isHoveredRef.current) {
-        const t = Date.now() / 1000;
-        /* Oscillate between 0.01 and 0.04 for a subtle organic motion */
-        const freq = 0.02 + Math.sin(t * 3) * 0.015;
-        el.setAttribute('baseFrequency', `${freq.toFixed(4)} ${(freq * 0.8).toFixed(4)}`);
-        animationFrameRef.current = requestAnimationFrame(animate);
+    /* Merge forwarded ref with internal ref */
+    const setRef = useCallback(
+      (el: HTMLButtonElement | null) => {
+        btnRef.current = el;
+        if (typeof ref === 'function') ref(el);
+        else if (ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = el;
+      },
+      [ref],
+    );
+
+    /* ── Animation loop ───────────────────────────────────── */
+    const tick = useCallback(() => {
+      const turb = turbRef.current;
+      const disp = dispRef.current;
+      const btn = btnRef.current;
+      if (!turb || !disp || !btn) return;
+
+      const target = hoveredRef.current ? maxScale : 0;
+      /* Smooth lerp toward target */
+      scaleRef.current += (target - scaleRef.current) * 0.12;
+
+      /* Snap to zero when close enough to avoid stuck sub-pixel noise */
+      if (Math.abs(scaleRef.current) < 0.3) scaleRef.current = 0;
+
+      const s = scaleRef.current;
+
+      if (s > 0.3) {
+        /* Animate turbulence seed every frame for a boiling-liquid look */
+        const t = performance.now() / 1000;
+        const freq = 0.012 + Math.sin(t * 2.5) * 0.006;
+        turb.setAttribute('baseFrequency', `${freq.toFixed(4)} ${(freq * 1.3).toFixed(4)}`);
+        turb.setAttribute('seed', String(Math.floor(t * 8) % 200));
+        disp.setAttribute('scale', s.toFixed(1));
+        btn.style.filter = `url(#${filterId})`;
+        rafRef.current = requestAnimationFrame(tick);
       } else {
-        /* Reset to zero — no distortion */
-        el.setAttribute('baseFrequency', '0 0');
+        /* Fully settled — remove filter for crisp resting state */
+        turb.setAttribute('baseFrequency', '0 0');
+        disp.setAttribute('scale', '0');
+        btn.style.filter = '';
+        /* Keep ticking only while transitioning out */
+        if (scaleRef.current !== 0) {
+          scaleRef.current = 0;
+        }
       }
-    }, []);
+    }, [filterId, maxScale]);
 
-    const handleMouseEnter = useCallback(() => {
-      isHoveredRef.current = true;
-      cancelAnimationFrame(animationFrameRef.current);
-      animationFrameRef.current = requestAnimationFrame(animate);
-    }, [animate]);
+    const enter = useCallback(() => {
+      if (disabled) return;
+      hoveredRef.current = true;
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(tick);
+    }, [tick, disabled]);
 
-    const handleMouseLeave = useCallback(() => {
-      isHoveredRef.current = false;
-      /* animate() will set baseFrequency to 0 on next tick and stop */
-      cancelAnimationFrame(animationFrameRef.current);
-      animationFrameRef.current = requestAnimationFrame(animate);
-    }, [animate]);
+    const leave = useCallback(() => {
+      hoveredRef.current = false;
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(tick);
+    }, [tick]);
 
-    /* Clean up rAF on unmount */
-    useEffect(() => {
-      return () => {
-        cancelAnimationFrame(animationFrameRef.current);
-      };
-    }, []);
+    /* Cleanup on unmount */
+    useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
 
-    /* ── Class composition ────────────────────────────────── */
-    const rootClass = [
-      styles.root,
-      styles[variant],
-      styles[size],
-      className,
-    ]
+    /* ── Class composition ─────────────────────────────────── */
+    const rootClass = [styles.root, styles[variant], styles[size], className]
       .filter(Boolean)
       .join(' ');
 
     return (
       <>
-        {/* Inline SVG filter — hidden visually, referenced by the button */}
-        <svg className={styles.filterContainer} aria-hidden="true">
+        {/* Inline SVG filter — visually hidden, referenced by ID */}
+        <svg className={styles.svgDefs} aria-hidden="true">
           <defs>
-            <filter id={filterId}>
+            <filter id={filterId} colorInterpolationFilters="sRGB">
               <feTurbulence
-                ref={turbulenceRef}
+                ref={turbRef}
                 type="fractalNoise"
                 baseFrequency="0 0"
                 numOctaves={3}
-                seed={42}
-                result="turbulence"
+                seed={1}
+                result="noise"
               />
               <feDisplacementMap
+                ref={dispRef}
                 in="SourceGraphic"
-                in2="turbulence"
-                scale={12}
+                in2="noise"
+                scale={0}
                 xChannelSelector="R"
                 yChannelSelector="G"
               />
@@ -142,26 +170,22 @@ export const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProp
         </svg>
 
         <button
-          ref={ref}
+          ref={setRef}
           type="button"
           className={rootClass}
-          onClick={onClick}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onFocus={handleMouseEnter}
-          onBlur={handleMouseLeave}
-          style={{ filter: isHoveredRef.current ? `url(#${filterId})` : undefined }}
+          disabled={disabled}
+          onMouseEnter={enter}
+          onMouseLeave={leave}
+          onFocus={enter}
+          onBlur={leave}
           {...rest}
         >
-          {/* Decorative blob that reacts to hover with the filter */}
-          <span className={styles.blob} style={{ filter: `url(#${filterId})` }} />
-
-          {/* Button label */}
-          <span className={styles.content}>{children}</span>
+          <span className={styles.fill} />
+          <span className={styles.label}>{children}</span>
         </button>
       </>
     );
-  }
+  },
 );
 
 LiquidButton.displayName = 'LiquidButton';

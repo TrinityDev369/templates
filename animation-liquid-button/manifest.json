@@ -1,11 +1,11 @@
 {
   "name": "animation-liquid-button",
-  "version": "1.0.0",
-  "description": "Liquid morphing button with SVG filter hover effect",
+  "version": "2.0.0",
+  "description": "Liquid morphing button with SVG turbulence-driven distortion on hover. Supports primary, secondary, and ghost variants with configurable intensity.",
   "outputDir": "components/animation-liquid-button",
   "files": ["LiquidButton.tsx", "LiquidButton.module.css"],
   "peerDependencies": {
     "react": ">=18"
   },
-  "postMessage": "Import and use: import { LiquidButton } from './components/animation-liquid-button/LiquidButton'"
+  "postMessage": "Import and use:\n\nimport { LiquidButton } from './components/animation-liquid-button/LiquidButton';\n\n<LiquidButton variant=\"primary\" size=\"lg\" intensity={0.8}>\n  Get Started\n</LiquidButton>"
 }

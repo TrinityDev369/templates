@@ -1,23 +1,23 @@
 /* LiquidButton.module.css
- * Liquid morphing button hover effect using SVG filters and CSS transitions.
- * Uses CSS custom properties for easy theming.
+ * Liquid morphing button with SVG turbulence-driven distortion on hover.
+ * All colors are customizable via CSS custom properties.
  */
 
-/* ── Theme tokens ───────────────────────────────────────── */
+/* ── Tokens ────────────────────────────────────────────── */
+
 .root {
   --lb-bg: #6c3ce0;
   --lb-bg-hover: #5a2dc5;
-  --lb-text: #ffffff;
+  --lb-text: #fff;
   --lb-border: transparent;
   --lb-border-hover: transparent;
   --lb-radius: 12px;
-  --lb-font-weight: 600;
-  --lb-transition-duration: 0.4s;
-  --lb-shadow: 0 4px 15px rgba(108, 60, 224, 0.35);
-  --lb-shadow-hover: 0 6px 24px rgba(108, 60, 224, 0.55);
+  --lb-shadow: 0 4px 14px rgba(108, 60, 224, 0.3);
+  --lb-shadow-hover: 0 8px 28px rgba(108, 60, 224, 0.5);
 }
 
-/* ── Base button ────────────────────────────────────────── */
+/* ── Base ──────────────────────────────────────────────── */
+
 .root {
   position: relative;
   display: inline-flex;
@@ -25,46 +25,62 @@
   justify-content: center;
   border: 2px solid var(--lb-border);
   border-radius: var(--lb-radius);
-  background: var(--lb-bg);
+  background: transparent;
   color: var(--lb-text);
   font-family: inherit;
-  font-weight: var(--lb-font-weight);
+  font-weight: 600;
   line-height: 1.2;
   cursor: pointer;
   outline: none;
   user-select: none;
   white-space: nowrap;
+  overflow: hidden;
+  /* No CSS filter here — applied via JS for dynamic ID binding */
   transition:
-    background var(--lb-transition-duration) ease,
-    border-color var(--lb-transition-duration) ease,
-    box-shadow var(--lb-transition-duration) ease,
-    transform var(--lb-transition-duration) ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.25s ease;
   box-shadow: var(--lb-shadow);
 }
 
-/* Apply the SVG liquid distortion filter on hover */
 .root:hover,
 .root:focus-visible {
-  background: var(--lb-bg-hover);
   border-color: var(--lb-border-hover);
   box-shadow: var(--lb-shadow-hover);
-  filter: url(#liquid-filter);
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .root:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
   box-shadow: var(--lb-shadow);
 }
 
-/* ── Focus ring ─────────────────────────────────────────── */
-.root:focus-visible {
-  outline: 2px solid var(--lb-bg);
-  outline-offset: 3px;
+.root:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-/* ── Inner content span (sits above filter layer) ───────── */
-.content {
+/* ── Background fill layer ─────────────────────────────── */
+
+.fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lb-bg);
+  z-index: 0;
+  transition: background 0.35s ease;
+}
+
+.root:hover .fill,
+.root:focus-visible .fill {
+  background: var(--lb-bg-hover);
+}
+
+/* ── Label (above fill) ────────────────────────────────── */
+
+.label {
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -73,75 +89,74 @@
   pointer-events: none;
 }
 
-/* ── Liquid blob overlay — animated on hover ────────────── */
-.blob {
-  position: absolute;
-  inset: -4px;
-  border-radius: inherit;
-  background: var(--lb-bg);
-  opacity: 0;
-  filter: url(#liquid-filter);
-  transition:
-    opacity var(--lb-transition-duration) ease,
-    transform var(--lb-transition-duration) ease;
-  pointer-events: none;
-  z-index: 0;
+/* ── Focus ring ────────────────────────────────────────── */
+
+.root:focus-visible {
+  outline: 2px solid var(--lb-bg);
+  outline-offset: 3px;
 }
 
-.root:hover .blob {
-  opacity: 0.35;
-  transform: scale(1.08);
-}
+/* ── Variant: primary ──────────────────────────────────── */
 
-/* ── Variant: primary (default) ─────────────────────────── */
 .primary {
   --lb-bg: #6c3ce0;
   --lb-bg-hover: #5a2dc5;
-  --lb-text: #ffffff;
-  --lb-border: transparent;
-  --lb-border-hover: transparent;
-  --lb-shadow: 0 4px 15px rgba(108, 60, 224, 0.35);
-  --lb-shadow-hover: 0 6px 24px rgba(108, 60, 224, 0.55);
+  --lb-text: #fff;
+  --lb-shadow: 0 4px 14px rgba(108, 60, 224, 0.3);
+  --lb-shadow-hover: 0 8px 28px rgba(108, 60, 224, 0.5);
 }
 
-/* ── Variant: secondary (outline) ───────────────────────── */
+/* ── Variant: secondary ────────────────────────────────── */
+
 .secondary {
   --lb-bg: transparent;
   --lb-bg-hover: rgba(108, 60, 224, 0.08);
   --lb-text: #6c3ce0;
   --lb-border: #6c3ce0;
   --lb-border-hover: #5a2dc5;
-  --lb-shadow: 0 2px 8px rgba(108, 60, 224, 0.12);
-  --lb-shadow-hover: 0 4px 16px rgba(108, 60, 224, 0.25);
+  --lb-shadow: 0 2px 8px rgba(108, 60, 224, 0.1);
+  --lb-shadow-hover: 0 4px 16px rgba(108, 60, 224, 0.22);
 }
 
-.secondary .blob {
-  background: #6c3ce0;
+/* ── Variant: ghost ────────────────────────────────────── */
+
+.ghost {
+  --lb-bg: transparent;
+  --lb-bg-hover: rgba(108, 60, 224, 0.06);
+  --lb-text: #6c3ce0;
+  --lb-border: transparent;
+  --lb-border-hover: transparent;
+  --lb-shadow: none;
+  --lb-shadow-hover: 0 2px 12px rgba(108, 60, 224, 0.15);
 }
 
-/* ── Size: sm ───────────────────────────────────────────── */
+/* ── Size: sm ──────────────────────────────────────────── */
+
 .sm {
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 0.8125rem;
   --lb-radius: 8px;
 }
 
-/* ── Size: md (default) ─────────────────────────────────── */
+/* ── Size: md ──────────────────────────────────────────── */
+
 .md {
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 0.9375rem;
   --lb-radius: 12px;
 }
 
-/* ── Size: lg ───────────────────────────────────────────── */
+/* ── Size: lg ──────────────────────────────────────────── */
+
 .lg {
-  padding: 16px 36px;
+  padding: 16px 40px;
   font-size: 1.0625rem;
   --lb-radius: 14px;
 }
 
-/* ── Hidden SVG filter container ────────────────────────── */
-.filterContainer {
+/* ── Hidden SVG ────────────────────────────────────────── */
+
+.svgDefs {
   position: absolute;
   width: 0;
   height: 0;
@@ -149,15 +164,18 @@
   pointer-events: none;
 }
 
-/* ── Reduced motion ─────────────────────────────────────── */
+/* ── Reduced motion ────────────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
-  .root,
-  .root:hover,
-  .root:focus-visible,
-  .blob,
-  .root:hover .blob {
+  .root {
     transition: none;
-    filter: none;
+  }
+  .root:hover,
+  .root:focus-visible {
     transform: none;
+    /* JS animation is suppressed via matchMedia in the component */
+  }
+  .fill {
+    transition: none;
   }
 }
