@@ -1,0 +1,11 @@
+{
+  "name": "design-responsive-breakpoints",
+  "version": "1.0.0",
+  "description": "Breakpoint system with container queries, responsive utility mixins, and mobile-first media queries. Includes Tailwind integration.",
+  "outputDir": "src/design-system",
+  "files": ["breakpoints.css", "tailwind.breakpoints.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import breakpoints.css in your global stylesheet. Use container queries with the .container-query wrapper class."
+}

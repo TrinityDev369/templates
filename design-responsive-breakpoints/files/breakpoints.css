@@ -1,0 +1,164 @@
+/* Responsive Breakpoint System
+ * Mobile-first breakpoints with container query support.
+ * Uses the same breakpoints as Tailwind for seamless integration.
+ */
+
+:root {
+  /* ── Breakpoint Values ── */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1400px;
+
+  /* ── Content Widths ── */
+  --content-sm: 640px;
+  --content-md: 768px;
+  --content-lg: 1024px;
+  --content-xl: 1280px;
+  --content-2xl: 1400px;
+  --content-prose: 65ch;
+  --content-full: 100%;
+}
+
+/* ── Mobile-First Media Queries ── */
+
+/* sm: 640px+ — Large phones, small tablets */
+@media (min-width: 640px) {
+  .container { max-width: 640px; }
+  .sm\:hidden { display: none; }
+  .sm\:block { display: block; }
+  .sm\:flex { display: flex; }
+  .sm\:grid { display: grid; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* md: 768px+ — Tablets */
+@media (min-width: 768px) {
+  .container { max-width: 768px; }
+  .md\:hidden { display: none; }
+  .md\:block { display: block; }
+  .md\:flex { display: flex; }
+  .md\:grid { display: grid; }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* lg: 1024px+ — Small laptops */
+@media (min-width: 1024px) {
+  .container { max-width: 1024px; }
+  .lg\:hidden { display: none; }
+  .lg\:block { display: block; }
+  .lg\:flex { display: flex; }
+  .lg\:grid { display: grid; }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* xl: 1280px+ — Desktops */
+@media (min-width: 1280px) {
+  .container { max-width: 1280px; }
+  .xl\:hidden { display: none; }
+  .xl\:block { display: block; }
+  .xl\:flex { display: flex; }
+  .xl\:grid { display: grid; }
+  .xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* 2xl: 1400px+ — Large desktops */
+@media (min-width: 1400px) {
+  .container { max-width: 1400px; }
+}
+
+/* ── Container Queries ── */
+/* Wrap any element with .cq to enable container queries on its children */
+.cq {
+  container-type: inline-size;
+}
+.cq-normal {
+  container-type: normal;
+}
+
+/* Container query breakpoints — use @container instead of @media */
+/* Usage: wrap parent in .cq, then target children with these classes */
+
+@container (min-width: 320px) {
+  .cq\:sm\:block { display: block; }
+  .cq\:sm\:flex { display: flex; }
+  .cq\:sm\:grid { display: grid; }
+  .cq\:sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cq\:sm\:hidden { display: none; }
+}
+
+@container (min-width: 480px) {
+  .cq\:md\:block { display: block; }
+  .cq\:md\:flex { display: flex; }
+  .cq\:md\:grid { display: grid; }
+  .cq\:md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cq\:md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cq\:md\:hidden { display: none; }
+}
+
+@container (min-width: 640px) {
+  .cq\:lg\:block { display: block; }
+  .cq\:lg\:flex { display: flex; }
+  .cq\:lg\:grid { display: grid; }
+  .cq\:lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cq\:lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cq\:lg\:hidden { display: none; }
+}
+
+/* ── Responsive Container ── */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Responsive Visibility ── */
+.mobile-only { display: block; }
+.tablet-only { display: none; }
+.desktop-only { display: none; }
+
+@media (min-width: 768px) {
+  .mobile-only { display: none; }
+  .tablet-only { display: block; }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only { display: none; }
+  .desktop-only { display: block; }
+}
+
+/* ── Responsive Typography Helpers ── */
+.responsive-text {
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 1.5rem);
+}
+.responsive-heading {
+  font-size: clamp(1.5rem, 1rem + 3vw, 3rem);
+}
+.responsive-display {
+  font-size: clamp(2rem, 1rem + 5vw, 4.5rem);
+}
+
+/* ── Aspect Ratio Utilities ── */
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-portrait { aspect-ratio: 3 / 4; }
+.aspect-wide { aspect-ratio: 21 / 9; }
