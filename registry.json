@@ -186,6 +186,11 @@
       "category": "config",
       "version": "1.0.0"
     },
+    "config-docker-compose-fullstack": {
+      "description": "Full-stack Docker Compose \u2014 app, PostgreSQL, Redis, and Traefik reverse proxy with SSL",
+      "category": "config",
+      "version": "1.0.0"
+    },
     "config-k8s-deployment": {
       "description": "Production-ready Kubernetes manifests \u2014 Deployment, Service, Ingress, HPA, ConfigMap with security best practices.",
       "category": "config",
@@ -193,6 +198,26 @@
     },
     "config-monitoring-grafana": {
       "description": "Grafana dashboards + Prometheus config \u2014 app overview, node metrics, alert rules, and Docker Compose monitoring stack.",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-nginx-reverse-proxy": {
+      "description": "Production Nginx reverse proxy \u2014 SSL termination, rate limiting, caching, and security headers",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-playwright-e2e": {
+      "description": "Playwright E2E test setup with page object model, fixtures, and parallel execution",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-terraform-hetzner": {
+      "description": "Terraform config for Hetzner Cloud infrastructure \u2014 servers, networks, firewalls, and volumes",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-vitest-setup": {
+      "description": "Vitest unit test config with MSW mocks, React Testing Library, coverage, and factory helpers",
       "category": "config",
       "version": "1.0.0"
     },
