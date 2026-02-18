@@ -1,0 +1,17 @@
+{
+  "name": "auth-login-form",
+  "version": "1.0.0",
+  "description": "Centered card login form with email, password, show/hide toggle, remember me, and OAuth buttons",
+  "outputDir": "components/auth-login-form",
+  "files": ["login-form.tsx", "login-form.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Login form installed!\n\nUsage:\nimport { LoginForm } from '@/components/auth-login-form/login-form'\n\n<LoginForm onSubmit={async (data) => { /* your auth logic */ }} />\n\nRequires shadcn/ui: npx shadcn@latest add button input card label checkbox form"
+}
