@@ -1,0 +1,124 @@
+/* Spacing & Grid System
+ * Based on a 4px base unit. All spacing derives from multiples of 4px.
+ * Compatible with Tailwind's default spacing scale.
+ */
+
+:root {
+  /* ── Base Unit ── */
+  --space-unit: 4px;
+
+  /* ── Spacing Scale ── */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;  /* 2px */
+  --space-1: 0.25rem;     /* 4px */
+  --space-1-5: 0.375rem;  /* 6px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-2-5: 0.625rem;  /* 10px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-3-5: 0.875rem;  /* 14px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.25rem;     /* 20px */
+  --space-6: 1.5rem;      /* 24px */
+  --space-7: 1.75rem;     /* 28px */
+  --space-8: 2rem;        /* 32px */
+  --space-9: 2.25rem;     /* 36px */
+  --space-10: 2.5rem;     /* 40px */
+  --space-11: 2.75rem;    /* 44px */
+  --space-12: 3rem;       /* 48px */
+  --space-14: 3.5rem;     /* 56px */
+  --space-16: 4rem;       /* 64px */
+  --space-20: 5rem;       /* 80px */
+  --space-24: 6rem;       /* 96px */
+  --space-28: 7rem;       /* 112px */
+  --space-32: 8rem;       /* 128px */
+  --space-36: 9rem;       /* 144px */
+  --space-40: 10rem;      /* 160px */
+  --space-44: 11rem;      /* 176px */
+  --space-48: 12rem;      /* 192px */
+  --space-52: 13rem;      /* 208px */
+  --space-56: 14rem;      /* 224px */
+  --space-60: 15rem;      /* 240px */
+  --space-64: 16rem;      /* 256px */
+  --space-72: 18rem;      /* 288px */
+  --space-80: 20rem;      /* 320px */
+  --space-96: 24rem;      /* 384px */
+
+  /* ── Semantic Spacing ── */
+  --space-section: var(--space-16);      /* Between major sections */
+  --space-component: var(--space-8);     /* Between components */
+  --space-element: var(--space-4);       /* Between elements within a component */
+  --space-inline: var(--space-2);        /* Between inline elements */
+
+  /* ── Container Widths ── */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+
+  /* ── Container Padding ── */
+  --container-pad: var(--space-4);
+  --container-pad-lg: var(--space-8);
+}
+
+/* ── Layout Utilities ── */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+.stack > * + * {
+  margin-top: var(--space-element);
+}
+.stack-sm > * + * { margin-top: var(--space-2); }
+.stack-md > * + * { margin-top: var(--space-4); }
+.stack-lg > * + * { margin-top: var(--space-8); }
+.stack-xl > * + * { margin-top: var(--space-12); }
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-element);
+}
+.cluster-sm { gap: var(--space-2); }
+.cluster-md { gap: var(--space-4); }
+.cluster-lg { gap: var(--space-8); }
+
+.center {
+  box-sizing: content-box;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-component);
+}
+
+/* ── Gap Utilities ── */
+.gap-0 { gap: var(--space-0); }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+.gap-10 { gap: var(--space-10); }
+.gap-12 { gap: var(--space-12); }
+.gap-16 { gap: var(--space-16); }
+
+/* ── Padding Utilities ── */
+.pad-0 { padding: var(--space-0); }
+.pad-1 { padding: var(--space-1); }
+.pad-2 { padding: var(--space-2); }
+.pad-3 { padding: var(--space-3); }
+.pad-4 { padding: var(--space-4); }
+.pad-6 { padding: var(--space-6); }
+.pad-8 { padding: var(--space-8); }
+.pad-12 { padding: var(--space-12); }
+.pad-16 { padding: var(--space-16); }

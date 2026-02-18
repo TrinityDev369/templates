@@ -1,0 +1,11 @@
+{
+  "name": "design-spacing-grid",
+  "version": "1.0.0",
+  "description": "4px/8px base grid spacing system with CSS custom properties, layout utilities, and gap classes. Drop-in foundation for consistent spatial rhythm.",
+  "outputDir": "src/design-system",
+  "files": ["spacing.css", "tailwind.spacing.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import spacing.css in your global stylesheet. Use --space-* variables or the utility classes for consistent spacing."
+}
