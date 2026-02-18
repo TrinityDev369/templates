@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-heatmap",
+  "version": "1.0.0",
+  "description": "Data heatmap with grid, calendar (GitHub-style), and correlation matrix variants. Color-scaled cells, tooltips, legends, and summary stats.",
+  "outputDir": "components/dashboard-heatmap",
+  "files": ["heatmap.tsx", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card tabs tooltip\nImport: import { Heatmap } from '@/components/dashboard-heatmap'"
+}
