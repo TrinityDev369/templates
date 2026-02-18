@@ -1,0 +1,12 @@
+{
+  "name": "pdf-report-branded",
+  "version": "1.0.0",
+  "description": "Branded PDF report with header, footer, tables, and bar charts — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/report-branded",
+  "files": ["report.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/report-branded/generate.tsx\nCustomize branding in report.tsx"
+}
