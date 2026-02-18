@@ -1,8 +1,10 @@
 {
   "name": "context-seed",
-  "version": "1.0.0",
-  "description": "PRD-to-packages expert guide — maps project requirements to the correct npx trinity369/use install commands",
-  "outputDir": "docs",
-  "files": ["CONTEXT-SEED.md"],
-  "postMessage": "Context Seed installed at docs/CONTEXT-SEED.md\n\nUsage: Feed your PRD + this file to an AI agent, or scan the domain checklist manually.\nThe guide maps PRD requirements to the correct 'npx trinity369/use <package>' commands."
+  "version": "2.0.0",
+  "description": "PRD-to-packages seeding skill — dynamically fetches the live template registry and maps project requirements to npx trinity369/use commands. Never goes stale.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/context-seed/SKILL.md"
+  ],
+  "postMessage": "Context Seed skill installed at .claude/skills/context-seed/SKILL.md\n\nUsage: Feed your PRD or describe your project. The skill fetches the live template registry and recommends the right packages.\n\nNo hardcoded catalog — new templates are picked up automatically."
 }
