@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* Transition applied dynamically via inline style for configurable speed */
+}
+
+.glare {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glare::before {
+  content: "";
+  position: absolute;
+  /* Size the glare spot larger than the card so it can move freely */
+  width: 200%;
+  height: 200%;
+  /* Default position — overridden by inline CSS custom properties */
+  top: var(--glare-top, -50%);
+  left: var(--glare-left, -50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, var(--glare-opacity, 0)) 0%,
+    transparent 60%
+  );
+  transform: translate(
+    var(--glare-translate-x, 0%),
+    var(--glare-translate-y, 0%)
+  );
+  transition: opacity 0.2s ease-out;
+}

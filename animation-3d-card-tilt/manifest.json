@@ -1,0 +1,11 @@
+{
+  "name": "animation-3d-card-tilt",
+  "version": "1.0.0",
+  "description": "3D card tilt effect — interactive perspective transform on mouse hover with glare highlight",
+  "outputDir": "components/3d-card-tilt",
+  "files": ["3d-card-tilt.tsx", "3d-card-tilt.module.css"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "3D Card Tilt component installed! Import with: import { Card3DTilt } from '@/components/3d-card-tilt/3d-card-tilt'"
+}
