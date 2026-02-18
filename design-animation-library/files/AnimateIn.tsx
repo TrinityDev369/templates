@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { type ReactNode, type CSSProperties } from "react";
-import { fade, fadeUp, transitions } from "./presets";
+import { fade, fadeUp, fadeDown, fadeLeft, fadeRight, scaleIn, blurIn } from "./presets";
 
 type AnimationPreset = "fade" | "fadeUp" | "fadeDown" | "fadeLeft" | "fadeRight" | "scaleIn" | "blurIn";
 
@@ -27,13 +27,13 @@ interface AnimateInProps {
 }
 
 const presetMap: Record<AnimationPreset, Variants> = {
-  fade: { hidden: { opacity: 0 }, visible: { opacity: 1 } },
-  fadeUp: { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } },
-  fadeDown: { hidden: { opacity: 0, y: -16 }, visible: { opacity: 1, y: 0 } },
-  fadeLeft: { hidden: { opacity: 0, x: 16 }, visible: { opacity: 1, x: 0 } },
-  fadeRight: { hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } },
-  scaleIn: { hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1 } },
-  blurIn: { hidden: { opacity: 0, filter: "blur(8px)" }, visible: { opacity: 1, filter: "blur(0px)" } },
+  fade,
+  fadeUp,
+  fadeDown,
+  fadeLeft,
+  fadeRight,
+  scaleIn,
+  blurIn,
 };
 
 /**

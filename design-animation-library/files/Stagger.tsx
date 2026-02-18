@@ -16,6 +16,9 @@ interface StaggerProps {
   once?: boolean;
   className?: string;
   style?: CSSProperties;
+  /** HTML element to render for each child wrapper. Defaults to "div".
+   * Use "li" when wrapping list items inside a <ul> or <ol>. */
+  childAs?: keyof typeof motion;
 }
 
 const defaultChildVariants: Variants = {
@@ -43,6 +46,7 @@ export function Stagger({
   once = true,
   className,
   style,
+  childAs = "div",
 }: StaggerProps) {
   const reducedMotion = useReducedMotion();
 
@@ -70,14 +74,17 @@ export function Stagger({
       className={className}
       style={style}
     >
-      {Children.map(children, (child) => (
-        <motion.div
-          variants={childVariants}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-        >
-          {child}
-        </motion.div>
-      ))}
+      {Children.map(children, (child) => {
+        const ChildWrapper = motion[childAs] as typeof motion.div;
+        return (
+          <ChildWrapper
+            variants={childVariants}
+            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+          >
+            {child}
+          </ChildWrapper>
+        );
+      })}
     </motion.div>
   );
 }
