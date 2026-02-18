@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-search-global",
+  "version": "1.0.0",
+  "description": "Cmd+K global search dialog with recent searches, categorized results (pages/users/actions), and keyboard navigation. shadcn/ui + Tailwind.",
+  "outputDir": "components/dashboard-search-global",
+  "files": ["global-search.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Global search installed! Add `npx shadcn@latest add command dialog avatar badge button`."
+}
