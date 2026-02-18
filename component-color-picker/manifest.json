@@ -1,0 +1,12 @@
+{
+  "name": "component-color-picker",
+  "version": "1.0.0",
+  "description": "HSL/RGB color picker with saturation canvas, presets, and EyeDropper API",
+  "outputDir": "components/color-picker",
+  "files": ["color-picker.tsx", "color-picker.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add popover input button\nRequires cn() utility from shadcn.\nImport: import { ColorPicker } from '@/components/color-picker/color-picker'"
+}
