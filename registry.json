@@ -156,6 +156,66 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "design-accessibility-primitives": {
+      "description": "Focus rings, skip links, screen reader utilities, focus traps, and reduced motion.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-animation-library": {
+      "description": "Reusable animation primitives built on framer-motion with viewport triggers.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-color-system": {
+      "description": "Semantic color palette with CSS variables, dark mode support, and contrast utilities.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-component-docs-template": {
+      "description": "Template and guide for documenting design system components.",
+      "category": "document",
+      "version": "1.0.0"
+    },
+    "design-icon-set": {
+      "description": "SVG icon system with polymorphic Icon component and 24 essential icons.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-motion-tokens": {
+      "description": "Duration, easing, and spring animation presets with reduced-motion support.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-responsive-breakpoints": {
+      "description": "Breakpoint system with container queries and mobile-first media queries.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-shadow-system": {
+      "description": "Elevation shadow tokens from xs to 2xl with colored variants and dark mode.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-spacing-grid": {
+      "description": "4px/8px base grid spacing system with layout utilities and gap classes.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-theme-switcher": {
+      "description": "Light/dark/system theme toggle with React context and localStorage persistence.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "design-tokens": {
+      "description": "Design token system with CSS custom properties \u2014 colors, typography, spacing, radius, shadows. Uses shadcn/ui defaults.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
+    "design-typography-scale": {
+      "description": "Fluid type scale with prose styles, heading hierarchy, and font stack definitions.",
+      "category": "design-system",
+      "version": "1.0.0"
+    },
     "pipe-content-pipeline": {
       "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
       "category": "pipe",
@@ -218,6 +278,11 @@
     },
     "skill-data-analysis": {
       "description": "Data analysis skill \u2014 statistical analysis, data visualization, pattern recognition, reporting",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-design-system": {
+      "description": "Agent skill for building and maintaining design system components.",
       "category": "skill",
       "version": "1.0.0"
     },
