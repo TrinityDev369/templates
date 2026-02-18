@@ -161,8 +161,18 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-code-block": {
+      "description": "Syntax-highlighted code block with copy button, line numbers, and language badge",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-color-picker": {
       "description": "HSL/RGB color picker with saturation canvas, presets, and EyeDropper API",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-copy-button": {
+      "description": "Click-to-copy button with animated checkmark confirmation",
       "category": "component",
       "version": "1.0.0"
     },
@@ -176,6 +186,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-image-cropper": {
+      "description": "Image crop and resize with aspect ratio presets, zoom, and rotation controls",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-markdown-preview": {
       "description": "Live markdown editor with split preview pane and built-in parser",
       "category": "component",
@@ -186,6 +201,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "component-signature-pad": {
+      "description": "Digital signature drawing pad with undo, clear, and PNG/SVG export",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "component-slider-range": {
       "description": "Single and dual-handle range slider with tooltips, marks, and keyboard navigation",
       "category": "component",
@@ -193,6 +213,11 @@
     },
     "component-stepper": {
       "description": "Step progress indicator with labels, validation states, and click navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-tag-input": {
+      "description": "Tag input with autocomplete suggestions, validation, and keyboard navigation",
       "category": "component",
       "version": "1.0.0"
     },
