@@ -1,0 +1,11 @@
+{
+  "name": "design-color-system",
+  "version": "1.0.0",
+  "description": "Semantic color palette with CSS custom properties, dark mode support, and contrast utilities. Built on shadcn/ui HSL color system.",
+  "outputDir": "src/design-system",
+  "files": ["colors.css", "color-utils.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import colors.css in your global stylesheet. Use color-utils.ts for programmatic color manipulation."
+}
