@@ -1,0 +1,11 @@
+{
+  "name": "animation-liquid-button",
+  "version": "1.0.0",
+  "description": "Liquid morphing button with SVG filter hover effect",
+  "outputDir": "components/animation-liquid-button",
+  "files": ["LiquidButton.tsx", "LiquidButton.module.css"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import and use: import { LiquidButton } from './components/animation-liquid-button/LiquidButton'"
+}

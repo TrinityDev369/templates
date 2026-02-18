@@ -1,0 +1,163 @@
+/* LiquidButton.module.css
+ * Liquid morphing button hover effect using SVG filters and CSS transitions.
+ * Uses CSS custom properties for easy theming.
+ */
+
+/* ── Theme tokens ───────────────────────────────────────── */
+.root {
+  --lb-bg: #6c3ce0;
+  --lb-bg-hover: #5a2dc5;
+  --lb-text: #ffffff;
+  --lb-border: transparent;
+  --lb-border-hover: transparent;
+  --lb-radius: 12px;
+  --lb-font-weight: 600;
+  --lb-transition-duration: 0.4s;
+  --lb-shadow: 0 4px 15px rgba(108, 60, 224, 0.35);
+  --lb-shadow-hover: 0 6px 24px rgba(108, 60, 224, 0.55);
+}
+
+/* ── Base button ────────────────────────────────────────── */
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--lb-border);
+  border-radius: var(--lb-radius);
+  background: var(--lb-bg);
+  color: var(--lb-text);
+  font-family: inherit;
+  font-weight: var(--lb-font-weight);
+  line-height: 1.2;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+  transition:
+    background var(--lb-transition-duration) ease,
+    border-color var(--lb-transition-duration) ease,
+    box-shadow var(--lb-transition-duration) ease,
+    transform var(--lb-transition-duration) ease;
+  box-shadow: var(--lb-shadow);
+}
+
+/* Apply the SVG liquid distortion filter on hover */
+.root:hover,
+.root:focus-visible {
+  background: var(--lb-bg-hover);
+  border-color: var(--lb-border-hover);
+  box-shadow: var(--lb-shadow-hover);
+  filter: url(#liquid-filter);
+  transform: scale(1.04);
+}
+
+.root:active {
+  transform: scale(0.98);
+  box-shadow: var(--lb-shadow);
+}
+
+/* ── Focus ring ─────────────────────────────────────────── */
+.root:focus-visible {
+  outline: 2px solid var(--lb-bg);
+  outline-offset: 3px;
+}
+
+/* ── Inner content span (sits above filter layer) ───────── */
+.content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  pointer-events: none;
+}
+
+/* ── Liquid blob overlay — animated on hover ────────────── */
+.blob {
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: var(--lb-bg);
+  opacity: 0;
+  filter: url(#liquid-filter);
+  transition:
+    opacity var(--lb-transition-duration) ease,
+    transform var(--lb-transition-duration) ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.root:hover .blob {
+  opacity: 0.35;
+  transform: scale(1.08);
+}
+
+/* ── Variant: primary (default) ─────────────────────────── */
+.primary {
+  --lb-bg: #6c3ce0;
+  --lb-bg-hover: #5a2dc5;
+  --lb-text: #ffffff;
+  --lb-border: transparent;
+  --lb-border-hover: transparent;
+  --lb-shadow: 0 4px 15px rgba(108, 60, 224, 0.35);
+  --lb-shadow-hover: 0 6px 24px rgba(108, 60, 224, 0.55);
+}
+
+/* ── Variant: secondary (outline) ───────────────────────── */
+.secondary {
+  --lb-bg: transparent;
+  --lb-bg-hover: rgba(108, 60, 224, 0.08);
+  --lb-text: #6c3ce0;
+  --lb-border: #6c3ce0;
+  --lb-border-hover: #5a2dc5;
+  --lb-shadow: 0 2px 8px rgba(108, 60, 224, 0.12);
+  --lb-shadow-hover: 0 4px 16px rgba(108, 60, 224, 0.25);
+}
+
+.secondary .blob {
+  background: #6c3ce0;
+}
+
+/* ── Size: sm ───────────────────────────────────────────── */
+.sm {
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  --lb-radius: 8px;
+}
+
+/* ── Size: md (default) ─────────────────────────────────── */
+.md {
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  --lb-radius: 12px;
+}
+
+/* ── Size: lg ───────────────────────────────────────────── */
+.lg {
+  padding: 16px 36px;
+  font-size: 1.0625rem;
+  --lb-radius: 14px;
+}
+
+/* ── Hidden SVG filter container ────────────────────────── */
+.filterContainer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .root,
+  .root:hover,
+  .root:focus-visible,
+  .blob,
+  .root:hover .blob {
+    transition: none;
+    filter: none;
+    transform: none;
+  }
+}
