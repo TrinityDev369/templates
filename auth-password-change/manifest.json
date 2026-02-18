@@ -1,0 +1,16 @@
+{
+  "name": "auth-password-change",
+  "version": "1.0.0",
+  "description": "In-app password change form with current password verification, strength meter, and confirmation",
+  "outputDir": "components/auth-password-change",
+  "files": ["password-change.tsx", "password-change.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button input card label\nImport: import { PasswordChangeForm } from '@/components/auth-password-change/password-change'"
+}
