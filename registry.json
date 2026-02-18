@@ -441,8 +441,23 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "integration-analytics-posthog": {
+      "description": "PostHog event tracking, user identification, and feature flags for Next.js",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-blockchain-wallet": {
+      "description": "Web3 wallet connection and transaction signing with ethers.js",
+      "category": "integration",
+      "version": "1.0.0"
+    },
     "integration-calendar-google": {
       "description": "Google Calendar API integration \u2014 OAuth2 client, CRUD events, incremental sync, free/busy lookup, and webhook notifications.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-email-sendgrid": {
+      "description": "SendGrid email sending with dynamic templates and batch support",
       "category": "integration",
       "version": "1.0.0"
     },
@@ -453,6 +468,16 @@
     },
     "integration-pdf-generation": {
       "description": "Server-side PDF generation with Puppeteer \u2014 HTML-to-PDF, invoice and report templates, merge, and watermark.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-push-notifications": {
+      "description": "Web push notifications with service worker, VAPID auth, and React hook",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-search-algolia": {
+      "description": "Algolia instant search with autocomplete, React components, and Tailwind styling",
       "category": "integration",
       "version": "1.0.0"
     },
