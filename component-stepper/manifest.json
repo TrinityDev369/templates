@@ -1,0 +1,12 @@
+{
+  "name": "component-stepper",
+  "version": "1.0.0",
+  "description": "Step progress indicator with labels, validation states, and click navigation",
+  "outputDir": "components/stepper",
+  "files": ["stepper.tsx", "stepper.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Requires cn() utility from shadcn: npx shadcn@latest init (if not already)\nImport: import { Stepper } from '@/components/stepper/stepper'"
+}
