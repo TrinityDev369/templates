@@ -152,9 +152,9 @@
       "version": "1.0.0"
     },
     "context-seed": {
-      "description": "PRD-to-packages seeding skill \u2014 dynamically fetches the live template registry and maps project requirements to npx trinity369/use commands. Never goes stale.",
+      "description": "Autonomous project seeder \u2014 reads a PRD, maps requirements to packages, installs them in dependency order, delegates design system composition to design-system-seed.",
       "category": "skill",
-      "version": "2.0.0"
+      "version": "3.0.0"
     },
     "crm-ai-assistant": {
       "description": "AI-powered CRM assistant with deal analysis, insights, and chat interface",
