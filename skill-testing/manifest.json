@@ -1,0 +1,8 @@
+{
+  "name": "skill-testing",
+  "version": "1.0.0",
+  "description": "Testing skill — Vitest patterns, Playwright E2E, coverage strategies, and test best practices",
+  "outputDir": ".claude",
+  "files": ["skills/testing/SKILL.md"],
+  "postMessage": "Testing skill installed! Use for writing and running Vitest unit tests and Playwright E2E tests."
+}
