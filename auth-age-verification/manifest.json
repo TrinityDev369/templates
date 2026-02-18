@@ -1,0 +1,12 @@
+{
+  "name": "auth-age-verification",
+  "version": "1.0.0",
+  "description": "Age verification gate with date picker and localStorage persistence",
+  "outputDir": "components/auth-age-verification",
+  "files": ["AgeVerification.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import and use: import { AgeVerification } from './components/auth-age-verification/AgeVerification'; <AgeVerification minimumAge={21} onVerified={() => setAllowed(true)} onDenied={() => router.push('/denied')} />"
+}
