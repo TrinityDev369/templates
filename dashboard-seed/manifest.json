@@ -1,0 +1,11 @@
+{
+  "name": "dashboard-seed",
+  "version": "1.0.0",
+  "description": "Autonomous dashboard composer — discovers data model and user roles, selects widgets, installs layout + components, and wires navigation. Delivers a working dashboard shell with the right widgets for your domain.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/dashboard-seed/SKILL.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Dashboard Seed installed at .claude/skills/dashboard-seed/SKILL.md\n\nDescribe your application and what data needs to be visible. The skill composes a complete dashboard from 18 available components:\n\nLayout: shell, sidebar-nav, user-menu\nData: kpi-cards, charts, data-table, heatmap\nWorkflow: kanban, calendar, gantt-chart, resource-scheduler\nComms: notification-center, activity-feed, search-global\nConfig: settings-page, realtime-websocket, map-visualization\n\nNot a list — a wired dashboard. The skill generates navigation config and layout composition."
+}
