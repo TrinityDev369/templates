@@ -321,6 +321,56 @@
       "category": "design-system",
       "version": "1.0.0"
     },
+    "form-address-autocomplete": {
+      "description": "Address form with autocomplete suggestions and map preview placeholder",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-array-fields": {
+      "description": "Dynamic repeatable field groups with add, remove, and reorder controls",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-autosave-draft": {
+      "description": "Form autosave hook with draft recovery, conflict detection, and debounced localStorage persistence",
+      "category": "utility",
+      "version": "1.0.0"
+    },
+    "form-checkout": {
+      "description": "Multi-step checkout form with shipping, payment, and review steps",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "form-conditional-logic": {
+      "description": "Form fields with conditional show/hide rules, supporting AND/OR logic",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-credit-card": {
+      "description": "Credit card input with auto-formatting, card type detection, and visual preview",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-inline-edit": {
+      "description": "Click-to-edit inline form fields with save/cancel, validation, and async support",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-phone-input": {
+      "description": "International phone input with country code picker and auto-formatting",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "form-survey-builder": {
+      "description": "Dynamic survey form builder with multiple question types and live preview",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "form-wizard-multistep": {
+      "description": "Reusable multi-step form wizard with per-step Zod validation and progress tracking",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "pipe-content-pipeline": {
       "description": "Content creation pipeline \u2014 research, draft, edit, publish workflow",
       "category": "pipe",
