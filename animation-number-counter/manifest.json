@@ -1,0 +1,12 @@
+{
+  "name": "animation-number-counter",
+  "version": "1.0.0",
+  "description": "Animated number counting with easing — counts from start to end value with configurable duration, formatting, and viewport trigger",
+  "outputDir": "components/animation-number-counter",
+  "files": ["NumberCounter.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { NumberCounter, formatWithCommas, formatCurrency } from './components/animation-number-counter/NumberCounter';\n\n<NumberCounter to={1500} duration={2} />\n<NumberCounter to={99.9} decimals={1} prefix=\"$\" />\n<NumberCounter to={1000000} format={formatWithCommas} suffix=\" users\" />\n<NumberCounter from={100} to={0} duration={3} />\n\nThe counter animates when it scrolls into view. Set triggerOnView={false} to animate on mount."
+}
