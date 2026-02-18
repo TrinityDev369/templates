@@ -1,0 +1,17 @@
+{
+  "name": "auth-signup-form",
+  "version": "1.0.0",
+  "description": "Registration form with validation, password strength meter, terms checkbox, and OAuth buttons",
+  "outputDir": "components/auth-signup-form",
+  "files": ["signup-form.tsx", "signup-form.types.ts", "password-strength.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Signup form installed!\n\nUsage:\nimport { SignupForm } from '@/components/auth-signup-form/signup-form'\n\n<SignupForm onSubmit={async (data) => { /* your registration logic */ }} />\n\nRequires shadcn/ui: npx shadcn@latest add button input card label checkbox"
+}
