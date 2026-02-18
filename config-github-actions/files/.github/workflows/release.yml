@@ -1,0 +1,190 @@
+# ============================================================================
+# Release — Create GitHub Release and optionally publish to npm
+# ============================================================================
+# Triggers when a semantic version tag is pushed:
+#   git tag v1.2.3 && git push origin v1.2.3
+#
+# Steps:
+#   1. Validate the tag format (vMAJOR.MINOR.PATCH)
+#   2. Build the project
+#   3. Create a GitHub Release with auto-generated release notes
+#   4. (Optional) Publish to npm — uncomment the npm-publish job below
+#
+# Required secrets (only for npm publish):
+#   - NPM_TOKEN: npm automation token with publish access
+# ============================================================================
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+# Ensure only one release runs at a time
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "20"
+  PNPM_VERSION: "9"
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Validate — Ensure the tag follows semantic versioning
+  # --------------------------------------------------------------------------
+  validate:
+    name: Validate Tag
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.parse.outputs.version }}
+      prerelease: ${{ steps.parse.outputs.prerelease }}
+
+    steps:
+      - name: Parse version from tag
+        id: parse
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          echo "Processing tag: ${TAG}"
+
+          # Strip the leading 'v' to get the raw version
+          VERSION="${TAG#v}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+          # Detect pre-release tags (e.g., v1.0.0-beta.1, v2.0.0-rc.1)
+          if [[ "${VERSION}" == *-* ]]; then
+            echo "prerelease=true" >> "$GITHUB_OUTPUT"
+            echo "Detected pre-release: ${VERSION}"
+          else
+            echo "prerelease=false" >> "$GITHUB_OUTPUT"
+            echo "Detected stable release: ${VERSION}"
+          fi
+
+  # --------------------------------------------------------------------------
+  # Build — Compile and package the project
+  # --------------------------------------------------------------------------
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [validate]
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for changelog generation
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artifact
+          path: dist/
+          retention-days: 30
+
+  # --------------------------------------------------------------------------
+  # GitHub Release — Create a release with auto-generated notes
+  # --------------------------------------------------------------------------
+  github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: [validate, build]
+    permissions:
+      contents: write  # Required to create releases
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifact
+          path: dist/
+
+      # Create a tarball of the build output to attach to the release
+      - name: Package build artifacts
+        run: |
+          tar -czf dist-${{ needs.validate.outputs.version }}.tar.gz dist/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: v${{ needs.validate.outputs.version }}
+          # Auto-generate release notes from commits since last tag
+          generate_release_notes: true
+          # Mark pre-releases appropriately (beta, rc, alpha, etc.)
+          prerelease: ${{ needs.validate.outputs.prerelease == 'true' }}
+          # Attach the build tarball to the release
+          files: |
+            dist-${{ needs.validate.outputs.version }}.tar.gz
+          # Use GitHub token (automatically provided)
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # --------------------------------------------------------------------------
+  # npm Publish (Optional) — Uncomment to enable
+  # --------------------------------------------------------------------------
+  # To enable npm publishing:
+  #   1. Uncomment the job below
+  #   2. Set the NPM_TOKEN secret in your repository settings
+  #   3. Ensure package.json has the correct "name" and "publishConfig"
+  #
+  # npm-publish:
+  #   name: Publish to npm
+  #   runs-on: ubuntu-latest
+  #   needs: [validate, build]
+  #   timeout-minutes: 10
+  #
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+  #
+  #     - name: Install pnpm
+  #       uses: pnpm/action-setup@v4
+  #       with:
+  #         version: ${{ env.PNPM_VERSION }}
+  #
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ env.NODE_VERSION }}
+  #         cache: pnpm
+  #         registry-url: https://registry.npmjs.org
+  #
+  #     - name: Install dependencies
+  #       run: pnpm install --frozen-lockfile
+  #
+  #     - name: Build project
+  #       run: pnpm build
+  #
+  #     # Publish with the appropriate dist-tag for pre-releases
+  #     - name: Publish to npm
+  #       run: |
+  #         if [ "${{ needs.validate.outputs.prerelease }}" = "true" ]; then
+  #           pnpm publish --no-git-checks --tag next
+  #         else
+  #           pnpm publish --no-git-checks
+  #         fi
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

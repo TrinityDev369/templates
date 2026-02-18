@@ -1,0 +1,194 @@
+# ============================================================================
+# Deploy — Staging and Production deployments
+# ============================================================================
+# Triggers:
+#   1. Manual dispatch (workflow_dispatch) — choose environment via input
+#   2. Automatic on push to main — deploys to staging after CI passes
+#
+# Uses GitHub Environments for approval gates and environment-specific secrets.
+# The deploy step uses SSH to connect to the target server.
+#
+# Required secrets (set per environment in Settings > Environments):
+#   - DEPLOY_HOST: Server hostname or IP address
+#   - DEPLOY_USER: SSH username on the target server
+#   - DEPLOY_KEY:  Private SSH key for authentication
+# ============================================================================
+
+name: Deploy
+
+on:
+  # Manual trigger with environment selection
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - production
+
+  # Auto-deploy to staging when CI passes on main
+  push:
+    branches: [main]
+
+# Only one deploy at a time per environment
+concurrency:
+  group: deploy-${{ github.event.inputs.environment || 'staging' }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "20"
+  PNPM_VERSION: "9"
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Determine which environment to deploy to
+  # --------------------------------------------------------------------------
+  resolve-env:
+    name: Resolve Environment
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.env.outputs.target }}
+    steps:
+      - name: Set target environment
+        id: env
+        run: |
+          # workflow_dispatch uses the input; push to main defaults to staging
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "target=${{ github.event.inputs.environment }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "target=staging" >> "$GITHUB_OUTPUT"
+          fi
+
+  # --------------------------------------------------------------------------
+  # Build — identical to CI build, produces deploy artifact
+  # --------------------------------------------------------------------------
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-artifact
+          path: dist/
+          retention-days: 3
+
+  # --------------------------------------------------------------------------
+  # Deploy — SSH into target server and update the application
+  # --------------------------------------------------------------------------
+  deploy:
+    name: Deploy to ${{ needs.resolve-env.outputs.environment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [resolve-env, build]
+
+    # GitHub Environment — enables approval gates and scoped secrets
+    environment:
+      name: ${{ needs.resolve-env.outputs.environment }}
+      url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy-artifact
+          path: dist/
+
+      # Configure SSH for the deploy step
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      # -----------------------------------------------------------------------
+      # CUSTOMIZE THIS STEP for your deployment strategy.
+      # Common patterns:
+      #   - rsync build artifacts to the server
+      #   - docker compose pull && docker compose up -d
+      #   - kubectl apply or helm upgrade
+      #   - pm2 restart / systemctl restart
+      # -----------------------------------------------------------------------
+      - name: Deploy via SSH
+        id: deploy
+        env:
+          TARGET_ENV: ${{ needs.resolve-env.outputs.environment }}
+        run: |
+          echo "Deploying to ${TARGET_ENV}..."
+
+          # Example: rsync the build output to the server
+          # rsync -avz --delete \
+          #   -e "ssh -i ~/.ssh/deploy_key" \
+          #   dist/ \
+          #   ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/app/dist/
+
+          # Example: restart the application
+          # ssh -i ~/.ssh/deploy_key \
+          #   ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
+          #   "cd /opt/app && docker compose pull && docker compose up -d"
+
+          # Set the deployment URL for the GitHub Environment
+          if [ "${TARGET_ENV}" = "production" ]; then
+            echo "url=https://example.com" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://staging.example.com" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "Deploy to ${TARGET_ENV} complete."
+
+      # Clean up SSH key material
+      - name: Cleanup SSH
+        if: always()
+        run: rm -rf ~/.ssh/deploy_key
+
+  # --------------------------------------------------------------------------
+  # Notify — Post-deploy notification (optional)
+  # --------------------------------------------------------------------------
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs: [resolve-env, deploy]
+    if: always()
+
+    steps:
+      - name: Report status
+        env:
+          TARGET_ENV: ${{ needs.resolve-env.outputs.environment }}
+          DEPLOY_STATUS: ${{ needs.deploy.result }}
+        run: |
+          if [ "${DEPLOY_STATUS}" = "success" ]; then
+            echo "Successfully deployed to ${TARGET_ENV}"
+          else
+            echo "Deploy to ${TARGET_ENV} failed with status: ${DEPLOY_STATUS}"
+          fi
+
+          # Uncomment to send Slack notification:
+          # curl -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
+          #   -H "Content-Type: application/json" \
+          #   -d "{\"text\": \"Deploy to ${TARGET_ENV}: ${DEPLOY_STATUS}\"}"

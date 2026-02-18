@@ -1,0 +1,8 @@
+{
+  "name": "config-github-actions",
+  "version": "1.0.0",
+  "description": "GitHub Actions workflows — CI pipeline (lint, typecheck, test), deploy, and release automation",
+  "outputDir": ".",
+  "files": [".github/workflows/ci.yml", ".github/workflows/deploy.yml", ".github/workflows/release.yml"],
+  "postMessage": "Workflows installed at .github/workflows/. Set required secrets:\n- DEPLOY_HOST, DEPLOY_USER, DEPLOY_KEY (for deploy)\n- NPM_TOKEN (for release, if publishing)"
+}
