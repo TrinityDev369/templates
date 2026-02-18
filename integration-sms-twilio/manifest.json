@@ -1,0 +1,11 @@
+{
+  "name": "integration-sms-twilio",
+  "version": "1.0.0",
+  "description": "Twilio SMS integration — send/receive messages, bulk SMS, delivery status, phone validation, and webhook handling with signature verification.",
+  "outputDir": "src/integrations/sms-twilio",
+  "files": ["client.ts", "types.ts", "webhook-handler.ts", "index.ts"],
+  "peerDependencies": {
+    "twilio": ">=4"
+  },
+  "postMessage": "Twilio SMS integration installed!\n1. Get credentials from https://console.twilio.com\n2. Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER in .env\n3. Import: import { createSmsClient, sendSms } from '@/integrations/sms-twilio'"
+}
