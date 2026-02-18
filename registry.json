@@ -276,6 +276,11 @@
       "category": "design-system",
       "version": "1.0.0"
     },
+    "design-system-seed": {
+      "description": "Design system composition engine \u2014 maps brand identity to a working design system from 12 atomic primitives. Installs, configures, and generates the glue layer autonomously.",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "design-theme-switcher": {
       "description": "Light/dark/system theme toggle with React context and localStorage persistence.",
       "category": "component",
