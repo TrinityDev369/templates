@@ -1,0 +1,11 @@
+{
+  "name": "auth-sso-saml",
+  "version": "1.0.0",
+  "description": "SAML SSO integration module for enterprise Next.js applications",
+  "outputDir": "src/modules/auth-sso-saml",
+  "files": ["index.ts", "types.ts", "saml-config.ts", "saml-handler.ts", "middleware.ts"],
+  "peerDependencies": {
+    "next": ">=14"
+  },
+  "postMessage": "Configure your IdP settings in environment variables (SP_ENTITY_ID, IDP_METADATA_URL, IDP_CERTIFICATE, SP_ACS_URL), then import { createSAMLConfig, withSAML } from './src/modules/auth-sso-saml'. See saml-config.ts for setup details."
+}
