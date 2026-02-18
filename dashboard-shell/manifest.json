@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-shell",
+  "version": "1.0.0",
+  "description": "Responsive dashboard layout shell with collapsible sidebar, topbar, breadcrumbs, and global search. shadcn/ui + Tailwind.",
+  "outputDir": "app",
+  "files": ["layout.tsx"],
+  "peerDependencies": {"react": ">=18", "next": ">=14", "tailwindcss": ">=3"},
+  "postMessage": "Dashboard shell installed! Add `npx shadcn@latest add sheet button avatar dropdown-menu command breadcrumb separator scroll-area` for required components."
+}
