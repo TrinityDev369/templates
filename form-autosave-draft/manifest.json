@@ -1,0 +1,11 @@
+{
+  "name": "form-autosave-draft",
+  "version": "1.0.0",
+  "description": "Form autosave hook with draft recovery, conflict detection, and debounced localStorage persistence",
+  "outputDir": "src/utils",
+  "files": ["form-draft.ts"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Form Draft utility installed!\nImport: import { useFormDraft } from '@/utils/form-draft'\nUsage:\n  const { draft, saveDraft, clearDraft, hasDraft, isStale } = useFormDraft('my-form')\n  // Restore: if (hasDraft) setFormData(draft)\n  // Save: saveDraft(formData) — called automatically with debounce"
+}
