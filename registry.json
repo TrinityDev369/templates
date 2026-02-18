@@ -272,9 +272,9 @@
       "version": "1.0.0"
     },
     "context-graph": {
-      "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and MCP integration",
+      "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and kg CLI + MCP integration",
       "category": "starter",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     "context-seed": {
       "description": "Autonomous project seeder \u2014 reads a PRD, maps requirements to packages, installs them in dependency order, delegates design system composition to design-system-seed.",

@@ -1,7 +1,7 @@
 {
   "name": "context-graph",
-  "version": "1.0.0",
-  "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and Claude Code MCP integration. Powered by PostgreSQL + Apache AGE, Qdrant, Redis, and FastAPI.",
+  "version": "1.1.0",
+  "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and CLI + MCP integration. Powered by PostgreSQL + Apache AGE, Qdrant, Redis, and FastAPI.",
   "outputDir": ".",
   "files": [
     "docker-compose.yml",
@@ -39,6 +39,7 @@
     "api/app/services/chunking.py",
     "api/app/services/search.py",
     "api/app/services/snapshot.py",
+    "bin/kg.mjs",
     "mcp/package.json",
     "mcp/tsconfig.json",
     "mcp/run.sh",
@@ -61,5 +62,5 @@
     "reagraph": ">=4.0.0",
     "cytoscape": ">=3.0.0"
   },
-  "postMessage": "Context Graph installed! Run ./setup.sh to start all services (PostgreSQL+AGE, Qdrant, Redis, API). Then configure the MCP server in your Claude Code settings:\n\n  \"knowledge\": {\n    \"command\": \"npx\",\n    \"args\": [\"tsx\", \"mcp/src/server.ts\"],\n    \"env\": {\n      \"KNOWLEDGE_API_URL\": \"http://localhost:8100\",\n      \"KG_PROJECT\": \"my-project\"\n    }\n  }"
+  "postMessage": "Context Graph installed! Run ./setup.sh to start all services (PostgreSQL+AGE, Qdrant, Redis, API).\n\nCLI (recommended):\n  chmod +x bin/kg.mjs && ln -s bin/kg.mjs /usr/local/bin/kg\n  kg projects\n  kg search \"auth\" --project=codebase\n\nMCP server (optional):\n  Add to .claude/settings.json mcpServers:\n  \"knowledge\": { \"command\": \"npx\", \"args\": [\"tsx\", \"mcp/src/server.ts\"], \"env\": { \"KNOWLEDGE_API_URL\": \"http://localhost:8100\" } }"
 }

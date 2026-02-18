@@ -1,7 +1,7 @@
 ---
 name: context-graph
 description: |
-  Context Graph - persistent semantic memory across 8 domain graphs.
+  Context Graph - persistent semantic memory across domain graphs.
   Use this skill when:
   (1) Starting a task - search the right graph before asking questions
   (2) Discovering patterns, gotchas, or important decisions worth preserving
@@ -12,7 +12,9 @@ description: |
 
 # Context Graph
 
-Persistent memory with semantic search and graph traversal across 8 domain-specific graphs.
+Persistent memory with semantic search and graph traversal across domain-specific graphs.
+
+**CLI:** `kg <command>` — all operations go through the `kg` CLI (`bin/kg.mjs`).
 
 ## Graph Domains
 
@@ -27,66 +29,101 @@ Persistent memory with semantic search and graph traversal across 8 domain-speci
 | **Execution** | `execution` | Agent runtime, tasks, workflows | Agent, Task, Workflow |
 | **Meta** | `meta` | Schemas, migrations, system docs | Schema, Document |
 
-**Default:** Queries without `project` parameter go to `agency`. Always specify the graph slug for other graphs.
+## CLI Commands
 
-## MCP Tools (Preferred)
+### Read
 
-Use MCP tools directly for 2.5x faster, structured access:
+```bash
+# List all graphs
+kg projects
 
-| Tool | Purpose |
-|------|---------|
-| `mcp__knowledge__kg_health` | Check API status |
-| `mcp__knowledge__kg_search` | Hybrid search (vector + graph) |
-| `mcp__knowledge__kg_list_entities` | List entities by type |
-| `mcp__knowledge__kg_get_entity` | Get entity with connections |
-| `mcp__knowledge__kg_find_entity` | Find by exact name |
-| `mcp__knowledge__kg_create_entity` | Create new entity |
-| `mcp__knowledge__kg_upsert_entity` | Create or update (prevents duplicates) |
-| `mcp__knowledge__kg_batch_create` | Bulk create entities + relationships |
-| `mcp__knowledge__kg_create_relationship` | Connect entities |
-| `mcp__knowledge__kg_entity_relationships` | List entity connections |
-| `mcp__knowledge__kg_list_projects` | List graph namespaces |
-| `mcp__knowledge__kg_ingest_document` | Ingest docs for RAG |
-| `mcp__knowledge__kg_cypher` | Raw Cypher queries |
-| `mcp__knowledge__kg_visualize` | Get graph data for visualization |
-| `mcp__knowledge__kg_deduplicate` | Find and merge duplicates |
+# Cross-graph search (searches all graphs)
+kg search "auth middleware"
+
+# Scoped search (single graph)
+kg search "auth" --project=codebase --limit=5
+
+# Search with specific mode
+kg search "deployment" --project=knowledge --mode=vector
+
+# List entities (optionally by type)
+kg list --project=codebase --type=Module
+
+# Graph statistics
+kg stats --project=codebase
+
+# Entity neighborhood — relationships in/out
+kg focus "Auth System" --project=codebase
+kg focus 844424930132006 --project=codebase
+```
+
+### Write
+
+```bash
+# Create/upsert entity (prevents duplicates)
+kg add "CVA Pattern" --type=Concept --project=knowledge --description="Use CVA for component variants"
+
+# Create relationship between entities
+kg connect <from-id> <to-id> --type=DEPENDS_ON --project=codebase
+
+# Ingest document for RAG chunking
+kg ingest specs/my-feature.md --project=knowledge
+```
+
+### Power
+
+```bash
+# Raw Cypher query (read-only)
+kg cypher "MATCH (n) RETURN labels(n)[0] as type, count(n) ORDER BY count(n) DESC" --project=codebase
+```
+
+### JSON Output
+
+All commands support `--json` for programmatic use:
+
+```bash
+kg projects --json
+kg search "auth" --json --limit=3
+kg list --project=codebase --type=Module --json
+```
 
 ## Agent Workflow
 
 ### Start of task — search the right graph:
-```
-# Business context (clients, services, workflows)
-mcp__knowledge__kg_search
-  query: "client onboarding"
-  project: "agency"
+
+```bash
+# Business context
+kg search "client onboarding" --project=agency
 
 # Code context
-mcp__knowledge__kg_search
-  query: "authentication"
-  project: "codebase"
+kg search "authentication" --project=codebase
 
 # Patterns and learnings
-mcp__knowledge__kg_search
-  query: "deployment pattern"
-  project: "knowledge"
+kg search "deployment pattern" --project=knowledge
+
+# Don't know which graph? Cross-graph search:
+kg search "my topic"
 ```
 
-### During work — note patterns, decisions, gotchas.
+### During work — note patterns, decisions, gotchas:
 
-### End of task — record learnings:
+```bash
+# Record a new pattern
+kg add "Lazy Init Pattern" --type=Concept --project=knowledge \
+  --description="Defer expensive init to first call, not module load"
+
+# Connect it to related code
+kg connect <pattern-id> <module-id> --type=IMPLEMENTS --project=codebase
 ```
-# Use upsert to avoid duplicates
-mcp__knowledge__kg_upsert_entity
-  name: "JWT Refresh Pattern"
-  type: "Concept"
-  description: "Rotate refresh tokens on each use, 15min access token TTL"
-  project: "knowledge"
 
-# Batch create for multiple entities + relationships
-mcp__knowledge__kg_batch_create
-  project: "agency"
-  entities: [...]
-  relationships: [...]
+### End of task — explore what changed:
+
+```bash
+# Check entity neighborhood
+kg focus "Auth System" --project=codebase
+
+# Verify new entities
+kg list --project=knowledge --type=Concept --limit=10
 ```
 
 ## Entity Types
@@ -114,17 +151,6 @@ For full type reference with per-graph mapping, see [references/entity-types.md]
 | Dependency | `USES`, `DEPENDS_ON`, `REQUIRES`, `CALLS` |
 | Semantic | `IMPLEMENTS`, `DEFINES`, `REFERENCES`, `RELATED_TO` |
 | Organizational | `CREATED_BY`, `OWNS`, `WORKS_ON`, `MANAGES` |
-
-## CLI Reference (For Humans)
-
-```bash
-kg search "query" --project=agency
-kg list --type=Workflow --project=agency
-kg add "Name" --type=Concept --description="..."
-kg connect <source-id> <target-id> --relationship=IMPLEMENTS
-kg focus <entity-id> --depth=2
-kg projects
-```
 
 ## Codebase Graph
 

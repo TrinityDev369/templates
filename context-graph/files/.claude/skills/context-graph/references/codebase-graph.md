@@ -60,7 +60,7 @@ kg add "design-system" --type=Module --description="Component library with CVA p
 kg add "Button" --type=Component --description="Primary action button with variants"
 
 # Connect them
-kg connect <module-id> <component-id> --relationship=CONTAINS
+kg connect <module-id> <component-id> --type=CONTAINS --project=codebase
 ```
 
 ### Script-Based (For bulk population)
