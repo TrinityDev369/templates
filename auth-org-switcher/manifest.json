@@ -1,0 +1,13 @@
+{
+  "name": "auth-org-switcher",
+  "version": "1.0.0",
+  "description": "Organization and workspace switcher dropdown with search, avatars, and create new org option",
+  "outputDir": "components/auth-org-switcher",
+  "files": ["org-switcher.tsx", "org-switcher.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Org Switcher installed!\n\nUsage:\nimport { OrgSwitcher } from '@/components/auth-org-switcher/org-switcher'\n\n<OrgSwitcher\n  organizations={orgs}\n  currentOrgId=\"org_123\"\n  onOrgChange={(orgId) => { /* switch context */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button popover command avatar"
+}
