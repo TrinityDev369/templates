@@ -1,0 +1,29 @@
+{
+  "name": "swarm-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript Agent SDK worker for thermodynamic field coordination. Includes billing switch, PRD intake, eventbus, and context bundles. Requires swarm-layer template.",
+  "outputDir": ".",
+  "files": [
+    "README.md",
+    "src/config.ts",
+    "src/types.ts",
+    "src/events.ts",
+    "src/eventbus.ts",
+    "src/agent-state.ts",
+    "src/worker.ts",
+    "src/index.ts",
+    "src/tools/field.ts",
+    "src/tools/prd-intake.ts",
+    "src/subscribers/persistence.ts",
+    "src/subscribers/index.ts",
+    "package.json",
+    "tsconfig.json",
+    "schema/field-system.sql"
+  ],
+  "peerDependencies": {
+    "@anthropic-ai/claude-agent-sdk": ">=0.1.0",
+    "postgres": ">=3",
+    "typescript": ">=5"
+  },
+  "postMessage": "Swarm SDK installed! Run `npm install` then set DATABASE_URL and SWARM_BILLING in .env. Start a worker with `npx tsx src/worker.ts`."
+}
