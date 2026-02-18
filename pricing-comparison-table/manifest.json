@@ -1,0 +1,13 @@
+{
+  "name": "pricing-comparison-table",
+  "version": "1.0.0",
+  "description": "Full feature comparison matrix across pricing plans",
+  "outputDir": "components/pricing-comparison-table",
+  "files": ["comparison-table.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { ComparisonTable } from '@/components/pricing-comparison-table/comparison-table'\nUsage: <ComparisonTable plans={plans} features={featureGroups} highlightedPlanId=\"pro\" />"
+}
