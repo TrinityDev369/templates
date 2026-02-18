@@ -1,0 +1,9 @@
+{
+  "name": "shop-order-history",
+  "version": "1.0.0",
+  "description": "Order history page with status badges, expandable row details, re-order action, date filtering, and pagination. shadcn/ui + Tailwind.",
+  "outputDir": "components/shop-order-history",
+  "files": ["order-history.tsx", "order-status-badge.tsx", "types.ts"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3"},
+  "postMessage": "Order history installed! Add `npx shadcn@latest add table badge button dropdown-menu collapsible input popover` and import { OrderHistory } from './order-history'."
+}
