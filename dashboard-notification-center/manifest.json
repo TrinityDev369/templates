@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-notification-center",
+  "version": "1.0.0",
+  "description": "Bell icon popover with unread badge, notification list with tabs (all/unread), mark as read, and empty state. shadcn/ui + Tailwind.",
+  "outputDir": "components/dashboard-notification-center",
+  "files": ["notification-center.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Notification center installed! Add `npx shadcn@latest add popover button badge tabs scroll-area avatar separator`."
+}
