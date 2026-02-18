@@ -1,0 +1,14 @@
+{
+  "name": "shop-category-nav",
+  "version": "1.0.0",
+  "description": "Hierarchical category sidebar with accordion tree, breadcrumbs, count badges, and mobile sheet",
+  "outputDir": "components/shop-category-nav",
+  "files": ["category-nav.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add accordion sheet badge button scroll-area\nImport: import { CategoryNav, PLACEHOLDER_CATEGORIES } from '@/components/shop-category-nav/category-nav'"
+}
