@@ -1,0 +1,12 @@
+{
+  "name": "form-inline-edit",
+  "version": "1.0.0",
+  "description": "Click-to-edit inline form fields with save/cancel, validation, and async support",
+  "outputDir": "components/form-inline-edit",
+  "files": ["inline-edit.tsx", "inline-edit.types.ts", "inline-edit-field.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Inline Edit installed!\nImport: import { InlineEdit } from '@/components/form-inline-edit/inline-edit'\nUsage: <InlineEdit value={name} onSave={async (val) => await updateName(val)} />"
+}
