@@ -1,0 +1,9 @@
+{
+  "name": "shop-search-filters",
+  "version": "1.0.0",
+  "description": "Product search with faceted filters: price range, category checkboxes, color swatches, sort dropdown, and active filter badges. shadcn/ui + Tailwind.",
+  "outputDir": "components/shop-search-filters",
+  "files": ["search-filters.tsx", "price-range-filter.tsx", "category-filter.tsx", "color-filter.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Search filters installed! Add `npx shadcn@latest add input select sheet button badge separator checkbox label` and import { SearchFilters } from './search-filters'."
+}
