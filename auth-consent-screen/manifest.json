@@ -1,0 +1,14 @@
+{
+  "name": "auth-consent-screen",
+  "version": "1.0.0",
+  "description": "OAuth authorization consent screen with scope display and risk indicators",
+  "outputDir": "app/auth-consent-screen",
+  "files": ["page.tsx", "consent-screen.tsx", "consent-screen.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button card badge avatar\nConsent screen available at /auth-consent-screen. Customize the page.tsx to fetch OAuth params from URL."
+}
