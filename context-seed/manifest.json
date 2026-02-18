@@ -1,0 +1,8 @@
+{
+  "name": "context-seed",
+  "version": "1.0.0",
+  "description": "PRD-to-packages expert guide — maps project requirements to the correct npx trinity369/use install commands",
+  "outputDir": "docs",
+  "files": ["CONTEXT-SEED.md"],
+  "postMessage": "Context Seed installed at docs/CONTEXT-SEED.md\n\nUsage: Feed your PRD + this file to an AI agent, or scan the domain checklist manually.\nThe guide maps PRD requirements to the correct 'npx trinity369/use <package>' commands."
+}
