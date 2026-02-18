@@ -1,0 +1,14 @@
+{
+  "name": "auth-passkey-webauthn",
+  "version": "1.0.0",
+  "description": "WebAuthn passkey registration and login — fingerprint, face ID, and security key support with fallback options",
+  "outputDir": "components/auth-passkey-webauthn",
+  "files": ["passkey-webauthn.tsx", "passkey-webauthn.types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Passkey WebAuthn installed!\n\nUsage:\nimport { PasskeyWebAuthn } from '@/components/auth-passkey-webauthn'\n\n<PasskeyWebAuthn\n  onRegister={async (credential) => { /* store credential on server */ }}\n  onAuthenticate={async (assertion) => { /* verify on server */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button card alert"
+}
