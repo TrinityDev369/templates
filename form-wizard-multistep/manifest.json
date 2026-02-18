@@ -1,0 +1,22 @@
+{
+  "name": "form-wizard-multistep",
+  "version": "1.0.0",
+  "description": "Reusable multi-step form wizard with per-step Zod validation and progress tracking",
+  "outputDir": "src/modules/form-wizard-multistep",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "wizard.tsx",
+    "wizard-step.tsx",
+    "step-indicator.tsx",
+    "example-steps.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Multi-Step Wizard installed!\nImport: import { Wizard } from '@/modules/form-wizard-multistep'\nSee example-steps.tsx for usage patterns.\nUsage: <Wizard steps={steps} onComplete={(data) => console.log(data)} />"
+}
