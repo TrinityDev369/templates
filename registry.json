@@ -297,7 +297,7 @@
       "version": "1.0.0"
     },
     "dashboard-activity-feed": {
-      "description": "Timestamped activity timeline with avatars, action descriptions, type-colored indicators, and load more.",
+      "description": "Timestamped activity timeline with avatars, action types, and entity links",
       "category": "component",
       "version": "1.0.0"
     },
@@ -332,7 +332,7 @@
       "version": "1.0.0"
     },
     "dashboard-kpi-cards": {
-      "description": "KPI stat cards with trend indicators, percentage change, icons, and SVG sparklines.",
+      "description": "KPI stat cards with trend indicators, percentage change, and optional sparkline mini-charts",
       "category": "component",
       "version": "1.0.0"
     },
@@ -367,7 +367,7 @@
       "version": "1.0.0"
     },
     "dashboard-settings-page": {
-      "description": "Settings page with profile, appearance theme picker, notification toggles, and billing/usage tabs.",
+      "description": "Settings page with profile, appearance, notifications, and security tabs",
       "category": "page",
       "version": "1.0.0"
     },
@@ -382,7 +382,7 @@
       "version": "1.0.0"
     },
     "dashboard-user-menu": {
-      "description": "Avatar dropdown menu with profile, settings, billing, theme switcher submenu, and logout.",
+      "description": "Avatar dropdown menu with profile, settings, theme switcher, and logout",
       "category": "component",
       "version": "1.0.0"
     },
@@ -677,13 +677,13 @@
       "version": "1.0.0"
     },
     "shop-category-nav": {
-      "description": "Hierarchical category sidebar with accordion tree, breadcrumbs, count badges, active state, and mobile sheet.",
+      "description": "Hierarchical category sidebar with accordion tree, breadcrumbs, count badges, and mobile sheet",
       "category": "component",
       "version": "1.0.0"
     },
     "shop-checkout": {
-      "description": "Multi-step checkout flow with shipping, payment, review, and confirmation. react-hook-form + zod.",
-      "category": "component",
+      "description": "Multi-step checkout flow with shipping, payment, review, and confirmation steps",
+      "category": "page",
       "version": "1.0.0"
     },
     "shop-order-history": {
@@ -697,7 +697,7 @@
       "version": "1.0.0"
     },
     "shop-product-grid": {
-      "description": "Responsive product card grid with image, price, rating, sale badges, add-to-cart, grid/list toggle.",
+      "description": "Responsive product card grid with image, price, rating, sale badges, add-to-cart, and grid/list toggle",
       "category": "component",
       "version": "1.0.0"
     },
