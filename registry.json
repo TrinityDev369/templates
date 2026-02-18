@@ -76,6 +76,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "swarm-layer": {
+      "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles. Requires agentic-layer template and PostgreSQL.",
+      "category": "pipe",
+      "version": "1.0.0"
+    },
     "trinity-signature": {
       "description": "Animated triangle signature easter-egg for client sites",
       "category": "component",
