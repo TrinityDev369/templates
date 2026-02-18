@@ -1,0 +1,12 @@
+{
+  "name": "pipe-content-pipeline",
+  "version": "1.0.0",
+  "description": "Content creation pipeline — multi-stage workflow for research, drafting, editing, and publishing content",
+  "outputDir": ".",
+  "files": [
+    "CONTENT-PIPELINE.md",
+    ".claude/skills/content-pipeline/SKILL.md",
+    "scripts/content-pipeline.sh"
+  ],
+  "postMessage": "Content pipeline installed! Use the skill to run the full research → draft → edit → publish workflow. See CONTENT-PIPELINE.md for configuration."
+}
