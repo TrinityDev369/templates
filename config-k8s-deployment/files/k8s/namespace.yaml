@@ -1,0 +1,16 @@
+# ============================================================================
+# Namespace
+# ============================================================================
+# Creates an isolated namespace for all application resources.
+# Replace APP_NAMESPACE with your desired namespace name (e.g., "myapp-prod").
+# ============================================================================
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: APP_NAMESPACE
+  labels:
+    app.kubernetes.io/part-of: APP_NAME
+    app.kubernetes.io/managed-by: kubectl
+    # Environment label — adjust to match your deployment target
+    environment: production

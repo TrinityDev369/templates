@@ -1,0 +1,16 @@
+{
+  "name": "config-k8s-deployment",
+  "version": "1.0.0",
+  "description": "Production-ready Kubernetes manifests -- Deployment, Service, Ingress, HPA, ConfigMap with security best practices and cert-manager TLS.",
+  "outputDir": ".",
+  "files": [
+    "k8s/namespace.yaml",
+    "k8s/deployment.yaml",
+    "k8s/service.yaml",
+    "k8s/ingress.yaml",
+    "k8s/configmap.yaml",
+    "k8s/hpa.yaml",
+    "k8s/README.md"
+  ],
+  "postMessage": "K8s manifests installed in k8s/. Replace APP_NAME, APP_NAMESPACE, APP_IMAGE, APP_DOMAIN placeholders, then: kubectl apply -f k8s/"
+}

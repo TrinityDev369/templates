@@ -1,0 +1,81 @@
+# ============================================================================
+# HorizontalPodAutoscaler (v2)
+# ============================================================================
+# Automatically scales the Deployment between 2 and 10 replicas based on
+# CPU and memory utilization.
+#
+# Prerequisites:
+#   - metrics-server installed in the cluster (for CPU/memory metrics)
+#
+# Scaling behavior:
+#   - Scale up:   adds up to 4 pods per 60s when load spikes
+#   - Scale down: removes up to 2 pods per 300s (conservative, avoids flapping)
+#
+# Placeholders to replace:
+#   APP_NAME       — must match the Deployment name
+#   APP_NAMESPACE  — target namespace
+# ============================================================================
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: APP_NAME
+  namespace: APP_NAMESPACE
+  labels:
+    app.kubernetes.io/name: APP_NAME
+    app.kubernetes.io/component: autoscaler
+    app.kubernetes.io/part-of: APP_NAME
+    app.kubernetes.io/managed-by: kubectl
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: APP_NAME
+
+  # ------------------------------------------------------------------
+  # Replica bounds
+  # ------------------------------------------------------------------
+  minReplicas: 2
+  maxReplicas: 10
+
+  # ------------------------------------------------------------------
+  # Scaling metrics
+  # ------------------------------------------------------------------
+  metrics:
+    # Scale when average CPU utilization exceeds 70%
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+
+    # Scale when average memory utilization exceeds 80%
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+
+  # ------------------------------------------------------------------
+  # Scaling behavior — controls the speed and stability of scaling
+  # ------------------------------------------------------------------
+  behavior:
+    # Scale up relatively quickly to handle traffic spikes
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Pods
+          value: 4
+          periodSeconds: 60
+      selectPolicy: Max
+
+    # Scale down conservatively to avoid oscillation
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 120
+      selectPolicy: Min

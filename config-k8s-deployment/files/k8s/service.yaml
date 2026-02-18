@@ -1,0 +1,34 @@
+# ============================================================================
+# Service
+# ============================================================================
+# ClusterIP Service — internal load balancer that routes traffic to healthy
+# pods matching the Deployment's label selector.
+#
+# External traffic reaches this Service through the Ingress resource.
+# Port 80 (Service) maps to port 3000 (container).
+#
+# Placeholders to replace:
+#   APP_NAME       — must match the Deployment labels
+#   APP_NAMESPACE  — target namespace
+# ============================================================================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: APP_NAME
+  namespace: APP_NAMESPACE
+  labels:
+    app.kubernetes.io/name: APP_NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: APP_NAME
+    app.kubernetes.io/managed-by: kubectl
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: APP_NAME
+    app.kubernetes.io/component: server
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      protocol: TCP

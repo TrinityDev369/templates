@@ -1,0 +1,56 @@
+# ============================================================================
+# ConfigMap
+# ============================================================================
+# Non-sensitive configuration values injected as environment variables.
+# The Deployment references this ConfigMap via envFrom.configMapRef.
+#
+# For sensitive values (API keys, database passwords, tokens), use a Secret
+# instead — see the APP_NAME-secrets Secret referenced in the Deployment.
+#
+# Placeholders to replace:
+#   APP_NAME       — must match the Deployment's configMapRef name
+#   APP_NAMESPACE  — target namespace
+#   APP_DOMAIN     — your domain (e.g., "app.example.com")
+# ============================================================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: APP_NAME-config
+  namespace: APP_NAMESPACE
+  labels:
+    app.kubernetes.io/name: APP_NAME
+    app.kubernetes.io/component: config
+    app.kubernetes.io/part-of: APP_NAME
+    app.kubernetes.io/managed-by: kubectl
+data:
+  # ------------------------------------------------------------------
+  # Runtime environment
+  # ------------------------------------------------------------------
+  # Node.js environment mode — "production" enables optimizations
+  NODE_ENV: "production"
+
+  # Logging verbosity — "info" for production, "debug" for troubleshooting
+  LOG_LEVEL: "info"
+
+  # ------------------------------------------------------------------
+  # Server configuration
+  # ------------------------------------------------------------------
+  # Port the application listens on (must match container/probe port)
+  PORT: "3000"
+
+  # Public-facing URL of the application (used for CORS, redirects, etc.)
+  API_URL: "https://APP_DOMAIN"
+
+  # ------------------------------------------------------------------
+  # Feature flags (add your own below)
+  # ------------------------------------------------------------------
+  # FEATURE_NEW_UI: "true"
+  # FEATURE_BETA_API: "false"
+
+  # ------------------------------------------------------------------
+  # Third-party service configuration (non-sensitive only)
+  # ------------------------------------------------------------------
+  # REDIS_HOST: "redis.APP_NAMESPACE.svc.cluster.local"
+  # REDIS_PORT: "6379"
+  # CACHE_TTL: "3600"
