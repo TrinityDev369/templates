@@ -1,0 +1,17 @@
+{
+  "name": "shop-checkout",
+  "version": "1.0.0",
+  "description": "Multi-step checkout flow with shipping, payment, review, and confirmation steps",
+  "outputDir": "app/shop-checkout",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card form input label button radio-group select separator\nAvailable at /shop-checkout route. Wire cart data and payment provider to complete integration."
+}
