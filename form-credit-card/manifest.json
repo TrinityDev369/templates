@@ -1,0 +1,17 @@
+{
+  "name": "form-credit-card",
+  "version": "1.0.0",
+  "description": "Credit card input with auto-formatting, card type detection, and visual preview",
+  "outputDir": "components/form-credit-card",
+  "files": [
+    "credit-card-input.tsx",
+    "credit-card-input.types.ts",
+    "card-preview.tsx",
+    "card-utils.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Credit Card Input installed!\nImport: import { CreditCardInput } from '@/components/form-credit-card/credit-card-input'\nUsage: <CreditCardInput onChange={(card) => console.log(card)} />"
+}
