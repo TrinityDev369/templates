@@ -331,8 +331,33 @@
       "category": "pipe",
       "version": "1.0.0"
     },
+    "pricing-billing-toggle": {
+      "description": "Monthly/annual billing switch with savings percentage badge",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-calculator": {
+      "description": "Usage-based pricing calculator with slider and tier breakdown",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-cards": {
+      "description": "2-4 tier pricing cards with highlighted recommended plan",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-comparison-table": {
+      "description": "Full feature comparison matrix across pricing plans",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "pricing-enterprise-cta": {
       "description": "Enterprise contact sales CTA section with feature highlights",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "pricing-faq": {
+      "description": "Pricing FAQ accordion section with smooth expand/collapse animation",
       "category": "component",
       "version": "1.0.0"
     },
