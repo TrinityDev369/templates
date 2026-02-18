@@ -1,0 +1,11 @@
+{
+  "name": "component-qr-code",
+  "version": "1.0.0",
+  "description": "QR code generator component with Canvas rendering",
+  "outputDir": "components/component-qr-code",
+  "files": ["QRCode.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import and use: import { QRCode } from './components/component-qr-code/QRCode'; <QRCode value='https://example.com' size={256} />. Note: For production use with complex data, consider swapping the built-in encoder with a library like 'qrcode'."
+}
