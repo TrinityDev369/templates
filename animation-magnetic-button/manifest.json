@@ -1,0 +1,12 @@
+{
+  "name": "animation-magnetic-button",
+  "version": "1.0.0",
+  "description": "Button that magnetically attracts toward the cursor when hovering nearby. Uses spring physics for natural-feeling attraction and release.",
+  "outputDir": "components/animation-magnetic-button",
+  "files": ["MagneticButton.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { MagneticButton } from './components/animation-magnetic-button/MagneticButton';\n\n<MagneticButton strength={0.4} radius={150}>\n  Get Started\n</MagneticButton>"
+}
