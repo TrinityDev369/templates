@@ -25,7 +25,7 @@
 
 /* sm: 640px+ — Large phones, small tablets */
 @media (min-width: 640px) {
-  .container { max-width: 640px; }
+  .ds-container { max-width: 640px; }
   .sm\:hidden { display: none; }
   .sm\:block { display: block; }
   .sm\:flex { display: flex; }
@@ -35,7 +35,7 @@
 
 /* md: 768px+ — Tablets */
 @media (min-width: 768px) {
-  .container { max-width: 768px; }
+  .ds-container { max-width: 768px; }
   .md\:hidden { display: none; }
   .md\:block { display: block; }
   .md\:flex { display: flex; }
@@ -46,7 +46,7 @@
 
 /* lg: 1024px+ — Small laptops */
 @media (min-width: 1024px) {
-  .container { max-width: 1024px; }
+  .ds-container { max-width: 1024px; }
   .lg\:hidden { display: none; }
   .lg\:block { display: block; }
   .lg\:flex { display: flex; }
@@ -57,7 +57,7 @@
 
 /* xl: 1280px+ — Desktops */
 @media (min-width: 1280px) {
-  .container { max-width: 1280px; }
+  .ds-container { max-width: 1280px; }
   .xl\:hidden { display: none; }
   .xl\:block { display: block; }
   .xl\:flex { display: flex; }
@@ -67,7 +67,7 @@
 
 /* 2xl: 1400px+ — Large desktops */
 @media (min-width: 1400px) {
-  .container { max-width: 1400px; }
+  .ds-container { max-width: 1400px; }
 }
 
 /* ── Container Queries ── */
@@ -109,25 +109,27 @@
 }
 
 /* ── Responsive Container ── */
-.container {
+/* Uses .ds-container to avoid collision with Tailwind's .container utility.
+ * Padding references spacing tokens from the spacing-grid template when available. */
+.ds-container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--container-pad, 1rem);
+  padding-right: var(--container-pad, 1rem);
 }
 
 @media (min-width: 640px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .ds-container {
+    padding-left: var(--space-6, 1.5rem);
+    padding-right: var(--space-6, 1.5rem);
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .ds-container {
+    padding-left: var(--container-pad-lg, 2rem);
+    padding-right: var(--container-pad-lg, 2rem);
   }
 }
 
