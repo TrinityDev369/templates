@@ -1,0 +1,28 @@
+{
+  "name": "config-vitest-setup",
+  "version": "1.0.0",
+  "description": "Vitest unit test config with MSW mocks, React Testing Library, coverage, and factory helpers",
+  "outputDir": ".",
+  "files": [
+    "vitest.config.ts",
+    "src/test/setup.ts",
+    "src/test/mocks/handlers.ts",
+    "src/test/mocks/server.ts",
+    "src/test/helpers/render.tsx",
+    "src/test/helpers/factories.ts",
+    "src/test/__tests__/example.test.ts",
+    "src/test/__tests__/example-component.test.tsx"
+  ],
+  "peerDependencies": {
+    "vitest": ">=1.0",
+    "@testing-library/react": ">=14",
+    "@testing-library/jest-dom": ">=6",
+    "msw": ">=2.0",
+    "jsdom": ">=22",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@vitejs/plugin-react": ">=4",
+    "@testing-library/user-event": ">=14"
+  },
+  "postMessage": "Install: npm i -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event msw jsdom @vitejs/plugin-react\nRun: npx vitest\nWatch: npx vitest --watch\nCoverage: npx vitest --coverage\nUI: npx vitest --ui"
+}
