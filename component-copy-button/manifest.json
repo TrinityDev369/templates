@@ -1,0 +1,13 @@
+{
+  "name": "component-copy-button",
+  "version": "1.0.0",
+  "description": "Click-to-copy button with animated checkmark confirmation",
+  "outputDir": "components/component-copy-button",
+  "files": ["copy-button.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button tooltip\nImport: import { CopyButton } from '@/components/component-copy-button/copy-button'"
+}
