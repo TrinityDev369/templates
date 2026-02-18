@@ -1,0 +1,14 @@
+{
+  "name": "component-command-palette",
+  "version": "1.0.0",
+  "description": "Cmd+K command palette with search, keyboard navigation, grouped results, and shortcut display",
+  "outputDir": "components/command-palette",
+  "files": ["command-palette.tsx", "command-palette.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Command palette installed!\n\nUsage:\nimport { CommandPalette } from '@/components/command-palette/command-palette'\n\n<CommandPalette\n  items={[\n    { id: '1', label: 'Go to Dashboard', group: 'pages' },\n    { id: '2', label: 'Create new project', group: 'actions' },\n  ]}\n  groups={[\n    { id: 'pages', label: 'Pages' },\n    { id: 'actions', label: 'Actions' },\n  ]}\n  onSelect={(item) => router.push(item.id)}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add dialog input"
+}
