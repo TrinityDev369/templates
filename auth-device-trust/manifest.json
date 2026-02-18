@@ -1,0 +1,13 @@
+{
+  "name": "auth-device-trust",
+  "version": "1.0.0",
+  "description": "Trusted devices list with browser, OS, location info and device revocation",
+  "outputDir": "components/auth-device-trust",
+  "files": ["device-trust.tsx", "device-trust.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card button badge dialog\nImport: import { DeviceTrust } from '@/components/auth-device-trust/device-trust'"
+}
