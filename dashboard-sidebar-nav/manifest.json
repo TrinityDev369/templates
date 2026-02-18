@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-sidebar-nav",
+  "version": "1.0.0",
+  "description": "Collapsible sidebar navigation with grouped sections, badges, sub-items, tooltips when collapsed, and mobile sheet. shadcn/ui + Tailwind.",
+  "outputDir": "components/dashboard-sidebar-nav",
+  "files": ["sidebar-nav.tsx", "types.ts"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Sidebar nav installed! Add `npx shadcn@latest add button badge sheet tooltip collapsible avatar scroll-area separator`."
+}
