@@ -1,0 +1,9 @@
+{
+  "name": "component-diff-viewer",
+  "version": "1.0.0",
+  "description": "Side-by-side and inline text diff viewer with built-in diff algorithm",
+  "outputDir": "components/component-diff-viewer",
+  "files": ["DiffViewer.tsx"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Import and use: import { DiffViewer } from './components/component-diff-viewer/DiffViewer'; <DiffViewer oldText={before} newText={after} />"
+}
