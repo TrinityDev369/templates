@@ -1,0 +1,13 @@
+{
+  "name": "pricing-calculator",
+  "version": "1.0.0",
+  "description": "Usage-based pricing calculator with slider and tier breakdown",
+  "outputDir": "components/pricing-calculator",
+  "files": ["price-calculator.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { PriceCalculator } from '@/components/pricing-calculator/price-calculator'\nUsage: <PriceCalculator tiers={[{ upTo: 1000, pricePerUnit: 0, label: 'Free' }, { upTo: 10000, pricePerUnit: 0.01, label: 'Standard' }, { upTo: Infinity, pricePerUnit: 0.005, label: 'Volume' }]} unit=\"API calls\" />"
+}
