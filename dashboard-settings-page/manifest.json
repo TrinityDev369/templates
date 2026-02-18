@@ -1,0 +1,14 @@
+{
+  "name": "dashboard-settings-page",
+  "version": "1.0.0",
+  "description": "Settings page with profile, appearance, notifications, and security tabs",
+  "outputDir": "app/dashboard-settings-page",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card tabs input label button switch select separator avatar textarea\nAvailable at /dashboard-settings-page route. Customize tab content to match your app."
+}
