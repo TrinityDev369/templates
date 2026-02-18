@@ -1,0 +1,11 @@
+{
+  "name": "design-accessibility-primitives",
+  "version": "1.0.0",
+  "description": "Accessibility primitives: focus rings, skip links, screen reader utilities, focus traps, and reduced motion support. CSS utilities plus React components.",
+  "outputDir": "src/design-system",
+  "files": ["a11y.css", "VisuallyHidden.tsx", "SkipLink.tsx", "FocusTrap.tsx", "README.md"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Import a11y.css in your global stylesheet. Add <SkipLink /> as the first child of your <body> or layout."
+}

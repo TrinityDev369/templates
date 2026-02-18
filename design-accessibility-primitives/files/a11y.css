@@ -1,0 +1,150 @@
+/* Accessibility Primitives
+ * Focus management, screen reader utilities, and reduced motion support.
+ */
+
+/* ── Focus Ring System ── */
+:root {
+  --focus-ring-color: hsl(var(--ring, 240 5.9% 10%) / 0.5);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-offset-color: hsl(var(--background, 0 0% 100%));
+}
+
+.dark {
+  --focus-ring-color: hsl(var(--ring, 240 4.9% 83.9%) / 0.5);
+  --focus-ring-offset-color: hsl(var(--background, 240 10% 3.9%));
+}
+
+/* Default focus-visible ring for interactive elements */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Remove default outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Focus ring utility classes */
+.focus-ring {
+  outline: var(--focus-ring-width) solid transparent;
+  outline-offset: var(--focus-ring-offset);
+  transition: outline-color 150ms ease;
+}
+.focus-ring:focus-visible {
+  outline-color: var(--focus-ring-color);
+}
+
+.focus-ring-inset:focus-visible {
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
+
+/* ── Screen Reader Only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Make sr-only content visible on focus (for skip links) */
+.sr-only-focusable:focus,
+.sr-only-focusable:focus-within {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ── Skip Link ── */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: hsl(var(--background, 0 0% 100%));
+  color: hsl(var(--foreground, 240 10% 3.9%));
+  border: 2px solid hsl(var(--border, 240 5.9% 90%));
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition: top 150ms ease;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Opt-in motion class — overrides reduced motion for critical animations */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe {
+    animation-duration: revert !important;
+    transition-duration: revert !important;
+  }
+}
+
+/* ── High Contrast Mode ── */
+@media (forced-colors: active) {
+  .forced-color-adjust-none {
+    forced-color-adjust: none;
+  }
+  .forced-color-adjust-auto {
+    forced-color-adjust: auto;
+  }
+}
+
+/* ── Touch Target Size ── */
+/* Ensure minimum 44x44px touch targets (WCAG 2.5.8) */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Larger touch target for mobile */
+.touch-target-lg {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Live Region Utilities ── */
+.live-polite { /* use aria-live="polite" on element */ }
+.live-assertive { /* use aria-live="assertive" on element */ }
+
+/* ── Selection ── */
+::selection {
+  background-color: hsl(var(--primary, 240 5.9% 10%) / 0.2);
+  color: hsl(var(--foreground, 240 10% 3.9%));
+}
