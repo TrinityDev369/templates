@@ -1,0 +1,12 @@
+{
+  "name": "form-phone-input",
+  "version": "1.0.0",
+  "description": "International phone input with country code picker and auto-formatting",
+  "outputDir": "components/form-phone-input",
+  "files": ["phone-input.tsx", "phone-input.types.ts", "country-data.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Phone Input installed!\nImport: import { PhoneInput } from '@/components/form-phone-input/phone-input'\nUsage: <PhoneInput value={phone} onChange={setPhone} defaultCountry=\"US\" />"
+}
