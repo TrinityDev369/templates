@@ -1,0 +1,9 @@
+{
+  "name": "shop-product-detail",
+  "version": "1.0.0",
+  "description": "Product detail page with image gallery, variant selectors, rating, tabs for description/reviews/specs. shadcn/ui + Tailwind.",
+  "outputDir": "components/shop-product-detail",
+  "files": ["product-detail.tsx", "image-gallery.tsx", "review-list.tsx", "types.ts"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3"},
+  "postMessage": "Product detail installed! Add `npx shadcn@latest add tabs radio-group button badge separator breadcrumb`."
+}
