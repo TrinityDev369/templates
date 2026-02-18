@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-user-menu",
+  "version": "1.0.0",
+  "description": "Avatar dropdown menu with profile, settings, theme switcher, and logout",
+  "outputDir": "components/dashboard-user-menu",
+  "files": ["user-menu.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add avatar dropdown-menu button\nImport: import { UserMenu } from '@/components/dashboard-user-menu/user-menu'"
+}
