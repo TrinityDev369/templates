@@ -2,7 +2,7 @@
   "name": "design-icon-set",
   "version": "1.0.0",
   "description": "SVG icon system with a polymorphic Icon component, size variants, and tree-shakeable icon definitions. 24 essential icons included.",
-  "outputDir": "components/design-icon-set",
+  "outputDir": "src/design-system/icons",
   "files": ["Icon.tsx", "icons.ts", "README.md"],
   "peerDependencies": {
     "react": ">=18"
