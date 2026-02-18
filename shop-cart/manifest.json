@@ -1,0 +1,9 @@
+{
+  "name": "shop-cart",
+  "version": "1.0.0",
+  "description": "Shopping cart sheet with quantity controls, order summary, localStorage persistence, and empty state. shadcn/ui + Tailwind.",
+  "outputDir": "components/shop-cart",
+  "files": ["cart-sheet.tsx", "cart-provider.tsx", "cart-item.tsx", "types.ts"],
+  "peerDependencies": {"react": ">=18", "tailwindcss": ">=3"},
+  "postMessage": "Cart installed! Add `npx shadcn@latest add sheet button badge separator scroll-area`. Wrap your layout with <CartProvider>."
+}
