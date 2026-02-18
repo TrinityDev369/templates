@@ -17,9 +17,9 @@
       "version": "1.0.0"
     },
     "animation-liquid-button": {
-      "description": "Liquid morphing button with SVG filter hover effect",
+      "description": "Liquid morphing button with SVG turbulence-driven distortion on hover. Supports primary, secondary, and ghost variants with configurable intensity.",
       "category": "animation",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "animation-noise-grain": {
       "description": "Film grain and noise overlay effect using HTML Canvas",
