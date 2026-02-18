@@ -1,0 +1,11 @@
+{
+  "name": "commerce-seed",
+  "version": "1.0.0",
+  "description": "Autonomous storefront composer — discovers business model, selects components, installs the purchase flow, and wires cart state + product types. Delivers a working e-commerce frontend.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/commerce-seed/SKILL.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Commerce Seed installed at .claude/skills/commerce-seed/SKILL.md\n\nDescribe your store — what you sell, who buys it, and how. The skill composes a complete storefront:\n\nBrowse: product-grid, product-detail, category-nav, search-filters\nBuy: cart, checkout, order-history\nEngage: wishlist\n\nNot a list — a wired purchase flow with shared cart state and product types."
+}
