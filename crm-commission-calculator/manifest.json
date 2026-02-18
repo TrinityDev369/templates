@@ -1,0 +1,9 @@
+{
+  "name": "crm-commission-calculator",
+  "version": "1.0.0",
+  "description": "Sales commission calculator with configurable tier rules and visual breakdown",
+  "outputDir": "components/crm-commission-calculator",
+  "files": ["CommissionCalculator.tsx"],
+  "peerDependencies": { "react": ">=18", "tailwindcss": ">=3" },
+  "postMessage": "Import and use: import { CommissionCalculator } from './components/crm-commission-calculator/CommissionCalculator'; <CommissionCalculator onCalculate={result => console.log(result)} />"
+}
