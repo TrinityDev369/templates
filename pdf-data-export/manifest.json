@@ -1,0 +1,12 @@
+{
+  "name": "pdf-data-export",
+  "version": "1.0.0",
+  "description": "Tabular data export to formatted PDF with auto-pagination and summary — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/data-export",
+  "files": ["data-export.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/data-export/generate.tsx\nPass your data as columns + rows arrays"
+}
