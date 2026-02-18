@@ -96,13 +96,38 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-api-key-manager": {
+      "description": "API key management UI \u2014 create keys with scoped permissions, copy to clipboard, rotate, and revoke with confirmation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-audit-log": {
+      "description": "Authentication audit log viewer \u2014 filterable event timeline with user details, IP addresses, and risk indicators",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-biometric": {
       "description": "Biometric authentication UI using WebAuthn API with fingerprint/face recognition",
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-invite-flow": {
+      "description": "Team member invitation flow \u2014 bulk email invite with role selection, pending invites list, and resend/revoke actions",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-login-form": {
       "description": "Centered card login form with email, password, show/hide toggle, remember me, and OAuth buttons",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-org-switcher": {
+      "description": "Organization and workspace switcher dropdown with search, avatars, and create new org option",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-passkey-webauthn": {
+      "description": "WebAuthn passkey registration and login \u2014 fingerprint, face ID, and security key support with fallback options",
       "category": "component",
       "version": "1.0.0"
     },
