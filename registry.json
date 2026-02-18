@@ -92,9 +92,9 @@
       "version": "1.0.0"
     },
     "context-seed": {
-      "description": "PRD-to-packages expert guide \u2014 maps project requirements to correct npx trinity369/use commands",
-      "category": "document",
-      "version": "1.0.0"
+      "description": "PRD-to-packages seeding skill \u2014 dynamically fetches the live template registry and maps project requirements to npx trinity369/use commands. Never goes stale.",
+      "category": "skill",
+      "version": "2.0.0"
     },
     "crm-ai-assistant": {
       "description": "AI-powered CRM assistant with deal analysis, insights, and chat interface",
