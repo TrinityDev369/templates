@@ -1,0 +1,12 @@
+{
+  "name": "animation-skeleton-loading",
+  "version": "1.0.0",
+  "description": "Skeleton loading placeholders with shimmer animation. Includes presets for text, avatar, card, and table rows — plus a custom skeleton builder.",
+  "outputDir": "components/animation-skeleton-loading",
+  "files": ["Skeleton.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import and use:\n\nimport { Skeleton, SkeletonText, SkeletonAvatar, SkeletonCard } from './components/animation-skeleton-loading/Skeleton';\n\n// Basic line:\n<Skeleton className=\"h-4 w-3/4\" />\n\n// Text block:\n<SkeletonText lines={3} />\n\n// Avatar:\n<SkeletonAvatar size=\"lg\" />\n\n// Card:\n<SkeletonCard />"
+}
