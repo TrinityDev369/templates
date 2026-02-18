@@ -1,0 +1,179 @@
+/* Motion Token System
+ * Consistent animation timing and easing across your application.
+ * Respects prefers-reduced-motion automatically.
+ */
+
+:root {
+  /* ── Durations ── */
+  --duration-instant: 0ms;
+  --duration-fastest: 50ms;
+  --duration-faster: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-slowest: 700ms;
+  --duration-deliberate: 1000ms;
+
+  /* ── Easing Curves ── */
+  /* Standard Material/CSS defaults */
+  --ease-linear: linear;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);      /* Standard */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);              /* Accelerate */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);             /* Decelerate */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);        /* Standard */
+
+  /* Expressive / emphatic curves */
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);       /* Enter with emphasis */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);  /* Overshoot bounce */
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);   /* Elastic feel */
+  --ease-snappy: cubic-bezier(0.5, 0, 0.1, 1);        /* Quick and decisive */
+
+  /* Enter/Exit pairs */
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);           /* Decelerate into view */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);            /* Accelerate out of view */
+
+  /* ── Semantic Transitions ── */
+  --transition-colors: color, background-color, border-color, text-decoration-color, fill, stroke;
+  --transition-opacity: opacity;
+  --transition-shadow: box-shadow;
+  --transition-transform: transform;
+  --transition-all: all;
+}
+
+/* ── Transition Utility Classes ── */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: var(--ease-default);
+  transition-duration: var(--duration-fast);
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: var(--ease-default);
+  transition-duration: var(--duration-fast);
+}
+
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: var(--ease-default);
+  transition-duration: var(--duration-normal);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: var(--ease-default);
+  transition-duration: var(--duration-normal);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: var(--ease-default);
+  transition-duration: var(--duration-normal);
+}
+
+/* ── Duration Modifiers ── */
+.duration-instant { transition-duration: var(--duration-instant); }
+.duration-fastest { transition-duration: var(--duration-fastest); }
+.duration-faster { transition-duration: var(--duration-faster); }
+.duration-fast { transition-duration: var(--duration-fast); }
+.duration-normal { transition-duration: var(--duration-normal); }
+.duration-slow { transition-duration: var(--duration-slow); }
+.duration-slower { transition-duration: var(--duration-slower); }
+.duration-slowest { transition-duration: var(--duration-slowest); }
+
+/* ── Easing Modifiers ── */
+.ease-default { transition-timing-function: var(--ease-default); }
+.ease-in { transition-timing-function: var(--ease-in); }
+.ease-out { transition-timing-function: var(--ease-out); }
+.ease-in-out { transition-timing-function: var(--ease-in-out); }
+.ease-emphasized { transition-timing-function: var(--ease-emphasized); }
+.ease-spring { transition-timing-function: var(--ease-spring); }
+.ease-bounce { transition-timing-function: var(--ease-bounce); }
+.ease-snappy { transition-timing-function: var(--ease-snappy); }
+
+/* ── Keyframe Presets ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-down {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-8px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(8px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+/* ── Animation Utility Classes ── */
+.animate-fade-in { animation: fade-in var(--duration-normal) var(--ease-enter) both; }
+.animate-fade-out { animation: fade-out var(--duration-fast) var(--ease-exit) both; }
+.animate-slide-in-up { animation: slide-in-up var(--duration-normal) var(--ease-enter) both; }
+.animate-slide-in-down { animation: slide-in-down var(--duration-normal) var(--ease-enter) both; }
+.animate-slide-in-left { animation: slide-in-left var(--duration-normal) var(--ease-enter) both; }
+.animate-slide-in-right { animation: slide-in-right var(--duration-normal) var(--ease-enter) both; }
+.animate-scale-in { animation: scale-in var(--duration-normal) var(--ease-spring) both; }
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-pulse { animation: pulse 2s var(--ease-in-out) infinite; }
+.animate-bounce { animation: bounce 1s infinite; }
+
+/* ── Staggered Children ── */
+.stagger-children > * {
+  animation-fill-mode: both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-children > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-children > *:nth-child(10) { animation-delay: 450ms; }
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

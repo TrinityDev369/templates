@@ -1,0 +1,11 @@
+{
+  "name": "design-motion-tokens",
+  "version": "1.0.0",
+  "description": "Duration, easing, and spring animation presets as CSS custom properties. Includes reduced-motion support and Tailwind integration.",
+  "outputDir": "src/design-system",
+  "files": ["motion.css", "tailwind.motion.ts", "README.md"],
+  "peerDependencies": {
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import motion.css in your global stylesheet. Use --duration-* and --ease-* variables for consistent animation timing."
+}
