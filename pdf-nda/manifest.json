@@ -1,0 +1,12 @@
+{
+  "name": "pdf-nda",
+  "version": "1.0.0",
+  "description": "Non-Disclosure Agreement PDF with numbered articles, party details, and signature blocks — powered by @react-pdf/renderer",
+  "outputDir": "src/pdf/nda",
+  "files": ["nda.tsx", "generate.tsx"],
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=4",
+    "react": ">=18"
+  },
+  "postMessage": "Install deps: npm install @react-pdf/renderer react\nGenerate: npx tsx src/pdf/nda/generate.tsx\nCustomize party details, articles, and styling in nda.tsx"
+}
