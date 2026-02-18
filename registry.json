@@ -71,6 +71,16 @@
       "category": "document",
       "version": "1.0.0"
     },
+    "dashboard-activity-feed": {
+      "description": "Timestamped activity timeline with avatars, action descriptions, type-colored indicators, and load more.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-calendar": {
+      "description": "Interactive calendar with month/week/day views, event display, navigation, and today indicator.",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "dashboard-charts": {
       "description": "Area, bar, line, and donut chart components wrapped in shadcn Cards. Powered by recharts.",
       "category": "component",
@@ -81,14 +91,44 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-kanban": {
+      "description": "Kanban board with native drag-and-drop, priority badges, assignee avatars, and column management.",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "dashboard-kpi-cards": {
       "description": "KPI stat cards with trend indicators, percentage change, icons, and SVG sparklines.",
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-notification-center": {
+      "description": "Bell icon popover with unread badge, notification list with tabs, mark as read, and empty state.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-search-global": {
+      "description": "Cmd+K global search dialog with recent searches, categorized results, and keyboard navigation.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-settings-page": {
+      "description": "Settings page with profile, appearance theme picker, notification toggles, and billing/usage tabs.",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "dashboard-shell": {
       "description": "Responsive dashboard layout shell with collapsible sidebar, topbar, breadcrumbs, and global search.",
       "category": "layout",
+      "version": "1.0.0"
+    },
+    "dashboard-sidebar-nav": {
+      "description": "Collapsible sidebar navigation with grouped sections, badges, sub-items, tooltips, and mobile sheet.",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-user-menu": {
+      "description": "Avatar dropdown menu with profile, settings, billing, theme switcher submenu, and logout.",
+      "category": "component",
       "version": "1.0.0"
     },
     "pipe-content-pipeline": {
