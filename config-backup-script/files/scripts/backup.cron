@@ -1,0 +1,51 @@
+# =============================================================================
+# Backup Crontab Configuration
+# =============================================================================
+#
+# Install with:
+#   crontab -l | cat - scripts/backup.cron | crontab -
+#
+# Or edit crontab directly:
+#   crontab -e
+#
+# Verify with:
+#   crontab -l
+#
+# Log rotation (add to /etc/logrotate.d/backup):
+#   /var/log/backup.log {
+#       weekly
+#       rotate 4
+#       compress
+#       missingok
+#       notifempty
+#   }
+# =============================================================================
+
+# Environment (adjust paths as needed)
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+BACKUP_DIR=/var/backups
+DB_NAME=myapp
+DB_USER=postgres
+
+# -----------------------------------------------------------------------------
+# Daily database backup at 2:00 AM
+# -----------------------------------------------------------------------------
+0 2 * * * /path/to/scripts/backup.sh --db-only >> /var/log/backup.log 2>&1
+
+# -----------------------------------------------------------------------------
+# Weekly full backup (database + files) on Sunday at 1:00 AM
+# -----------------------------------------------------------------------------
+0 1 * * 0 /path/to/scripts/backup.sh --full >> /var/log/backup.log 2>&1
+
+# -----------------------------------------------------------------------------
+# Monthly extended-retention backup on the 1st at midnight
+# Keeps for 90 days instead of default 30
+# -----------------------------------------------------------------------------
+# 0 0 1 * * RETENTION_DAYS=90 /path/to/scripts/backup.sh --full >> /var/log/backup.log 2>&1
+
+# -----------------------------------------------------------------------------
+# Hourly database backup for high-availability environments
+# (uncomment if needed)
+# -----------------------------------------------------------------------------
+# 0 * * * * /path/to/scripts/backup.sh --db-only --no-rotate >> /var/log/backup.log 2>&1

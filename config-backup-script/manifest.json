@@ -1,0 +1,8 @@
+{
+  "name": "config-backup-script",
+  "version": "1.0.0",
+  "description": "Database and file backup scripts with rotation, encryption, S3 upload, and webhook notifications. Supports PostgreSQL and MySQL.",
+  "outputDir": ".",
+  "files": ["scripts/backup.sh", "scripts/restore.sh", "scripts/backup.cron", "scripts/README.md"],
+  "postMessage": "Backup scripts installed in scripts/. Edit backup.sh configuration section, then: chmod +x scripts/backup.sh scripts/restore.sh && ./scripts/backup.sh"
+}
