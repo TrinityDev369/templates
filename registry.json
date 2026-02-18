@@ -191,6 +191,26 @@
       "category": "config",
       "version": "1.0.0"
     },
+    "config-docker-next": {
+      "description": "Docker setup for Next.js \u2014 multi-stage Dockerfile, docker-compose dev/prod, env template",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-eslint-prettier": {
+      "description": "ESLint flat config + Prettier + EditorConfig for TypeScript React projects",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-github-actions": {
+      "description": "GitHub Actions CI/CD workflows \u2014 CI pipeline, deploy with staging/production, and semantic release",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-github-pr-template": {
+      "description": "GitHub PR template, issue templates (bug report + feature request), and CODEOWNERS",
+      "category": "config",
+      "version": "1.0.0"
+    },
     "config-k8s-deployment": {
       "description": "Production-ready Kubernetes manifests \u2014 Deployment, Service, Ingress, HPA, ConfigMap with security best practices.",
       "category": "config",
@@ -213,6 +233,11 @@
     },
     "config-terraform-hetzner": {
       "description": "Terraform config for Hetzner Cloud infrastructure \u2014 servers, networks, firewalls, and volumes",
+      "category": "config",
+      "version": "1.0.0"
+    },
+    "config-turbo-monorepo": {
+      "description": "Turborepo monorepo scaffold with apps/, packages/, shared configs, and pnpm workspaces",
       "category": "config",
       "version": "1.0.0"
     },
