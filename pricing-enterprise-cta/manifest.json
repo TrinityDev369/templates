@@ -1,0 +1,13 @@
+{
+  "name": "pricing-enterprise-cta",
+  "version": "1.0.0",
+  "description": "Enterprise contact sales CTA section with feature highlights",
+  "outputDir": "components/pricing-enterprise-cta",
+  "files": ["enterprise-cta.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { EnterpriseCta } from '@/components/pricing-enterprise-cta/enterprise-cta'\nUsage: <EnterpriseCta onContactSales={() => router.push('/contact')} />"
+}
