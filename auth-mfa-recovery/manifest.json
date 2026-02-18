@@ -1,0 +1,13 @@
+{
+  "name": "auth-mfa-recovery",
+  "version": "1.0.0",
+  "description": "MFA recovery codes display with copy, download, print, and regenerate actions",
+  "outputDir": "components/auth-mfa-recovery",
+  "files": ["mfa-recovery.tsx", "mfa-recovery.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card button dialog\nImport: import { MfaRecovery } from '@/components/auth-mfa-recovery/mfa-recovery'"
+}
