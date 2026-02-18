@@ -1,0 +1,14 @@
+{
+  "name": "component-toast-notifications",
+  "version": "1.0.0",
+  "description": "Stacked toast system with success/error/warning/info variants, auto-dismiss, and pause on hover",
+  "outputDir": "components/toast-notifications",
+  "files": ["toast.tsx", "toast.types.ts", "use-toast.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Toast notifications installed!\n\nSetup — wrap your app:\nimport { ToastProvider, Toaster } from '@/components/toast-notifications'\n\nexport default function RootLayout({ children }) {\n  return (\n    <ToastProvider>\n      {children}\n      <Toaster />\n    </ToastProvider>\n  )\n}\n\nUsage:\nimport { useToast } from '@/components/toast-notifications'\n\nconst { toast } = useToast()\ntoast({ title: 'Changes saved!', variant: 'success' })\n\nRequires shadcn/ui: npx shadcn@latest add button"
+}
