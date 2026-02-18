@@ -1,0 +1,13 @@
+{
+  "name": "pricing-plan-badge",
+  "version": "1.0.0",
+  "description": "Current plan badge with upgrade indicator",
+  "outputDir": "components/pricing-plan-badge",
+  "files": ["plan-badge.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { PlanBadge } from '@/components/pricing-plan-badge/plan-badge'\nUsage: <PlanBadge plan=\"Pro\" showUpgrade onUpgrade={() => router.push('/upgrade')} />"
+}
