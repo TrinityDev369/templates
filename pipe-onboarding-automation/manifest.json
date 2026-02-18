@@ -1,0 +1,9 @@
+{
+  "name": "pipe-onboarding-automation",
+  "version": "1.0.0",
+  "description": "Automated employee/user onboarding pipeline with configurable steps per role",
+  "outputDir": ".",
+  "files": ["CLAUDE.md", "scripts/onboard.py", "scripts/config.yaml"],
+  "peerDependencies": {},
+  "postMessage": "Configure scripts/config.yaml with your roles and onboarding steps, then run: python scripts/onboard.py --employee-name 'Jane Doe' --role engineer --team platform"
+}

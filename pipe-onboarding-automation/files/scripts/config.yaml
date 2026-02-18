@@ -1,0 +1,299 @@
+# =============================================================================
+# Onboarding Automation Configuration
+#
+# Define roles, onboarding steps, and notification channels.
+# Replace placeholder values with your organization's details.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Notification channels
+# ---------------------------------------------------------------------------
+notifications:
+  from_email: "onboarding@example.com"
+  channels:
+    - type: slack
+      webhook_url: "${SLACK_ONBOARDING_WEBHOOK}"
+      channel: "#onboarding"
+    - type: email
+      smtp_host: "${SMTP_HOST}"
+      smtp_port: 587
+
+# ---------------------------------------------------------------------------
+# Roles and their onboarding steps
+# ---------------------------------------------------------------------------
+roles:
+
+  # -------------------------------------------------------------------------
+  # Engineer
+  # -------------------------------------------------------------------------
+  engineer:
+    display_name: "Software Engineer"
+    steps:
+      - name: Create email account
+        type: account
+        service: google-workspace
+        description: Provision a company email address via Google Workspace
+        assignee: auto
+
+      - name: Send welcome email
+        type: email
+        template: engineer-welcome
+        description: Send a personalized welcome email with first-day logistics and team intro
+        assignee: auto
+
+      - name: Invite to GitHub organization
+        type: account
+        service: github
+        description: Send GitHub org invite and add to relevant teams
+        assignee: auto
+
+      - name: Grant repository access
+        type: access
+        service: github
+        description: Add to team repos, grant write access to assigned project repositories
+        assignee: auto
+
+      - name: Provision cloud access
+        type: access
+        service: aws
+        description: Create IAM user, add to developer group, configure MFA requirement
+        assignee: auto
+
+      - name: Set up project management
+        type: account
+        service: linear
+        description: Create account in project management tool and add to team workspace
+        assignee: auto
+
+      - name: Create onboarding checklist
+        type: task
+        description: Generate a personalized onboarding task list with milestones for the first 30/60/90 days
+        assignee: engineering-lead
+
+      - name: Schedule intro meetings
+        type: task
+        description: Book 1-on-1 meetings with team lead, mentor, and key stakeholders
+        assignee: engineering-lead
+
+      - name: Assign training modules
+        type: task
+        description: Enroll in required engineering training (security, code review, CI/CD practices)
+        assignee: auto
+
+      - name: Deliver engineering handbook
+        type: docs
+        template: engineering-handbook
+        description: Share the engineering handbook, coding standards, and architecture docs
+        assignee: auto
+
+      - name: Share environment setup guide
+        type: docs
+        template: dev-environment-setup
+        description: Provide local development environment setup instructions
+        assignee: auto
+
+  # -------------------------------------------------------------------------
+  # Designer
+  # -------------------------------------------------------------------------
+  designer:
+    display_name: "Product Designer"
+    steps:
+      - name: Create email account
+        type: account
+        service: google-workspace
+        description: Provision a company email address via Google Workspace
+        assignee: auto
+
+      - name: Send welcome email
+        type: email
+        template: designer-welcome
+        description: Send a personalized welcome email with creative team introduction
+        assignee: auto
+
+      - name: Provision Figma access
+        type: account
+        service: figma
+        description: Invite to the organization Figma workspace and relevant projects
+        assignee: auto
+
+      - name: Grant design system access
+        type: access
+        service: figma
+        description: Add to the design system library and component files
+        assignee: auto
+
+      - name: Set up project management
+        type: account
+        service: linear
+        description: Create account in project management tool and add to design workspace
+        assignee: auto
+
+      - name: Create onboarding checklist
+        type: task
+        description: Generate design-focused onboarding tasks including design system review and brand audit
+        assignee: design-lead
+
+      - name: Schedule intro meetings
+        type: task
+        description: Book meetings with design lead, product partners, and engineering counterparts
+        assignee: design-lead
+
+      - name: Assign training modules
+        type: task
+        description: Enroll in brand guidelines workshop and accessibility training
+        assignee: auto
+
+      - name: Deliver design handbook
+        type: docs
+        template: design-handbook
+        description: Share the design handbook, brand guidelines, and component documentation
+        assignee: auto
+
+  # -------------------------------------------------------------------------
+  # Product Manager
+  # -------------------------------------------------------------------------
+  pm:
+    display_name: "Product Manager"
+    steps:
+      - name: Create email account
+        type: account
+        service: google-workspace
+        description: Provision a company email address via Google Workspace
+        assignee: auto
+
+      - name: Send welcome email
+        type: email
+        template: pm-welcome
+        description: Send a personalized welcome email with product team overview
+        assignee: auto
+
+      - name: Provision analytics access
+        type: account
+        service: analytics
+        description: Create accounts for analytics dashboards (Mixpanel, Amplitude, etc.)
+        assignee: auto
+
+      - name: Grant product tools access
+        type: access
+        service: linear
+        description: Set up project management access with admin permissions for the product area
+        assignee: auto
+
+      - name: Grant documentation access
+        type: access
+        service: notion
+        description: Add to product team Notion workspace with relevant product areas
+        assignee: auto
+
+      - name: Create onboarding checklist
+        type: task
+        description: Generate PM-focused onboarding tasks including product review and stakeholder mapping
+        assignee: product-lead
+
+      - name: Schedule intro meetings
+        type: task
+        description: Book meetings with product lead, engineering leads, design partners, and key stakeholders
+        assignee: product-lead
+
+      - name: Assign training modules
+        type: task
+        description: Enroll in product process training, roadmap workshop, and customer research methodology
+        assignee: auto
+
+      - name: Deliver product handbook
+        type: docs
+        template: product-handbook
+        description: Share product strategy docs, roadmaps, customer research, and competitive analysis
+        assignee: auto
+
+  # -------------------------------------------------------------------------
+  # Marketing
+  # -------------------------------------------------------------------------
+  marketing:
+    display_name: "Marketing Specialist"
+    steps:
+      - name: Create email account
+        type: account
+        service: google-workspace
+        description: Provision a company email address via Google Workspace
+        assignee: auto
+
+      - name: Send welcome email
+        type: email
+        template: marketing-welcome
+        description: Send a personalized welcome email with marketing team overview
+        assignee: auto
+
+      - name: Provision marketing tools
+        type: account
+        service: hubspot
+        description: Create accounts for CRM and marketing automation platforms
+        assignee: auto
+
+      - name: Grant social media access
+        type: access
+        service: social-media
+        description: Add to social media management tools and provide brand accounts access
+        assignee: marketing-lead
+
+      - name: Grant analytics access
+        type: access
+        service: google-analytics
+        description: Provision access to website analytics and marketing dashboards
+        assignee: auto
+
+      - name: Create onboarding checklist
+        type: task
+        description: Generate marketing-focused onboarding tasks including brand review and campaign auditing
+        assignee: marketing-lead
+
+      - name: Schedule intro meetings
+        type: task
+        description: Book meetings with marketing lead, content team, and cross-functional partners
+        assignee: marketing-lead
+
+      - name: Deliver marketing handbook
+        type: docs
+        template: marketing-handbook
+        description: Share brand guidelines, content calendar, campaign playbooks, and style guide
+        assignee: auto
+
+  # -------------------------------------------------------------------------
+  # Intern
+  # -------------------------------------------------------------------------
+  intern:
+    display_name: "Intern"
+    steps:
+      - name: Create email account
+        type: account
+        service: google-workspace
+        description: Provision a company email address via Google Workspace
+        assignee: auto
+
+      - name: Send welcome email
+        type: email
+        template: intern-welcome
+        description: Send a personalized welcome email with internship program overview
+        assignee: auto
+
+      - name: Set up project management
+        type: account
+        service: linear
+        description: Create account in project management tool with intern-level access
+        assignee: auto
+
+      - name: Create onboarding checklist
+        type: task
+        description: Generate intern-focused onboarding tasks including orientation schedule and learning goals
+        assignee: intern-coordinator
+
+      - name: Schedule intro meetings
+        type: task
+        description: Book meetings with mentor, team lead, and other interns
+        assignee: intern-coordinator
+
+      - name: Deliver intern handbook
+        type: docs
+        template: intern-handbook
+        description: Share the intern handbook, company overview, policies, and project briefs
+        assignee: auto
