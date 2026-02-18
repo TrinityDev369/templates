@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-resource-scheduler",
+  "version": "1.0.0",
+  "description": "Resource scheduling grid with drag-and-drop block assignment, day/week views, capacity tracking, and time navigation. HTML5 native DnD, no external dependencies.",
+  "outputDir": "src/modules/dashboard-resource-scheduler",
+  "files": ["resource-scheduler.tsx", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card badge button avatar toggle-group tooltip\nImport: import { ResourceScheduler } from '@/modules/dashboard-resource-scheduler'"
+}
