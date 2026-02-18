@@ -1,0 +1,63 @@
+# ============================================================================
+# CODEOWNERS — Automatically request reviews from the right teams
+# ============================================================================
+#
+# Each line is a file pattern followed by one or more owners.
+# Order matters: later patterns take precedence over earlier ones.
+#
+# Owners can be @usernames, @org/team-names, or email addresses.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# Global fallback — default reviewers for everything not matched below
+# ---------------------------------------------------------------------------
+*                                   @myorg/engineering
+
+# ---------------------------------------------------------------------------
+# Frontend — UI components, styles, client-side code
+# ---------------------------------------------------------------------------
+/src/components/                    @myorg/frontend
+/src/pages/                         @myorg/frontend
+/src/styles/                        @myorg/frontend
+/src/hooks/                         @myorg/frontend
+/public/                            @myorg/frontend
+*.css                               @myorg/frontend
+*.scss                              @myorg/frontend
+*.tsx                               @myorg/frontend
+
+# ---------------------------------------------------------------------------
+# Backend — API routes, services, database
+# ---------------------------------------------------------------------------
+/src/api/                           @myorg/backend
+/src/services/                      @myorg/backend
+/src/middleware/                     @myorg/backend
+/src/models/                        @myorg/backend
+/src/lib/db/                        @myorg/backend
+/migrations/                        @myorg/backend
+
+# ---------------------------------------------------------------------------
+# DevOps / Infrastructure — CI/CD, Docker, deployment
+# ---------------------------------------------------------------------------
+/.github/                           @myorg/devops
+/Dockerfile                         @myorg/devops
+/docker-compose*.yml                @myorg/devops
+/.env.example                       @myorg/devops
+/scripts/                           @myorg/devops
+/infra/                             @myorg/devops
+*.Dockerfile                        @myorg/devops
+
+# ---------------------------------------------------------------------------
+# Documentation
+# ---------------------------------------------------------------------------
+/docs/                              @myorg/engineering
+*.md                                @myorg/engineering
+
+# ---------------------------------------------------------------------------
+# Security-sensitive files — require senior review
+# ---------------------------------------------------------------------------
+/src/auth/                          @myorg/backend @myorg/security
+/src/middleware/auth*                @myorg/backend @myorg/security
+package.json                        @myorg/engineering
+pnpm-lock.yaml                      @myorg/engineering

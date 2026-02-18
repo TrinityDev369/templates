@@ -1,0 +1,8 @@
+{
+  "name": "config-github-pr-template",
+  "version": "1.0.0",
+  "description": "GitHub PR and issue templates with review checklists, CODEOWNERS, and structured workflows",
+  "outputDir": ".",
+  "files": [".github/pull_request_template.md", ".github/ISSUE_TEMPLATE/bug_report.md", ".github/ISSUE_TEMPLATE/feature_request.md", ".github/CODEOWNERS"],
+  "postMessage": "Templates installed at .github/. Customize CODEOWNERS with your team's GitHub handles."
+}
