@@ -1,0 +1,12 @@
+{
+  "name": "integration-blockchain-wallet",
+  "version": "1.0.0",
+  "description": "Web3 wallet connection and transaction signing with ethers.js",
+  "outputDir": "src/integrations/blockchain-wallet",
+  "files": ["client.ts", "types.ts", "wallet-provider.tsx", "use-wallet.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "ethers": ">=6"
+  },
+  "postMessage": "Set up your chain config in client.ts.\nWrap your app: <WalletProvider config={...}><App /></WalletProvider>\nUse in components: const { connect, address, sendTransaction } = useWallet()"
+}
