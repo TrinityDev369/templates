@@ -1,0 +1,9 @@
+{
+  "name": "design-component-docs-template",
+  "version": "1.0.0",
+  "description": "Template and guide for documenting design system components. Includes a fillable component doc template and a writing guide with examples.",
+  "outputDir": "docs",
+  "files": ["component-doc.template.md", "COMPONENT_DOC_GUIDE.md", "README.md"],
+  "peerDependencies": {},
+  "postMessage": "Copy component-doc.template.md for each new component and fill in the sections. See COMPONENT_DOC_GUIDE.md for writing tips."
+}
