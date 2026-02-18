@@ -1,0 +1,12 @@
+{
+  "name": "animation-page-transition",
+  "version": "1.0.0",
+  "description": "Page transition wrapper with multiple animation presets -- fade, slide, scale, and flip. Drop-in wrapper for route transitions in React apps.",
+  "outputDir": "components/animation-page-transition",
+  "files": ["PageTransition.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "framer-motion": ">=10"
+  },
+  "postMessage": "Import and use:\n\nimport { PageTransition } from './components/animation-page-transition/PageTransition';\n\n// Wrap each page/route with a unique key to trigger AnimatePresence:\n<PageTransition key={location.pathname} preset=\"slide\" direction=\"left\">\n  <YourPageContent />\n</PageTransition>\n\nNote: The `key` prop is essential. AnimatePresence detects route changes\nby tracking when keyed children mount/unmount. Use `location.pathname`\n(react-router) or `router.asPath` (Next.js) as the key."
+}
