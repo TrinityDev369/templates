@@ -1,0 +1,13 @@
+{
+  "name": "dashboard-activity-feed",
+  "version": "1.0.0",
+  "description": "Timestamped activity timeline with avatars, action types, and entity links",
+  "outputDir": "components/dashboard-activity-feed",
+  "files": ["activity-feed.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add avatar scroll-area badge button\nImport: import { ActivityFeed, PLACEHOLDER_ACTIVITIES } from '@/components/dashboard-activity-feed/activity-feed'"
+}
