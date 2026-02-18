@@ -1,0 +1,15 @@
+{
+  "name": "config-nginx-reverse-proxy",
+  "version": "1.0.0",
+  "description": "Production Nginx reverse proxy — SSL termination, rate limiting, caching, and security headers",
+  "outputDir": ".",
+  "files": [
+    "nginx.conf",
+    "conf.d/default.conf",
+    "conf.d/ssl.conf",
+    "conf.d/security-headers.conf",
+    "conf.d/rate-limiting.conf",
+    "conf.d/caching.conf"
+  ],
+  "postMessage": "Update conf.d/default.conf with your upstream servers and domain.\nSSL: Place certs at /etc/nginx/ssl/ or use certbot.\nTest: nginx -t\nReload: nginx -s reload"
+}
