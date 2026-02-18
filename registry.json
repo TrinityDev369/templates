@@ -66,6 +66,11 @@
       "category": "starter",
       "version": "1.0.0"
     },
+    "context-seed": {
+      "description": "PRD-to-packages expert guide \u2014 maps project requirements to correct npx trinity369/use commands",
+      "category": "document",
+      "version": "1.0.0"
+    },
     "dashboard-charts": {
       "description": "Area, bar, line, and donut chart components wrapped in shadcn Cards. Powered by recharts.",
       "category": "component",
