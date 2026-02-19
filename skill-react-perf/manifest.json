@@ -1,0 +1,8 @@
+{
+  "name": "skill-react-perf",
+  "version": "1.0.0",
+  "description": "React performance optimization and profiling — memoization, code splitting, bundle analysis, rendering patterns",
+  "outputDir": ".claude",
+  "files": ["skills/react-perf/SKILL.md"],
+  "postMessage": "React Performance skill installed! Use for profiling, optimization, and bundle analysis."
+}
