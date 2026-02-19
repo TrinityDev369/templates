@@ -1,0 +1,8 @@
+{
+  "name": "skill-seo",
+  "version": "1.0.0",
+  "description": "Technical SEO audit and optimization skill — meta tags, structured data, Core Web Vitals, Open Graph",
+  "outputDir": ".claude",
+  "files": ["skills/seo/SKILL.md"],
+  "postMessage": "SEO skill installed! Use for technical SEO audits, meta tag optimization, and structured data generation."
+}
