@@ -1,0 +1,8 @@
+{
+  "name": "skill-api-design",
+  "version": "1.0.0",
+  "description": "REST and GraphQL API design best practices — resource modeling, versioning, error handling, pagination",
+  "outputDir": ".claude",
+  "files": ["skills/api-design/SKILL.md"],
+  "postMessage": "API Design skill installed! Use for designing RESTful APIs, route handlers, and OpenAPI specs."
+}
