@@ -1,0 +1,14 @@
+{
+  "name": "page-restaurant-menu",
+  "version": "1.0.0",
+  "description": "Digital restaurant menu with category navigation, dietary badges, and elegant dark theme",
+  "outputDir": "app/menu",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Restaurant menu page available at /menu.\nCustomize menu items, categories, and restaurant branding in page.tsx.\nUses dark warm theme — ensure your Tailwind config includes amber/gold colors."
+}
