@@ -1,0 +1,14 @@
+{
+  "name": "page-saas-comparison",
+  "version": "1.0.0",
+  "description": "SaaS tool comparison page with scoring matrix, card view, and interactive filters",
+  "outputDir": "app/compare",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Comparison page available at /compare.\nCustomize tools, features, and scores in page.tsx.\nToggle between table and card views. Sort by any feature column."
+}
