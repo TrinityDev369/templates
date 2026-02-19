@@ -191,6 +191,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "blog-category-page": {
+      "description": "Blog category page with filtered post list, grid/list views, pagination, and sidebar",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "blog-tag-cloud": {
       "description": "Interactive tag cloud with weighted sizing, color scaling, and staggered animations",
       "category": "component",
@@ -646,6 +651,16 @@
       "category": "integration",
       "version": "1.0.0"
     },
+    "page-event-landing": {
+      "description": "Event landing page with speakers, schedule, pricing tiers, and sponsor sections",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-podcast-show": {
+      "description": "Podcast show page with episode list, season filters, and interactive audio player bar",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "page-restaurant-menu": {
       "description": "Digital restaurant menu with category navigation, dietary badges, and elegant dark theme",
       "category": "page",
@@ -836,8 +851,18 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "skill-i18n": {
+      "description": "Internationalization and localization skill \u2014 next-intl, message extraction, RTL support, locale routing",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "skill-legal-review": {
       "description": "Legal review skill \u2014 contract analysis, clause identification, risk flagging, compliance checks",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-react-perf": {
+      "description": "React performance optimization and profiling \u2014 memoization, code splitting, bundle analysis, rendering patterns",
       "category": "skill",
       "version": "1.0.0"
     },
