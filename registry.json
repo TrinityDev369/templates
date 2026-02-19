@@ -191,6 +191,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "blog-tag-cloud": {
+      "description": "Interactive tag cloud with weighted sizing, color scaling, and staggered animations",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "commerce-seed": {
       "description": "Autonomous storefront composer \u2014 discovers business model, installs purchase flow components, and wires cart state + product types.",
       "category": "skill",
@@ -641,6 +646,16 @@
       "category": "integration",
       "version": "1.0.0"
     },
+    "page-restaurant-menu": {
+      "description": "Digital restaurant menu with category navigation, dietary badges, and elegant dark theme",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-saas-comparison": {
+      "description": "SaaS tool comparison page with scoring matrix, card view, and interactive filters",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "pdf-certificate": {
       "name": "pdf-certificate",
       "description": "Elegant certificate of completion/achievement PDF with decorative borders and signature field \u2014 powered by @react-pdf/renderer",
@@ -796,6 +811,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "skill-api-design": {
+      "description": "REST and GraphQL API design best practices \u2014 resource modeling, versioning, error handling, pagination",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "skill-copywriter": {
       "description": "Content creation skill \u2014 SEO-aware copy, blog posts, headlines",
       "category": "skill",
@@ -823,6 +843,11 @@
     },
     "skill-security": {
       "description": "Security review skill \u2014 OWASP checklist, auth patterns, input validation",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-seo": {
+      "description": "Technical SEO audit and optimization skill \u2014 meta tags, structured data, Core Web Vitals, Open Graph",
       "category": "skill",
       "version": "1.0.0"
     },
