@@ -881,6 +881,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "starter-restaurant": {
+      "description": "Next.js 14 restaurant starter with menu, reservations, chef team, and testimonials. TypeScript, Tailwind CSS, App Router, shadcn/ui theming.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "starter-saas-minimal": {
       "description": "Next.js 14 SaaS + Shop starter with shadcn/ui, dashboard shell, product catalog, cart, and checkout.",
       "category": "starter",
