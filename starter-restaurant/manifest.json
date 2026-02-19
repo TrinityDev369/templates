@@ -1,0 +1,36 @@
+{
+  "name": "starter-restaurant",
+  "version": "1.0.0",
+  "description": "Next.js 14 restaurant starter with menu, reservations, chef team, and testimonials. TypeScript, Tailwind CSS, App Router, shadcn/ui theming.",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "components.json",
+    "placeholder-dish.svg",
+    "placeholder-avatar.svg",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/menu/page.tsx",
+    "app/reservations/page.tsx",
+    "app/about/page.tsx",
+    "app/contact/page.tsx",
+    "lib/utils.ts",
+    "lib/data.ts",
+    "types/index.ts",
+    "components/navbar.tsx",
+    "components/footer.tsx",
+    "components/dish-card.tsx",
+    "components/reservation-form.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Restaurant starter installed! Run:\n1. npm install\n2. npx shadcn@latest init (select 'stone' base color)\n3. npm run dev\n\nCustomize your restaurant by editing lib/data.ts (menu items, chefs, testimonials) and replace placeholder SVGs with real images."
+}
