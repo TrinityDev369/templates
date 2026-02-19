@@ -1,0 +1,14 @@
+{
+  "name": "blog-category-page",
+  "version": "1.0.0",
+  "description": "Blog category page with filtered post list, grid/list views, pagination, and sidebar",
+  "outputDir": "app/blog/category",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Blog category page available at /blog/category.\nCustomize posts, categories, and sidebar content in page.tsx.\nSupports grid/list views, sorting, and pagination."
+}
