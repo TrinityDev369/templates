@@ -1,0 +1,12 @@
+{
+  "name": "blog-tag-cloud",
+  "version": "1.0.0",
+  "description": "Interactive tag cloud with weighted sizing, color scaling, and staggered animations",
+  "outputDir": "components/blog-tag-cloud",
+  "files": ["tag-cloud.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { TagCloud } from '@/components/blog-tag-cloud/tag-cloud'\n\nUsage:\n<TagCloud\n  tags={[{ name: 'React', count: 15 }, { name: 'Next.js', count: 8 }]}\n  onTagClick={(tag) => router.push(`/blog/tag/${tag}`)}\n/>"
+}
