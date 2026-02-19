@@ -846,6 +846,30 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "thumbnail-generator": {
+      "name": "Thumbnail Generator",
+      "description": "AI thumbnail generation with Reve + Flux backends, IVM overlay system, dashboard UI, and self-adapting Claude Code skill",
+      "category": "STORAGE",
+      "type": "pipe",
+      "tags": [
+        "ai",
+        "image-generation",
+        "reve",
+        "flux",
+        "thumbnails",
+        "s3",
+        "self-adapting-skill"
+      ],
+      "stack": [
+        "react",
+        "next",
+        "tailwind",
+        "postgres",
+        "lucide-react"
+      ],
+      "fileCount": 29,
+      "version": "1.0.0"
+    },
     "trinity-signature": {
       "description": "Animated triangle signature easter-egg for client sites",
       "category": "component",
