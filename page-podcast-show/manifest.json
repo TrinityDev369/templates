@@ -1,0 +1,14 @@
+{
+  "name": "page-podcast-show",
+  "version": "1.0.0",
+  "description": "Podcast show page with episode list, season filters, and interactive audio player bar",
+  "outputDir": "app/podcast",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Podcast page available at /podcast.\nCustomize show info, episodes, and branding in page.tsx.\nUses dark theme with purple accent. Connect real audio sources to replace mock player."
+}
