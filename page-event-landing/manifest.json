@@ -1,0 +1,14 @@
+{
+  "name": "page-event-landing",
+  "version": "1.0.0",
+  "description": "Event landing page with speakers, schedule, pricing tiers, and sponsor sections",
+  "outputDir": "app/event",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Event landing page available at /event.\nCustomize speakers, schedule, pricing, and sponsors in page.tsx.\nUses indigo/violet gradient theme."
+}
