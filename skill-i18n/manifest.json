@@ -1,0 +1,8 @@
+{
+  "name": "skill-i18n",
+  "version": "1.0.0",
+  "description": "Internationalization and localization skill — next-intl, message extraction, RTL support, locale routing",
+  "outputDir": ".claude",
+  "files": ["skills/i18n/SKILL.md"],
+  "postMessage": "i18n skill installed! Use for setting up internationalization, managing translations, and locale routing."
+}
