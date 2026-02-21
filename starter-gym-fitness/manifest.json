@@ -1,0 +1,41 @@
+{
+  "name": "starter-gym-fitness",
+  "version": "1.0.0",
+  "description": "Next.js 14 gym and fitness starter with class schedule, membership plans, trainer profiles, and testimonials. Dark theme with orange accents. TypeScript, Tailwind CSS, App Router.",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "placeholder-class.svg",
+    "placeholder-trainer.svg",
+    "placeholder-member.svg",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/classes/page.tsx",
+    "app/classes/[id]/page.tsx",
+    "app/trainers/page.tsx",
+    "app/membership/page.tsx",
+    "app/schedule/page.tsx",
+    "app/contact/page.tsx",
+    "lib/utils.ts",
+    "lib/data.ts",
+    "types/index.ts",
+    "components/navbar.tsx",
+    "components/footer.tsx",
+    "components/class-card.tsx",
+    "components/trainer-card.tsx",
+    "components/pricing-card.tsx",
+    "components/schedule-table.tsx",
+    "components/testimonial-card.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Iron Peak Fitness starter installed! Run:\n1. npm install\n2. npm run dev\n\nCustomize your gym by editing lib/data.ts (classes, trainers, plans, schedule) and replace placeholder SVGs with real images."
+}
