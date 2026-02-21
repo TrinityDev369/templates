@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 
 const revenueData = Array.from({ length: 12 }, (_, i) => ({
   month: new Date(2024, i).toLocaleDateString("en-US", { month: "short" }),
-  revenue: Math.floor(15000 + Math.random() * 30000 + i * 2000),
+  revenue: Math.floor(15000 + ((i * 7919) % 30000) + i * 2000),
 }));
 
 const ordersData = [
@@ -35,7 +35,7 @@ const ordersData = [
 
 const visitorsData = Array.from({ length: 30 }, (_, i) => ({
   day: i + 1,
-  visitors: Math.floor(200 + Math.random() * 500 + Math.sin(i / 3) * 100),
+  visitors: Math.floor(200 + ((i * 131) % 500) + Math.round(Math.sin(i / 3) * 100)),
 }));
 
 const trafficData = [

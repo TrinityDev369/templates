@@ -10,6 +10,7 @@
     "next.config.ts",
     "postcss.config.mjs",
     "components.json",
+    "app/globals.css",
     "app/layout.tsx",
     "app/page.tsx",
     "app/(dashboard)/layout.tsx",
@@ -25,7 +26,6 @@
     "app/(shop)/checkout/page.tsx",
     "lib/utils.ts",
     "lib/hooks/use-cart.ts",
-    "lib/hooks/use-media-query.ts",
     "types/index.ts"
   ],
   "peerDependencies": {
@@ -33,5 +33,5 @@
     "next": ">=14",
     "tailwindcss": ">=3"
   },
-  "postMessage": "SaaS starter installed! Run `npx shadcn@latest init` then `npm install` to get started. See app/(dashboard) for admin pages and app/(shop) for storefront."
+  "postMessage": "SaaS starter installed! Run:\n1. npm install\n2. npx shadcn@latest add button card badge input sheet dropdown-menu avatar separator select tabs switch label\n3. npm run dev\n\nSee app/(dashboard) for admin pages and app/(shop) for storefront."
 }

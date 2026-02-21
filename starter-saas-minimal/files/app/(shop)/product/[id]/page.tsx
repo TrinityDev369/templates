@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft, Minus, Plus, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,32 +14,148 @@ import { formatCurrency } from "@/lib/utils";
 import { toast } from "sonner";
 import type { Product } from "@/types";
 
-const product: Product = {
-  id: "1",
-  name: "Wireless Headphones Pro",
-  description:
-    "Experience premium sound quality with our flagship wireless headphones. Featuring active noise cancellation, 30-hour battery life, and ultra-comfortable memory foam ear cushions. Perfect for music lovers and professionals alike.",
-  price: 79.99,
-  category: "Electronics",
-  stock: 124,
-  status: "active",
-  rating: 4.5,
-  reviewCount: 89,
-  variants: [
-    { id: "size", name: "Size", type: "size", options: ["Standard", "Compact"] },
-    { id: "color", name: "Color", type: "color", options: ["Black", "White", "Navy", "Rose Gold"] },
-  ],
-  specifications: {
-    "Driver Size": "40mm",
-    "Frequency Response": "20Hz - 20kHz",
-    "Battery Life": "30 hours",
-    "Charging": "USB-C, 10min = 3hr playback",
-    Weight: "250g",
-    Connectivity: "Bluetooth 5.3",
-    "Noise Cancellation": "Active (ANC)",
+const products: Product[] = [
+  {
+    id: "1",
+    name: "Wireless Headphones Pro",
+    description:
+      "Experience premium sound quality with our flagship wireless headphones. Featuring active noise cancellation, 30-hour battery life, and ultra-comfortable memory foam ear cushions. Perfect for music lovers and professionals alike.",
+    price: 79.99,
+    category: "Electronics",
+    stock: 124,
+    status: "active",
+    rating: 4.5,
+    reviewCount: 89,
+    variants: [
+      { id: "size", name: "Size", type: "size", options: ["Standard", "Compact"] },
+      { id: "color", name: "Color", type: "color", options: ["Black", "White", "Navy", "Rose Gold"] },
+    ],
+    specifications: {
+      "Driver Size": "40mm",
+      "Frequency Response": "20Hz - 20kHz",
+      "Battery Life": "30 hours",
+      "Charging": "USB-C, 10min = 3hr playback",
+      Weight: "250g",
+      Connectivity: "Bluetooth 5.3",
+      "Noise Cancellation": "Active (ANC)",
+    },
+    createdAt: "2024-01-01",
   },
-  createdAt: "2024-01-01",
-};
+  {
+    id: "2",
+    name: "Cotton T-Shirt",
+    description: "Soft organic cotton tee that feels great all day. Available in multiple sizes and colors. Machine washable and built to last.",
+    price: 24.99,
+    category: "Clothing",
+    stock: 350,
+    status: "active",
+    rating: 4.2,
+    reviewCount: 156,
+    variants: [
+      { id: "size", name: "Size", type: "size", options: ["S", "M", "L", "XL"] },
+      { id: "color", name: "Color", type: "color", options: ["White", "Black", "Gray", "Navy"] },
+    ],
+    specifications: { Material: "100% Organic Cotton", Fit: "Regular", Care: "Machine wash cold" },
+    createdAt: "2024-01-02",
+  },
+  {
+    id: "3",
+    name: "Running Shoes",
+    description: "Lightweight performance runners designed for comfort and speed. Breathable mesh upper with responsive cushioning for your daily runs.",
+    price: 129.99,
+    category: "Sports",
+    stock: 67,
+    status: "active",
+    rating: 4.8,
+    reviewCount: 234,
+    variants: [
+      { id: "size", name: "Size", type: "size", options: ["8", "9", "10", "11", "12"] },
+      { id: "color", name: "Color", type: "color", options: ["Black/White", "Blue/Gray", "Red/Black"] },
+    ],
+    specifications: { Upper: "Breathable mesh", Sole: "Rubber with EVA foam", Weight: "280g", Drop: "8mm" },
+    createdAt: "2024-01-03",
+  },
+  {
+    id: "4",
+    name: "Coffee Maker",
+    description: "12-cup programmable brewer with thermal carafe. Wake up to freshly brewed coffee with the programmable timer and enjoy hot coffee all morning.",
+    price: 89.99,
+    category: "Home",
+    stock: 45,
+    status: "active",
+    rating: 4.3,
+    reviewCount: 78,
+    variants: [
+      { id: "color", name: "Color", type: "color", options: ["Black", "Stainless Steel"] },
+    ],
+    specifications: { Capacity: "12 cups", Carafe: "Thermal stainless steel", Timer: "24-hour programmable", Power: "1000W" },
+    createdAt: "2024-01-04",
+  },
+  {
+    id: "5",
+    name: "Yoga Mat",
+    description: "Extra thick non-slip mat for all your yoga and fitness needs. 6mm thick with alignment lines to help perfect your poses.",
+    price: 34.99,
+    category: "Sports",
+    stock: 200,
+    status: "active",
+    rating: 4.6,
+    reviewCount: 112,
+    variants: [
+      { id: "color", name: "Color", type: "color", options: ["Purple", "Blue", "Green", "Black"] },
+    ],
+    specifications: { Thickness: "6mm", Material: "TPE eco-friendly", Length: "183cm", Width: "61cm" },
+    createdAt: "2024-01-05",
+  },
+  {
+    id: "6",
+    name: "Desk Lamp",
+    description: "LED adjustable desk lamp with multiple brightness levels and color temperatures. USB charging port included for convenience.",
+    price: 49.99,
+    category: "Home",
+    stock: 90,
+    status: "active",
+    rating: 4.1,
+    reviewCount: 45,
+    variants: [
+      { id: "color", name: "Color", type: "color", options: ["White", "Black", "Silver"] },
+    ],
+    specifications: { "Light Source": "LED", Brightness: "5 levels", "Color Temperature": "3000K-6000K", Power: "USB-C" },
+    createdAt: "2024-01-06",
+  },
+  {
+    id: "7",
+    name: "Bluetooth Speaker",
+    description: "Portable waterproof speaker with 360-degree sound. IPX7 rated for poolside and outdoor use with 12-hour battery life.",
+    price: 59.99,
+    category: "Electronics",
+    stock: 88,
+    status: "active",
+    rating: 4.4,
+    reviewCount: 167,
+    variants: [
+      { id: "color", name: "Color", type: "color", options: ["Black", "Blue", "Red", "Green"] },
+    ],
+    specifications: { Connectivity: "Bluetooth 5.0", "Battery Life": "12 hours", Waterproof: "IPX7", Weight: "540g" },
+    createdAt: "2024-01-07",
+  },
+  {
+    id: "8",
+    name: "Leather Wallet",
+    description: "Genuine leather bifold wallet with RFID blocking technology. Slim design with 8 card slots and a bill compartment.",
+    price: 44.99,
+    category: "Accessories",
+    stock: 150,
+    status: "active",
+    rating: 4.7,
+    reviewCount: 93,
+    variants: [
+      { id: "color", name: "Color", type: "color", options: ["Brown", "Black", "Tan"] },
+    ],
+    specifications: { Material: "Genuine leather", "Card Slots": "8", RFID: "Blocking", Dimensions: "11 x 9 x 1.5 cm" },
+    createdAt: "2024-01-08",
+  },
+];
 
 const PLACEHOLDER_COLORS = [
   "bg-blue-200 dark:bg-blue-800",
@@ -48,9 +165,9 @@ const PLACEHOLDER_COLORS = [
 ];
 
 const reviews = [
-  { id: 1, author: "Alex M.", rating: 5, date: "Jan 10, 2024", text: "Best headphones I have ever owned. The noise cancellation is incredible." },
-  { id: 2, author: "Sarah K.", rating: 4, date: "Jan 8, 2024", text: "Great sound quality and very comfortable. Battery life is impressive." },
-  { id: 3, author: "Mike T.", rating: 5, date: "Jan 5, 2024", text: "Worth every penny. Using these daily for work calls and music." },
+  { id: 1, author: "Alex M.", rating: 5, date: "Jan 10, 2024", text: "Best product I have ever owned. The quality is incredible." },
+  { id: 2, author: "Sarah K.", rating: 4, date: "Jan 8, 2024", text: "Great quality and very well made. Highly recommend." },
+  { id: 3, author: "Mike T.", rating: 5, date: "Jan 5, 2024", text: "Worth every penny. Using this daily and loving it." },
 ];
 
 function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "md" }) {
@@ -71,18 +188,41 @@ function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "md
   );
 }
 
-export default function ProductDetailPage() {
+export default function ProductDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const product = products.find((p) => p.id === params.id);
+
+  if (!product) {
+    notFound();
+  }
+
+  return <ProductDetail product={product} />;
+}
+
+function ProductDetail({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("Standard");
-  const [selectedColor, setSelectedColor] = useState("Black");
+  const [selectedVariants, setSelectedVariants] = useState<Record<string, string>>(() => {
+    const defaults: Record<string, string> = {};
+    product.variants?.forEach((v) => {
+      if (v.options.length > 0) {
+        defaults[v.id] = v.options[0];
+      }
+    });
+    return defaults;
+  });
   const [selectedImage, setSelectedImage] = useState(0);
   const { addItem } = useCart();
+
+  const variantString = Object.values(selectedVariants).join(" / ");
 
   const handleAddToCart = () => {
     addItem(
       { id: product.id, name: product.name, price: product.price },
       quantity,
-      `${selectedSize} / ${selectedColor}`
+      variantString || undefined
     );
     toast.success(`${product.name} added to cart`);
   };
@@ -141,39 +281,28 @@ export default function ProductDetailPage() {
 
           <Separator />
 
-          {/* Size Selector */}
-          <div className="space-y-3">
-            <label className="text-sm font-medium">Size</label>
-            <div className="flex gap-2">
-              {product.variants?.[0]?.options.map((size) => (
-                <Button
-                  key={size}
-                  variant={selectedSize === size ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedSize(size)}
-                >
-                  {size}
-                </Button>
-              ))}
+          {/* Variant Selectors */}
+          {product.variants?.map((variant) => (
+            <div key={variant.id} className="space-y-3">
+              <label className="text-sm font-medium">
+                {variant.name}{selectedVariants[variant.id] ? `: ${selectedVariants[variant.id]}` : ""}
+              </label>
+              <div className="flex gap-2">
+                {variant.options.map((option) => (
+                  <Button
+                    key={option}
+                    variant={selectedVariants[variant.id] === option ? "default" : "outline"}
+                    size="sm"
+                    onClick={() =>
+                      setSelectedVariants((prev) => ({ ...prev, [variant.id]: option }))
+                    }
+                  >
+                    {option}
+                  </Button>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Color Selector */}
-          <div className="space-y-3">
-            <label className="text-sm font-medium">Color: {selectedColor}</label>
-            <div className="flex gap-2">
-              {product.variants?.[1]?.options.map((color) => (
-                <Button
-                  key={color}
-                  variant={selectedColor === color ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedColor(color)}
-                >
-                  {color}
-                </Button>
-              ))}
-            </div>
-          </div>
+          ))}
 
           <Separator />
 
@@ -225,9 +354,8 @@ export default function ProductDetailPage() {
               <CardContent className="prose max-w-none p-6 dark:prose-invert">
                 <p>{product.description}</p>
                 <p className="text-muted-foreground">
-                  Designed for all-day comfort and exceptional audio performance.
-                  Whether you are commuting, working, or relaxing, these headphones
-                  deliver crystal-clear sound with deep bass and detailed highs.
+                  Designed for quality and built to last. A great addition to your
+                  collection that combines form and function perfectly.
                 </p>
               </CardContent>
             </Card>

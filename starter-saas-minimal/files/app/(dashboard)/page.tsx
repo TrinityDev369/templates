@@ -37,7 +37,7 @@ const revenueData = Array.from({ length: 30 }, (_, i) => ({
     month: "short",
     day: "numeric",
   }),
-  revenue: Math.floor(800 + Math.random() * 1200 + i * 20),
+  revenue: Math.floor(800 + ((i * 47) % 1200) + i * 20),
 }));
 
 const recentOrders: Pick<Order, "id" | "customer" | "status" | "total" | "createdAt">[] = [
