@@ -1,6 +1,16 @@
 {
   "version": "1.0",
   "templates": {
+    "agent-docs-writer": {
+      "description": "Documentation generation agent \u2014 reads code, produces structured docs with examples",
+      "category": "agent",
+      "version": "1.0.0"
+    },
+    "agent-refactor": {
+      "description": "Automated code refactoring agent \u2014 identifies patterns, applies transformations, validates results",
+      "category": "agent",
+      "version": "1.0.0"
+    },
     "agent-translator": {
       "description": "Multi-language translation agent \u2014 context-aware translation with tone preservation and i18n support",
       "category": "agent",
@@ -193,6 +203,16 @@
     },
     "blog-category-page": {
       "description": "Blog category page with filtered post list, grid/list views, pagination, and sidebar",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "blog-comments-giscus": {
+      "description": "Blog comments powered by GitHub Discussions via Giscus \u2014 zero database needed",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "blog-search-results": {
+      "description": "Blog search results page with query highlighting, filters, and pagination",
       "category": "page",
       "version": "1.0.0"
     },
@@ -738,6 +758,11 @@
     },
     "pipe-onboarding-automation": {
       "description": "Automated employee/user onboarding pipeline with configurable steps per role",
+      "category": "pipe",
+      "version": "1.0.0"
+    },
+    "pipe-security-audit": {
+      "description": "Security audit pipeline \u2014 OWASP checks, dependency scanning, secrets detection, report generation",
       "category": "pipe",
       "version": "1.0.0"
     },
