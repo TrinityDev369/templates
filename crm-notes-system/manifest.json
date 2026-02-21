@@ -1,0 +1,12 @@
+{
+  "name": "crm-notes-system",
+  "version": "1.0.0",
+  "description": "Rich text notes with @mentions, timestamps, and author attribution — for contacts, deals, and companies",
+  "outputDir": "components/crm-notes-system",
+  "files": ["notes.tsx", "types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { NotesFeed, NoteComposer } from '@/components/crm-notes-system/notes';\nimport type { Note } from '@/components/crm-notes-system/types';\n\n<NotesFeed notes={notes} currentUserId={userId} onDelete={handleDelete} onEdit={handleEdit} />\n<NoteComposer onSubmit={handleCreate} authorName='Jane' />\n\nNote: This uses a simple textarea with @mention detection (no tiptap dependency). For rich text, add tiptap and swap the textarea."
+}
