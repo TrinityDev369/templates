@@ -1,0 +1,14 @@
+{
+  "name": "dashboard-feature-flags",
+  "version": "1.0.0",
+  "description": "Feature flag management dashboard with toggle switches, environment badges, targeting rules, search, and delete confirmation. LaunchDarkly-style.",
+  "outputDir": "app/feature-flags",
+  "files": ["page.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Feature flags dashboard installed at app/feature-flags/page.tsx.\nAccess at /feature-flags. Self-contained — no additional dependencies needed."
+}
