@@ -1,0 +1,9 @@
+{
+  "name": "hex-grid",
+  "version": "1.0.0",
+  "description": "Hexagonal grid with cube coordinates, both orientations, hit testing, rings, spirals, line drawing, and smart cover/resize. Derived from IVM principles.",
+  "outputDir": "src/utils",
+  "files": ["hex-grid.ts"],
+  "peerDependencies": {},
+  "postMessage": "Imported! Use it:\n\nimport { createHexGrid, coverHex, resizeHex, pixelToHex, hexNeighbors, hexDistance, hexRing, hexSpiral, hexLine } from './hex-grid';\n\n// Fill a container\nconst grid = createHexGrid({ width: 800, height: 600, cellSize: 30 });\n\n// Or auto-compute cellSize\nconst grid = coverHex(800, 600, { targetCount: 80 });\n\n// Hit test\nconst coord = pixelToHex(mouseX, mouseY, grid);\n\n// Spatial queries\nconst adj = hexNeighbors(coord);\nconst area = hexSpiral(coord, 3);\nconst path = hexLine(coordA, coordB);"
+}
