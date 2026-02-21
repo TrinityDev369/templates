@@ -151,7 +151,7 @@ export default function ApplyPage({ params }: { params: { id: string } }) {
           >
             Resume <span className="text-red-500">*</span>
           </label>
-          <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-brand-300 transition-colors">
+          <div className="relative border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-brand-300 transition-colors">
             <Upload className="w-8 h-8 text-gray-400 mx-auto mb-3" />
             <p className="text-sm text-gray-600 mb-1">
               Drop your resume here or{" "}
@@ -163,7 +163,6 @@ export default function ApplyPage({ params }: { params: { id: string } }) {
               type="file"
               accept=".pdf,.doc,.docx"
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-              style={{ position: "relative" }}
             />
           </div>
         </div>

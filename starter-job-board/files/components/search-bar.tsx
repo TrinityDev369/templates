@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Search, MapPin, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SearchFilters } from "@/types";
@@ -22,10 +23,23 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
+  const router = useRouter();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    onSearch?.({ query, location, type, level: "" });
+
+    if (onSearch) {
+      onSearch({ query, location, type, level: "" });
+      return;
+    }
+
+    // Navigate to /jobs with query params when no onSearch callback provided
+    const params = new URLSearchParams();
+    if (query) params.set("q", query);
+    if (location) params.set("location", location);
+    if (type) params.set("type", type);
+    const qs = params.toString();
+    router.push(qs ? `/jobs?${qs}` : "/jobs");
   }
 
   return (
@@ -41,6 +55,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         <Search className="absolute left-3 h-4.5 w-4.5 text-gray-400" />
         <input
           type="text"
+          name="q"
           placeholder="Job title or keyword"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -56,6 +71,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         <MapPin className="absolute left-3 h-4.5 w-4.5 text-gray-400" />
         <input
           type="text"
+          name="location"
           placeholder="City or remote"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
@@ -70,6 +86,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
       <div className="relative flex items-center sm:w-40">
         <ChevronDown className="pointer-events-none absolute right-3 h-4 w-4 text-gray-400" />
         <select
+          name="type"
           value={type}
           onChange={(e) => setType(e.target.value)}
           className="h-11 w-full appearance-none rounded-xl bg-gray-50 pl-3 pr-9 text-sm text-gray-900 outline-none transition-colors focus:bg-gray-100 sm:rounded-lg sm:bg-transparent sm:focus:bg-gray-50"

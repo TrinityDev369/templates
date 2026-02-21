@@ -27,8 +27,6 @@
     "components/footer.tsx",
     "components/job-card.tsx",
     "components/search-bar.tsx",
-    "components/company-card.tsx",
-    "components/category-card.tsx",
     "components/job-filters.tsx"
   ],
   "peerDependencies": {
