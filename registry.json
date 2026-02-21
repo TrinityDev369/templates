@@ -211,9 +211,19 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "blog-reading-mode": {
+      "description": "Distraction-free reading mode toggle \u2014 hides nav, widens content, adjusts typography",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "blog-search-results": {
       "description": "Blog search results page with query highlighting, filters, and pagination",
       "category": "page",
+      "version": "1.0.0"
+    },
+    "blog-share-buttons": {
+      "description": "Social media share buttons with copy-link functionality",
+      "category": "component",
       "version": "1.0.0"
     },
     "blog-tag-cloud": {
@@ -248,6 +258,11 @@
     },
     "component-copy-button": {
       "description": "Click-to-copy button with animated checkmark confirmation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-countdown-timer": {
+      "description": "Countdown timer with days/hours/minutes/seconds \u2014 target date and duration modes",
       "category": "component",
       "version": "1.0.0"
     },
@@ -288,6 +303,11 @@
     },
     "component-slider-range": {
       "description": "Single and dual-handle range slider with tooltips, marks, and keyboard navigation",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "component-star-rating": {
+      "description": "Interactive star rating with half-star support, hover preview, and keyboard navigation",
       "category": "component",
       "version": "1.0.0"
     },
@@ -399,6 +419,11 @@
     "crm-commission-calculator": {
       "description": "Sales commission calculator with configurable tier rules and visual breakdown",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "crm-dashboard-overview": {
+      "description": "CRM overview dashboard with KPI cards, pipeline summary, revenue chart, and activity feed",
+      "category": "page",
       "version": "1.0.0"
     },
     "crm-territory-map": {
