@@ -1,0 +1,9 @@
+{
+  "name": "agent-docs-writer",
+  "version": "1.0.0",
+  "description": "Documentation generation agent — reads code, produces structured docs with examples",
+  "outputDir": ".claude",
+  "files": ["agents/docs-writer.md"],
+  "peerDependencies": {},
+  "postMessage": "Docs writer agent installed. Invoke with: /agents:docs-writer or reference in CLAUDE.md agent configs."
+}
