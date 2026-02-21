@@ -1,0 +1,12 @@
+{
+  "name": "blog-comments-giscus",
+  "version": "1.0.0",
+  "description": "Blog comments powered by GitHub Discussions via Giscus — zero database needed",
+  "outputDir": "components/blog-comments-giscus",
+  "files": ["comments.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@giscus/react": ">=3"
+  },
+  "postMessage": "Install: npm install @giscus/react\n\nSetup:\n1. Enable GitHub Discussions on your repo\n2. Install the Giscus app: https://github.com/apps/giscus\n3. Get your config at: https://giscus.app\n4. Update repo, repoId, category, and categoryId in comments.tsx\n\nUsage: <Comments slug={post.slug} />"
+}
