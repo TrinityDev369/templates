@@ -1,0 +1,12 @@
+{
+  "name": "crm-task-manager",
+  "version": "1.0.0",
+  "description": "CRM task management — create, assign, and track tasks with due dates, priorities, and contact/deal linking",
+  "outputDir": "components/crm-task-manager",
+  "files": ["index.ts", "types.ts", "task-list.tsx", "task-form.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { TaskList, TaskForm } from '@/components/crm-task-manager';\nimport type { Task } from '@/components/crm-task-manager/types';\n\nConnect onCreateTask, onUpdateTask, onDeleteTask callbacks to your API."
+}
