@@ -1,0 +1,12 @@
+{
+  "name": "crm-email-integration",
+  "version": "1.0.0",
+  "description": "CRM email integration — compose, send, receive, and thread emails linked to contacts and deals",
+  "outputDir": "components/crm-email-integration",
+  "files": ["index.ts", "types.ts", "email-compose.tsx", "email-thread.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { EmailCompose, EmailThread } from '@/components/crm-email-integration';\nimport type { Email, EmailThread as ThreadType } from '@/components/crm-email-integration/types';\n\nConnect the send/fetch functions in email-compose.tsx and email-thread.tsx to your email API (SendGrid, Resend, etc.)."
+}
