@@ -421,9 +421,34 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "crm-custom-fields": {
+      "description": "Custom field system for CRM \u2014 define, configure, and render dynamic fields on contacts and deals",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "crm-dashboard-overview": {
       "description": "CRM overview dashboard with KPI cards, pipeline summary, revenue chart, and activity feed",
       "category": "page",
+      "version": "1.0.0"
+    },
+    "crm-email-integration": {
+      "description": "CRM email integration \u2014 compose, send, receive, and thread emails linked to contacts and deals",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "crm-import-export": {
+      "description": "CSV import and export utilities for CRM contacts and deals \u2014 parse, validate, transform, and download",
+      "category": "utility",
+      "version": "1.0.0"
+    },
+    "crm-reporting-charts": {
+      "description": "Sales reporting with pipeline funnel, revenue trends, win/loss analysis, and activity breakdown charts",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "crm-task-manager": {
+      "description": "CRM task management \u2014 create, assign, and track tasks with due dates, priorities, and contact/deal linking",
+      "category": "module",
       "version": "1.0.0"
     },
     "crm-territory-map": {
