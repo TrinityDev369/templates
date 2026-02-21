@@ -1,0 +1,13 @@
+{
+  "name": "crm-sales-forecast",
+  "version": "1.0.0",
+  "description": "Sales forecasting widget with pipeline probability weighting, monthly projections, and confidence bands",
+  "outputDir": "components/crm-sales-forecast",
+  "files": ["sales-forecast.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "recharts": ">=2"
+  },
+  "postMessage": "Usage:\nimport { SalesForecast } from '@/components/crm-sales-forecast/sales-forecast';\n\n<SalesForecast deals={deals} />\n\nPass your pipeline deals array. The component calculates weighted forecast based on stage probabilities."
+}
