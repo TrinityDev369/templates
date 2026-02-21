@@ -991,6 +991,21 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "starter-gym-fitness": {
+      "description": "Next.js 14 gym and fitness starter with class schedule, membership plans, trainer profiles, and testimonials. Dark theme.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
+    "starter-job-board": {
+      "description": "Next.js 14 job board starter with job listings, search filters, company profiles, application forms, and employer posting.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
+    "starter-real-estate": {
+      "description": "Next.js 14 real estate starter with property listings, search filters, neighborhoods, agent profiles, and contact form.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "starter-restaurant": {
       "description": "Next.js 14 restaurant starter with menu, reservations, chef team, and testimonials. TypeScript, Tailwind CSS, App Router, shadcn/ui theming.",
       "category": "starter",
