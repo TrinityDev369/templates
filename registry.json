@@ -421,6 +421,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "crm-company-page": {
+      "description": "Company detail page with contacts list, deal history, and activity timeline",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "crm-custom-fields": {
       "description": "Custom field system for CRM \u2014 define, configure, and render dynamic fields on contacts and deals",
       "category": "module",
@@ -441,9 +446,19 @@
       "category": "utility",
       "version": "1.0.0"
     },
+    "crm-notes-system": {
+      "description": "Rich text notes with @mentions, timestamps, and author attribution",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "crm-reporting-charts": {
       "description": "Sales reporting with pipeline funnel, revenue trends, win/loss analysis, and activity breakdown charts",
       "category": "page",
+      "version": "1.0.0"
+    },
+    "crm-sales-forecast": {
+      "description": "Sales forecasting with pipeline probability weighting, monthly projections, and confidence bands",
+      "category": "component",
       "version": "1.0.0"
     },
     "crm-task-manager": {
@@ -476,6 +491,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-file-browser": {
+      "description": "File and folder browser with breadcrumbs, grid/list views, and file type icons",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "dashboard-gantt-chart": {
       "description": "Project timeline Gantt chart with task groups, progress bars, dependency arrows, and day/week/month views.",
       "category": "component",
@@ -493,6 +513,11 @@
     },
     "dashboard-kpi-cards": {
       "description": "KPI stat cards with trend indicators, percentage change, and optional sparkline mini-charts",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-logs-viewer": {
+      "description": "Real-time log viewer with level filtering, text search, and auto-scroll",
       "category": "component",
       "version": "1.0.0"
     },
