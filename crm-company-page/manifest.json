@@ -1,0 +1,14 @@
+{
+  "name": "crm-company-page",
+  "version": "1.0.0",
+  "description": "Company detail page with header, contacts list, deal history, and activity timeline",
+  "outputDir": "app/companies/[id]",
+  "files": ["page.tsx", "loading.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Company page available at /companies/[id]\n\nInstall: npm install lucide-react\n\nCustomize the data fetching functions (getCompany, getContacts, getDeals, getActivities) in page.tsx to connect to your CRM data source."
+}
