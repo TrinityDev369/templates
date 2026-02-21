@@ -1,0 +1,12 @@
+{
+  "name": "blog-reading-mode",
+  "version": "1.0.0",
+  "description": "Distraction-free reading mode toggle — hides nav, widens content, adjusts typography",
+  "outputDir": "components/blog-reading-mode",
+  "files": ["reading-mode.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { ReadingModeProvider, ReadingModeToggle, ReadingModeContent } from '@/components/blog-reading-mode/reading-mode';\n\nWrap your layout in <ReadingModeProvider>, place <ReadingModeToggle /> in your toolbar, and wrap article content in <ReadingModeContent>."
+}
