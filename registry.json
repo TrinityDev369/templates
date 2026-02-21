@@ -476,6 +476,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "dashboard-audit-trail": {
+      "description": "Enterprise audit trail with filters, expandable rows, stats, pagination.",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "dashboard-calendar": {
       "description": "Interactive calendar with month/week/day views, event display, navigation, and today indicator.",
       "category": "component",
@@ -489,6 +494,11 @@
     "dashboard-data-table": {
       "description": "Generic data table with sorting, filtering, pagination, row selection. TanStack Table + shadcn/ui.",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-feature-flags": {
+      "description": "Feature flag management dashboard with toggles, environments, targeting rules.",
+      "category": "page",
       "version": "1.0.0"
     },
     "dashboard-file-browser": {
@@ -529,6 +539,11 @@
     "dashboard-notification-center": {
       "description": "Bell icon popover with unread badge, notification list with tabs, mark as read, and empty state.",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "dashboard-onboarding-wizard": {
+      "description": "Multi-step onboarding wizard with progress bar, profile, preferences, team invite.",
+      "category": "page",
       "version": "1.0.0"
     },
     "dashboard-realtime-websocket": {
