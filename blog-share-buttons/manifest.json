@@ -1,0 +1,12 @@
+{
+  "name": "blog-share-buttons",
+  "version": "1.0.0",
+  "description": "Social media share buttons with copy-link functionality",
+  "outputDir": "components/blog-share-buttons",
+  "files": ["share-buttons.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { ShareButtons } from '@/components/blog-share-buttons/share-buttons';\n\n<ShareButtons url={postUrl} title={postTitle} />"
+}
