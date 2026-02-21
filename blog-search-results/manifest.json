@@ -1,0 +1,14 @@
+{
+  "name": "blog-search-results",
+  "version": "1.0.0",
+  "description": "Blog search results page with query highlighting, filters, and pagination",
+  "outputDir": "app/blog/search",
+  "files": ["page.tsx", "loading.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Search page available at /blog/search?q=query\n\nInstall shadcn deps: npx shadcn@latest add input badge card\n\nCustomize the searchPosts() function in page.tsx to connect to your data source."
+}
