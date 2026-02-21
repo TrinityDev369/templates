@@ -1,0 +1,14 @@
+{
+  "name": "dashboard-onboarding-wizard",
+  "version": "1.0.0",
+  "description": "Multi-step onboarding wizard with progress bar, profile setup, preferences, team invite, and completion summary. Self-contained React page.",
+  "outputDir": "app/onboarding",
+  "files": ["page.tsx", "loading.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Onboarding wizard installed at app/onboarding/page.tsx.\nAccess at /onboarding. Requires a cn() utility at lib/utils.ts (clsx + tailwind-merge)."
+}
