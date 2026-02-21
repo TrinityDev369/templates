@@ -1,0 +1,9 @@
+{
+  "name": "crm-import-export",
+  "version": "1.0.0",
+  "description": "CSV import and export utilities for CRM contacts and deals — parse, validate, transform, and download",
+  "outputDir": "src/utils",
+  "files": ["import-export.ts"],
+  "peerDependencies": {},
+  "postMessage": "Usage:\nimport { parseCSV, exportToCSV, downloadCSV, validateRows, transformContacts } from './import-export';\n\n// Import\nconst { rows, errors } = parseCSV(csvString, contactSchema);\n\n// Export\nconst csv = exportToCSV(contacts, ['name', 'email', 'phone', 'company']);\ndownloadCSV(csv, 'contacts-export.csv');"
+}
