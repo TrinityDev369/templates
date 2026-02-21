@@ -51,15 +51,19 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
   const [bedrooms, setBedrooms] = useState(0);
 
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    onSearch?.({
-      query,
-      type,
-      minPrice,
-      maxPrice,
-      bedrooms,
-      bathrooms: 0,
-    });
+    if (onSearch) {
+      e.preventDefault();
+      onSearch({
+        query,
+        type,
+        minPrice,
+        maxPrice,
+        bedrooms,
+        bathrooms: 0,
+      });
+    }
+    // When no onSearch is provided, the native form GET submission
+    // navigates to /properties with query params.
   }
 
   const selectClasses =
@@ -67,6 +71,8 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
 
   return (
     <form
+      action="/properties"
+      method="get"
       onSubmit={handleSubmit}
       className={cn(
         "overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-200",
@@ -79,6 +85,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
           <MapPin className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
+            name="query"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="City, neighborhood, or address..."
@@ -89,6 +96,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         {/* Property Type */}
         <div className="relative border-t border-gray-200 lg:border-t-0">
           <select
+            name="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
             className={selectClasses}
@@ -105,6 +113,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         {/* Min Price */}
         <div className="relative border-t border-gray-200 lg:border-t-0">
           <select
+            name="minPrice"
             value={minPrice}
             onChange={(e) => setMinPrice(Number(e.target.value))}
             className={selectClasses}
@@ -121,6 +130,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         {/* Max Price */}
         <div className="relative border-t border-gray-200 lg:border-t-0">
           <select
+            name="maxPrice"
             value={maxPrice}
             onChange={(e) => setMaxPrice(Number(e.target.value))}
             className={selectClasses}
@@ -137,6 +147,7 @@ export function SearchBar({ onSearch, className }: SearchBarProps) {
         {/* Bedrooms */}
         <div className="relative border-t border-gray-200 lg:border-t-0">
           <select
+            name="bedrooms"
             value={bedrooms}
             onChange={(e) => setBedrooms(Number(e.target.value))}
             className={selectClasses}

@@ -6,7 +6,7 @@ const quickLinks = [
   { label: "Properties for Rent", href: "/properties?status=for-rent" },
   { label: "Neighborhoods", href: "/neighborhoods" },
   { label: "Our Agents", href: "/agents" },
-  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const propertyTypes = [
@@ -136,12 +136,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Homestead. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm text-gray-500 transition-colors hover:text-gray-300">
+            <span className="text-sm text-gray-500">
               Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-sm text-gray-500 transition-colors hover:text-gray-300">
+            </span>
+            <span className="text-sm text-gray-500">
               Terms of Service
-            </Link>
+            </span>
           </div>
         </div>
       </div>

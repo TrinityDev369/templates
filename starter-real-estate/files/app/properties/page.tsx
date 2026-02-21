@@ -32,9 +32,6 @@ export default function PropertiesPage() {
     });
   }, [filters]);
 
-  const hasActiveFilters =
-    filters.type || filters.minPrice || filters.maxPrice || filters.bedrooms || filters.bathrooms;
-
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Header */}

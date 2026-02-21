@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Home, TrendingUp } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 import type { Neighborhood } from "@/types";
@@ -9,10 +8,7 @@ interface NeighborhoodCardProps {
 
 export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
   return (
-    <Link
-      href={`/neighborhoods/${neighborhood.id}`}
-      className="group relative block overflow-hidden rounded-xl shadow-sm ring-1 ring-gray-200 transition-shadow duration-300 hover:shadow-lg"
-    >
+    <div className="group relative block overflow-hidden rounded-xl shadow-sm ring-1 ring-gray-200 transition-shadow duration-300 hover:shadow-lg">
       {/* Image with Zoom Effect */}
       <div className="relative aspect-[3/4] overflow-hidden sm:aspect-[4/3]">
         {neighborhood.image ? (
@@ -52,6 +48,6 @@ export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
