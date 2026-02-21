@@ -7,6 +7,23 @@ import type {
 } from "@/types";
 
 // ---------------------------------------------------------------------------
+// Contact Info
+// ---------------------------------------------------------------------------
+
+export const contactInfo = {
+  address: "742 Iron Peak Boulevard\nDenver, CO 80202",
+  phone: "(555) 987-6543",
+  phoneHref: "tel:+15559876543",
+  email: "info@ironpeakfitness.com",
+  emailHref: "mailto:info@ironpeakfitness.com",
+  hours: [
+    { days: "Monday - Friday", time: "5:00 AM - 11:00 PM" },
+    { days: "Saturday", time: "6:00 AM - 10:00 PM" },
+    { days: "Sunday", time: "7:00 AM - 9:00 PM" },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Trainers
 // ---------------------------------------------------------------------------
 

@@ -28,9 +28,7 @@
     "components/footer.tsx",
     "components/class-card.tsx",
     "components/trainer-card.tsx",
-    "components/pricing-card.tsx",
-    "components/schedule-table.tsx",
-    "components/testimonial-card.tsx"
+    "components/schedule-table.tsx"
   ],
   "peerDependencies": {
     "react": ">=18",

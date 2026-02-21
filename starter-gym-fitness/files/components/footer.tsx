@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Dumbbell, Mail } from "lucide-react";
+import { contactInfo } from "@/lib/data";
 
 const quickLinks = [
   { href: "/classes", label: "Classes" },
@@ -7,12 +8,6 @@ const quickLinks = [
   { href: "/trainers", label: "Trainers" },
   { href: "/membership", label: "Membership" },
   { href: "/contact", label: "Contact" },
-];
-
-const hours = [
-  { days: "Monday - Friday", time: "5:00 AM - 10:00 PM" },
-  { days: "Saturday - Sunday", time: "7:00 AM - 8:00 PM" },
-  { days: "Holidays", time: "8:00 AM - 6:00 PM" },
 ];
 
 export function Footer() {
@@ -60,7 +55,7 @@ export function Footer() {
               Hours
             </h3>
             <ul className="space-y-3">
-              {hours.map((entry) => (
+              {contactInfo.hours.map((entry) => (
                 <li key={entry.days}>
                   <span className="block text-sm font-medium text-white">
                     {entry.days}

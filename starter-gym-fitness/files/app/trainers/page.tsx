@@ -1,5 +1,5 @@
 import { trainers } from "@/lib/data";
-import TrainerCard from "@/components/trainer-card";
+import { TrainerCard } from "@/components/trainer-card";
 
 export const metadata = {
   title: "Trainers | Iron Peak Fitness",
