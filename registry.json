@@ -991,8 +991,18 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "starter-event-platform": {
+      "description": "Next.js 14 event platform with event listings, speaker profiles, ticket tiers, schedule timeline, and countdown timer. Purple/violet theme.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "starter-gym-fitness": {
       "description": "Next.js 14 gym and fitness starter with class schedule, membership plans, trainer profiles, and testimonials. Dark theme.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
+    "starter-healthcare-portal": {
+      "description": "Next.js 14 healthcare patient portal with appointments, health records, doctor profiles, multi-step booking, and departments. Teal/cyan theme.",
       "category": "starter",
       "version": "1.0.0"
     },
