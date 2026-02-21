@@ -1,0 +1,9 @@
+{
+  "name": "ivm-grid",
+  "version": "1.0.0",
+  "description": "IVM (Isotropic Vector Matrix) triangle tessellation with tri-cube coordinates, D3 symmetry, cover/resize, and hit testing. The mathematical foundation for hexagonal and other grids.",
+  "outputDir": "src/utils",
+  "files": ["ivm-grid.ts"],
+  "peerDependencies": {},
+  "postMessage": "Imported! Use it:\n\nimport { createIvmGrid, coverIvm, resizeIvm, pickTriangle, neighbors, disc, ring } from './ivm-grid';\n\n// Fill a container\nconst grid = createIvmGrid({ width: 800, height: 600, sideLength: 40 });\n\n// Or auto-compute sideLength\nconst grid = coverIvm(800, 600, { targetCount: 200 });\n\n// Hit test\nconst coord = pickTriangle(mouseX, mouseY, grid);\n\n// Neighborhood\nconst adj = neighbors(coord);\nconst area = disc(coord, 3);"
+}
