@@ -1,0 +1,9 @@
+{
+  "name": "pipe-security-audit",
+  "version": "1.0.0",
+  "description": "Security audit pipeline — OWASP checks, dependency scanning, secrets detection, and report generation",
+  "outputDir": ".",
+  "files": ["CLAUDE.md", ".claude/skills/security-audit/SKILL.md", "scripts/security-scan.sh"],
+  "peerDependencies": {},
+  "postMessage": "Security audit pipeline installed.\n\nRun the automated scan: bash scripts/security-scan.sh\nOr use the Claude skill: /security-audit\n\nEdit CLAUDE.md to customize audit scope and severity thresholds."
+}
