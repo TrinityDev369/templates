@@ -1,0 +1,12 @@
+{
+  "name": "dashboard-logs-viewer",
+  "version": "1.0.0",
+  "description": "Real-time log viewer with level filtering, text search, auto-scroll, and timestamp formatting",
+  "outputDir": "components/dashboard-logs-viewer",
+  "files": ["logs-viewer.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { LogsViewer } from '@/components/dashboard-logs-viewer/logs-viewer';\n\n<LogsViewer logs={logs} />\n\n// Or with real-time streaming\n<LogsViewer logs={logs} autoScroll follow />"
+}
