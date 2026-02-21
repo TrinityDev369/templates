@@ -1,0 +1,12 @@
+{
+  "name": "component-countdown-timer",
+  "version": "1.0.0",
+  "description": "Countdown timer with days, hours, minutes, seconds — supports target date and duration modes",
+  "outputDir": "components/countdown-timer",
+  "files": ["countdown-timer.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { CountdownTimer } from '@/components/countdown-timer/countdown-timer';\n\n// Count down to a date\n<CountdownTimer targetDate={new Date('2025-12-31T23:59:59')} onComplete={() => alert('Happy New Year!')} />\n\n// Count down a duration (in seconds)\n<CountdownTimer duration={3600} onComplete={() => console.log('Done!')} />"
+}
