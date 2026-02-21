@@ -606,6 +606,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "hex-grid": {
+      "description": "Hexagonal grid with cube coordinates, both orientations, hit testing, rings, spirals, and smart cover/resize",
+      "category": "utility",
+      "version": "1.0.0"
+    },
     "integration-analytics-posthog": {
       "description": "PostHog event tracking, user identification, and feature flags for Next.js",
       "category": "integration",
@@ -649,6 +654,11 @@
     "integration-sms-twilio": {
       "description": "Twilio SMS integration \u2014 send/receive messages, bulk SMS, delivery status, phone validation, and webhook handling.",
       "category": "integration",
+      "version": "1.0.0"
+    },
+    "ivm-grid": {
+      "description": "IVM triangle tessellation with tri-cube coordinates, D3 symmetry, cover/resize, and hit testing",
+      "category": "utility",
       "version": "1.0.0"
     },
     "page-event-landing": {
