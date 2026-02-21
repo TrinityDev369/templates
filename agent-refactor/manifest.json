@@ -1,0 +1,9 @@
+{
+  "name": "agent-refactor",
+  "version": "1.0.0",
+  "description": "Automated code refactoring agent — identifies patterns, applies transformations, validates results",
+  "outputDir": ".claude",
+  "files": ["agents/refactor.md"],
+  "peerDependencies": {},
+  "postMessage": "Refactor agent installed. Invoke with: /agents:refactor or reference in CLAUDE.md agent configs."
+}
