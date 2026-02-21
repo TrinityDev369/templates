@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarDays, Clock, Users, Send } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { CalendarDays, Clock, Users, Phone, Send, CheckCircle } from "lucide-react";
 
 const initialFormState = {
   name: "",
@@ -15,20 +14,20 @@ const initialFormState = {
 };
 
 const timeSlots = [
-  "11:30",
-  "12:00",
-  "12:30",
-  "1:00",
-  "1:30",
-  "5:00",
-  "5:30",
-  "6:00",
-  "6:30",
-  "7:00",
-  "7:30",
-  "8:00",
-  "8:30",
-  "9:00",
+  "11:30 AM",
+  "12:00 PM",
+  "12:30 PM",
+  "1:00 PM",
+  "1:30 PM",
+  "5:00 PM",
+  "5:30 PM",
+  "6:00 PM",
+  "6:30 PM",
+  "7:00 PM",
+  "7:30 PM",
+  "8:00 PM",
+  "8:30 PM",
+  "9:00 PM",
 ];
 
 const inputClasses =
@@ -36,6 +35,7 @@ const inputClasses =
 
 export function ReservationForm() {
   const [formData, setFormData] = useState(initialFormState);
+  const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -45,8 +45,28 @@ export function ReservationForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    alert("Reservation request submitted! We'll confirm shortly.");
+    setSubmitted(true);
     setFormData(initialFormState);
+  }
+
+  if (submitted) {
+    return (
+      <div className="text-center py-12 space-y-4">
+        <CheckCircle className="h-16 w-16 text-primary mx-auto" />
+        <h3 className="font-serif text-2xl font-bold">Thank You!</h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          Your reservation request has been submitted. We will confirm your
+          booking shortly via email.
+        </p>
+        <button
+          type="button"
+          onClick={() => setSubmitted(false)}
+          className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-6 py-2.5 font-medium transition-colors"
+        >
+          Make Another Reservation
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -91,7 +111,7 @@ export function ReservationForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="phone" className="block text-sm font-medium mb-1.5">
-            <Users size={14} className="inline text-muted-foreground mr-1.5" />
+            <Phone size={14} className="inline text-muted-foreground mr-1.5" />
             Phone Number
           </label>
           <input

@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { UtensilsCrossed } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { menuItems } from "@/lib/data";
 import { DishCard } from "@/components/dish-card";
-import type { MenuItem } from "@/types";
 
 const categories = ["all", "starters", "mains", "desserts", "drinks"] as const;
 

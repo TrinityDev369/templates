@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { contactInfo } from "@/lib/data";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -7,13 +8,6 @@ const quickLinks = [
   { label: "About", href: "/about" },
   { label: "Reservations", href: "/reservations" },
   { label: "Contact", href: "/contact" },
-];
-
-const hours = [
-  { days: "Tuesday - Friday", time: "11:30 AM - 10:00 PM" },
-  { days: "Saturday", time: "10:00 AM - 11:00 PM" },
-  { days: "Sunday", time: "10:00 AM - 9:00 PM" },
-  { days: "Monday", time: "Closed" },
 ];
 
 export default function Footer() {
@@ -54,7 +48,7 @@ export default function Footer() {
               Hours
             </h3>
             <ul className="mt-4 space-y-2">
-              {hours.map((item) => (
+              {contactInfo.hours.map((item) => (
                 <li key={item.days} className="text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">{item.days}</span>
                   <br />
@@ -72,15 +66,15 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>123 Gourmet Avenue, Culinary District, NY 10001</span>
+                <span>{contactInfo.address}</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 shrink-0" />
-                <span>(212) 555-0198</span>
+                <span>{contactInfo.phone}</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0" />
-                <span>hello@savoria.com</span>
+                <span>{contactInfo.email}</span>
               </li>
             </ul>
           </div>
@@ -91,7 +85,7 @@ export default function Footer() {
       <div className="border-t">
         <div className="mx-auto max-w-7xl px-6 py-6">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; 2024 Savoria. All rights reserved.
+            &copy; {new Date().getFullYear()} Savoria. All rights reserved.
           </p>
         </div>
       </div>

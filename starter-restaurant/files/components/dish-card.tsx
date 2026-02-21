@@ -1,5 +1,4 @@
 import { UtensilsCrossed } from "lucide-react";
-import { cn } from "@/lib/utils";
 import type { MenuItem } from "@/types";
 
 export function DishCard({ item }: { item: MenuItem }) {
