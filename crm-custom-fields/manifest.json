@@ -1,0 +1,12 @@
+{
+  "name": "crm-custom-fields",
+  "version": "1.0.0",
+  "description": "Custom field system for CRM — define, configure, and render dynamic fields on contacts and deals",
+  "outputDir": "components/crm-custom-fields",
+  "files": ["index.ts", "types.ts", "custom-field-builder.tsx", "custom-field-renderer.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { CustomFieldBuilder, CustomFieldRenderer } from '@/components/crm-custom-fields';\nimport type { FieldDefinition } from '@/components/crm-custom-fields/types';\n\n// Admin: define fields\n<CustomFieldBuilder fields={fields} onChange={setFields} />\n\n// User: render fields on a form\n<CustomFieldRenderer fields={fields} values={values} onChange={setValues} />"
+}
