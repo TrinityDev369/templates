@@ -1,0 +1,12 @@
+{
+  "name": "component-star-rating",
+  "version": "1.0.0",
+  "description": "Interactive star rating with half-star support, hover preview, and accessible keyboard navigation",
+  "outputDir": "components/star-rating",
+  "files": ["star-rating.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { StarRating } from '@/components/star-rating/star-rating';\n\n<StarRating value={3.5} onChange={(rating) => console.log(rating)} />\n<StarRating value={4} readOnly />"
+}
