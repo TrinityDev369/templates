@@ -1,0 +1,12 @@
+{
+  "name": "dashboard-file-browser",
+  "version": "1.0.0",
+  "description": "File and folder browser with breadcrumbs, grid/list views, and file type icons",
+  "outputDir": "components/dashboard-file-browser",
+  "files": ["file-browser.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Usage:\nimport { FileBrowser } from '@/components/dashboard-file-browser/file-browser';\n\n<FileBrowser files={files} onNavigate={handleNavigate} onFileSelect={handleSelect} />\n\nProvide your file tree data and handle navigation/selection callbacks."
+}
