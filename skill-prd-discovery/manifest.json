@@ -1,0 +1,12 @@
+{
+  "name": "skill-prd-discovery",
+  "version": "2.0.0",
+  "description": "Product discovery skill — structured brainstorming sessions that produce PRD-ready discovery canvases with phase-gated conversation, meta-cognitive monitoring, and multi-PRD detection",
+  "outputDir": ".claude",
+  "files": [
+    "skills/prd-discovery/SKILL.md",
+    "skills/prd-discovery/references/question-bank.md",
+    "skills/prd-discovery/references/discovery-canvas.md"
+  ],
+  "postMessage": "PRD Discovery skill installed!\n\nUsage: /prd-discovery\n\nRuns a structured discovery session that produces a Discovery Canvas — the input artifact for PRD authoring.\nIncludes question bank, worked examples, session save/resume, and multi-PRD split detection.\n\nPair with skill-prd-architect to convert the canvas into a production PRD."
+}
