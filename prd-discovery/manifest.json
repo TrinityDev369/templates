@@ -1,0 +1,13 @@
+{
+  "name": "prd-discovery",
+  "version": "1.0.0",
+  "description": "Deep product discovery session — a senior product strategist AI that asks provocative questions, challenges assumptions, maps user flows, eliminates uncertainty, and produces a PRD-ready Discovery Canvas",
+  "outputDir": ".claude",
+  "files": [
+    "skills/prd-discovery/SKILL.md",
+    "skills/prd-discovery/references/question-bank.md",
+    "skills/prd-discovery/references/discovery-canvas.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "PRD Discovery skill installed!\n\nTo start a discovery session:\n  1. Open Claude Code or Claude Desktop\n  2. The skill loads automatically from .claude/skills/prd-discovery/\n  3. Say: \"Let's start a discovery session\" or \"I want to figure out what to build\"\n\nThe AI will guide you through a structured brainstorming and requirements gathering process.\nAt the end you'll have a Discovery Canvas — a structured document ready for PRD authoring.\n\nFor ChatGPT: Copy the contents of .claude/skills/prd-discovery/SKILL.md into your Custom Instructions or system prompt."
+}
