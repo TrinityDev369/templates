@@ -1,0 +1,14 @@
+{
+  "name": "data-tree-table",
+  "version": "1.0.0",
+  "description": "Hierarchical tree table with expand/collapse — nested rows with indentation and toggle controls",
+  "outputDir": "components/data-tree-table",
+  "files": ["tree-table.tsx", "tree-table.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "@tanstack/react-table": ">=8",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install deps: npm i @tanstack/react-table lucide-react\nImport: import { TreeTable } from '@/components/data-tree-table/tree-table'"
+}
