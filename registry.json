@@ -586,6 +586,31 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "data-card-grid": {
+      "description": "Responsive card grid with optional masonry layout \u2014 adapts from 1 to 4 columns",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-list-infinite-scroll": {
+      "description": "Virtualized infinite scroll list \u2014 loads more items as you scroll with intersection observer",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-table-editable": {
+      "description": "Inline-editable table cells \u2014 click to edit with validation and save callbacks",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-table-expandable": {
+      "description": "Table with expandable row details \u2014 click to reveal nested content per row",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-table-virtual": {
+      "description": "Virtualized table for large datasets \u2014 renders only visible rows for 60fps scrolling",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "design-accessibility-primitives": {
       "description": "Focus rings, skip links, screen reader utilities, focus traps, and reduced motion.",
       "category": "design-system",
