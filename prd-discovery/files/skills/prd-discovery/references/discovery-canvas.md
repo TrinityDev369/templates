@@ -16,9 +16,10 @@ The Discovery Canvas maps directly to the PRD template used by `prd-architect`. 
 | 7. Constraints (compliance) | Migration Considerations | Legal/regulatory feeds migration and compliance sections |
 | 8. Uncertainty Register | Open Questions | Uncertainties become PRD open questions with impact levels |
 | 9. Assumptions Log | Open Questions | Unvalidated assumptions flagged in PRD |
-| 10. Scope Decision | (PRD boundary) | Determines whether 1 or N PRDs are written |
-| 11. Open Questions | Open Questions | Merged with uncertainties |
-| 12. Next Steps | Project Phases | Next steps inform phase breakdown |
+| 10. Parking Lot | (internal) | Ensures nothing raised during session was lost |
+| 11. Scope Decision | (PRD boundary) | Determines whether 1 or N PRDs are written |
+| 12. Open Questions | Open Questions | Merged with uncertainties |
+| 13. Next Steps | Project Phases | Next steps inform phase breakdown |
 
 **Key principle:** The canvas captures WHAT WAS DISCOVERED. The PRD interprets it into WHAT WILL BE BUILT. Discovery is descriptive; PRD is prescriptive.
 
@@ -77,6 +78,11 @@ Each canvas section must meet a minimum quality bar before the session ends:
 - At least 5 assumptions captured
 - Each assumption is falsifiable (can be proven wrong)
 - The most dangerous assumption is identified
+
+### Section 10: Parking Lot
+- Every item raised out of phase is captured (nothing silently dropped)
+- Each item has a disposition: resolved (with section reference), deferred, or still open
+- "Still open" items also appear in Section 12 (Open Questions)
 
 ---
 
@@ -197,15 +203,20 @@ Owners cancel plans, skip vet appointments, or leave pets alone longer than comf
 
 **Most dangerous assumption:** #3 — If sitters don't respond fast, the core value prop (same-day) fails.
 
-#### 10. Scope Decision
+#### 10. Parking Lot
+1. Community Admin user type — mentioned in Phase 2, parked as v2 scope (resolved → deferred)
+2. "What about dog walkers vs. house sitters?" — discussed briefly, decided to start with general "pet sitting" and let the market segment itself (resolved → Section 5 scope)
+3. Insurance requirements — raised in Phase 1, couldn't resolve in session (still open → Section 12 #1)
+
+#### 11. Scope Decision
 **Single PRD** — This is a focused MVP with clear boundaries. Community features (Admin user type) deferred to v2.
 
-#### 11. Open Questions
+#### 12. Open Questions
 1. What pet sitter insurance is required in [launch city]? — **High impact** (could delay launch)
 2. Can Supabase handle real-time GPS at the update frequency we need? — **Medium** (has alternatives)
 3. How do we seed the initial sitter supply in one neighborhood? — **High** (chicken-and-egg)
 
-#### 12. Next Steps
+#### 13. Next Steps
 1. Validate assumption #3: Run a 1-week manual matching experiment in target neighborhood (text-based, no app)
 2. Research pet sitter insurance requirements for launch city
 3. Write PRD from this canvas using prd-architect
@@ -247,3 +258,25 @@ Discovery revealed three distinct systems with different user types and technica
 2. Storefront can launch with manual fulfillment (no Operations Engine needed initially)
 3. Each PRD has a different tech stack emphasis (SSR vs admin panel vs internal tools)
 4. Different deployment cadences (storefront = daily, merchant = weekly, ops = monthly)
+
+---
+
+## When NOT to Split — Counter-Example
+
+### Example: Fitness App with Trainers + Members
+
+Discovery reveals two user types (Trainers and Members), different feature sets, and a tempting split:
+
+**Split signals present:**
+- Two distinct user types with different screens
+- Trainer dashboard vs. member app look like different products
+- Different usage patterns (trainer: weekly planning; member: daily workouts)
+
+**Why this should stay as ONE PRD:**
+
+1. **Shared data model is the product.** Every trainer action (create workout, set schedule, track progress) immediately affects member experience. Splitting would force premature API contracts between two "products" that are really one.
+2. **No independent value.** A trainer dashboard with no members is useless. A member app with no trainer content is empty. Neither side delivers value alone — unlike the e-commerce example where the Storefront ships independently.
+3. **Deployment is coupled.** A change to how trainers define workouts immediately changes how members see them. Separate PRDs would create constant cross-PRD dependencies that slow both teams down.
+4. **Same technical domain.** Both sides are a React web app hitting the same database. There's no tech stack boundary to justify separation.
+
+**The lesson:** Multiple user types ≠ multiple PRDs. Only split when each part can **deliver value independently** AND has **meaningful technical boundaries**. If every feature on Side A immediately affects Side B, it's one product with role-based views — not two products.

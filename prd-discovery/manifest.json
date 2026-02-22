@@ -1,13 +1,13 @@
 {
   "name": "prd-discovery",
-  "version": "1.0.0",
-  "description": "Deep product discovery session — a senior product strategist AI that asks provocative questions, challenges assumptions, maps user flows, eliminates uncertainty, and produces a PRD-ready Discovery Canvas",
+  "version": "3.0.0",
+  "description": "Product discovery skill — structured brainstorming sessions that produce PRD-ready discovery canvases. Phase-gated conversation with meta-cognitive monitoring, conversation excerpts, pre-decided client protocol, discovery off-ramp, and multi-PRD detection.",
   "outputDir": ".claude",
   "files": [
     "skills/prd-discovery/SKILL.md",
     "skills/prd-discovery/references/question-bank.md",
-    "skills/prd-discovery/references/discovery-canvas.md"
+    "skills/prd-discovery/references/discovery-canvas.md",
+    "skills/prd-discovery/references/conversation-excerpts.md"
   ],
-  "peerDependencies": {},
-  "postMessage": "PRD Discovery skill installed!\n\nTo start a discovery session:\n  1. Open Claude Code or Claude Desktop\n  2. The skill loads automatically from .claude/skills/prd-discovery/\n  3. Say: \"Let's start a discovery session\" or \"I want to figure out what to build\"\n\nThe AI will guide you through a structured brainstorming and requirements gathering process.\nAt the end you'll have a Discovery Canvas — a structured document ready for PRD authoring.\n\nFor ChatGPT: Copy the contents of .claude/skills/prd-discovery/SKILL.md into your Custom Instructions or system prompt."
+  "postMessage": "PRD Discovery skill installed!\n\nUsage: /prd-discovery\n\nRuns a structured discovery session that produces a Discovery Canvas — the input artifact for PRD authoring.\nIncludes conversation excerpts, question bank, worked examples, session save/resume, pre-decided client protocol, and discovery off-ramp.\n\nPair with prd-architect to convert the canvas into a production PRD."
 }
