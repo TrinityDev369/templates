@@ -1,0 +1,12 @@
+{
+  "name": "primitive-avatar",
+  "version": "1.0.0",
+  "description": "Avatar with image, fallback initials, status dot, and group stacking",
+  "outputDir": "components/ui",
+  "files": ["avatar.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@radix-ui/react-avatar": ">=1"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Avatar, AvatarImage, AvatarFallback, AvatarGroup } from '@/components/ui/avatar'\nUsage: <Avatar size='lg' status='online'><AvatarImage src='...' /><AvatarFallback>AB</AvatarFallback></Avatar>"
+}
