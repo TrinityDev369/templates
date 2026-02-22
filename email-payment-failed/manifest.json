@@ -1,0 +1,12 @@
+{
+  "name": "email-payment-failed",
+  "version": "1.0.0",
+  "description": "Payment failure notification with payment details card, retry schedule, and update payment CTA. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["payment-failed.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Payment failed email installed! Preview: npx email dev\nImport: import { PaymentFailedEmail } from '@/emails/payment-failed'"
+}
