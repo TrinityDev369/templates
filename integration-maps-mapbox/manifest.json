@@ -1,0 +1,12 @@
+{
+  "name": "integration-maps-mapbox",
+  "version": "1.0.0",
+  "description": "Mapbox GL interactive map with markers, popups, fly-to animations, and fit-bounds. Includes React component and standalone utilities.",
+  "outputDir": "src/integrations/mapbox",
+  "files": ["client.ts", "types.ts", "mapbox-map.tsx", "index.ts"],
+  "peerDependencies": {
+    "mapbox-gl": ">=3",
+    "react": ">=18"
+  },
+  "postMessage": "Set NEXT_PUBLIC_MAPBOX_TOKEN in .env\nImport: import { MapboxMap } from '@/integrations/mapbox'\nCSS: mapbox-gl/dist/mapbox-gl.css is imported automatically"
+}
