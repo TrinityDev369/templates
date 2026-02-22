@@ -1,0 +1,12 @@
+{
+  "name": "email-feature-announcement",
+  "version": "1.0.0",
+  "description": "New feature announcement email with screenshot showcase, highlight cards, and CTA. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["feature-announcement.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Feature announcement email installed! Preview: npx email dev\nImport: import { FeatureAnnouncementEmail } from '@/emails/feature-announcement'"
+}
