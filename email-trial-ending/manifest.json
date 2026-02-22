@@ -1,0 +1,12 @@
+{
+  "name": "email-trial-ending",
+  "version": "1.0.0",
+  "description": "Trial expiration warning email with urgency badge, feature loss list, pricing card, and upgrade CTA. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["trial-ending.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Trial ending email installed! Preview: npx email dev\nImport: import { TrialEndingEmail } from '@/emails/trial-ending'"
+}
