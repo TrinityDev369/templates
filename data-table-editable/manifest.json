@@ -1,0 +1,14 @@
+{
+  "name": "data-table-editable",
+  "version": "1.0.0",
+  "description": "Inline-editable table cells — click to edit with validation and save callbacks",
+  "outputDir": "components/data-table-editable",
+  "files": ["editable-table.tsx", "editable-table.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "@tanstack/react-table": ">=8",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install deps: npm i @tanstack/react-table lucide-react\nImport: import { EditableTable } from '@/components/data-table-editable/editable-table'"
+}
