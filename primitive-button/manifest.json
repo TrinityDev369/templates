@@ -1,0 +1,13 @@
+{
+  "name": "primitive-button",
+  "version": "1.0.0",
+  "description": "Button with variants (default/destructive/outline/ghost/link), sizes, and loading state",
+  "outputDir": "components/ui",
+  "files": ["button.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "class-variance-authority": ">=0.7",
+    "@radix-ui/react-slot": ">=1"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Button } from '@/components/ui/button'\nUsage: <Button variant='outline' size='sm' isLoading>Save</Button>"
+}
