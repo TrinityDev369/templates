@@ -1097,9 +1097,9 @@
       "version": "1.0.0"
     },
     "skill-prd-discovery": {
-      "description": "Product discovery skill \u2014 structured brainstorming sessions that produce PRD-ready discovery canvases",
+      "description": "Product discovery skill \u2014 structured brainstorming sessions with phase-gated conversation, conversation excerpts, pre-decided client protocol, and discovery off-ramp",
       "category": "skill",
-      "version": "2.0.0"
+      "version": "3.0.0"
     },
     "skill-react-perf": {
       "description": "React performance optimization and profiling \u2014 memoization, code splitting, bundle analysis, rendering patterns",
