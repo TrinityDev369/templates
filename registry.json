@@ -401,6 +401,11 @@
       "category": "config",
       "version": "1.0.0"
     },
+    "context-engineer": {
+      "description": "Inspect, diagnose, and optimize agent context for maximum signal density. Identifies context-bloat, context-rot, and context-overfit across three layers.",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "context-graph": {
       "description": "Full-stack knowledge graph with hybrid search (vector + graph), RAG document ingestion, React visualization, and kg CLI + MCP integration",
       "category": "starter",
