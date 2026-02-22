@@ -1,0 +1,13 @@
+{
+  "name": "data-comparison-table",
+  "version": "1.0.0",
+  "description": "Side-by-side comparison table with sticky headers and highlighted differences",
+  "outputDir": "components/data-comparison-table",
+  "files": ["comparison-table.tsx", "comparison-table.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install deps: npm i lucide-react\nImport: import { ComparisonTable } from '@/components/data-comparison-table/comparison-table'"
+}
