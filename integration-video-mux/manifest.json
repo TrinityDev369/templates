@@ -1,0 +1,12 @@
+{
+  "name": "integration-video-mux",
+  "version": "1.0.0",
+  "description": "Mux video integration with direct uploads, asset management, and React player component.",
+  "outputDir": "src/integrations/mux",
+  "files": ["client.ts", "types.ts", "mux-player.tsx", "index.ts"],
+  "peerDependencies": {
+    "@mux/mux-player-react": ">=2",
+    "react": ">=18"
+  },
+  "postMessage": "Set MUX_TOKEN_ID and MUX_TOKEN_SECRET in .env\nImport: import { MuxPlayer, createUploadUrl } from '@/integrations/mux'"
+}
