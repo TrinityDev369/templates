@@ -1,0 +1,39 @@
+{
+  "name": "starter-inventory",
+  "version": "1.0.0",
+  "description": "Inventory management with products and stock tracking",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    ".env.example",
+    "src/app/globals.css",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/app/products/page.tsx",
+    "src/app/products/new/page.tsx",
+    "src/app/products/[id]/page.tsx",
+    "src/app/movements/page.tsx",
+    "src/app/suppliers/page.tsx",
+    "src/app/api/products/route.ts",
+    "src/app/api/stock-movements/route.ts",
+    "src/app/api/suppliers/route.ts",
+    "src/app/products/[id]/stock-form.tsx",
+    "src/app/suppliers/add-supplier-form.tsx",
+    "src/components/product-table.tsx",
+    "src/components/stock-badge.tsx",
+    "src/lib/db.ts",
+    "src/lib/schema.sql",
+    "src/types/index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "postgres": ">=3"
+  },
+  "postMessage": "Run: npm install && npm run db:migrate && npm run dev\nSet DATABASE_URL in .env (see .env.example)."
+}
