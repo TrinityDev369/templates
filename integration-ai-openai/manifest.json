@@ -1,0 +1,11 @@
+{
+  "name": "integration-ai-openai",
+  "version": "1.0.0",
+  "description": "OpenAI integration with chat completions, streaming, embeddings, and structured output. Uses official SDK.",
+  "outputDir": "src/integrations/openai",
+  "files": ["client.ts", "types.ts", "index.ts"],
+  "peerDependencies": {
+    "openai": ">=4"
+  },
+  "postMessage": "Set OPENAI_API_KEY in .env\nImport: import { createClient, chat, chatStream, embed } from '@/integrations/openai'"
+}
