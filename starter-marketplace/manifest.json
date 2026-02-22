@@ -1,0 +1,32 @@
+{
+  "name": "starter-marketplace",
+  "version": "1.0.0",
+  "description": "Two-sided marketplace with listings and profiles",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    ".env.example",
+    "src/app/globals.css",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/app/listings/[id]/page.tsx",
+    "src/app/sell/page.tsx",
+    "src/app/api/listings/route.ts",
+    "src/app/profile/[id]/page.tsx",
+    "src/components/listing-card.tsx",
+    "src/lib/db.ts",
+    "src/lib/schema.sql",
+    "src/types/index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "postgres": ">=3"
+  },
+  "postMessage": "Run: npm install && npm run db:migrate && npm run dev\nSet DATABASE_URL in .env (see .env.example)."
+}
