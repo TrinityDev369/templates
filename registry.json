@@ -1016,6 +1016,66 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "primitive-alert": {
+      "description": "Alert banner with variants and dismiss",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-avatar": {
+      "description": "Avatar with status dot and group stacking",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-badge": {
+      "description": "Badge with color variants and dot indicator",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-button": {
+      "description": "Button with variants, sizes, and loading state",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-card": {
+      "description": "Card with header/body/footer and interactive variant",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-dropdown": {
+      "description": "Dropdown menu with icons and destructive variant",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-input": {
+      "description": "Input with icon slots and error state",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-modal": {
+      "description": "Modal dialog with size variants and focus trap",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-separator": {
+      "description": "Separator with labeled variant",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-skeleton": {
+      "description": "Skeleton with text/card/article/table presets",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-spinner": {
+      "description": "Loading spinner with size and color variants",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "primitive-tooltip": {
+      "description": "Tooltip with placement and convenience wrapper",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "shop-cart": {
       "description": "Shopping cart sheet with quantity controls, order summary, localStorage persistence, and empty state.",
       "category": "component",
