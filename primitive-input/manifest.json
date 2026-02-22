@@ -1,0 +1,11 @@
+{
+  "name": "primitive-input",
+  "version": "1.0.0",
+  "description": "Input field with optional leading/trailing icon, error state, and helper text",
+  "outputDir": "components/ui",
+  "files": ["input.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Input } from '@/components/ui/input'\nUsage: <Input leadingIcon={<SearchIcon />} error placeholder='Search...' />"
+}
