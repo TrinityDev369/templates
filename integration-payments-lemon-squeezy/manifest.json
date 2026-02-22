@@ -1,0 +1,9 @@
+{
+  "name": "integration-payments-lemon-squeezy",
+  "version": "1.0.0",
+  "description": "Lemon Squeezy payment integration with checkout, subscription management, and webhook verification.",
+  "outputDir": "src/integrations/lemon-squeezy",
+  "files": ["client.ts", "types.ts", "webhook-handler.ts", "index.ts"],
+  "peerDependencies": {},
+  "postMessage": "Set LEMON_SQUEEZY_API_KEY, LEMON_SQUEEZY_STORE_ID, and LEMON_SQUEEZY_WEBHOOK_SECRET in .env\nImport: import { createCheckout, handleWebhook } from '@/integrations/lemon-squeezy'"
+}
