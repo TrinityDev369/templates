@@ -1,0 +1,12 @@
+{
+  "name": "primitive-modal",
+  "version": "1.0.0",
+  "description": "Modal dialog with size variants (sm/default/lg/xl/full), header, body, footer slots and built-in close button",
+  "outputDir": "components/ui",
+  "files": ["modal.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@radix-ui/react-dialog": ">=1"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Modal, ModalTrigger, ModalContent, ModalHeader, ModalTitle, ModalDescription, ModalFooter } from '@/components/ui/modal'\nUsage: <Modal><ModalTrigger asChild><Button>Open</Button></ModalTrigger><ModalContent size='lg'>...</ModalContent></Modal>"
+}
