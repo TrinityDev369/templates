@@ -1,0 +1,12 @@
+{
+  "name": "primitive-badge",
+  "version": "1.0.0",
+  "description": "Badge/chip with color variants (default/success/warning/info/destructive) and dot indicator",
+  "outputDir": "components/ui",
+  "files": ["badge.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "class-variance-authority": ">=0.7"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Badge } from '@/components/ui/badge'\nUsage: <Badge variant='success' dot>Active</Badge>"
+}
