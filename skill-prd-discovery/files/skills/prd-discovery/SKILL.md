@@ -40,12 +40,12 @@ Do NOT explain the phases. Do NOT list what you'll cover. Let them talk first.
 
 ## Session Arc
 
-The session flows through 6 phases. Each has a **readiness gate** — don't advance until the gate is met. But phases aren't rigid — if an answer pulls toward a different phase, follow the energy and circle back.
+The session flows through 7 phases (0–6). Each has a **readiness gate** — don't advance until the gate is met. But phases aren't rigid — if an answer pulls toward a different phase, follow the energy and circle back.
 
 ```
-OPEN → WHY → WHO → WHAT → REALITY → SYNTHESIS
-  ↑___________________________________|
-         (circle back if gaps found)
+OPEN → WHY → WHO → WHAT → REALITY → UNCERTAINTY → SYNTHESIS
+  ↑__________________________________________________|
+              (circle back if gaps found)
 ```
 
 Typical session: 15-30 exchanges. Adjust to project complexity.
@@ -61,7 +61,7 @@ After the user shares their vision:
 2. Ask: *"What made you start thinking about this? What's the trigger — why now?"*
 3. Gauge complexity: Is this a landing page or a platform? Adjust session depth accordingly.
 
-**Gate:** You can articulate the core idea in one sentence and the user confirms it.
+**Gate:** You can articulate the core idea in one sentence and the user confirms it. *(Feeds Canvas §1: Vision Statement)*
 
 ---
 
@@ -81,7 +81,7 @@ After the user shares their vision:
 
 **When you hear "everyone needs this":** Counter with *"Who needs it MOST? Who would pay for it tomorrow morning?"*
 
-**Gate:** You can describe the problem without referencing the solution, AND you know why the status quo is insufficient.
+**Gate:** You can describe the problem without referencing the solution, AND you know why the status quo is insufficient. *(Feeds Canvas §2: Problem Map — needs: problem statement, status quo workaround, why now, cost of inaction)*
 
 ---
 
@@ -111,7 +111,7 @@ TRIGGER → First touch → Onboarding → Core loop → Success moment → Retu
 ```
 Then: *"Now walk me through what happens when everything goes WRONG in that flow."*
 
-**Gate:** You can name every user type, their primary motivation, the primary user's happy path AND failure path.
+**Gate:** You can name every user type, their primary motivation, the primary user's happy path AND failure path. *(Feeds Canvas §3: User Map + §4: User Flows — needs: 2+ user types with goal/frustration/trigger, primary user chosen, happy path 4+ steps, 1+ error path)*
 
 ---
 
@@ -141,7 +141,7 @@ OUTCOME: What does the user see/feel/get?
 
 **When the feature list grows beyond 6-8 items:** Stop and say *"We have [N] features now. Let's stack-rank. What ships in week 1? What's month 3? What's 'someday'?"*
 
-**Gate:** Prioritized feature list (P0/P1/P2) with user flow maps for every P0.
+**Gate:** Prioritized feature list (P0/P1/P2) with user flow maps for every P0. *(Feeds Canvas §5: Feature Map — needs: 3-6 P0 features, each traceable to a problem in §2)*
 
 ---
 
@@ -163,7 +163,7 @@ OUTCOME: What does the user see/feel/get?
 - *"You want [integration X]. Have you confirmed their API supports what you need?"*
 - *"What happens if you launch without [feature Y]? Could you?"*
 
-**Gate:** Hard constraints (budget, timeline, tech, legal) are known and verified compatible with scope.
+**Gate:** Hard constraints (budget, timeline, tech, legal) are known and verified compatible with scope. *(Feeds Canvas §6: Business Context + §7: Constraints)*
 
 ---
 
@@ -190,7 +190,7 @@ OUTCOME: What does the user see/feel/get?
 - **LEARN POST-LAUNCH** — Can ship and learn from real usage
 - **ACCEPTABLE RISK** — Acknowledged and accepted
 
-**Gate:** Major uncertainties identified, classified, and user acknowledges them.
+**Gate:** Major uncertainties identified, classified, and user acknowledges them. *(Feeds Canvas §8: Uncertainty Register + §9: Assumptions Log — needs: 3+ uncertainties classified, 5+ falsifiable assumptions, most dangerous identified)*
 
 ---
 
@@ -222,6 +222,7 @@ OUTCOME: What does the user see/feel/get?
 7. **Match vocabulary.** No jargon unless the user introduces it. Mirror their language
 8. **Never repeat a question.** If they gave a short answer, offer a concrete example or option: *"For example, would it be more like X or more like Y?"*
 9. **Park, don't lose.** When something important comes up out of phase, acknowledge and buffer it: *"Great point about [X] — I'm parking that for when we get to [phase]. Right now let's finish [current topic]."* Maintain a mental parking lot and revisit every parked item before Synthesis.
+10. **Checkpoint summaries.** Every 8-10 exchanges, insert a brief running summary: *"Let me make sure I have this right so far: [2-3 sentence synthesis of everything established]. Anything I'm getting wrong?"* This preserves context as the conversation grows and catches drift early.
 
 ## Meta-Cognitive Monitor
 
@@ -252,7 +253,7 @@ Not every project needs 30 minutes. Calibrate in Phase 0:
 
 ### Session Shape by Depth
 
-- **Light** (landing page, simple tool, single feature): Compress to phases 0→1→3→6. ~10 exchanges
+- **Light** (landing page, simple tool, single feature): Compress to phases 0→1→3→5→6 (skip WHO, REALITY). ~10 exchanges
 - **Standard** (app, website, client project): Full protocol. ~20 exchanges
 - **Deep** (platform, marketplace, complex SaaS): Full protocol + extended Phase 2 and 3. ~30+ exchanges
 
@@ -447,6 +448,55 @@ When resuming from a checkpoint:
 2. Confirm nothing changed: *"Has anything shifted since we last talked? New constraints, changed thinking?"*
 3. Pick up with the queued question from the checkpoint
 
+## Pre-Decided Client Protocol
+
+~40% of sessions start with: *"I already know what I want. React app, auth, dashboard, Stripe. Here's my Figma. Just build it."*
+
+This user isn't wrong — they may have done real thinking. But they've also skipped validation. The protocol is: **respect their work, then stress-test it.**
+
+**Opening:** *"Sounds like you've thought deeply about this already. I don't want to waste your time re-exploring what you've figured out. Instead, let me do a quick validation pass — I'll pressure-test the assumptions underneath your spec, and we'll either confirm you're solid or catch a blind spot before it costs you. Should take 10 minutes instead of 30."*
+
+**Compressed validation (4 phases, ~10 exchanges):**
+
+1. **Confirm the WHY** (1-2 exchanges): *"Before we look at features — in one sentence, what's the core problem this solves? Who has it worst?"* — If they can answer clearly, move on. If they struggle, slow down.
+2. **Stress-test the WHO** (1-2 exchanges): *"Walk me through the primary user's journey from trigger to success. Now: what happens when it goes wrong?"* — Error paths reveal missing requirements.
+3. **Feature triage** (2-3 exchanges): *"Of everything in your spec, what's the ONE thing that — if it shipped broken — would kill the product?"* Then: *"What's the one thing you could cut and nobody would notice for 3 months?"*
+4. **Blind spot scan** (2-3 exchanges): *"Three quick questions: What's your hardest technical problem? What assumption would be most dangerous if wrong? What happens when your first 100 users arrive in week 1 — what breaks?"*
+
+**If validation reveals no gaps:** *"Your spec is solid. I'll generate a canvas that captures what you've described — it'll take 2 minutes to review and then you can go straight to PRD."*
+
+**If validation reveals gaps:** *"Your spec is 80% there, but I found something — [specific gap]. Can we spend 5 minutes on this?"* Then do a targeted deep-dive on just that area.
+
+## Discovery Off-Ramp
+
+Sometimes discovery reveals the idea isn't viable, or what the user needs isn't software. **The session should end with honest advice, not a forced canvas.**
+
+Watch for these signals:
+
+| Signal | What It Means | Response |
+|--------|--------------|----------|
+| No problem found | User wants to build something but can't articulate what's broken | *"I'm struggling to find the pain point. Without a real problem, the product has no anchor. Can we step back?"* |
+| Spreadsheet-grade scope | The entire product is 3 screens and a CRUD form | *"This might not need custom software. Have you tried [Airtable/Notion/Google Forms]? It would be live tomorrow."* |
+| Feature = product | The "product" is actually one feature of a larger product | *"This feels like a feature, not a product. Where does it live? Who owns the product it's part of?"* |
+| No users exist | Market is hypothetical, no evidence anyone wants this | *"We have zero evidence anyone would use this. Before building, I'd recommend [specific validation step]."* |
+| Budget-scope mismatch | What they want costs 10x what they have | *"Honest assessment: this scope needs [$X]. At [$budget], we'd need to cut to [minimal viable scope]. Is that worth building?"* |
+
+**Off-ramp output:** Instead of a full Discovery Canvas, produce a shorter **Discovery Memo**:
+
+```markdown
+# Discovery Memo: [Project Name]
+
+**Date:** [date]
+**Recommendation:** [Do not build / Build smaller / Validate first / Proceed]
+**Rationale:** [2-3 sentences explaining why]
+
+## What We Found
+[Summary of the discovery conversation]
+
+## Recommended Next Step
+[Specific action — validation experiment, tool evaluation, scope reduction, or proceed to PRD]
+```
+
 ## Anti-Patterns
 
 - **Form mode** — Asking all questions upfront like a survey. This is a conversation. Respond to what they say.
@@ -457,9 +507,12 @@ When resuming from a checkpoint:
 - **Agreement bias** — Agreeing with everything. Your job is to challenge with warmth.
 - **Solution leakage** — Designing architecture during discovery. That comes in the PRD.
 - **Vague outputs** — Writing "needs further investigation" without specifying exactly WHAT needs investigating
+- **Forced canvas** — Producing a Discovery Canvas when discovery concludes "don't build this." Use the Discovery Memo off-ramp instead.
 
 ## References
 
-For an extended question library organized by phase with follow-up probes and red flags, read `references/question-bank.md`.
+For a focused question library organized by phase with follow-up probes and red flags, read `references/question-bank.md`.
+
+For mid-session dialogue examples showing how to navigate difficult moments, read `references/conversation-excerpts.md`.
 
 For a complete worked canvas example and the mapping from canvas sections to PRD sections, read `references/discovery-canvas.md`.
