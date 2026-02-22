@@ -1,0 +1,12 @@
+{
+  "name": "data-timeline-vertical",
+  "version": "1.0.0",
+  "description": "Chronological vertical timeline with category filtering and alternating layout",
+  "outputDir": "components/data-timeline-vertical",
+  "files": ["vertical-timeline.tsx", "vertical-timeline.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { VerticalTimeline } from '@/components/data-timeline-vertical/vertical-timeline'"
+}
