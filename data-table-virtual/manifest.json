@@ -1,0 +1,14 @@
+{
+  "name": "data-table-virtual",
+  "version": "1.0.0",
+  "description": "Virtualized table for large datasets — renders only visible rows for 60fps scrolling",
+  "outputDir": "components/data-table-virtual",
+  "files": ["virtual-table.tsx", "virtual-table.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "@tanstack/react-table": ">=8",
+    "@tanstack/react-virtual": ">=3"
+  },
+  "postMessage": "Install deps: npm i @tanstack/react-table @tanstack/react-virtual\nImport: import { VirtualTable } from '@/components/data-table-virtual/virtual-table'"
+}
