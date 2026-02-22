@@ -1,0 +1,12 @@
+{
+  "name": "data-json-viewer",
+  "version": "1.0.0",
+  "description": "Collapsible JSON tree viewer with syntax coloring, search, and copy support",
+  "outputDir": "components/data-json-viewer",
+  "files": ["json-viewer.tsx", "json-viewer.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { JsonViewer } from '@/components/data-json-viewer/json-viewer'"
+}
