@@ -1,0 +1,12 @@
+{
+  "name": "data-stats-dashboard",
+  "version": "1.0.0",
+  "description": "Statistics dashboard with animated counters, trend indicators, and sparkline-style bars",
+  "outputDir": "components/data-stats-dashboard",
+  "files": ["stats-dashboard.tsx", "stats-dashboard.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { StatsDashboard } from '@/components/data-stats-dashboard/stats-dashboard'"
+}
