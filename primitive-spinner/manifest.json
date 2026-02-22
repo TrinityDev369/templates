@@ -1,0 +1,12 @@
+{
+  "name": "primitive-spinner",
+  "version": "1.0.0",
+  "description": "Loading spinner with size (xs/sm/default/lg/xl) and color variants",
+  "outputDir": "components/ui",
+  "files": ["spinner.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "class-variance-authority": ">=0.7"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Spinner } from '@/components/ui/spinner'\nUsage: <Spinner size='sm' variant='muted' />"
+}
