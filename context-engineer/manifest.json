@@ -1,0 +1,12 @@
+{
+  "name": "context-engineer",
+  "version": "1.0.0",
+  "description": "Inspect, diagnose, and optimize agent context for maximum signal density. Identifies context-bloat, context-rot, and context-overfit across three layers: static context files, context bundles, and knowledge graph.",
+  "outputDir": ".claude",
+  "files": [
+    "skills/context-engineer/SKILL.md",
+    "skills/context-engineer/references/bundle-schema.md",
+    "skills/context-engineer/references/diagnosis-queries.md"
+  ],
+  "postMessage": "Context Engineer skill installed!\nUse: Invoke via /context-engineer or ask Claude to audit your agent context.\nCovers: static context files, context bundles (scoring/matching), and knowledge graph layers."
+}
