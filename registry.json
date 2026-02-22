@@ -1116,6 +1116,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "starter-course-platform": {
+      "description": "Online course platform with lessons and progress",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "starter-event-platform": {
       "description": "Next.js 14 event platform with event listings, speaker profiles, ticket tiers, schedule timeline, and countdown timer. Purple/violet theme.",
       "category": "starter",
@@ -1131,10 +1136,25 @@
       "category": "starter",
       "version": "1.0.0"
     },
+    "starter-inventory": {
+      "description": "Inventory management with products and stock tracking",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "starter-job-board": {
       "description": "Next.js 14 job board starter with job listings, search filters, company profiles, application forms, and employer posting",
       "category": "starter",
       "version": "1.0.1"
+    },
+    "starter-marketplace": {
+      "description": "Two-sided marketplace with listings and profiles",
+      "category": "starter",
+      "version": "1.0.0"
+    },
+    "starter-project-management": {
+      "description": "Project management with tasks, boards, and timelines",
+      "category": "starter",
+      "version": "1.0.0"
     },
     "starter-real-estate": {
       "description": "Next.js 14 real estate starter with property listings, search filters, neighborhoods, agent profiles, and contact form",
@@ -1150,6 +1170,11 @@
       "description": "Next.js 14 SaaS + Shop starter with shadcn/ui, dashboard shell, product catalog, cart, and checkout",
       "category": "starter",
       "version": "1.0.1"
+    },
+    "starter-social-network": {
+      "description": "Social network with feeds, profiles, and messaging",
+      "category": "starter",
+      "version": "1.0.0"
     },
     "swarm-layer": {
       "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles. Requires agentic-layer template and PostgreSQL.",
