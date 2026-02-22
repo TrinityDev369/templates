@@ -1,0 +1,12 @@
+{
+  "name": "primitive-separator",
+  "version": "1.0.0",
+  "description": "Horizontal or vertical separator — plus LabeledSeparator with centered text",
+  "outputDir": "components/ui",
+  "files": ["separator.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@radix-ui/react-separator": ">=1"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Separator, LabeledSeparator } from '@/components/ui/separator'\nUsage: <LabeledSeparator label='or continue with' />"
+}
