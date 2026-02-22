@@ -962,9 +962,9 @@
       "version": "1.0.0"
     },
     "prd-discovery": {
-      "description": "Product discovery skill \u2014 structured brainstorming sessions with phase-gated conversation, conversation excerpts, pre-decided client protocol, and discovery off-ramp",
+      "description": "Deep product discovery session \u2014 asks provocative questions, maps user flows, eliminates uncertainty, produces PRD-ready Discovery Canvas",
       "category": "skill",
-      "version": "3.0.0"
+      "version": "1.0.0"
     },
     "pricing-billing-toggle": {
       "description": "Monthly/annual billing switch with savings percentage badge",
@@ -1095,11 +1095,6 @@
       "description": "Legal review skill \u2014 contract analysis, clause identification, risk flagging, compliance checks",
       "category": "skill",
       "version": "1.0.0"
-    },
-    "skill-prd-discovery": {
-      "description": "Product discovery skill \u2014 structured brainstorming sessions with phase-gated conversation, conversation excerpts, pre-decided client protocol, and discovery off-ramp",
-      "category": "skill",
-      "version": "3.0.0"
     },
     "skill-react-perf": {
       "description": "React performance optimization and profiling \u2014 memoization, code splitting, bundle analysis, rendering patterns",
