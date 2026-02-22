@@ -1,0 +1,12 @@
+{
+  "name": "email-team-invite",
+  "version": "1.0.0",
+  "description": "Team invitation email with inviter details, team info card, role badge, accept/decline actions. Built with React Email.",
+  "outputDir": "emails",
+  "files": ["team-invite.tsx", "index.ts"],
+  "peerDependencies": {
+    "@react-email/components": ">=0.0.20",
+    "react": ">=18"
+  },
+  "postMessage": "Team invite email installed! Preview: npx email dev\nImport: import { TeamInviteEmail } from '@/emails/team-invite'"
+}
