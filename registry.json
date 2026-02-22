@@ -962,9 +962,9 @@
       "version": "1.0.0"
     },
     "prd-discovery": {
-      "description": "Deep product discovery session \u2014 asks provocative questions, maps user flows, eliminates uncertainty, produces PRD-ready Discovery Canvas",
+      "description": "Product discovery skill \u2014 structured brainstorming sessions with phase-gated conversation, conversation excerpts, pre-decided client protocol, and discovery off-ramp",
       "category": "skill",
-      "version": "1.0.0"
+      "version": "3.0.0"
     },
     "pricing-billing-toggle": {
       "description": "Monthly/annual billing switch with savings percentage badge",
