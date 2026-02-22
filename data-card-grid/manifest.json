@@ -1,0 +1,12 @@
+{
+  "name": "data-card-grid",
+  "version": "1.0.0",
+  "description": "Responsive card grid with optional masonry layout — adapts from 1 to 4 columns",
+  "outputDir": "components/data-card-grid",
+  "files": ["card-grid.tsx", "card-grid.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { CardGrid } from '@/components/data-card-grid/card-grid'"
+}
