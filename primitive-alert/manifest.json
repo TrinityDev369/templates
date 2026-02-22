@@ -1,0 +1,12 @@
+{
+  "name": "primitive-alert",
+  "version": "1.0.0",
+  "description": "Alert banner with info/success/warning/error variants and optional dismiss button",
+  "outputDir": "components/ui",
+  "files": ["alert.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "class-variance-authority": ">=0.7"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'\nUsage: <Alert variant='success' dismissible><AlertTitle>Done</AlertTitle><AlertDescription>Saved.</AlertDescription></Alert>"
+}
