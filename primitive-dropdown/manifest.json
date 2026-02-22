@@ -1,0 +1,12 @@
+{
+  "name": "primitive-dropdown",
+  "version": "1.0.0",
+  "description": "Dropdown menu with items, separators, labels, icon slots, and destructive variant",
+  "outputDir": "components/ui",
+  "files": ["dropdown.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@radix-ui/react-dropdown-menu": ">=2"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown'\nUsage: wrap trigger in <DropdownMenuTrigger asChild> and list <DropdownMenuItem> inside <DropdownMenuContent>"
+}
