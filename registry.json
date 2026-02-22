@@ -706,6 +706,11 @@
       "category": "email",
       "version": "1.0.0"
     },
+    "email-payment-failed": {
+      "description": "Payment failure notification with payment details card, retry schedule, and update payment CTA. Built with React Email.",
+      "category": "email",
+      "version": "1.0.0"
+    },
     "email-product-launch": {
       "description": "Product launch announcement email with feature highlights, social proof, pricing teaser, and early-bird CTA.",
       "category": "email",
@@ -713,6 +718,26 @@
     },
     "email-referral-program": {
       "description": "Referral program invitation email with discount offer, referral code, and social proof.",
+      "category": "email",
+      "version": "1.0.0"
+    },
+    "email-team-invite": {
+      "description": "Team invitation email with inviter details, team info card, role badge, accept/decline actions. Built with React Email.",
+      "category": "email",
+      "version": "1.0.0"
+    },
+    "email-trial-ending": {
+      "description": "Trial expiration warning email with urgency badge, feature loss list, pricing card, and upgrade CTA. Built with React Email.",
+      "category": "email",
+      "version": "1.0.0"
+    },
+    "email-verification": {
+      "description": "Email verification transactional template with confirmation button, fallback URL, and expiration notice. Built with React Email.",
+      "category": "email",
+      "version": "1.0.0"
+    },
+    "email-weekly-digest": {
+      "description": "Weekly activity digest with stats grid, change indicators, activity feed, and key insights. Built with React Email.",
       "category": "email",
       "version": "1.0.0"
     },
