@@ -1,0 +1,11 @@
+{
+  "name": "primitive-card",
+  "version": "1.0.0",
+  "description": "Card container with header, body, and footer slots — plus interactive hover variant",
+  "outputDir": "components/ui",
+  "files": ["card.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'\nUsage: <Card interactive> ... </Card>"
+}
