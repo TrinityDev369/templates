@@ -706,6 +706,11 @@
       "category": "email",
       "version": "1.0.0"
     },
+    "email-feature-announcement": {
+      "description": "New feature announcement email with screenshot showcase, highlight cards, and CTA. Built with React Email.",
+      "category": "email",
+      "version": "1.0.0"
+    },
     "email-payment-failed": {
       "description": "Payment failure notification with payment details card, retry schedule, and update payment CTA. Built with React Email.",
       "category": "email",
@@ -796,6 +801,11 @@
       "category": "utility",
       "version": "1.0.0"
     },
+    "integration-ai-openai": {
+      "description": "OpenAI integration with chat completions, streaming, embeddings, and structured output. Uses official SDK.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
     "integration-analytics-posthog": {
       "description": "PostHog event tracking, user identification, and feature flags for Next.js",
       "category": "integration",
@@ -816,8 +826,18 @@
       "category": "integration",
       "version": "1.0.0"
     },
+    "integration-maps-mapbox": {
+      "description": "Mapbox GL interactive map with markers, popups, fly-to animations, and fit-bounds. Includes React component and standalone utilities.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
     "integration-ocr-tesseract": {
       "description": "Tesseract.js OCR \u2014 text extraction from images with bounding boxes, structured output, language detection, and worker pool.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-payments-lemon-squeezy": {
+      "description": "Lemon Squeezy payment integration with checkout, subscription management, and webhook verification.",
       "category": "integration",
       "version": "1.0.0"
     },
@@ -838,6 +858,11 @@
     },
     "integration-sms-twilio": {
       "description": "Twilio SMS integration \u2014 send/receive messages, bulk SMS, delivery status, phone validation, and webhook handling.",
+      "category": "integration",
+      "version": "1.0.0"
+    },
+    "integration-video-mux": {
+      "description": "Mux video integration with direct uploads, asset management, and React player component.",
       "category": "integration",
       "version": "1.0.0"
     },
