@@ -1,0 +1,12 @@
+{
+  "name": "primitive-tooltip",
+  "version": "1.0.0",
+  "description": "Tooltip with configurable placement and delay — convenience wrapper + low-level exports",
+  "outputDir": "components/ui",
+  "files": ["tooltip.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "@radix-ui/react-tooltip": ">=1"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Tooltip } from '@/components/ui/tooltip'\nUsage: <Tooltip content='Edit item' side='top'><button>...</button></Tooltip>"
+}
