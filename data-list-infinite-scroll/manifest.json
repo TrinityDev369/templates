@@ -1,0 +1,12 @@
+{
+  "name": "data-list-infinite-scroll",
+  "version": "1.0.0",
+  "description": "Virtualized infinite scroll list — loads more items as you scroll with intersection observer",
+  "outputDir": "components/data-list-infinite-scroll",
+  "files": ["infinite-scroll-list.tsx", "infinite-scroll-list.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { InfiniteScrollList } from '@/components/data-list-infinite-scroll/infinite-scroll-list'"
+}
