@@ -1,0 +1,11 @@
+{
+  "name": "primitive-skeleton",
+  "version": "1.0.0",
+  "description": "Skeleton loader — base Skeleton plus SkeletonText, SkeletonCard, SkeletonArticle, SkeletonTableRow presets",
+  "outputDir": "components/ui",
+  "files": ["skeleton.tsx"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "postMessage": "Requires shadcn/ui setup: npx shadcn@latest init\nImport: import { Skeleton, SkeletonCard, SkeletonText, SkeletonArticle, SkeletonTableRow } from '@/components/ui/skeleton'\nUsage: <SkeletonCard /> or compose with <Skeleton className='h-4 w-32' />"
+}
