@@ -591,8 +591,23 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "data-comparison-table": {
+      "description": "Side-by-side comparison table with sticky headers and highlighted differences",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-json-viewer": {
+      "description": "Collapsible JSON tree viewer with syntax coloring, search, and copy support",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "data-list-infinite-scroll": {
       "description": "Virtualized infinite scroll list \u2014 loads more items as you scroll with intersection observer",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-stats-dashboard": {
+      "description": "Statistics dashboard with animated counters, trend indicators, and sparkline-style bars",
       "category": "component",
       "version": "1.0.0"
     },
@@ -608,6 +623,16 @@
     },
     "data-table-virtual": {
       "description": "Virtualized table for large datasets \u2014 renders only visible rows for 60fps scrolling",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-timeline-vertical": {
+      "description": "Chronological vertical timeline with category filtering and alternating layout",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "data-tree-table": {
+      "description": "Hierarchical tree table with expand/collapse \u2014 nested rows with indentation and toggle controls",
       "category": "component",
       "version": "1.0.0"
     },
