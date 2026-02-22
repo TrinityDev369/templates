@@ -1,0 +1,14 @@
+{
+  "name": "data-table-expandable",
+  "version": "1.0.0",
+  "description": "Table with expandable row details — click to reveal nested content per row",
+  "outputDir": "components/data-table-expandable",
+  "files": ["expandable-table.tsx", "expandable-table.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "@tanstack/react-table": ">=8",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install deps: npm i @tanstack/react-table lucide-react\nImport: import { ExpandableTable } from '@/components/data-table-expandable/expandable-table'"
+}
