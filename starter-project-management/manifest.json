@@ -1,0 +1,34 @@
+{
+  "name": "starter-project-management",
+  "version": "1.0.0",
+  "description": "Project management with tasks, boards, and timelines",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    ".env.example",
+    "src/app/globals.css",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/app/projects/new/page.tsx",
+    "src/app/projects/[id]/page.tsx",
+    "src/app/api/projects/route.ts",
+    "src/app/api/projects/[id]/tasks/route.ts",
+    "src/app/api/tasks/[id]/move/route.ts",
+    "src/components/task-card.tsx",
+    "src/components/kanban-column.tsx",
+    "src/lib/db.ts",
+    "src/lib/schema.sql",
+    "src/types/index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "postgres": ">=3"
+  },
+  "postMessage": "Run: npm install && npm run db:migrate && npm run dev\nSet DATABASE_URL in .env (see .env.example)."
+}
