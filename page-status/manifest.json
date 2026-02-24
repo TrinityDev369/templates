@@ -1,0 +1,19 @@
+{
+  "name": "page-status",
+  "version": "1.0.0",
+  "description": "Service status page with uptime chart, service cards, recent incidents, and subscribe-to-updates section",
+  "outputDir": "app/system-status",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/uptime-chart.tsx",
+    "components/status-card.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Status page available at /system-status. Edit SERVICES, INCIDENTS, and UPTIME_DATA in page.tsx to match your infrastructure."
+}
