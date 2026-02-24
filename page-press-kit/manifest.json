@@ -1,0 +1,19 @@
+{
+  "name": "page-press-kit",
+  "version": "1.0.0",
+  "description": "Press kit with logos, photos, and brand guidelines",
+  "outputDir": "app/press-kit",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/brand-assets.tsx",
+    "components/press-contacts.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Press kit page available at /press-kit. Edit brand assets, colors, and contact info in page.tsx."
+}
