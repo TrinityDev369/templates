@@ -1,0 +1,30 @@
+{
+  "name": "starter-booking-system",
+  "version": "1.0.0",
+  "description": "Appointment booking system with calendar view and availability management",
+  "outputDir": ".",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    ".env.example",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/globals.css",
+    "app/book/page.tsx",
+    "app/admin/page.tsx",
+    "app/api/slots/route.ts",
+    "app/api/bookings/route.ts",
+    "components/calendar-view.tsx",
+    "components/time-slots.tsx",
+    "components/booking-form.tsx",
+    "components/booking-confirmation.tsx",
+    "components/admin-dashboard.tsx",
+    "lib/utils.ts",
+    "lib/db.ts",
+    "lib/types.ts",
+    "db/schema.sql"
+  ],
+  "postMessage": "Run: npm install && npm run dev\nSet DATABASE_URL in .env (see .env.example)\nInitialize DB: psql $DATABASE_URL < db/schema.sql"
+}
