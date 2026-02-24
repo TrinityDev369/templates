@@ -1,0 +1,24 @@
+{
+  "name": "storage-s3-browser",
+  "version": "1.0.0",
+  "description": "S3-compatible bucket browser with upload and preview",
+  "outputDir": "src/modules/storage-s3-browser",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "s3-browser.tsx",
+    "s3-object-list.tsx",
+    "s3-upload-dialog.tsx",
+    "s3-preview.tsx",
+    "app/api/s3/route.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263",
+    "@aws-sdk/client-s3": ">=3",
+    "@aws-sdk/s3-request-presigner": ">=3"
+  },
+  "postMessage": "Import: import { S3Browser } from '@/modules/storage-s3-browser'\nSet AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY in .env.\nFor S3-compatible services (MinIO, Hetzner), also set S3_ENDPOINT."
+}
