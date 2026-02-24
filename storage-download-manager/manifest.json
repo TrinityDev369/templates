@@ -1,0 +1,13 @@
+{
+  "name": "storage-download-manager",
+  "version": "1.0.0",
+  "description": "File download manager with progress and resume",
+  "outputDir": "components/storage-download-manager",
+  "files": ["download-manager.tsx", "download-manager.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { DownloadManager } from '@/components/storage-download-manager/download-manager'\nProvide download items and event handlers as props."
+}
