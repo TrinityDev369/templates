@@ -1,0 +1,14 @@
+{
+  "name": "support-status-page",
+  "version": "1.0.0",
+  "description": "Service status page with incident history",
+  "outputDir": "app/status",
+  "files": ["page.tsx", "loading.tsx", "components/status-overview.tsx", "components/service-list.tsx", "components/incident-timeline.tsx"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Status page available at /status. Edit services and incidents data in page.tsx."
+}
