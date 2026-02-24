@@ -1,0 +1,13 @@
+{
+  "name": "storage-image-gallery",
+  "version": "1.0.0",
+  "description": "Image gallery with lightbox and lazy loading",
+  "outputDir": "components/storage-image-gallery",
+  "files": ["image-gallery.tsx", "image-gallery.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { ImageGallery } from '@/components/storage-image-gallery/image-gallery'\nPass an array of { src, alt } objects as the images prop."
+}
