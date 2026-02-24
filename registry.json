@@ -1116,6 +1116,26 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "sidebar-dashboard": {
+      "description": "Collapsible app sidebar with nav groups, icons, badge counts, and user menu",
+      "category": "layout",
+      "version": "1.0.0"
+    },
+    "sidebar-docs": {
+      "description": "Documentation tree sidebar with nested sections, expand/collapse, and search",
+      "category": "layout",
+      "version": "1.0.0"
+    },
+    "sidebar-mobile": {
+      "description": "Slide-out mobile drawer sidebar with overlay and close button",
+      "category": "layout",
+      "version": "1.0.0"
+    },
+    "sidebar-settings": {
+      "description": "Settings panel sidebar with grouped section links and active highlight",
+      "category": "layout",
+      "version": "1.0.0"
+    },
     "skill-accessibility": {
       "description": "WCAG compliance and accessibility audit skill",
       "category": "skill",
@@ -1174,6 +1194,11 @@
     "skill-testing": {
       "description": "Testing skill \u2014 Vitest patterns, Playwright E2E, coverage strategies",
       "category": "skill",
+      "version": "1.0.0"
+    },
+    "starter-booking-system": {
+      "description": "Appointment booking system with calendar view and availability management",
+      "category": "starter",
       "version": "1.0.0"
     },
     "starter-course-platform": {
