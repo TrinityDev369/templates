@@ -1261,6 +1261,31 @@
       "category": "starter",
       "version": "1.0.0"
     },
+    "storage-avatar-upload": {
+      "description": "Avatar upload with crop, resize, and preview",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "storage-bulk-upload": {
+      "description": "Multi-file bulk upload with queue management",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "storage-file-manager": {
+      "description": "File manager with grid/list views and context menu",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "storage-image-gallery": {
+      "description": "Image gallery with lightbox and lazy loading",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "storage-media-library": {
+      "description": "Media library with categories, search, and metadata",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "swarm-layer": {
       "description": "Thermodynamic field coordination: task fields, agent spawning, autonomous hooks, context bundles. Requires agentic-layer template and PostgreSQL.",
       "category": "pipe",
