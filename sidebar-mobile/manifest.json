@@ -1,0 +1,17 @@
+{
+  "name": "sidebar-mobile",
+  "version": "1.0.0",
+  "description": "Slide-out mobile drawer sidebar with overlay and close button",
+  "outputDir": "app",
+  "files": [
+    "components/mobile-sidebar.tsx",
+    "components/mobile-nav-trigger.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add sheet button separator\nAdd <MobileNavTrigger /> to your header for mobile. Edit nav items in components/mobile-sidebar.tsx."
+}
