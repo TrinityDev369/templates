@@ -1,0 +1,13 @@
+{
+  "name": "storage-avatar-upload",
+  "version": "1.0.0",
+  "description": "Avatar upload with crop, resize, and preview",
+  "outputDir": "components/storage-avatar-upload",
+  "files": ["avatar-upload.tsx", "avatar-upload.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { AvatarUpload } from '@/components/storage-avatar-upload/avatar-upload'\nHandle the onUpload callback to send the cropped blob to your server."
+}
