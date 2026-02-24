@@ -1241,6 +1241,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "skill-prd-architect": {
+      "description": "Write and iterate on AI-optimized Product Requirements Documents",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "skill-react-perf": {
       "description": "React performance optimization and profiling \u2014 memoization, code splitting, bundle analysis, rendering patterns",
       "category": "skill",
