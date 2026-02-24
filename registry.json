@@ -146,6 +146,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-lockout-screen": {
+      "description": "Account lockout page with countdown timer and unlock options",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "auth-login-form": {
       "description": "Centered card login form with email, password, show/hide toggle, remember me, and OAuth buttons",
       "category": "component",
@@ -176,6 +181,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "auth-profile-security": {
+      "description": "Security settings dashboard with password, 2FA, sessions, and events",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "auth-rate-limit-ui": {
       "description": "Rate limiting feedback component with attempt counter, countdown timer, and progressive warnings",
       "category": "component",
@@ -199,6 +209,11 @@
     "auth-sso-saml": {
       "description": "SAML SSO integration module for enterprise Next.js applications",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "auth-team-roles": {
+      "description": "Team member management with role assignment and invitations",
+      "category": "component",
       "version": "1.0.0"
     },
     "blog-category-page": {
@@ -906,6 +921,11 @@
       "category": "page",
       "version": "1.0.0"
     },
+    "page-partner-integrations": {
+      "description": "Integration marketplace with categories, search, and detail panels",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "page-podcast-show": {
       "description": "Podcast show page with episode list, season filters, and interactive audio player bar",
       "category": "page",
@@ -923,6 +943,11 @@
     },
     "page-saas-comparison": {
       "description": "SaaS tool comparison page with scoring matrix, card view, and interactive filters",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-security-trust": {
+      "description": "Security practices and compliance badges page",
       "category": "page",
       "version": "1.0.0"
     },
