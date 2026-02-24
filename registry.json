@@ -876,6 +876,11 @@
       "category": "utility",
       "version": "1.0.0"
     },
+    "page-app-download": {
+      "description": "Mobile app download page with store badges",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "page-careers": {
       "description": "Job listings page with filters and apply flow",
       "category": "page",
@@ -883,6 +888,11 @@
     },
     "page-case-study": {
       "description": "Case study template with problem, solution, results",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-coming-soon": {
+      "description": "Coming soon page with countdown and email capture",
       "category": "page",
       "version": "1.0.0"
     },
@@ -901,6 +911,11 @@
       "category": "page",
       "version": "1.0.0"
     },
+    "page-press-kit": {
+      "description": "Press kit with logos, photos, and brand guidelines",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "page-restaurant-menu": {
       "description": "Digital restaurant menu with category navigation, dietary badges, and elegant dark theme",
       "category": "page",
@@ -908,6 +923,16 @@
     },
     "page-saas-comparison": {
       "description": "SaaS tool comparison page with scoring matrix, card view, and interactive filters",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-status": {
+      "description": "Service status page with uptime and incidents",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-waitlist": {
+      "description": "Pre-launch waitlist with position counter",
       "category": "page",
       "version": "1.0.0"
     },
