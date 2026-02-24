@@ -1,0 +1,21 @@
+{
+  "name": "storage-media-library",
+  "version": "1.0.0",
+  "description": "Media library with categories, search, and metadata",
+  "outputDir": "src/modules/storage-media-library",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "media-library.tsx",
+    "media-grid.tsx",
+    "media-filters.tsx",
+    "media-detail-panel.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { MediaLibrary } from '@/modules/storage-media-library'\nProvide items array and event handlers. See types.ts for MediaItem interface."
+}
