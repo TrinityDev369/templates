@@ -1,0 +1,19 @@
+{
+  "name": "auth-lockout-screen",
+  "version": "1.0.0",
+  "description": "Account locked page after too many failed login attempts with countdown timer, animated lock icon, and alternative unlock methods",
+  "outputDir": "app/locked",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/lockout-timer.tsx",
+    "components/unlock-options.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Account lockout screen installed at app/locked/page.tsx.\nAccess at /locked. Requires a cn() utility at lib/utils.ts (clsx + tailwind-merge).\n\nUsage:\n  Navigate to /locked?attempts=5&maxAttempts=5&duration=900\n\nQuery params (all optional):\n  - attempts: number of failed attempts (default 5)\n  - maxAttempts: max allowed attempts (default 5)\n  - duration: lockout duration in seconds (default 900 = 15 min)\n\nRequires shadcn/ui: npx shadcn@latest add button card"
+}
