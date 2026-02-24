@@ -1,0 +1,20 @@
+{
+  "name": "page-partner-integrations",
+  "version": "1.0.0",
+  "description": "Integration marketplace with categories, search, and detail panels",
+  "outputDir": "app/integrations",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/integration-card.tsx",
+    "components/integration-filters.tsx",
+    "components/integration-detail.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Integrations page available at /integrations. Edit sample integrations data in page.tsx."
+}
