@@ -1,0 +1,12 @@
+{
+  "name": "bento-features",
+  "version": "1.0.0",
+  "description": "Visual feature showcase in bento grid layout with badges and configurable spans",
+  "outputDir": "components/bento-features",
+  "files": ["bento-features.tsx", "bento-features.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Requires bento-grid-base: npx @trinity369/use bento-grid-base\nInstall shadcn deps: npx shadcn@latest add card badge\nImport: import { BentoFeatures } from '@/components/bento-features/bento-features'"
+}
