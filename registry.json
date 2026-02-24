@@ -1026,6 +1026,11 @@
       "category": "pipe",
       "version": "1.0.0"
     },
+    "prd-architect": {
+      "description": "Write and iterate on AI-optimized Product Requirements Documents",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "prd-discovery": {
       "description": "Deep product discovery session \u2014 asks provocative questions, maps user flows, eliminates uncertainty, produces PRD-ready Discovery Canvas",
       "category": "skill",
