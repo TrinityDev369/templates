@@ -876,8 +876,23 @@
       "category": "utility",
       "version": "1.0.0"
     },
+    "page-careers": {
+      "description": "Job listings page with filters and apply flow",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-case-study": {
+      "description": "Case study template with problem, solution, results",
+      "category": "page",
+      "version": "1.0.0"
+    },
     "page-event-landing": {
       "description": "Event landing page with speakers, schedule, pricing tiers, and sponsor sections",
+      "category": "page",
+      "version": "1.0.0"
+    },
+    "page-faq": {
+      "description": "FAQ page with categories and search",
       "category": "page",
       "version": "1.0.0"
     },
@@ -1296,6 +1311,11 @@
       "category": "module",
       "version": "1.0.0"
     },
+    "support-csat-survey": {
+      "description": "Customer satisfaction survey with emoji rating",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "support-feedback-widget": {
       "description": "In-app feedback widget with screenshot and mood",
       "category": "component",
@@ -1309,6 +1329,11 @@
     "support-nps-survey": {
       "description": "Net Promoter Score survey with follow-up",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "support-status-page": {
+      "description": "Service status page with incident history",
+      "category": "page",
       "version": "1.0.0"
     },
     "swarm-layer": {
