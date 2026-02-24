@@ -1,0 +1,12 @@
+{
+  "name": "bento-stats",
+  "version": "1.0.0",
+  "description": "Dashboard-style metrics in bento grid layout with trend indicators and badges",
+  "outputDir": "components/bento-stats",
+  "files": ["bento-stats.tsx", "bento-stats.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Requires bento-grid-base: npx @trinity369/use bento-grid-base\nInstall shadcn deps: npx shadcn@latest add card badge\nImport: import { BentoStats } from '@/components/bento-stats/bento-stats'"
+}
