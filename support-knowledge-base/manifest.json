@@ -1,0 +1,22 @@
+{
+  "name": "support-knowledge-base",
+  "version": "1.0.0",
+  "description": "Knowledge base with articles, search, and categories",
+  "outputDir": "src/modules/support-knowledge-base",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "knowledge-base.tsx",
+    "article-list.tsx",
+    "article-detail.tsx",
+    "category-nav.tsx",
+    "search-bar.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { KnowledgeBase } from '@/modules/support-knowledge-base'\nProvide articles and categories arrays as props. See types.ts for Article and Category interfaces."
+}
