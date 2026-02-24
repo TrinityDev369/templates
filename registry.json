@@ -226,6 +226,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "bento-grid-base": {
+      "description": "Configurable bento grid layout with CSS grid \u2014 base component for bento-style sections",
+      "category": "BENTO",
+      "version": "1.0.0"
+    },
     "blog-category-page": {
       "description": "Blog category page with filtered post list, grid/list views, pagination, and sidebar",
       "category": "page",
