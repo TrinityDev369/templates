@@ -1,0 +1,19 @@
+{
+  "name": "page-coming-soon",
+  "version": "1.0.0",
+  "description": "Coming soon page with countdown timer, email capture form, and social links. Dark gradient background with flip-style countdown animation.",
+  "outputDir": "app/coming-soon",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/countdown-timer.tsx",
+    "components/email-capture.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Coming soon page available at /coming-soon.\nSet your launch date in the LAUNCH_DATE constant in page.tsx.\nUpdate brand name, tagline, and social links to match your project."
+}
