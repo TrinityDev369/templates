@@ -1,0 +1,8 @@
+{
+  "name": "skill-plan",
+  "version": "1.0.0",
+  "description": "Planning skill — analyze requirements, explore codebase, and produce structured implementation plans",
+  "outputDir": ".claude",
+  "files": ["skills/plan/SKILL.md"],
+  "postMessage": "Planning skill installed at .claude/skills/plan/SKILL.md\nUse: /plan <feature description>"
+}
