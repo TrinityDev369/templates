@@ -1,0 +1,12 @@
+{
+  "name": "section-cta",
+  "version": "1.0.0",
+  "description": "Call-to-action section with dark, brand, and light background variants",
+  "outputDir": "components/section-cta",
+  "files": ["cta-section.tsx", "cta-section.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button\nImport: import { CtaSection } from '@/components/section-cta/cta-section'\n\nVariants: 'dark' (default), 'brand', 'light'"
+}
