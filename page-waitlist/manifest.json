@@ -1,0 +1,22 @@
+{
+  "name": "page-waitlist",
+  "version": "1.0.0",
+  "description": "Pre-launch waitlist page with email signup, animated position counter, social sharing, and referral system",
+  "type": "page",
+  "category": "WEB_DESIGN",
+  "stack": ["react", "next", "tailwind"],
+  "outputDir": "app/waitlist",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/waitlist-form.tsx",
+    "components/waitlist-position.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Waitlist page installed at app/waitlist!\n\nVisit /waitlist to see the page.\n\nCustomize:\n- Update product name and tagline in page.tsx\n- Connect the signup form to your API in waitlist-form.tsx\n- Adjust placeholder stats (waitlist count, launch date) in page.tsx\n- Replace referral link generation with your actual referral system"
+}
