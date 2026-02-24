@@ -1,0 +1,12 @@
+{
+  "name": "section-logo-cloud",
+  "version": "1.0.0",
+  "description": "Logo cloud section with static grid or infinite marquee scroll — inline SVG logos, zero dependencies",
+  "outputDir": "components/section-logo-cloud",
+  "files": ["logo-cloud-section.tsx", "logo-cloud-section.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Import: import { LogoCloudSection } from '@/components/section-logo-cloud/logo-cloud-section'\n\nVariants: 'static' (default), 'marquee'"
+}
