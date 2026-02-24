@@ -1,0 +1,12 @@
+{
+  "name": "bento-grid-base",
+  "version": "1.0.0",
+  "description": "Configurable bento grid layout with CSS grid — base component for bento-style sections",
+  "outputDir": "components/bento-grid-base",
+  "files": ["bento-grid.tsx", "bento-grid.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card\nImport:\nimport { BentoGrid, BentoGridItem } from '@/components/bento-grid-base/bento-grid'\n\n<BentoGrid cols={3}>\n  <BentoGridItem colSpan={2}>Wide item</BentoGridItem>\n  <BentoGridItem rowSpan={2}>Tall item</BentoGridItem>\n  <BentoGridItem>Regular</BentoGridItem>\n</BentoGrid>"
+}
