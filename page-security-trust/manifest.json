@@ -1,0 +1,20 @@
+{
+  "name": "page-security-trust",
+  "version": "1.0.0",
+  "description": "Security practices and compliance badges page with trust stats, data handling policies, and responsible disclosure info",
+  "outputDir": "app/security",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/compliance-badges.tsx",
+    "components/security-features.tsx",
+    "components/trust-stats.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Security & Trust page available at /security. Customize compliance badges, security features, trust stats, and data handling policies in the respective component files and page.tsx."
+}
