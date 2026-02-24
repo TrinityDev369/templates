@@ -1,0 +1,12 @@
+{
+  "name": "section-pricing",
+  "version": "1.0.0",
+  "description": "Pricing section with tier cards, billing toggle, feature lists, and highlighted popular plan",
+  "outputDir": "components/section-pricing",
+  "files": ["pricing-section.tsx", "pricing-section.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card button badge switch\nImport: import { PricingSection } from '@/components/section-pricing/pricing-section'"
+}
