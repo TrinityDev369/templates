@@ -1,0 +1,22 @@
+{
+  "name": "auth-onboarding",
+  "version": "1.0.0",
+  "description": "Multi-step onboarding wizard with progress bar -- welcome, profile setup, preferences, and completion",
+  "outputDir": "components/auth-onboarding",
+  "files": [
+    "onboarding-wizard.tsx",
+    "onboarding-wizard.types.ts",
+    "step-welcome.tsx",
+    "step-profile.tsx",
+    "step-preferences.tsx",
+    "step-complete.tsx",
+    "progress-bar.tsx",
+    "index.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Onboarding wizard installed!\n\nUsage:\nimport { OnboardingWizard } from '@/components/auth-onboarding'\n\n<OnboardingWizard\n  onComplete={(data) => { /* save profile + preferences */ }}\n  onSkip={() => { /* go to dashboard */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add card button input label switch"
+}
