@@ -1156,6 +1156,16 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "section-cta": {
+      "description": "Call-to-action section with dark, brand, and light background variants",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-faq": {
+      "description": "FAQ section with shadcn accordion and optional category tabs",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
     "section-features": {
       "description": "Features section with icon cards in 3-column or 4-column responsive grid layout",
       "category": "SECTIONS",
@@ -1163,6 +1173,21 @@
     },
     "section-hero": {
       "description": "Hero section with centered, split, and video variants \u2014 responsive with dark mode support",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-logo-cloud": {
+      "description": "Logo cloud section with static grid or infinite marquee scroll",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-pricing": {
+      "description": "Pricing section with tier cards, billing toggle, feature lists, and highlighted popular plan",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-stats": {
+      "description": "Stats section with animated count-up numbers, separators, and responsive grid",
       "category": "SECTIONS",
       "version": "1.0.0"
     },
