@@ -1,0 +1,13 @@
+{
+  "name": "support-csat-survey",
+  "version": "1.0.0",
+  "description": "Customer satisfaction survey with emoji rating",
+  "outputDir": "components/support-csat-survey",
+  "files": ["csat-survey.tsx", "csat-survey.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { CsatSurvey } from '@/components/support-csat-survey/csat-survey'\nUse variant='toast' for bottom-right popup, 'modal' for overlay, or 'inline' (default)."
+}
