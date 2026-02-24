@@ -1,0 +1,13 @@
+{
+  "name": "support-nps-survey",
+  "version": "1.0.0",
+  "description": "Net Promoter Score survey with follow-up",
+  "outputDir": "components/support-nps-survey",
+  "files": ["nps-survey.tsx", "nps-survey.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { NpsSurvey } from '@/components/support-nps-survey/nps-survey'\nUse variant='banner' for bottom bar, 'modal' for overlay, or 'inline' (default)."
+}
