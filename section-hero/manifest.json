@@ -1,0 +1,12 @@
+{
+  "name": "section-hero",
+  "version": "1.0.0",
+  "description": "Hero section with centered, split, and video variants — responsive with dark mode support",
+  "outputDir": "components/section-hero",
+  "files": ["hero-section.tsx", "hero-section.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button badge\nImport: import { HeroSection } from '@/components/section-hero/hero-section'\n\nVariants: 'centered' (default), 'split', 'with-video'"
+}
