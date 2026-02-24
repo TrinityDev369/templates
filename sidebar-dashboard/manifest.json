@@ -1,0 +1,19 @@
+{
+  "name": "sidebar-dashboard",
+  "version": "1.0.0",
+  "description": "Collapsible app sidebar with nav groups, icons, badge counts, and user menu",
+  "outputDir": "app",
+  "files": [
+    "(dashboard)/layout.tsx",
+    "components/sidebar.tsx",
+    "components/sidebar-nav.tsx",
+    "components/sidebar-user-menu.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add button avatar tooltip separator dropdown-menu\nWrap your dashboard routes in app/(dashboard)/. Edit nav items in components/sidebar-nav.tsx."
+}
