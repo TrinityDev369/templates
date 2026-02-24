@@ -226,8 +226,23 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "bento-features": {
+      "description": "Visual feature showcase in bento grid layout with badges and configurable spans",
+      "category": "BENTO",
+      "version": "1.0.0"
+    },
     "bento-grid-base": {
       "description": "Configurable bento grid layout with CSS grid \u2014 base component for bento-style sections",
+      "category": "BENTO",
+      "version": "1.0.0"
+    },
+    "bento-saas": {
+      "description": "SaaS landing page bento grid with hero, features, integrations, testimonial, and stats cards",
+      "category": "BENTO",
+      "version": "1.0.0"
+    },
+    "bento-stats": {
+      "description": "Dashboard-style metrics in bento grid layout with trend indicators and badges",
       "category": "BENTO",
       "version": "1.0.0"
     },
@@ -1299,6 +1314,11 @@
     "skill-legal-review": {
       "description": "Legal review skill \u2014 contract analysis, clause identification, risk flagging, compliance checks",
       "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-plan": {
+      "description": "Planning skill \u2014 analyze requirements, explore codebase, and produce structured implementation plans",
+      "category": "AGENTIC",
       "version": "1.0.0"
     },
     "skill-prd-architect": {
