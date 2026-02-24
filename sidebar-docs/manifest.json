@@ -1,0 +1,19 @@
+{
+  "name": "sidebar-docs",
+  "version": "1.0.0",
+  "description": "Documentation tree sidebar with nested sections, expand/collapse, and search",
+  "outputDir": "app",
+  "files": [
+    "(docs)/layout.tsx",
+    "components/docs-sidebar.tsx",
+    "components/docs-tree.tsx",
+    "components/docs-search.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add input separator scroll-area\nWrap your docs routes in app/(docs)/. Edit tree structure in components/docs-tree.tsx."
+}
