@@ -1,0 +1,13 @@
+{
+  "name": "auth-ip-allowlist",
+  "version": "1.0.0",
+  "description": "IP allowlist management with CIDR validation, per-entry toggles, and enforcement control",
+  "outputDir": "components/auth-ip-allowlist",
+  "files": ["ip-allowlist.tsx", "ip-allowlist.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "zod": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card button input label switch badge\nImport: import { IpAllowlist } from '@/components/auth-ip-allowlist/ip-allowlist'"
+}
