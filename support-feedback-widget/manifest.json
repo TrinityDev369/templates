@@ -1,0 +1,13 @@
+{
+  "name": "support-feedback-widget",
+  "version": "1.0.0",
+  "description": "In-app feedback widget with screenshot and mood",
+  "outputDir": "components/support-feedback-widget",
+  "files": ["feedback-widget.tsx", "feedback-widget.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { FeedbackWidget } from '@/components/support-feedback-widget/feedback-widget'\nAdd <FeedbackWidget onSubmit={handler} /> to your layout. Optional: install html2canvas for screenshot capture."
+}
