@@ -1,0 +1,13 @@
+{
+  "name": "storage-bulk-upload",
+  "version": "1.0.0",
+  "description": "Multi-file bulk upload with queue management",
+  "outputDir": "components/storage-bulk-upload",
+  "files": ["bulk-upload.tsx", "bulk-upload.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { BulkUpload } from '@/components/storage-bulk-upload/bulk-upload'\nProvide an onUpload async function to handle file uploads to your server."
+}
