@@ -1,0 +1,21 @@
+{
+  "name": "auth-profile-security",
+  "version": "1.0.0",
+  "description": "Security settings dashboard with password status, 2FA setup, active sessions, trusted devices, and recent security events",
+  "outputDir": "app/settings/security",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/password-card.tsx",
+    "components/two-factor-card.tsx",
+    "components/sessions-card.tsx",
+    "components/security-events.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Security settings page available at /settings/security\n\nInstall shadcn deps: npx shadcn@latest add card badge button switch\n\nCustomize sample data in each component file to connect to your auth API. Wire up the action handlers (onChangePassword, onToggle2FA, onSignOut, onRemoveDevice) to your backend."
+}
