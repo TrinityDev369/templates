@@ -1,0 +1,21 @@
+{
+  "name": "page-case-study",
+  "version": "1.0.0",
+  "description": "Case study template with problem, solution, results",
+  "outputDir": "app/case-study",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/case-study-hero.tsx",
+    "components/case-study-stats.tsx",
+    "components/case-study-content.tsx",
+    "components/case-study-testimonial.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Case study page at /case-study. Replace sample content in page.tsx with your client's story."
+}
