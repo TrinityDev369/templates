@@ -1,0 +1,20 @@
+{
+  "name": "page-faq",
+  "version": "1.0.0",
+  "description": "FAQ page with categories and search",
+  "outputDir": "app/faq",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/faq-search.tsx",
+    "components/faq-categories.tsx",
+    "components/faq-accordion.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "FAQ page available at /faq. Edit questions data in page.tsx. Customize categories in components/faq-categories.tsx."
+}
