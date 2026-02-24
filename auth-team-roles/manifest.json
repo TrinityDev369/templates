@@ -1,0 +1,14 @@
+{
+  "name": "auth-team-roles",
+  "version": "1.0.0",
+  "description": "Team member management with role badges, role change dropdown, member removal, search/filter, and pending invites section",
+  "outputDir": "components/auth-team-roles",
+  "files": ["team-roles.tsx", "team-roles.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Team roles manager installed!\n\nUsage:\nimport { TeamRoles } from '@/components/auth-team-roles/team-roles'\n\n<TeamRoles\n  members={members}\n  pendingInvites={invites}\n  currentUserId=\"user-1\"\n  onRoleChange={async (memberId, newRole) => { /* update role via API */ }}\n  onRemoveMember={async (memberId) => { /* remove member via API */ }}\n  onInvite={() => router.push('/invite')}\n  onResendInvite={async (inviteId) => { /* resend invite email */ }}\n  onCancelInvite={async (inviteId) => { /* cancel pending invite */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button card badge"
+}
