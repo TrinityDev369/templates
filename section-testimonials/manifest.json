@@ -1,0 +1,12 @@
+{
+  "name": "section-testimonials",
+  "version": "1.0.0",
+  "description": "Testimonials section with avatar cards, star ratings, and responsive grid layout",
+  "outputDir": "components/section-testimonials",
+  "files": ["testimonials-section.tsx", "testimonials-section.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Install shadcn deps: npx shadcn@latest add card avatar\nImport: import { TestimonialsSection } from '@/components/section-testimonials/testimonials-section'"
+}
