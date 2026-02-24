@@ -146,6 +146,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-ip-allowlist": {
+      "description": "IP allowlist management with CIDR validation, per-entry toggles, and enforcement control",
+      "category": "AUTH",
+      "version": "1.0.0"
+    },
     "auth-lockout-screen": {
       "description": "Account lockout page with countdown timer and unlock options",
       "category": "page",
@@ -159,6 +164,11 @@
     "auth-mfa-recovery": {
       "description": "MFA recovery codes display with copy, download, print, and regenerate actions",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-onboarding": {
+      "description": "Multi-step onboarding wizard with progress bar \u2014 welcome, profile setup, preferences, and completion",
+      "category": "AUTH",
       "version": "1.0.0"
     },
     "auth-org-switcher": {
@@ -1144,6 +1154,21 @@
     "primitive-tooltip": {
       "description": "Tooltip with placement and convenience wrapper",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "section-features": {
+      "description": "Features section with icon cards in 3-column or 4-column responsive grid layout",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-hero": {
+      "description": "Hero section with centered, split, and video variants \u2014 responsive with dark mode support",
+      "category": "SECTIONS",
+      "version": "1.0.0"
+    },
+    "section-testimonials": {
+      "description": "Testimonials section with avatar cards, star ratings, and responsive grid layout",
+      "category": "SECTIONS",
       "version": "1.0.0"
     },
     "shop-cart": {
