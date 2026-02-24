@@ -1,0 +1,11 @@
+{
+  "name": "skill-prd-architect",
+  "version": "1.0.0",
+  "description": "Write and iterate on AI-optimized Product Requirements Documents with full lifecycle support",
+  "outputDir": ".claude",
+  "files": [
+    "skills/prd-architect/SKILL.md",
+    "skills/prd-architect/references/prd-template.md"
+  ],
+  "postMessage": "PRD Architect skill installed! Use: /prd-architect to write, iterate, or reflect on PRDs.\nModes: 'write PRD' (create), 'update PRD' (iterate), 'PRD retrospective' (reflect)."
+}
