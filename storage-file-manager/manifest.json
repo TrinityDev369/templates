@@ -1,0 +1,22 @@
+{
+  "name": "storage-file-manager",
+  "version": "1.0.0",
+  "description": "File manager with grid/list views and context menu",
+  "outputDir": "src/modules/storage-file-manager",
+  "files": [
+    "index.ts",
+    "types.ts",
+    "file-manager.tsx",
+    "file-grid.tsx",
+    "file-list.tsx",
+    "file-context-menu.tsx",
+    "file-breadcrumb.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "Import: import { FileManager } from '@/modules/storage-file-manager'\nProvide files array and event handlers as props. See types.ts for interfaces."
+}
