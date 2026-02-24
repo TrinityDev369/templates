@@ -1,0 +1,21 @@
+{
+  "name": "page-app-download",
+  "version": "1.0.0",
+  "description": "Mobile app download page with store badges, phone mockup, features grid, screenshot gallery, and QR code section",
+  "outputDir": "app/download",
+  "files": [
+    "page.tsx",
+    "loading.tsx",
+    "components/app-hero.tsx",
+    "components/app-features.tsx",
+    "components/app-screenshots.tsx",
+    "components/store-badges.tsx"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "lucide-react": ">=0.263"
+  },
+  "postMessage": "App download page available at /download. Edit app details, features, and screenshots in page.tsx and component files. Replace placeholder store badge URLs and screenshot images with your own assets."
+}
