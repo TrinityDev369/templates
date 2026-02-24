@@ -1271,6 +1271,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "storage-download-manager": {
+      "description": "File download manager with progress and resume",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "storage-file-manager": {
       "description": "File manager with grid/list views and context menu",
       "category": "module",
@@ -1284,6 +1289,26 @@
     "storage-media-library": {
       "description": "Media library with categories, search, and metadata",
       "category": "module",
+      "version": "1.0.0"
+    },
+    "storage-s3-browser": {
+      "description": "S3-compatible bucket browser with upload and preview",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "support-feedback-widget": {
+      "description": "In-app feedback widget with screenshot and mood",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "support-knowledge-base": {
+      "description": "Knowledge base with articles, search, and categories",
+      "category": "module",
+      "version": "1.0.0"
+    },
+    "support-nps-survey": {
+      "description": "Net Promoter Score survey with follow-up",
+      "category": "component",
       "version": "1.0.0"
     },
     "swarm-layer": {
