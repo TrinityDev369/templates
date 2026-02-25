@@ -1,3 +1,4 @@
+import { requirePermission } from "@/lib/require-permission";
 import { UserForm } from "@/components/user-form";
 import { mockUsersById } from "@/lib/mock-data";
 import Link from "next/link";
@@ -8,6 +9,7 @@ export default async function EditUserPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  await requirePermission("users:edit");
   const { id } = await params;
   const user = mockUsersById[id];
 

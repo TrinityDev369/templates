@@ -7,24 +7,68 @@ import {
   LayoutDashboard,
   Users,
   Settings,
+  ScrollText,
   Menu,
   X,
   LogOut,
   ChevronRight,
+  Search,
+  Plus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { NavItem } from "@/types";
+import { can } from "@/lib/rbac";
+import { CommandPalette } from "@/components/command-palette";
+import type { NavItem, Permission } from "@/types";
 
 const navItems: NavItem[] = [
-  { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { title: "Users", href: "/dashboard/users", icon: Users },
-  { title: "Settings", href: "/dashboard/settings", icon: Settings },
+  { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard, permission: "dashboard:view" },
+  { title: "Users", href: "/dashboard/users", icon: Users, permission: "users:read" },
+  { title: "Audit Log", href: "/dashboard/audit", icon: ScrollText, permission: "audit:view" },
+  { title: "Settings", href: "/dashboard/settings", icon: Settings, permission: "settings:view" },
 ];
 
-export function DashboardShell({ children }: { children: React.ReactNode }) {
+export function DashboardShell({
+  session,
+  children,
+}: {
+  session: { sub: string; email: string; role: string };
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [commandOpen, setCommandOpen] = useState(false);
+
+  const visibleNav = navItems.filter(
+    (item) => !item.permission || can(session.role, item.permission)
+  );
+
+  const commandItems = [
+    ...visibleNav.map((item) => ({
+      id: `nav-${item.href}`,
+      label: item.title,
+      href: item.href,
+      section: "Navigation",
+      permission: item.permission,
+      icon: item.icon,
+    })),
+    {
+      id: "action-create-user",
+      label: "Create User",
+      href: "/dashboard/users/new",
+      section: "Actions",
+      permission: "users:create" as Permission,
+      icon: Plus,
+    },
+    {
+      id: "action-audit-log",
+      label: "View Audit Log",
+      href: "/dashboard/audit",
+      section: "Actions",
+      permission: "audit:view" as Permission,
+      icon: ScrollText,
+    },
+  ];
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -63,7 +107,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <nav className="flex-1 space-y-1 p-3">
-          {navItems.map((item) => {
+          {visibleNav.map((item) => {
             const isActive =
               item.href === "/dashboard"
                 ? pathname === "/dashboard"
@@ -110,16 +154,32 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
           >
             <Menu className="h-4 w-4" />
           </button>
+          <button
+            onClick={() => setCommandOpen(true)}
+            className="hidden h-9 w-64 items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground hover:bg-accent sm:flex"
+          >
+            <Search className="h-4 w-4" />
+            <span className="flex-1 text-left">Search...</span>
+            <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground sm:flex">
+              {"\u2318"}K
+            </kbd>
+          </button>
           <div className="flex-1" />
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-full bg-primary text-center text-sm font-medium leading-8 text-primary-foreground">
-              A
+              {session.email[0].toUpperCase()}
             </div>
           </div>
         </header>
 
         <main className="flex-1 p-6">{children}</main>
       </div>
+
+      <CommandPalette
+        open={commandOpen}
+        onOpenChange={setCommandOpen}
+        items={commandItems}
+      />
     </div>
   );
 }

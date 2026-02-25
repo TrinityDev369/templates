@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { signToken, setSession } from "@/lib/auth";
 import { mockUsers } from "@/lib/mock-data";
+import { logAction } from "@/lib/audit";
 
 export async function POST(request: Request) {
   const { email, password } = await request.json();
@@ -17,6 +18,14 @@ export async function POST(request: Request) {
 
   const token = signToken({ id: user.id, email: user.email, role: user.role });
   await setSession(token);
+
+  await logAction({
+    userId: user.id,
+    action: "user.login",
+    entityType: "session",
+    metadata: { email: user.email },
+    ipAddress: request.headers.get("x-forwarded-for") ?? "127.0.0.1",
+  });
 
   return NextResponse.json({ success: true });
 }

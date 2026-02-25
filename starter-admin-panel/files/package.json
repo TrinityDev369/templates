@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:migrate": "psql $DATABASE_URL < lib/schema.sql"
+    "db:migrate": "psql $DATABASE_URL < lib/schema.sql",
+    "generate": "npx tsx scripts/generate-entity.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

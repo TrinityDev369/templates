@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { DataTable } from "@/components/data-table";
+import { Authorized } from "@/components/authorized";
 import { mockUsers } from "@/lib/mock-data";
 import type { ColumnDef } from "@tanstack/react-table";
 import type { User } from "@/types";
@@ -61,12 +62,14 @@ const columns: ColumnDef<User>[] = [
   {
     id: "actions",
     cell: ({ row }) => (
-      <Link
-        href={`/dashboard/users/${row.original.id}`}
-        className="inline-flex h-8 items-center rounded-md border px-3 text-xs hover:bg-accent"
-      >
-        Edit
-      </Link>
+      <Authorized permission="users:edit" fallback={<span className="text-xs text-muted-foreground">View only</span>}>
+        <Link
+          href={`/dashboard/users/${row.original.id}`}
+          className="inline-flex h-8 items-center rounded-md border px-3 text-xs hover:bg-accent"
+        >
+          Edit
+        </Link>
+      </Authorized>
     ),
   },
 ];
@@ -87,13 +90,15 @@ export default function UsersPage() {
           <h1 className="text-3xl font-bold tracking-tight">Users</h1>
           <p className="text-muted-foreground">Manage user accounts and permissions.</p>
         </div>
-        <Link
-          href="/dashboard/users/new"
-          className="inline-flex h-10 items-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-        >
-          <Plus className="h-4 w-4" />
-          Add User
-        </Link>
+        <Authorized permission="users:create">
+          <Link
+            href="/dashboard/users/new"
+            className="inline-flex h-10 items-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            <Plus className="h-4 w-4" />
+            Add User
+          </Link>
+        </Authorized>
       </div>
 
       <div className="flex items-center gap-4">

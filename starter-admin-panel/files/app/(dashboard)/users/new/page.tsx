@@ -1,8 +1,11 @@
+import { requirePermission } from "@/lib/require-permission";
 import { UserForm } from "@/components/user-form";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 
-export default function NewUserPage() {
+export default async function NewUserPage() {
+  await requirePermission("users:create");
+
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4">

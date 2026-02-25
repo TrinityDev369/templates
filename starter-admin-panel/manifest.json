@@ -1,7 +1,7 @@
 {
   "name": "starter-admin-panel",
-  "version": "1.1.0",
-  "description": "Admin panel starter with CRUD data tables, forms, auth, and PostgreSQL. Next.js 14, shadcn/ui, TanStack Table, Recharts.",
+  "version": "1.2.0",
+  "description": "Admin panel starter with RBAC, audit log, Cmd+K search, CRUD data tables, forms, auth, and PostgreSQL. Next.js 14, shadcn/ui, TanStack Table, Recharts.",
   "outputDir": ".",
   "files": [
     "package.json",
@@ -22,16 +22,26 @@
     "app/(dashboard)/users/new/page.tsx",
     "app/(dashboard)/users/[id]/page.tsx",
     "app/(dashboard)/settings/page.tsx",
+    "app/(dashboard)/audit/page.tsx",
+    "app/(dashboard)/audit/audit-log-viewer.tsx",
     "components/dashboard-shell.tsx",
     "components/data-table.tsx",
     "components/kpi-card.tsx",
     "components/user-form.tsx",
+    "components/authorized.tsx",
+    "components/command-palette.tsx",
     "lib/mock-data.ts",
+    "lib/mock-audit-data.ts",
     "lib/db.ts",
     "lib/auth.ts",
     "lib/utils.ts",
     "lib/schema.sql",
-    "types/index.ts"
+    "lib/rbac.ts",
+    "lib/require-permission.ts",
+    "lib/session-context.tsx",
+    "lib/audit.ts",
+    "types/index.ts",
+    "scripts/generate-entity.ts"
   ],
   "peerDependencies": {
     "react": ">=18",
@@ -48,5 +58,5 @@
     "clsx": ">=2",
     "tailwind-merge": ">=2"
   },
-  "postMessage": "Admin panel installed! Run:\n1. npm install\n2. npx shadcn@latest add button card input label table tabs select badge dropdown-menu sheet avatar separator switch dialog form\n3. Copy .env.example to .env and set DATABASE_URL + JWT_SECRET\n4. psql < lib/schema.sql\n5. npm run dev\n\nCRUD example: /dashboard/users. Add your own entities by copying the users/ pattern."
+  "postMessage": "Admin panel installed! Run:\n1. npm install\n2. npx shadcn@latest add button card input label table tabs select badge dropdown-menu sheet avatar separator switch dialog form\n3. Copy .env.example to .env and set DATABASE_URL + JWT_SECRET\n4. psql < lib/schema.sql\n5. npm run dev\n\nNew in v1.2.0:\n- RBAC: Role-based access control (admin/editor/viewer) with <Authorized> component\n- Audit Log: Track user actions at /dashboard/audit (admin only)\n- Cmd+K: Command palette search with keyboard navigation\n- Entity Generator: npm run generate <entity-name> scaffolds full CRUD pages\n\nDemo credentials: admin@example.com / admin123 (try editor@/viewer@ to see RBAC)"
 }
