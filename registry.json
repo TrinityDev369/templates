@@ -1349,7 +1349,7 @@
     "starter-admin-panel": {
       "description": "Admin panel starter with CRUD data tables, forms, auth, and PostgreSQL. Next.js 14, shadcn/ui, TanStack Table, Recharts.",
       "category": "STARTER",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     "starter-booking-system": {
       "description": "Appointment booking system with calendar view and availability management",
