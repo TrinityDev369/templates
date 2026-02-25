@@ -6,15 +6,23 @@ import { z } from "zod";
 import { useRouter } from "next/navigation";
 import type { User } from "@/types";
 
-const userSchema = z.object({
+const baseSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   role: z.enum(["admin", "editor", "viewer"]),
   status: z.enum(["active", "inactive"]),
-  password: z.string().min(8, "Password must be at least 8 characters").optional().or(z.literal("")),
+  password: z.string(),
 });
 
-type UserFormValues = z.infer<typeof userSchema>;
+const createSchema = baseSchema.extend({
+  password: z.string().min(8, "Password must be at least 8 characters"),
+});
+
+const editSchema = baseSchema.extend({
+  password: z.string().min(8, "Password must be at least 8 characters").or(z.literal("")),
+});
+
+type UserFormValues = z.infer<typeof baseSchema>;
 
 interface UserFormProps {
   mode: "create" | "edit";
@@ -23,13 +31,14 @@ interface UserFormProps {
 
 export function UserForm({ mode, defaultValues }: UserFormProps) {
   const router = useRouter();
+  const schema = mode === "create" ? createSchema : editSchema;
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<UserFormValues>({
-    resolver: zodResolver(userSchema),
+    resolver: zodResolver(schema),
     defaultValues: defaultValues
       ? {
           name: defaultValues.name,

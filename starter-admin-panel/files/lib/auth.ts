@@ -2,7 +2,11 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import type { User } from "@/types";
 
-const SECRET = process.env.JWT_SECRET || "dev-secret-change-me";
+const SECRET = process.env.JWT_SECRET;
+
+if (!SECRET) {
+  throw new Error("JWT_SECRET environment variable is not set");
+}
 const COOKIE_NAME = "admin-session";
 const EXPIRES_IN = "7d";
 

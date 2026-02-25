@@ -3,17 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { DataTable } from "@/components/data-table";
+import { mockUsers } from "@/lib/mock-data";
 import type { ColumnDef } from "@tanstack/react-table";
 import type { User } from "@/types";
-import { ArrowUpDown, MoreHorizontal, Plus } from "lucide-react";
-
-const mockUsers: User[] = [
-  { id: "1", email: "admin@example.com", name: "Admin User", role: "admin", status: "active", created_at: "2024-01-15T10:00:00Z", updated_at: "2024-01-15T10:00:00Z" },
-  { id: "2", email: "editor@example.com", name: "Editor User", role: "editor", status: "active", created_at: "2024-02-20T14:30:00Z", updated_at: "2024-02-20T14:30:00Z" },
-  { id: "3", email: "viewer@example.com", name: "Viewer User", role: "viewer", status: "active", created_at: "2024-03-10T09:15:00Z", updated_at: "2024-03-10T09:15:00Z" },
-  { id: "4", email: "jane@example.com", name: "Jane Cooper", role: "editor", status: "active", created_at: "2024-04-05T16:45:00Z", updated_at: "2024-04-05T16:45:00Z" },
-  { id: "5", email: "bob@example.com", name: "Bob Wilson", role: "viewer", status: "inactive", created_at: "2024-05-12T11:20:00Z", updated_at: "2024-05-12T11:20:00Z" },
-];
+import { ArrowUpDown, Plus } from "lucide-react";
 
 const columns: ColumnDef<User>[] = [
   {
@@ -68,17 +61,12 @@ const columns: ColumnDef<User>[] = [
   {
     id: "actions",
     cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Link
-          href={`/dashboard/users/${row.original.id}`}
-          className="inline-flex h-8 items-center rounded-md border px-3 text-xs hover:bg-accent"
-        >
-          Edit
-        </Link>
-        <button className="inline-flex h-8 w-8 items-center justify-center rounded-md border hover:bg-accent">
-          <MoreHorizontal className="h-4 w-4" />
-        </button>
-      </div>
+      <Link
+        href={`/dashboard/users/${row.original.id}`}
+        className="inline-flex h-8 items-center rounded-md border px-3 text-xs hover:bg-accent"
+      >
+        Edit
+      </Link>
     ),
   },
 ];

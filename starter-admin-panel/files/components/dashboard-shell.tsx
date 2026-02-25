@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
@@ -23,7 +23,14 @@ const navItems: NavItem[] = [
 
 export function DashboardShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  async function handleLogout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/login");
+    router.refresh();
+  }
 
   return (
     <div className="flex min-h-screen">
@@ -48,6 +55,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
+            aria-label="Close sidebar"
             className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-accent lg:hidden"
           >
             <X className="h-4 w-4" />
@@ -82,13 +90,13 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
         </nav>
 
         <div className="border-t p-3">
-          <Link
-            href="/login"
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
+          <button
+            onClick={handleLogout}
+            className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
           >
             <LogOut className="h-4 w-4" />
             Sign Out
-          </Link>
+          </button>
         </div>
       </aside>
 
@@ -97,6 +105,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
         <header className="flex h-14 items-center gap-4 border-b bg-card px-6">
           <button
             onClick={() => setSidebarOpen(true)}
+            aria-label="Open sidebar"
             className="inline-flex h-8 w-8 items-center justify-center rounded-md border hover:bg-accent lg:hidden"
           >
             <Menu className="h-4 w-4" />

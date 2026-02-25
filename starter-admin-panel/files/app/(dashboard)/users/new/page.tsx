@@ -8,6 +8,7 @@ export default function NewUserPage() {
       <div className="flex items-center gap-4">
         <Link
           href="/dashboard/users"
+          aria-label="Back to users"
           className="inline-flex h-8 w-8 items-center justify-center rounded-md border hover:bg-accent"
         >
           <ChevronLeft className="h-4 w-4" />
