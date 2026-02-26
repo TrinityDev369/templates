@@ -1,0 +1,24 @@
+{
+  "name": "plan",
+  "model": "sonnet",
+  "tools": "Read,Glob,Grep,Write,Bash",
+  "affinities": ["architect", "planner"],
+  "focus": {
+    "include": [
+      "specs/",
+      ".claude/context/",
+      "src/",
+      "app/",
+      "lib/"
+    ],
+    "exclude": [
+      "node_modules/",
+      "dist/",
+      ".next/",
+      ".worktrees/",
+      "coverage/"
+    ],
+    "contextFiles": ["standards.md"]
+  },
+  "promptTemplate": "plan.md"
+}

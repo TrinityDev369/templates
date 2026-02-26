@@ -1,0 +1,24 @@
+{
+  "name": "build",
+  "model": "sonnet",
+  "tools": "Read,Glob,Grep,Edit,Write,Bash",
+  "affinities": ["implementer"],
+  "focus": {
+    "include": [
+      "src/",
+      "app/",
+      "lib/",
+      "specs/{{SLUG}}.md"
+    ],
+    "exclude": [
+      "node_modules/",
+      "dist/",
+      ".next/",
+      ".worktrees/",
+      "coverage/",
+      "docs/reviews/"
+    ],
+    "contextFiles": ["standards.md"]
+  },
+  "promptTemplate": "build.md"
+}

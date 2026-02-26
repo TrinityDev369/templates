@@ -1,0 +1,23 @@
+{
+  "name": "fix",
+  "model": "sonnet",
+  "tools": "Read,Glob,Grep,Edit,Write,Bash",
+  "affinities": ["debugger"],
+  "focus": {
+    "include": [
+      "src/",
+      "app/",
+      "lib/",
+      "docs/reviews/"
+    ],
+    "exclude": [
+      "node_modules/",
+      "dist/",
+      ".next/",
+      ".worktrees/",
+      "coverage/"
+    ],
+    "contextFiles": ["standards.md"]
+  },
+  "promptTemplate": "fix.md"
+}

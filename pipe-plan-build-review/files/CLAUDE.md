@@ -2,59 +2,68 @@
 
 ## Identity
 
-<!-- Customize this section for your project -->
-**[Your Project Name]** -- brief description of what this project does and who it serves.
+<!-- Customize: replace with your project name and description -->
+**[Your Project Name]** -- brief description of what this project does.
 
 ## Pipeline: Plan-Build-Review
 
-This project uses an agentic pipeline that chains four phases to ship features safely:
+This project uses an automated pipeline that chains four phases to ship features safely:
 
 ```
-Plan --> Build --> Review --> Fix
+Plan --> Build --> Review --> Fix (if needed)
 ```
 
-1. **Plan** -- Gather requirements, explore the codebase, produce a spec in `specs/`
-2. **Build** -- Execute the spec step by step, committing after each logical unit
-3. **Review** -- Analyze all changes via `git diff`, check for security issues, logic errors, missing error handling, and test coverage gaps
-4. **Fix** -- Address Critical and High findings from review, re-review, iterate (max 2 rounds)
+### Phases
 
-## Usage
+1. **Plan** -- Explore the codebase, produce a spec in `specs/<feature>.md`
+2. **Build** -- Execute the spec step by step, commit after each logical unit
+3. **Review** -- Analyze changes via `git diff`, check for security, logic, and quality issues
+4. **Fix** -- Address Critical and Major findings, re-review (max 2 rounds)
 
-### Full pipeline (recommended)
-
-```
-/plan-build-review <feature description>
-```
-
-This runs all four phases automatically. The skill will pause if the review phase finds critical issues and attempt to fix them before finishing.
-
-### Optional: create a feature branch first
+### Usage
 
 ```bash
-./scripts/pbr.sh <feature-name>
+# Full pipeline
+./scripts/pbr "Add user authentication"
+
+# Start from a specific phase
+./scripts/pbr --from build --spec specs/auth.md
+
+# Skip review
+./scripts/pbr "Quick feature" --no-review
+
+# Dry run (inspect prompts without execution)
+./scripts/pbr --dry-run "Test feature"
+
+# Override model for all phases
+./scripts/pbr "Complex feature" --model opus
 ```
 
-This creates a `feat/<feature-name>` branch so the pipeline works on an isolated branch that can be merged via PR later.
+### Focus Sharpening
 
-## Artifacts
+Each phase gets a tailored `.claudeignore` that restricts which files the agent can see. This keeps agents focused on relevant code. Configure visibility per phase in `pipeline/phases/*.json`.
+
+### Phase Configs
+
+Edit `pipeline/phases/<phase>.json` to customize:
+- **model** -- which Claude model to use
+- **tools** -- which Claude Code tools to allow (e.g., plan phase has no Edit)
+- **focus.include** -- directories the agent CAN see
+- **focus.exclude** -- directories always hidden
+- **focus.contextFiles** -- which `.claude/context/*.md` files to load
+
+### Artifacts
 
 | Artifact | Location | Phase |
 |----------|----------|-------|
-| Spec | `specs/<feature-name>.md` | Plan |
-| Commits | Feature branch | Build |
-| Review report | Printed to console | Review |
-| Fix commits | Feature branch | Fix |
-
-## Rules
-
-1. **Specs before code** -- The Plan phase always writes a spec before any implementation begins
-2. **Commit after each unit** -- The Build phase commits after each logical step, not in one big batch
-3. **No silent failures** -- If the Build phase hits an error, it stops and reports rather than continuing
-4. **Critical/High must be fixed** -- The Fix phase addresses all Critical and High review findings before the pipeline completes
-5. **Max 2 fix rounds** -- To prevent infinite loops, the Fix phase iterates at most twice
+| Spec | `specs/<slug>.md` | Plan |
+| Commits | `pbr/<slug>` branch | Build |
+| Review report | `docs/reviews/review_<date>_<slug>.md` | Review |
+| Fix commits | Same branch | Fix |
 
 ## Customization
 
-- Edit the skill at `.claude/skills/plan-build-review/SKILL.md` to adjust phase behavior
-- Modify `scripts/pbr.sh` to change branch naming conventions
-- Add project-specific review criteria by extending Phase 3 in the skill
+- **Phase prompts**: Edit `pipeline/prompts/*.md` to adjust agent instructions
+- **Phase configs**: Edit `pipeline/phases/*.json` to change model, tools, or focus
+- **Context files**: Add `.claude/context/*.md` files for project conventions
+- **Quality gates**: Edit `pipeline/lib/gates.sh` to add custom validation

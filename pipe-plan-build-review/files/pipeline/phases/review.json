@@ -1,0 +1,24 @@
+{
+  "name": "review",
+  "model": "sonnet",
+  "tools": "Read,Glob,Grep,Write,Bash",
+  "affinities": ["reviewer"],
+  "focus": {
+    "include": [
+      "src/",
+      "app/",
+      "lib/",
+      "docs/reviews/",
+      "specs/"
+    ],
+    "exclude": [
+      "node_modules/",
+      "dist/",
+      ".next/",
+      ".worktrees/",
+      "coverage/"
+    ],
+    "contextFiles": ["standards.md"]
+  },
+  "promptTemplate": "review.md"
+}

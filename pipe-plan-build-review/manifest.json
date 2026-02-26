@@ -1,12 +1,25 @@
 {
   "name": "pipe-plan-build-review",
-  "version": "1.0.0",
-  "description": "Full agentic pipeline: plan, build, review, fix",
+  "version": "2.0.0",
+  "description": "Full agentic pipeline: plan, build, review, fix. Each phase runs as a focused Claude agent with restricted tools and file visibility via .claudeignore.",
   "outputDir": ".",
   "files": [
     "CLAUDE.md",
     ".claude/skills/plan-build-review/SKILL.md",
-    "scripts/pbr.sh"
+    "scripts/pbr",
+    "pipeline/pbr.sh",
+    "pipeline/lib/focus.sh",
+    "pipeline/lib/spawn-phase.sh",
+    "pipeline/lib/gates.sh",
+    "pipeline/phases/plan.json",
+    "pipeline/phases/build.json",
+    "pipeline/phases/review.json",
+    "pipeline/phases/fix.json",
+    "pipeline/prompts/plan.md",
+    "pipeline/prompts/build.md",
+    "pipeline/prompts/review.md",
+    "pipeline/prompts/fix.md"
   ],
-  "postMessage": "Plan-Build-Review pipeline installed!\n\nUsage: /plan-build-review <feature description>\nOptional: ./scripts/pbr.sh <feature-name> to create a branch first.\n\nCustomize CLAUDE.md with your project identity."
+  "peerDependencies": {},
+  "postMessage": "Plan-Build-Review pipeline installed!\n\nQuick start:\n  chmod +x scripts/pbr pipeline/pbr.sh pipeline/lib/*.sh\n  ./scripts/pbr \"Add user authentication\"\n\nDry run (preview prompts):\n  ./scripts/pbr --dry-run \"Test feature\"\n\nCustomize:\n  - Phase configs: pipeline/phases/*.json (model, tools, file visibility)\n  - Prompt templates: pipeline/prompts/*.md\n  - Context files: .claude/context/*.md (project conventions)\n\nRequires: claude CLI, python3, git"
 }
