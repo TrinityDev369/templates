@@ -108,9 +108,11 @@ Orchestrate a complete feature lifecycle: plan, build, review, fix. Each phase p
 
 1. **Gather the diff:**
    ```bash
-   git diff main...HEAD
+   # Auto-detect base branch (works with main, master, develop, trunk)
+   BASE=$(git remote show origin 2>/dev/null | awk '/HEAD branch/ {print $NF}' || echo "main")
+   git diff "${BASE}...HEAD"
    ```
-   On `main` directly, use `git diff HEAD~<N>` where N = commits from Phase 2.
+   On the base branch directly, use `git diff HEAD~<N>` where N = commits from Phase 2.
 
 2. **Analyze changes** across five dimensions:
 
