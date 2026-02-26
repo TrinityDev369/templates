@@ -87,7 +87,7 @@ For containers restarting, check restart count:
 docker inspect --format '{{.RestartCount}}' <container_name> 2>/dev/null
 ```
 
-A restart count > 3 within the last hour is a confirmed restart loop.
+A restart count > 3 (cumulative since container start) indicates a restart loop — cross-reference with container uptime (`docker inspect --format '{{.State.StartedAt}}'`) to assess recency.
 
 #### 2b. Database Connectivity
 
@@ -134,7 +134,11 @@ fi
 # nginx
 if command -v nginx &>/dev/null || [ -f /etc/nginx/nginx.conf ]; then
   nginx -t 2>&1 && echo "nginx config: OK" || echo "nginx config: FAIL"
-  systemctl is-active nginx 2>/dev/null || pgrep -x nginx >/dev/null && echo "nginx process: OK" || echo "nginx process: NOT RUNNING"
+  if systemctl is-active nginx &>/dev/null || pgrep -x nginx >/dev/null 2>&1; then
+    echo "nginx process: OK"
+  else
+    echo "nginx process: NOT RUNNING"
+  fi
 fi
 
 # Node.js processes
