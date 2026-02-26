@@ -1,0 +1,8 @@
+{
+  "name": "skill-review",
+  "version": "1.0.0",
+  "description": "Automated code review with risk tiers and checklist",
+  "outputDir": ".claude",
+  "files": ["skills/review/SKILL.md"],
+  "postMessage": "Code review skill installed! Invoke with: /review <pr-number|branch|commit-range>"
+}
