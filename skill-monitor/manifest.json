@@ -1,0 +1,8 @@
+{
+  "name": "skill-monitor",
+  "version": "1.0.0",
+  "description": "System and process monitoring skill",
+  "outputDir": ".claude",
+  "files": ["skills/monitor/SKILL.md"],
+  "postMessage": "Monitor skill installed! Run /monitor for a system health check, or /monitor docker for container status."
+}
