@@ -1057,9 +1057,9 @@
       "version": "1.0.0"
     },
     "pipe-plan-build-review": {
-      "description": "Full agentic pipeline: plan, build, review, fix",
+      "description": "Full agentic pipeline: plan, build, review, fix. Each phase runs as a focused Claude agent with restricted tools and file visibility via .claudeignore.",
       "category": "pipe",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "pipe-security-audit": {
       "description": "Security audit pipeline \u2014 OWASP checks, dependency scanning, secrets detection, report generation",
