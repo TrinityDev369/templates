@@ -1,0 +1,8 @@
+{
+  "name": "skill-devops",
+  "version": "1.0.0",
+  "description": "Infrastructure and deployment skill",
+  "outputDir": ".claude",
+  "files": ["skills/devops/SKILL.md"],
+  "postMessage": "DevOps skill installed! Use when building Docker images, setting up CI/CD, or deploying to production."
+}
