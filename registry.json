@@ -1,6 +1,11 @@
 {
   "version": "1.0",
   "templates": {
+    "agent-codemod": {
+      "description": "Automated codemod and migration agent",
+      "category": "agent",
+      "version": "1.0.0"
+    },
     "agent-docs-writer": {
       "description": "Documentation generation agent \u2014 reads code, produces structured docs with examples",
       "category": "agent",
@@ -1051,6 +1056,11 @@
       "category": "pipe",
       "version": "1.0.0"
     },
+    "pipe-plan-build-review": {
+      "description": "Full agentic pipeline: plan, build, review, fix",
+      "category": "pipe",
+      "version": "1.0.0"
+    },
     "pipe-security-audit": {
       "description": "Security audit pipeline \u2014 OWASP checks, dependency scanning, secrets detection, report generation",
       "category": "pipe",
@@ -1306,6 +1316,11 @@
       "category": "skill",
       "version": "1.0.0"
     },
+    "skill-devops": {
+      "description": "Infrastructure and deployment skill",
+      "category": "skill",
+      "version": "1.0.0"
+    },
     "skill-i18n": {
       "description": "Internationalization and localization skill \u2014 next-intl, message extraction, RTL support, locale routing",
       "category": "skill",
@@ -1313,6 +1328,11 @@
     },
     "skill-legal-review": {
       "description": "Legal review skill \u2014 contract analysis, clause identification, risk flagging, compliance checks",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-monitor": {
+      "description": "System and process monitoring skill",
       "category": "skill",
       "version": "1.0.0"
     },
@@ -1328,6 +1348,11 @@
     },
     "skill-react-perf": {
       "description": "React performance optimization and profiling \u2014 memoization, code splitting, bundle analysis, rendering patterns",
+      "category": "skill",
+      "version": "1.0.0"
+    },
+    "skill-review": {
+      "description": "Automated code review with risk tiers and checklist",
       "category": "skill",
       "version": "1.0.0"
     },
