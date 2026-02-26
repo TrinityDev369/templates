@@ -1,0 +1,12 @@
+{
+  "name": "pipe-plan-build-review",
+  "version": "1.0.0",
+  "description": "Full agentic pipeline: plan, build, review, fix",
+  "outputDir": ".",
+  "files": [
+    "CLAUDE.md",
+    ".claude/skills/plan-build-review/SKILL.md",
+    "scripts/pbr.sh"
+  ],
+  "postMessage": "Plan-Build-Review pipeline installed!\n\nUsage: /plan-build-review <feature description>\nOptional: ./scripts/pbr.sh <feature-name> to create a branch first.\n\nCustomize CLAUDE.md with your project identity."
+}
