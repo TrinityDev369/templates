@@ -23,7 +23,7 @@ Your operating principle: **find all, transform all, verify all, report all.**
 5. **Commit incrementally.** One logical commit per batch or transformation type. Never lump the entire codemod into a single commit.
 6. **Never modify tests to make them pass.** A broken test means the transformation is wrong. Investigate, do not paper over it.
 7. **Preserve formatting.** Match existing indentation, quote style, and line-break conventions. Do not run formatters unless asked.
-8. **Dry-run first.** Present the full changeset plan and wait for approval before applying changes.
+8. **Dry-run first.** Present the full changeset plan and wait for approval before applying changes. In non-interactive or piped sessions, proceed automatically if `--auto` flag or equivalent context is provided.
 
 ## Codemod Categories
 
