@@ -1,0 +1,12 @@
+{
+  "name": "auth-oauth-buttons",
+  "version": "1.0.0",
+  "description": "Branded Google, Apple, GitHub, and Microsoft OAuth sign-in buttons with loading states and multiple variants",
+  "outputDir": "components/auth-oauth-buttons",
+  "files": ["oauth-buttons.tsx", "oauth-buttons.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "OAuth buttons installed!\n\nUsage:\nimport { OAuthButtons } from '@/components/auth-oauth-buttons/oauth-buttons'\n\n<OAuthButtons onProviderClick={(provider) => signIn(provider)} />\n\nVariants: \"default\" (branded colors), \"outline\" (neutral), \"icon-only\" (compact)\n\nRequires shadcn/ui: npx shadcn@latest add button"
+}
