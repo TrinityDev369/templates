@@ -253,12 +253,14 @@ const RbacPermissions: FC<RbacPermissionsProps> = ({
                   {deleteConfirm === role.id ? (
                     <>
                       <button
+                        type="button"
                         className="ml-1 text-xs text-destructive hover:underline"
                         onClick={() => handleDeleteRole(role.id)}
                       >
                         Confirm
                       </button>
                       <button
+                        type="button"
                         className="text-xs text-muted-foreground hover:underline"
                         onClick={() => setDeleteConfirm(null)}
                       >

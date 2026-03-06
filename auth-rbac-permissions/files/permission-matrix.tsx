@@ -1,6 +1,6 @@
 "use client";
 
-import { type FC, useCallback, useState } from "react";
+import { Fragment, type FC, useCallback, useState } from "react";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -124,7 +124,7 @@ const PermissionMatrix: FC<PermissionMatrixProps> = ({
 
           <tbody>
             {Object.entries(groups).map(([groupName, groupPerms]) => (
-              <React.Fragment key={groupName}>
+              <Fragment key={groupName}>
                 {/* Group header row */}
                 <tr>
                   <td
@@ -176,7 +176,7 @@ const PermissionMatrix: FC<PermissionMatrixProps> = ({
                     })}
                   </tr>
                 ))}
-              </React.Fragment>
+              </Fragment>
             ))}
           </tbody>
         </table>
@@ -184,9 +184,6 @@ const PermissionMatrix: FC<PermissionMatrixProps> = ({
     </TooltipProvider>
   );
 };
-
-// Need React import for JSX.Fragment usage
-import React from "react";
 
 export { PermissionMatrix };
 export type { PermissionMatrixProps };
