@@ -1,0 +1,16 @@
+{
+  "name": "auth-magic-link",
+  "version": "1.0.0",
+  "description": "Passwordless magic link sign-in flow with email entry, check-email confirmation, resend countdown, and expired link handling",
+  "outputDir": "components/auth-magic-link",
+  "files": ["magic-link.tsx", "magic-link.types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "next": ">=14",
+    "tailwindcss": ">=3",
+    "zod": ">=3",
+    "react-hook-form": ">=7",
+    "@hookform/resolvers": ">=3"
+  },
+  "postMessage": "Magic link auth installed!\n\nUsage:\nimport { MagicLink } from '@/components/auth-magic-link'\n\n<MagicLink\n  onSendLink={async (email) => { /* send magic link email */ }}\n  onBackToSignIn={() => router.push('/login')}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button input card label"
+}
