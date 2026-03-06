@@ -1,0 +1,12 @@
+{
+  "name": "auth-email-verification",
+  "version": "1.0.0",
+  "description": "Email verification flow with resend countdown, optional code input, expiry timer, and success/expired states",
+  "outputDir": "components/auth-email-verification",
+  "files": ["email-verification.tsx", "email-verification.types.ts", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Email verification installed!\n\nUsage:\nimport { EmailVerification } from '@/components/auth-email-verification'\n\n<EmailVerification\n  email=\"user@example.com\"\n  status=\"pending\"\n  onResend={async (email) => { /* send verification */ }}\n  onVerifyCode={async (code) => { /* validate */ }}\n  onContinue={() => router.push('/dashboard')}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button input card label"
+}
