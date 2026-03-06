@@ -1,0 +1,12 @@
+{
+  "name": "auth-rbac-permissions",
+  "version": "1.0.0",
+  "description": "Role and permission management with interactive matrix editor, role creation dialog, and delete confirmation",
+  "outputDir": "components/auth-rbac-permissions",
+  "files": ["rbac-permissions.tsx", "rbac-permissions.types.ts", "permission-matrix.tsx", "index.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "RBAC permissions UI installed!\n\nUsage:\nimport { RbacPermissions } from '@/components/auth-rbac-permissions'\n\n<RbacPermissions\n  permissions={[{ id: 'users.create', label: 'Create users', group: 'Users' }]}\n  roles={[{ id: 'admin', name: 'Admin', permissions: ['users.create'] }]}\n  onTogglePermission={async (roleId, permId, granted) => { /* persist */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button input card label checkbox dialog tooltip"
+}
