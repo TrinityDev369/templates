@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -144,25 +144,28 @@ function ConnectedAccounts({
 
   const connectedCount = accounts.filter((a) => a.connected).length;
 
-  const handleAction = async (account: ConnectedAccount) => {
-    setError(null);
-    setLoadingProvider(account.provider);
-    try {
-      if (account.connected) {
-        await onDisconnect(account.provider);
-      } else {
-        await onConnect(account.provider);
+  const handleAction = useCallback(
+    async (account: ConnectedAccount) => {
+      setError(null);
+      setLoadingProvider(account.provider);
+      try {
+        if (account.connected) {
+          await onDisconnect(account.provider);
+        } else {
+          await onConnect(account.provider);
+        }
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : `Failed to ${account.connected ? "disconnect" : "connect"} ${providerMeta[account.provider].label}`
+        );
+      } finally {
+        setLoadingProvider(null);
       }
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : `Failed to ${account.connected ? "disconnect" : "connect"} ${providerMeta[account.provider].label}`
-      );
-    } finally {
-      setLoadingProvider(null);
-    }
-  };
+    },
+    [onConnect, onDisconnect]
+  );
 
   return (
     <Card>
