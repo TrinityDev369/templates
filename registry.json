@@ -131,6 +131,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-connected-accounts": {
+      "description": "OAuth provider management settings panel with connect/disconnect, lockout protection, and connection timestamps",
+      "category": "component",
+      "version": "1.0.0"
+    },
     "auth-consent-screen": {
       "description": "OAuth authorization consent screen with scope display and risk indicators",
       "category": "page",
@@ -139,6 +144,11 @@
     "auth-device-trust": {
       "description": "Trusted devices list with browser, OS, location info and device revocation",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-email-verification": {
+      "description": "Email verification flow with resend countdown, optional code input, expiry timer, and success/expired states",
+      "category": "module",
       "version": "1.0.0"
     },
     "auth-impersonation-banner": {
@@ -166,8 +176,18 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "auth-magic-link": {
+      "description": "Passwordless magic link sign-in flow with email entry, check-email confirmation, resend countdown, and expired link handling",
+      "category": "module",
+      "version": "1.0.0"
+    },
     "auth-mfa-recovery": {
       "description": "MFA recovery codes display with copy, download, print, and regenerate actions",
+      "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-oauth-buttons": {
+      "description": "Branded Google, Apple, GitHub, and Microsoft OAuth sign-in buttons with loading states and multiple variants",
       "category": "component",
       "version": "1.0.0"
     },
@@ -204,6 +224,11 @@
     "auth-rate-limit-ui": {
       "description": "Rate limiting feedback component with attempt counter, countdown timer, and progressive warnings",
       "category": "component",
+      "version": "1.0.0"
+    },
+    "auth-rbac-permissions": {
+      "description": "Role and permission management with interactive matrix editor, role creation dialog, and delete confirmation",
+      "category": "module",
       "version": "1.0.0"
     },
     "auth-seed": {
