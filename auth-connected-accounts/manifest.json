@@ -1,0 +1,12 @@
+{
+  "name": "auth-connected-accounts",
+  "version": "1.0.0",
+  "description": "OAuth provider management settings panel with connect/disconnect, lockout protection, and connection timestamps",
+  "outputDir": "components/auth-connected-accounts",
+  "files": ["connected-accounts.tsx", "connected-accounts.types.ts"],
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "postMessage": "Connected accounts panel installed!\n\nUsage:\nimport { ConnectedAccounts } from '@/components/auth-connected-accounts/connected-accounts'\n\n<ConnectedAccounts\n  accounts={[{ provider: 'google', connected: true, accountLabel: 'user@gmail.com' }]}\n  onConnect={async (provider) => { /* OAuth redirect */ }}\n  onDisconnect={async (provider) => { /* revoke */ }}\n/>\n\nRequires shadcn/ui: npx shadcn@latest add button card"
+}
