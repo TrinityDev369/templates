@@ -1211,6 +1211,11 @@
       "category": "component",
       "version": "1.0.0"
     },
+    "scraper-bun-hono": {
+      "description": "Self-hosted web scraper starter \u2014 Bun + Hono + Postgres with content cache, per-domain policy learning, and bundled Claude skill. Grows into a full tier-escalation cascade.",
+      "category": "starter",
+      "version": "1.0.0"
+    },
     "section-cta": {
       "description": "Call-to-action section with dark, brand, and light background variants",
       "category": "SECTIONS",
