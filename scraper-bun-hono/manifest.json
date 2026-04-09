@@ -1,0 +1,25 @@
+{
+  "name": "scraper-bun-hono",
+  "version": "1.0.0",
+  "description": "Self-hosted web scraper starter — Bun + Hono + Postgres with content cache, per-domain policy learning, and a bundled Claude skill. Runs on a single Hetzner AX42 box. Grows into a full tier-escalation cascade (Playwright stealth, IPv6 /64 rotation, residential proxy, Firecrawl fallback).",
+  "outputDir": "./scraper",
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "Dockerfile",
+    "docker-compose.yml",
+    "env.example",
+    ".gitignore",
+    "schema.sql",
+    "README.md",
+    "src/server.ts",
+    "src/db.ts",
+    "src/cache.ts",
+    "src/policy.ts",
+    "src/tier1-fetch.ts",
+    "src/convert.ts",
+    ".claude/skills/scrape/SKILL.md"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Scraper starter installed in ./scraper\n\nNext steps:\n  1. cd scraper && cp env.example .env\n  2. docker compose up -d       # starts postgres + scraper on :3021\n  3. curl -X POST http://localhost:3021/scrape -H 'content-type: application/json' -d '{\"url\":\"https://example.com\"}'\n\nLocal dev (without Docker):\n  bun install && bun run dev\n\nThe bundled Claude skill at .claude/skills/scrape/SKILL.md teaches agents in your project to prefer this scraper over WebFetch.\n\nTo grow it into the full 4-tier cascade (Playwright stealth → IPv6 /64 rotation → residential proxy → Firecrawl fallback), see the 'Growing this starter' section in README.md."
+}
