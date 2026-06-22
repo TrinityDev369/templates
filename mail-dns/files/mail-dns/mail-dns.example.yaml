@@ -1,0 +1,72 @@
+# mail-dns.example.yaml — worked example for ozean-licht.com.
+#
+# This is the SHAPE that `mail-dns/generate.ts` emits as `mail-dns.yaml`. Copy each
+# record below into your DNS provider (Ozean Licht's is Hostinger) as name / type / value.
+# Provider-neutral on purpose: no Cloudflare/registrar API calls — just records to paste.
+#
+# Re-generate after editing mail-dns.config.ts:   npx tsx mail-dns/generate.ts
+# Check they are published + aligned:              npx tsx mail-dns/verify.ts
+
+version: 1
+
+# Relay SPF include target. NEVER an IP — SPF authorizes the relay via `include:` so the
+# relay can re-IP without you touching a single DNS record.
+relaySpfDomain: _spf.relay.trinity.agency
+
+# Relay FQDN used as the MX target for inbound-enabled domains.
+relayMxHost: relay.trinity.agency
+
+# Central DMARC aggregate-report mailbox. Reports land at Trinity, not in the tenant repo.
+dmarcRua: dmarc@trinity.agency
+
+domains:
+  - domain: ozean-licht.com
+    # DKIM selector. The PUBLIC KEY itself is published by `trinity-mail init` — this
+    # manifest only carries the selector so verify knows where to look.
+    dkimSelector: s202606
+    bounceSubdomain: bounce.ozean-licht.com
+    # No MX here: ozean-licht.com is outbound-only for now. Set inbound: true to add MX.
+    inbound: false
+    records:
+      # ── SPF (the sending domain) ────────────────────────────────────────────────
+      - name: ozean-licht.com
+        type: TXT
+        value: v=spf1 include:_spf.relay.trinity.agency ~all
+        comment: >-
+          SPF — authorizes the relay via include: (never an ip4 literal, so the relay can
+          re-IP without touching your DNS). ~all is softfail for warmup; harden to "-all"
+          once deliverability is proven (spec §7).
+
+      # ── DKIM ─────────────────────────────────────────────────────────────────────
+      - name: s202606._domainkey.ozean-licht.com
+        type: TXT
+        value: v=DKIM1; k=rsa; h=sha256; p=__DKIM_PUBLIC_KEY__
+        comment: >-
+          DKIM — the public key (p=) is published by `trinity-mail init`; replace
+          __DKIM_PUBLIC_KEY__ with the base64 key from the init bundle. If your registrar
+          rejects values >255 chars, split into quoted chunks (Hostinger accepts the single
+          long value).
+
+      # ── DMARC ────────────────────────────────────────────────────────────────────
+      - name: _dmarc.ozean-licht.com
+        type: TXT
+        value: v=DMARC1; p=none; rua=mailto:dmarc@trinity.agency; adkim=r; aspf=r; fo=1
+        comment: >-
+          DMARC — start at p=none (monitor only); aggregate reports go to the central
+          mailbox. Ramp p=none → quarantine → reject as SPF+DKIM alignment proves out.
+
+      # ── Bounce subdomain SPF ─────────────────────────────────────────────────────
+      - name: bounce.ozean-licht.com
+        type: TXT
+        value: v=spf1 include:_spf.relay.trinity.agency ~all
+        comment: >-
+          Bounce subdomain SPF — the Return-Path uses bounce.ozean-licht.com (VERP), so it
+          needs its own SPF authorizing the relay or bounce traffic fails SPF alignment.
+
+      # ── MX (OPTIONAL — only when inbound is enabled) ─────────────────────────────
+      # Uncomment / set inbound: true to route incoming mail to the relay:
+      # - name: ozean-licht.com
+      #   type: MX
+      #   value: relay.trinity.agency.
+      #   priority: 10
+      #   comment: MX — inbound enabled: routes incoming mail for ozean-licht.com to the relay.

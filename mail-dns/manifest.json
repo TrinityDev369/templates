@@ -1,0 +1,24 @@
+{
+  "name": "mail-dns",
+  "description": "Trinity Mail DNS manifest + verify: the tenant-side mirror of the relay onboard script. Generates a provider-neutral mail-dns.yaml of copy-paste SPF/DKIM/DMARC/bounce records (SPF via include: of the relay, never a hardcoded IP) for one or more sending domains, plus a node:dns verify script that checks every record is published and aligned",
+  "version": "1.0.0",
+  "outputDir": ".",
+  "files": [
+    "mail-dns/types.ts",
+    "mail-dns/generate.ts",
+    "mail-dns/verify.ts",
+    "mail-dns/index.ts",
+    "mail-dns/mail-dns.example.yaml",
+    "mail-dns/README.md",
+    "mail-dns/__tests__/generate.test.ts"
+  ],
+  "peerDependencies": {
+    "yaml": ">=2.0.0"
+  },
+  "devDependencies": {
+    "vitest": ">=1.0.0",
+    "typescript": ">=5.0.0",
+    "@types/node": ">=20.0.0"
+  },
+  "postMessage": "Installed to ./mail-dns. 1) (Optional) author mail-dns/mail-dns.config.ts (export default a MailDnsConfig) — or edit the inline defaults; see mail-dns/mail-dns.example.yaml for the ozean-licht.com worked example. SPF MUST stay an include: of the relay SPF domain, never a hardcoded IP. 2) Generate the manifest: `npx tsx mail-dns/generate.ts` (writes mail-dns/mail-dns.yaml). 3) Publish each name/type/value record at your DNS provider (Hostinger for OL); the DKIM public key is published by `trinity-mail init`. 4) Verify publication + alignment: `npx tsx mail-dns/verify.ts` (OK/!! per record, exit 1 if any fail). Start SPF ~all / DMARC p=none during warmup, then harden to -all / quarantine→reject. Pairs with mail-client, mail-templates, mail-webhook, mail-tresor. Tests: `npx vitest run mail-dns`."
+}

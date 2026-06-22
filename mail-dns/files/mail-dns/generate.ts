@@ -1,0 +1,191 @@
+/**
+ * Trinity Mail — `mail-dns` manifest generator.
+ *
+ * Reads a small config object → produces a provider-neutral `mail-dns.yaml` of
+ * copy-paste DNS records for every sending domain. Mirrors the record shapes emitted
+ * by the relay's `onboard-domain.sh`, but as a machine-readable manifest the tenant
+ * keeps in-repo and feeds to `verify.ts`.
+ *
+ * SPF is always an `include:` of the relay's SPF domain — NEVER a hardcoded ip4 literal —
+ * so the relay can re-IP without touching any tenant's DNS.
+ *
+ * CLI:  npx tsx mail-dns/generate.ts
+ *   - loads `./mail-dns.config.ts` (export default) if present, else uses inline defaults,
+ *   - writes `mail-dns.yaml` next to it.
+ */
+import { writeFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { stringify } from 'yaml';
+import type {
+  DnsRecord,
+  DomainManifest,
+  MailDnsConfig,
+  MailDnsManifest,
+} from './types.js';
+
+/** Inline defaults — a worked example for ozean-licht.com. Override via mail-dns.config.ts. */
+export const DEFAULT_CONFIG: MailDnsConfig = {
+  domains: ['ozean-licht.com'],
+  relaySpfDomain: '_spf.relay.trinity.agency',
+  relayMxHost: 'relay.trinity.agency',
+  dmarcRua: 'dmarc@trinity.agency',
+  dkimSelector: 's202606',
+  bounceSubdomainPrefix: 'bounce',
+  spfPolicy: '~all',
+  dmarcPolicy: 'none',
+  inbound: false,
+};
+
+function inboundFor(cfg: MailDnsConfig, domain: string): boolean {
+  if (typeof cfg.inbound === 'object' && cfg.inbound !== null) {
+    return Boolean(cfg.inbound[domain]);
+  }
+  return Boolean(cfg.inbound);
+}
+
+/** Build the SPF value as an `include:` of the relay SPF domain — never an ip4 literal. */
+function spfValue(relaySpfDomain: string, policy: '~all' | '-all'): string {
+  return `v=spf1 include:${relaySpfDomain} ${policy}`;
+}
+
+/** Build the record set for a single domain. */
+export function buildDomainManifest(
+  cfg: MailDnsConfig,
+  domain: string,
+): DomainManifest {
+  const prefix = cfg.bounceSubdomainPrefix ?? 'bounce';
+  const bounce = `${prefix}.${domain}`;
+  const spfPolicy = cfg.spfPolicy ?? '~all';
+  const dmarcPolicy = cfg.dmarcPolicy ?? 'none';
+  const inbound = inboundFor(cfg, domain);
+
+  const records: DnsRecord[] = [
+    {
+      name: domain,
+      type: 'TXT',
+      value: spfValue(cfg.relaySpfDomain, spfPolicy),
+      comment:
+        `SPF — authorizes the relay via include: (never an ip4 literal, so the relay can re-IP ` +
+        `without touching your DNS). Uses ${spfPolicy} during warmup; harden to "-all" once ` +
+        `deliverability is proven.`,
+    },
+    {
+      name: `${cfg.dkimSelector}._domainkey.${domain}`,
+      type: 'TXT',
+      value: `v=DKIM1; k=rsa; h=sha256; p=__DKIM_PUBLIC_KEY__`,
+      comment:
+        `DKIM — the public key (p=) is published by \`trinity-mail init\`; this manifest only ` +
+        `carries the selector "${cfg.dkimSelector}". Replace __DKIM_PUBLIC_KEY__ with the base64 ` +
+        `key from the init bundle (or let init publish it for you).`,
+    },
+    {
+      name: `_dmarc.${domain}`,
+      type: 'TXT',
+      value: `v=DMARC1; p=${dmarcPolicy}; rua=mailto:${cfg.dmarcRua}; adkim=r; aspf=r; fo=1`,
+      comment:
+        `DMARC — start at p=${dmarcPolicy} (monitoring); aggregate reports go to the central ` +
+        `mailbox. Ramp p=none → quarantine → reject as alignment proves out.`,
+    },
+    {
+      name: bounce,
+      type: 'TXT',
+      value: spfValue(cfg.relaySpfDomain, spfPolicy),
+      comment:
+        `Bounce subdomain SPF — the Return-Path uses ${bounce}; it needs its own SPF authorizing ` +
+        `the relay so bounce/VERP traffic passes SPF alignment.`,
+    },
+  ];
+
+  if (inbound) {
+    records.push({
+      name: domain,
+      type: 'MX',
+      value: `${cfg.relayMxHost}.`,
+      priority: 10,
+      comment: `MX — inbound enabled: routes incoming mail for ${domain} to the relay.`,
+    });
+  }
+
+  return {
+    domain,
+    dkimSelector: cfg.dkimSelector,
+    bounceSubdomain: bounce,
+    inbound,
+    records,
+  };
+}
+
+/** Build the full manifest from config. */
+export function buildManifest(cfg: MailDnsConfig): MailDnsManifest {
+  if (!cfg.domains || cfg.domains.length === 0) {
+    throw new Error('mail-dns: config.domains must list at least one sending domain');
+  }
+  if (/ip4:|ip6:|\d{1,3}(\.\d{1,3}){3}/.test(cfg.relaySpfDomain)) {
+    throw new Error(
+      'mail-dns: relaySpfDomain must be an SPF include domain (e.g. _spf.relay.trinity.agency), ' +
+        'never an IP literal — the relay must be able to re-IP without tenant DNS changes.',
+    );
+  }
+  return {
+    version: 1,
+    relaySpfDomain: cfg.relaySpfDomain,
+    relayMxHost: cfg.relayMxHost,
+    dmarcRua: cfg.dmarcRua,
+    domains: cfg.domains.map((d) => buildDomainManifest(cfg, d)),
+  };
+}
+
+/** Serialize a manifest to YAML with a leading provenance comment. */
+export function renderYaml(manifest: MailDnsManifest): string {
+  const header =
+    '# mail-dns.yaml — generated by mail-dns/generate.ts. Provider-neutral copy-paste records.\n' +
+    '# Publish these at your DNS provider (e.g. Hostinger). Re-run generate after editing\n' +
+    '# mail-dns.config.ts; run mail-dns/verify.ts to check they are published + aligned.\n';
+  return header + stringify(manifest);
+}
+
+/** Try to load `./mail-dns.config.ts` (export default). Returns null if absent. */
+async function loadConfigModule(here: string): Promise<MailDnsConfig | null> {
+  const candidate = resolve(here, 'mail-dns.config.ts');
+  try {
+    const mod = (await import(pathToFileURL(candidate).href)) as {
+      default?: MailDnsConfig;
+      config?: MailDnsConfig;
+    };
+    return mod.default ?? mod.config ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** CLI entry: load config (file or defaults), build, write mail-dns.yaml. */
+export async function main(): Promise<void> {
+  const here = dirname(fileURLToPath(import.meta.url));
+  const fromFile = await loadConfigModule(here);
+  const cfg = fromFile ?? DEFAULT_CONFIG;
+  if (!fromFile) {
+    // eslint-disable-next-line no-console
+    console.warn('mail-dns: no mail-dns.config.ts found — using inline defaults (ozean-licht.com).');
+  }
+  const manifest = buildManifest(cfg);
+  const out = resolve(here, 'mail-dns.yaml');
+  writeFileSync(out, renderYaml(manifest), 'utf8');
+  // eslint-disable-next-line no-console
+  console.log(`mail-dns: wrote ${out} (${manifest.domains.length} domain(s)).`);
+}
+
+// Run when invoked directly (npx tsx mail-dns/generate.ts), not when imported.
+const invokedDirectly =
+  typeof process !== 'undefined' &&
+  Array.isArray(process.argv) &&
+  process.argv[1] !== undefined &&
+  import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (invokedDirectly) {
+  main().catch((err) => {
+    // eslint-disable-next-line no-console
+    console.error(err instanceof Error ? err.message : err);
+    process.exitCode = 1;
+  });
+}
