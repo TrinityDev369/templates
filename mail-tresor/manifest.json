@@ -1,0 +1,19 @@
+{
+  "name": "mail-tresor",
+  "description": "Trinity Mail env contract as a Tresor schema fragment: every mail env key (MAIL_*, RELAY_SMTP_*, RELAY_WEBHOOK_SECRET, DATABASE_URL, MAIL_BODY_KEY) declared with risk level, rotation policy, validation regex, and secret flag — mergeable into the project's tresor.config.ts, plus a mail env example",
+  "version": "1.0.0",
+  "outputDir": "tresor",
+  "files": [
+    "mail.tresor.ts",
+    "mail.env.example",
+    "README.md",
+    "__tests__/keys.test.ts"
+  ],
+  "peerDependencies": {},
+  "devDependencies": {
+    "vitest": ">=1.0.0",
+    "typescript": ">=5.0.0",
+    "@types/node": ">=20.0.0"
+  },
+  "postMessage": "Installed to ./tresor. 1) Merge the schema fragment into your Tresor config: `import { mailSecrets } from './mail.tresor'` then spread `...mailSecrets` into tresor.config.ts (see README). 2) Seed real values into tresor/vault.env from mail.env.example (NEVER commit vault.env); keep MAIL_DRIVER=console until you have relay credentials from `trinity-mail init`. 3) `tresor sync && tresor doctor` to generate + validate the runtime .env. Tests: `npx vitest run`. Note: this governs the SMTP/app env keys only — the Clausura wrap-key custody lives in the future Tresor-vault (Phase C, plan D-3), not here. Pairs with mail-client, mail-webhook, mail-dns, mail-templates."
+}
