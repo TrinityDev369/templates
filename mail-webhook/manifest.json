@@ -1,0 +1,33 @@
+{
+  "name": "mail-webhook",
+  "description": "Trinity Mail delivery-event receiver: signature-verified webhook handlers for the relay's delivery lifecycle (queued→sent→delivered, deferred, bounced, complained, opened, clicked), an append-only email_events log + status-advancing email_logs, a local suppression mirror with check-before-send, and crypto-shreddable (AES-256-GCM) retained-body storage. Framework-agnostic core with thin Next.js route adapters.",
+  "version": "1.0.0",
+  "outputDir": "src/mail",
+  "files": [
+    "webhook/types.ts",
+    "webhook/signature.ts",
+    "webhook/crypto.ts",
+    "webhook/schema.sql",
+    "webhook/store.ts",
+    "webhook/suppression.ts",
+    "webhook/events.ts",
+    "webhook/bounce.ts",
+    "webhook/index.ts",
+    "adapters/next-events-route.ts",
+    "adapters/next-bounce-route.ts",
+    "README.md",
+    "__tests__/signature.test.ts",
+    "__tests__/events.test.ts",
+    "__tests__/bounce.test.ts",
+    "__tests__/crypto.test.ts"
+  ],
+  "peerDependencies": {
+    "postgres": ">=3.4.0"
+  },
+  "devDependencies": {
+    "vitest": ">=1.0.0",
+    "typescript": ">=5.0.0",
+    "@types/node": ">=20.0.0"
+  },
+  "postMessage": "Installed to src/mail (pairs with mail-client). 1) Apply webhook/schema.sql to your database. 2) Add the new env keys to your .env: RELAY_WEBHOOK_SECRET (shared with the relay, issued by `trinity-mail init`) and MAIL_BODY_KEY (a 32-byte base64 key — generate with `openssl rand -base64 32`; graduates to the Tresor vault in Phase C). 3) Wire the two route adapters (adapters/next-events-route.ts → app/api/mail/events/route.ts, adapters/next-bounce-route.ts → app/api/mail/bounce/route.ts). 4) Call isSuppressed(recipient) before every send. Tests: `npx vitest run src/mail`."
+}
