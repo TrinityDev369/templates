@@ -1,0 +1,36 @@
+{
+  "name": "mail-templates",
+  "description": "Trinity Mail React Email templates: branded, German-first (en fallback) transactional emails (verify, password-reset, magic-link, welcome, receipt, generic-notification) with a preheader-aware base layout, vendored brand theme, tiny i18n, and a renderEmail() helper that emits both HTML and a plain-text alternative for multipart sends",
+  "version": "1.0.0",
+  "outputDir": "emails",
+  "files": [
+    "theme.ts",
+    "i18n.ts",
+    "render.ts",
+    "index.ts",
+    "components/layout.tsx",
+    "components/header.tsx",
+    "components/footer.tsx",
+    "components/button.tsx",
+    "components/divider.tsx",
+    "components/styles.ts",
+    "templates/verify-email.tsx",
+    "templates/password-reset.tsx",
+    "templates/magic-link.tsx",
+    "templates/welcome.tsx",
+    "templates/receipt.tsx",
+    "templates/generic-notification.tsx",
+    "README.md",
+    "__tests__/render.test.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "@react-email/components": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": ">=18",
+    "vitest": ">=1.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "postMessage": "Installed to emails/. 1) Render any template to a multipart pair: `const { html, text } = await renderEmail(<VerifyEmail userName=\"...\" verifyUrl=\"...\" />)`. 2) Pass it straight to the mail-client template: `await mail.send({ to, subject, html, text, category: 'auth' })` — both parts are required for deliverability. 3) Templates default to German (`locale=\"de\"`); pass `locale=\"en\"` for the English fallback, and `brandName` to brand the header/footer. Preview in the React Email dev server or just call renderEmail. Tests: `npx vitest run emails`."
+}
