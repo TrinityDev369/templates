@@ -1,0 +1,38 @@
+{
+  "name": "mail-client",
+  "description": "Trinity Mail transport client: provider-agnostic sendMail() over the shared relay, with a durable outbox (at-least-once retry + dead-letter), idempotency, message-contract headers, plaintext autogen, rate-limit + consent guardrails, and a console dev driver",
+  "version": "1.0.0",
+  "outputDir": "src/mail",
+  "files": [
+    "lib/types.ts",
+    "lib/headers.ts",
+    "lib/plaintext.ts",
+    "config.ts",
+    "drivers/relay.ts",
+    "drivers/console.ts",
+    "drivers/index.ts",
+    "outbox/schema.sql",
+    "outbox/store.ts",
+    "outbox/worker.ts",
+    "guards.ts",
+    "sendMail.ts",
+    "index.ts",
+    "adapters/standalone-worker.ts",
+    "adapters/next-route.ts",
+    ".env.example",
+    "README.md",
+    "__tests__/mail-client.test.ts",
+    "__tests__/plaintext.test.ts"
+  ],
+  "peerDependencies": {
+    "nodemailer": ">=6.9.0",
+    "postgres": ">=3.4.0"
+  },
+  "devDependencies": {
+    "@types/nodemailer": ">=6.4.0",
+    "vitest": ">=1.0.0",
+    "tsx": ">=4.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "postMessage": "Installed to src/mail. 1) Copy .env.example into your env (governed via `npx @trinity369/use mail-tresor`); keep MAIL_DRIVER=console until you have relay credentials. 2) Apply outbox/schema.sql to your database. 3) Run the durable worker: `npx tsx src/mail/adapters/standalone-worker.ts` (or call mail.drain() after send in serverless). 4) Add mail-templates (rendering), mail-webhook (delivery events + suppression), and mail-dns (DNS). Tests: `npx vitest run src/mail`."
+}
