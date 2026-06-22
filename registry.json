@@ -951,6 +951,56 @@
       "category": "utility",
       "version": "1.0.0"
     },
+    "mail-client": {
+      "description": "Trinity Mail transport: provider-agnostic sendMail() over the shared relay with durable outbox (retry + dead-letter), idempotency, message-contract headers, plaintext autogen, rate-limit + consent guardrails, and a console dev driver",
+      "category": "mail",
+      "composableWith": [
+        "mail-templates",
+        "mail-webhook",
+        "mail-dns",
+        "mail-tresor"
+      ]
+    },
+    "mail-dns": {
+      "description": "Provider-neutral mail-dns.yaml generator + DNS verify (SPF include / per-domain DKIM / DMARC rua / bounce subdomain) \u2014 the tenant-side mirror of the relay's onboard-domain.sh",
+      "category": "mail",
+      "composableWith": [
+        "mail-client",
+        "mail-templates",
+        "mail-webhook",
+        "mail-tresor"
+      ]
+    },
+    "mail-templates": {
+      "description": "React Email base layout + 6 German-first starters (verify-email, password-reset, magic-link, welcome, receipt, generic-notification) on the vendored Trinity brand theme, with preheader support and renderEmail() emitting html + plaintext",
+      "category": "mail",
+      "composableWith": [
+        "mail-client",
+        "mail-webhook",
+        "mail-dns",
+        "mail-tresor"
+      ]
+    },
+    "mail-tresor": {
+      "description": "Tresor env-schema fragment governing the full Trinity Mail env contract (SMTP creds, webhook secret, body key) with per-key risk/rotation/validation",
+      "category": "mail",
+      "composableWith": [
+        "mail-client",
+        "mail-templates",
+        "mail-webhook",
+        "mail-dns"
+      ]
+    },
+    "mail-webhook": {
+      "description": "Signature-verified relay webhook receivers (delivery events + bounces), email_logs/email_events lifecycle with a local suppression mirror, and crypto-shreddable AES-256-GCM body retention",
+      "category": "mail",
+      "composableWith": [
+        "mail-client",
+        "mail-templates",
+        "mail-dns",
+        "mail-tresor"
+      ]
+    },
     "page-app-download": {
       "description": "Mobile app download page with store badges",
       "category": "page",
