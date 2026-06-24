@@ -104,7 +104,7 @@ export const mailSecrets = {
     risk: 'low',
     rotation: 'never',
     pattern: /^\d{1,5}$/,
-    description: 'SMTP submission port — 587 (STARTTLS) or 465 (implicit TLS).',
+    description: 'SMTP submission port — 465 (implicit TLS, default — what the relay serves) or 587 (STARTTLS).',
     secret: false,
   },
   RELAY_SMTP_USER: {
@@ -125,7 +125,7 @@ export const mailSecrets = {
     risk: 'low',
     rotation: 'never',
     pattern: /^(true|false)$/,
-    description: 'Implicit TLS toggle — true for port 465, false for 587 STARTTLS.',
+    description: 'Implicit TLS toggle — true for port 465 (default), false for 587 STARTTLS.',
     secret: false,
   },
 

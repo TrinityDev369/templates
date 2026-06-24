@@ -55,10 +55,10 @@ tresor audit    # rotation status; surfaces stale critical/high keys first
 | `MAIL_REPLY_TO` | low | never | no | Default Reply-To address. |
 | `MAIL_BOUNCE_DOMAIN` | low | never | no | Return-Path subdomain DSNs route to. |
 | `RELAY_SMTP_HOST` | low | never | no | SMTP submission host of the shared relay. |
-| `RELAY_SMTP_PORT` | low | never | no | `587` (STARTTLS) or `465` (implicit TLS). |
+| `RELAY_SMTP_PORT` | low | never | no | `465` (implicit TLS, default) or `587` (STARTTLS). |
 | `RELAY_SMTP_USER` | medium | 90d | yes | Per-project SMTP username (from `trinity-mail init`). |
 | `RELAY_SMTP_PASS` | **high** | 90d | yes | Per-project SMTP password — sends on the shared reputation. |
-| `RELAY_SMTP_SECURE` | low | never | no | `true` for 465, `false` for 587. |
+| `RELAY_SMTP_SECURE` | low | never | no | `true` for 465 (default), `false` for 587. |
 | `MAIL_OUTBOX_MAX_ATTEMPTS` | low | never | no | Attempts before dead-lettering. |
 | `MAIL_OUTBOX_BACKOFF_MS` | low | never | no | Base backoff (exponential + jitter, capped 1h). |
 | `MAIL_RATE_MAX` | low | never | no | Max sends per window, per project+stream. |

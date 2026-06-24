@@ -64,8 +64,16 @@ export function loadMailConfig(env: NodeJS.ProcessEnv = process.env): MailConfig
           '(issued by `trinity-mail init <project>`). Use MAIL_DRIVER=console for local dev.',
       );
     }
-    const port = int(env.RELAY_SMTP_PORT, 587);
-    relay = { host, port, user, pass, secure: env.RELAY_SMTP_SECURE === 'true' || port === 465 };
+    // Default 465 (implicit TLS, RFC 8314): the Trinity Mail relay serves 465, not 587.
+    const port = int(env.RELAY_SMTP_PORT, 465);
+    // Honor an explicit RELAY_SMTP_SECURE; otherwise default by port (implicit TLS unless 587).
+    const secure =
+      env.RELAY_SMTP_SECURE === 'true'
+        ? true
+        : env.RELAY_SMTP_SECURE === 'false'
+          ? false
+          : port !== 587;
+    relay = { host, port, user, pass, secure };
   }
 
   return {

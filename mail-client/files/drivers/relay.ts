@@ -1,8 +1,9 @@
 /**
  * Trinity Mail — relay SMTP driver (the real send path).
  *
- * Pooled submission to the Trinity Mail relay over 587 (STARTTLS) or 465 (implicit
- * TLS), authenticated with per-app credentials issued by `trinity-mail init`. The
+ * Pooled submission to the Trinity Mail relay over 465 (implicit TLS, the default the
+ * relay serves) or 587 (STARTTLS), authenticated with per-app credentials issued by
+ * `trinity-mail init`. The
  * relay does DKIM signing, egress, and the central fact-log; this driver just hands
  * it an authenticated, well-formed message.
  */
