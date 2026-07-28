@@ -1,0 +1,32 @@
+{
+  "name": "chatbot-api",
+  "description": "Express chat API with SSE streaming, Anthropic Claude, API key auth, origin guard, rate limiting, and escalation",
+  "version": "1.0.0",
+  "outputDir": "src/chatbot-api",
+  "files": [
+    "lib/types.ts",
+    "lib/anthropic.ts",
+    "lib/session.ts",
+    "middleware/api-key.ts",
+    "middleware/cors-origin.ts",
+    "middleware/rate-limit.ts",
+    "chat.ts",
+    "history.ts",
+    "chatbot.config.ts",
+    "server.ts",
+    ".env.example",
+    "__tests__/chat.test.ts",
+    "__tests__/rate-limit.test.ts",
+    "__tests__/session.test.ts"
+  ],
+  "peerDependencies": {
+    "@anthropic-ai/sdk": ">=0.30.0",
+    "express": ">=4.18.0"
+  },
+  "devDependencies": {
+    "@types/express": ">=4.17.0",
+    "tsx": ">=4.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "postMessage": "Copy .env.example to .env and add your ANTHROPIC_API_KEY. Run with: npx tsx server.ts"
+}

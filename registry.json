@@ -1619,6 +1619,39 @@
       "description": "Animated triangle signature easter-egg for client sites",
       "category": "component",
       "version": "1.0.0"
+    },
+    "chatbot-widget": {
+      "description": "Drop-in React chat widget with SSE streaming, session persistence, and human escalation",
+      "category": "ai-assistant",
+      "composableWith": [
+        "chatbot-api",
+        "chatbot-db",
+        "chatbot-context"
+      ]
+    },
+    "chatbot-api": {
+      "description": "Express chat API with SSE streaming, Anthropic Claude, rate limiting, and escalation",
+      "category": "ai-assistant",
+      "composableWith": [
+        "chatbot-widget",
+        "chatbot-db",
+        "chatbot-context"
+      ]
+    },
+    "chatbot-db": {
+      "description": "PostgreSQL schema and repository for chatbot conversations with Prisma + raw SQL options",
+      "category": "ai-assistant",
+      "composableWith": [
+        "chatbot-api",
+        "chatbot-context"
+      ]
+    },
+    "chatbot-context": {
+      "description": "Dynamic context assembly engine with pluggable modules and token budgeting",
+      "category": "ai-assistant",
+      "composableWith": [
+        "chatbot-api"
+      ]
     }
   }
 }

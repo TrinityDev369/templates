@@ -1,0 +1,17 @@
+{
+  "name": "chatbot-db",
+  "description": "PostgreSQL schema and repository for chatbot conversations with Prisma + raw SQL options",
+  "version": "1.0.0",
+  "outputDir": "src/chatbot-db",
+  "files": [
+    "schema.prisma",
+    "migration.sql",
+    "repository.ts",
+    "seed.ts",
+    "__tests__/repository.test.ts"
+  ],
+  "peerDependencies": {
+    "@prisma/client": ">=5.0.0"
+  },
+  "postMessage": "Merge schema.prisma into your existing Prisma schema, or run migration.sql directly.\nSee repository.ts for the data access layer.\n\nQuick start:\n  1. psql -d your_db -f src/chatbot-db/migration.sql\n  2. npx tsx src/chatbot-db/seed.ts"
+}

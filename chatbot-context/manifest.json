@@ -1,0 +1,21 @@
+{
+  "name": "chatbot-context",
+  "description": "Dynamic context assembly engine with pluggable modules and token budgeting",
+  "version": "1.0.0",
+  "outputDir": "src/chatbot-context",
+  "files": [
+    "types.ts",
+    "budget.ts",
+    "build-prompt.ts",
+    "modules/domain-catalog.ts",
+    "modules/user-context.ts",
+    "modules/faq.ts",
+    "modules/events.ts",
+    "index.ts",
+    "__tests__/budget.test.ts",
+    "__tests__/build-prompt.test.ts",
+    "__tests__/faq.test.ts"
+  ],
+  "peerDependencies": {},
+  "postMessage": "Wire your data sources into the context modules. See build-prompt.ts for the orchestrator and modules/ for examples."
+}

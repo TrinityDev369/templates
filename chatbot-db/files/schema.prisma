@@ -1,0 +1,47 @@
+// ── Chatbot Models ──────────────────────────────────────────
+// Add these models to your existing schema.prisma
+//
+// These models provide conversation persistence for chatbot
+// interactions. Supports both anonymous (session-based) and
+// authenticated (user-bound) conversations.
+//
+// Usage:
+//   1. Copy these models into your main schema.prisma
+//   2. Run: npx prisma migrate dev --name add-chatbot-tables
+//   3. Import the generated client and use with ChatbotRepository
+
+model ChatbotConversation {
+  id            String   @id @default(uuid()) @db.Uuid
+  sessionId     String   @map("session_id")
+  userId        String?  @map("user_id")          // null for anonymous
+  title         String?  @db.VarChar(500)
+  status        String   @default("active")        // active, archived, closed
+  metadata      Json     @default("{}")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  messages      ChatbotMessage[]
+
+  @@index([sessionId])
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("chatbot_conversations")
+}
+
+model ChatbotMessage {
+  id              String   @id @default(uuid()) @db.Uuid
+  conversationId  String   @map("conversation_id") @db.Uuid
+  role            String                           // user, assistant, system
+  content         String   @db.Text
+  tokensUsed      Int?     @map("tokens_used")
+  model           String?  @db.VarChar(100)
+  sequence        Int
+  metadata        Json     @default("{}")
+  createdAt       DateTime @default(now()) @map("created_at")
+  conversation    ChatbotConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+  @@index([conversationId, sequence])
+  @@index([role])
+  @@map("chatbot_messages")
+}

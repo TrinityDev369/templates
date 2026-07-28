@@ -1,0 +1,35 @@
+{
+  "name": "chatbot-widget",
+  "description": "Drop-in React chat widget with SSE streaming, session persistence, and human escalation",
+  "version": "1.0.0",
+  "outputDir": "src/chatbot",
+  "files": [
+    "lib/types.ts",
+    "lib/stream.ts",
+    "lib/history.ts",
+    "hooks/useChat.ts",
+    "hooks/useSession.ts",
+    "components/ChatBubble.tsx",
+    "components/ChatWindow.tsx",
+    "components/MessageList.tsx",
+    "components/MessageBubble.tsx",
+    "components/Markdown.tsx",
+    "components/InputBar.tsx",
+    "components/TypingIndicator.tsx",
+    "components/EscalationCard.tsx",
+    "components/DisclaimerBanner.tsx",
+    "components/RegenerateButton.tsx",
+    "components/RetryBanner.tsx",
+    "styles/widget.css",
+    "ChatWidget.tsx",
+    "index.ts",
+    "__tests__/stream.test.ts",
+    "__tests__/useSession.test.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "postMessage": "Import <ChatWidget> and pass your ChatConfig. See index.ts for all exports.",
+  "notes": "The CSS import (`import './styles/widget.css'`) in ChatWidget.tsx requires a bundler that handles CSS imports (Vite, webpack, Next.js, etc.). If your setup does not support CSS imports, load widget.css via a <link> tag and remove the import line from ChatWidget.tsx."
+}
